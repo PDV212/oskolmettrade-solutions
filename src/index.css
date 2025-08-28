@@ -2,39 +2,62 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* OSKOL-MET-TRADE Industrial Design System
+   Professional metalworking and manufacturing theme
+   All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Industrial Blue & Gray Color Palette */
+    --background: 220 15% 97%;
+    --foreground: 215 25% 15%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 220 20% 98%;
+    --card-foreground: 215 25% 15%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 220 20% 98%;
+    --popover-foreground: 215 25% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Industrial Blue Primary */
+    --primary: 210 85% 35%;
+    --primary-foreground: 220 20% 98%;
+    --primary-hover: 210 85% 42%;
+    --primary-muted: 210 60% 85%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Steel Gray Secondary */
+    --secondary: 215 15% 25%;
+    --secondary-foreground: 220 20% 98%;
+    --secondary-hover: 215 15% 32%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Industrial Accent Colors */
+    --accent: 25 95% 53%;
+    --accent-foreground: 220 20% 98%;
+    --accent-muted: 25 75% 88%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Professional Muted */
+    --muted: 215 20% 92%;
+    --muted-foreground: 215 15% 45%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 220 20% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 215 20% 88%;
+    --input: 215 20% 94%;
+    --ring: 210 85% 35%;
+
+    /* Industrial Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(215 25% 15%) 0%, hsl(215 20% 25%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(210 85% 35%) 0%, hsl(210 85% 42%) 100%);
+    --gradient-steel: linear-gradient(180deg, hsl(215 15% 92%) 0%, hsl(215 20% 88%) 100%);
+    
+    /* Industrial Shadows */
+    --shadow-industrial: 0 8px 32px -8px hsl(215 25% 15% / 0.3);
+    --shadow-card: 0 4px 16px -4px hsl(215 25% 15% / 0.1);
+    --shadow-accent: 0 8px 24px -8px hsl(210 85% 35% / 0.4);
+
+    /* Professional Typography */
+    --font-industrial: 'Inter', 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
 
     --radius: 0.5rem;
 
@@ -56,33 +79,35 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Dark Industrial Theme */
+    --background: 215 25% 8%;
+    --foreground: 220 20% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 215 25% 10%;
+    --card-foreground: 220 20% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 215 25% 10%;
+    --popover-foreground: 220 20% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 210 85% 55%;
+    --primary-foreground: 215 25% 8%;
+    --primary-hover: 210 85% 62%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 215 15% 18%;
+    --secondary-foreground: 220 20% 95%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 215 20% 15%;
+    --muted-foreground: 215 15% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 25 95% 58%;
+    --accent-foreground: 215 25% 8%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84.2% 65%;
+    --destructive-foreground: 220 20% 95%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 215 20% 18%;
+    --input: 215 20% 15%;
+    --ring: 210 85% 55%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -100,6 +125,60 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+    font-family: var(--font-industrial);
+  }
+
+  /* Industrial Typography Classes */
+  .heading-hero {
+    @apply text-4xl md:text-6xl font-bold tracking-tight;
+    background: var(--gradient-hero);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1.1;
+  }
+
+  .heading-section {
+    @apply text-2xl md:text-4xl font-bold text-foreground;
+  }
+
+  .text-industrial {
+    @apply text-muted-foreground leading-relaxed;
+  }
+
+  /* Industrial Button Styles */
+  .btn-industrial {
+    @apply bg-primary hover:bg-primary-hover text-primary-foreground font-semibold px-8 py-4 rounded-lg transition-all duration-300;
+    box-shadow: var(--shadow-accent);
+  }
+
+  .btn-steel {
+    @apply bg-secondary hover:bg-secondary-hover text-secondary-foreground font-semibold px-6 py-3 rounded-lg transition-all duration-300;
+  }
+
+  /* Industrial Card Styles */
+  .card-industrial {
+    @apply bg-card border border-border rounded-xl p-6;
+    box-shadow: var(--shadow-card);
+    transition: all 0.3s ease;
+  }
+
+  .card-industrial:hover {
+    box-shadow: var(--shadow-industrial);
+    transform: translateY(-4px);
+  }
+
+  /* Industrial Gradients */
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .bg-gradient-accent {
+    background: var(--gradient-accent);
+  }
+
+  .bg-gradient-steel {
+    background: var(--gradient-steel);
   }
 }
