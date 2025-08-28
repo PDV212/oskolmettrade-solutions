@@ -19,7 +19,8 @@ const Header = () => {
     if (href.startsWith('#')) {
       const element = document.querySelector(href) as HTMLElement;
       if (element) {
-        const headerHeight = 100; // Increased to scroll higher
+        // Для кнопки "О компании" используем меньший отступ
+        const headerHeight = href === '#directions' ? 80 : 100;
         const elementPosition = element.offsetTop - headerHeight;
         window.scrollTo({
           top: elementPosition,
