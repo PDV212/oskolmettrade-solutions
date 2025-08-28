@@ -107,10 +107,16 @@ const BusinessDirections = () => {
           </p>
           
           {/* Direction Images Gallery */}
-          <div className="flex flex-wrap justify-center items-center gap-8 mt-12 mb-8 px-4">
-            <img src={manipulators2Image} alt="OSKOL" className="h-24 object-contain opacity-80 hover:opacity-100 transition-opacity" />
-            <img src={equipmentLogoImage} alt="Equipment" className="h-24 object-contain opacity-80 hover:opacity-100 transition-opacity" />
-            <img src={rawDrillingImage} alt="Raw Drilling" className="h-24 object-contain opacity-80 hover:opacity-100 transition-opacity" />
+          <div className="flex flex-wrap justify-center items-center gap-12 mt-12 mb-8 px-4">
+            <div className="w-32 h-32 flex items-center justify-center">
+              <img src={manipulators2Image} alt="OSKOL" className="max-w-full max-h-full object-contain opacity-80 hover:opacity-100 transition-opacity" />
+            </div>
+            <div className="w-32 h-32 flex items-center justify-center">
+              <img src={equipmentLogoImage} alt="Equipment" className="max-w-full max-h-full object-contain opacity-80 hover:opacity-100 transition-opacity" />
+            </div>
+            <div className="w-32 h-32 flex items-center justify-center">
+              <img src={rawDrillingImage} alt="Raw Drilling" className="max-w-full max-h-full object-contain opacity-80 hover:opacity-100 transition-opacity" />
+            </div>
           </div>
         </div>
 
@@ -148,7 +154,9 @@ const BusinessDirections = () => {
                             <span className="text-muted-foreground">{feature.text}</span>
                           </div>
                           <div className="ml-8">
-                            <img src={feature.image} alt={feature.text} className="h-16 object-contain opacity-90 hover:opacity-100 transition-opacity" />
+                            <div className="w-24 h-24 flex items-center justify-center">
+                              <img src={feature.image} alt={feature.text} className="max-w-full max-h-full object-contain opacity-90 hover:opacity-100 transition-opacity" />
+                            </div>
                           </div>
                         </div>
                       ) : (
