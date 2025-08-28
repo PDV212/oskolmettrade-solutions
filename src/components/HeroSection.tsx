@@ -49,7 +49,7 @@ const HeroSection = () => {
               <span className="inline-block px-4 py-2 bg-accent/20 text-accent rounded-full text-sm font-semibold mb-4">
                 С 1994 года на рынке
               </span>
-              <h1 className="heading-hero text-white mb-6">
+              <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-6" style={{ WebkitTextFillColor: 'white', backgroundClip: 'unset', WebkitBackgroundClip: 'unset' }}>
                 ОСКОЛ-МЕТ-ТРЕЙД
               </h1>
               <p className="text-xl md:text-2xl text-white/90 font-medium mb-4">
