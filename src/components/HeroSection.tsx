@@ -91,7 +91,7 @@ const HeroSection = () => {
         </div>
 
         {/* Business Directions - Positioned absolutely within hero section */}
-        <div className="absolute bottom-12 right-4 w-80 animate-industrial-fade-in hidden lg:block z-20">
+        <div className="absolute bottom-0 right-0 w-80 animate-industrial-fade-in hidden lg:block z-20">
           <div className="bg-white/15 backdrop-blur-md rounded-2xl p-6 border border-white/30 shadow-2xl">
             <h3 className="text-xl font-bold text-white mb-4">Направления деятельности</h3>
             <div className="space-y-3">
