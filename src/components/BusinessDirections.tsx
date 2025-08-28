@@ -6,6 +6,7 @@ const cncMachineImage = '/lovable-uploads/b5b9d48f-fa70-463f-b4c5-98e99b19fbaa.p
 import materialsImage from '@/assets/raw-materials.jpg';
 const rawMaterialsImage = '/lovable-uploads/9676f778-2096-4758-bdfe-13e24c70089a.png';
 import furnaceImage from '@/assets/metallurgy-furnace.jpg';
+const heatingFurnacesImage = '/lovable-uploads/edf23884-f593-4722-b789-00f5ca57510a.png';
 
 const BusinessDirections = () => {
   const directions = [
@@ -48,7 +49,7 @@ const BusinessDirections = () => {
       title: 'Металлургические печи',
       subtitle: 'Современные технологии нагрева и плавки',
       description: 'Проектирование и поставка печного оборудования для металлургической промышленности',
-      image: furnaceImage,
+      image: heatingFurnacesImage,
       features: [
         'Вакуумно-дуговые печи (0,5-50 тонн)',
         'Печи индукционного нагрева (до 150 тонн)',
@@ -137,7 +138,7 @@ const BusinessDirections = () => {
               <div className={`${index % 2 === 1 ? 'lg:col-start-1' : ''} animate-industrial-fade-in`}>
                 <Card className="card-industrial overflow-hidden">
                   <div 
-                    className={`${direction.id === 'equipment' || direction.id === 'materials' ? 'h-96 bg-contain bg-center bg-no-repeat' : 'h-80 bg-cover bg-center'} relative`}
+                    className={`${direction.id === 'equipment' || direction.id === 'materials' || direction.id === 'furnaces' ? 'h-96 bg-contain bg-center bg-no-repeat' : 'h-80 bg-cover bg-center'} relative`}
                     style={{ backgroundImage: `url(${direction.image})` }}
                   >
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
