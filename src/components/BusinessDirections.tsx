@@ -117,13 +117,13 @@ const BusinessDirections = () => {
           
         {/* Direction Images Gallery */}
         <div className="flex justify-center items-center gap-4 mt-12 mb-8 px-4">
-          <div className="w-80 h-80 flex items-center justify-center bg-muted/50 rounded-lg p-4 flex-shrink-0">
+          <div className="w-96 h-96 flex items-center justify-center bg-muted/50 rounded-lg p-4 flex-shrink-0">
             <img src={manipulators2Image} alt="OSKOL" className="max-w-full max-h-full object-contain opacity-80 hover:opacity-100 transition-opacity" />
           </div>
-          <div className="w-80 h-80 flex items-center justify-center bg-muted/50 rounded-lg p-4 flex-shrink-0">
+          <div className="w-96 h-96 flex items-center justify-center bg-muted/50 rounded-lg p-4 flex-shrink-0">
             <img src={equipmentLogoImage} alt="Equipment" className="max-w-full max-h-full object-contain opacity-80 hover:opacity-100 transition-opacity" />
           </div>
-          <div className="w-80 h-80 flex items-center justify-center bg-muted/50 rounded-lg p-4 flex-shrink-0">
+          <div className="w-96 h-96 flex items-center justify-center bg-muted/50 rounded-lg p-4 flex-shrink-0">
             <img src={rawMaterialsMainImage} alt="Raw Materials" className="max-w-full max-h-full object-contain opacity-80 hover:opacity-100 transition-opacity" />
           </div>
         </div>
@@ -163,7 +163,7 @@ const BusinessDirections = () => {
                             <span className="text-muted-foreground">{feature.text}</span>
                           </div>
                           <div className="ml-8">
-                            <div className="w-60 h-60 flex items-center justify-center bg-muted/50 rounded-lg p-4">
+                            <div className="w-96 h-96 flex items-center justify-center bg-muted/50 rounded-lg p-4">
                               <img src={feature.image} alt={feature.text} className="max-w-full max-h-full object-contain opacity-90 hover:opacity-100 transition-opacity" />
                             </div>
                           </div>
