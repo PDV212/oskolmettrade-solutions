@@ -49,7 +49,7 @@ const HeroSection = () => {
               <span className="inline-block px-4 py-2 bg-accent/20 text-accent rounded-full text-sm font-semibold mb-4">
                 С 1994 года на рынке
               </span>
-              <h1 className="heading-hero text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] mb-6" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.9), 0 0 10px rgba(255,255,255,0.3)' }}>
+              <h1 className="heading-hero text-black mb-6">
                 ОСКОЛ-МЕТ-ТРЕЙД
               </h1>
               <p className="text-xl md:text-2xl text-white/90 font-medium mb-4">
