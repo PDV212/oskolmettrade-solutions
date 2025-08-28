@@ -163,7 +163,7 @@ const BusinessDirections = () => {
                             <span className="text-muted-foreground">{feature.text}</span>
                           </div>
                           <div className="ml-8">
-                            <div className="w-80 h-80 flex items-center justify-center bg-muted/50 rounded-lg p-4">
+                            <div className="w-60 h-60 flex items-center justify-center bg-muted/50 rounded-lg p-4">
                               <img src={feature.image} alt={feature.text} className="max-w-full max-h-full object-contain opacity-90 hover:opacity-100 transition-opacity" />
                             </div>
                           </div>
