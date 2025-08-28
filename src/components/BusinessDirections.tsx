@@ -32,7 +32,7 @@ const BusinessDirections = () => {
         'Гидравлические прессы',
         'Роботизированные участки сварки и покраски',
         { 
-          text: 'Промышленные манипуляторы и роботы',
+          text: 'Промышленные манипуляторы и роботы, роботизированные участки сварки и покраски предусматривающие полную автоматизацию ключевых технологических операций — сварки и покраски металлоконструкций — с использованием манипуляторов, интегрированных с цифровыми чертежами и сенсорными системами контроля качества.',
           image: manipulatorsImage
         }
       ],
@@ -106,18 +106,18 @@ const BusinessDirections = () => {
             Группа компаний с полным циклом услуг от проектирования до сервисного обслуживания.
           </p>
           
-          {/* Direction Images Gallery */}
-          <div className="flex flex-wrap justify-center items-center gap-12 mt-12 mb-8 px-4">
-            <div className="w-32 h-32 flex items-center justify-center">
-              <img src={manipulators2Image} alt="OSKOL" className="max-w-full max-h-full object-contain opacity-80 hover:opacity-100 transition-opacity" />
-            </div>
-            <div className="w-32 h-32 flex items-center justify-center">
-              <img src={equipmentLogoImage} alt="Equipment" className="max-w-full max-h-full object-contain opacity-80 hover:opacity-100 transition-opacity" />
-            </div>
-            <div className="w-32 h-32 flex items-center justify-center">
-              <img src={rawMaterialsMainImage} alt="Raw Materials" className="max-w-full max-h-full object-contain opacity-80 hover:opacity-100 transition-opacity" />
-            </div>
+        {/* Direction Images Gallery */}
+        <div className="flex flex-wrap justify-center items-center gap-8 mt-12 mb-8 px-4">
+          <div className="w-40 h-40 flex items-center justify-center bg-muted/50 rounded-lg p-4">
+            <img src={manipulators2Image} alt="OSKOL" className="max-w-full max-h-full object-contain opacity-80 hover:opacity-100 transition-opacity" />
           </div>
+          <div className="w-40 h-40 flex items-center justify-center bg-muted/50 rounded-lg p-4">
+            <img src={equipmentLogoImage} alt="Equipment" className="max-w-full max-h-full object-contain opacity-80 hover:opacity-100 transition-opacity" />
+          </div>
+          <div className="w-40 h-40 flex items-center justify-center bg-muted/50 rounded-lg p-4">
+            <img src={rawMaterialsMainImage} alt="Raw Materials" className="max-w-full max-h-full object-contain opacity-80 hover:opacity-100 transition-opacity" />
+          </div>
+        </div>
         </div>
 
         {/* Directions Grid */}
@@ -154,7 +154,7 @@ const BusinessDirections = () => {
                             <span className="text-muted-foreground">{feature.text}</span>
                           </div>
                           <div className="ml-8">
-                            <div className="w-24 h-24 flex items-center justify-center">
+                            <div className="w-40 h-40 flex items-center justify-center bg-muted/50 rounded-lg p-4">
                               <img src={feature.image} alt={feature.text} className="max-w-full max-h-full object-contain opacity-90 hover:opacity-100 transition-opacity" />
                             </div>
                           </div>
