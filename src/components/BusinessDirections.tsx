@@ -9,6 +9,14 @@ const rawMaterialsImage = '/lovable-uploads/9676f778-2096-4758-bdfe-13e24c70089a
 import furnaceImage from '@/assets/metallurgy-furnace.jpg';
 const heatingFurnacesImage = '/lovable-uploads/edf23884-f593-4722-b789-00f5ca57510a.png';
 
+// New images for sections
+const manipulatorsImage = '/lovable-uploads/761c2c04-8071-4122-94b3-bb0d459d2e87.png';
+const rawMaterials3Image = '/lovable-uploads/4f5cab2a-bc4e-42c9-8834-fd7b004f5b7d.png';
+const manipulators2Image = '/lovable-uploads/f95317f5-d336-41bd-bee8-c76ec0ea6a0e.png';
+const equipmentLogoImage = '/lovable-uploads/6ec4623e-736f-469e-b1e3-ec6dbe88be82.png';
+const rawDrillingImage = '/lovable-uploads/edd8aa37-df09-43b8-aaf6-32ba3147f61c.png';
+const rawEquipment3Image = '/lovable-uploads/058d498e-a516-4470-ac33-0fc0b5b77654.png';
+
 const BusinessDirections = () => {
   const directions = [
     {
@@ -23,7 +31,11 @@ const BusinessDirections = () => {
         'Токарные обрабатывающие центры с ЧПУ',
         'Шлифовальные станки с ЧПУ',
         'Гидравлические прессы',
-        'Роботизированные участки сварки и покраски'
+        'Роботизированные участки сварки и покраски',
+        { 
+          text: 'Промышленные манипуляторы и роботы',
+          image: manipulatorsImage
+        }
       ],
       gradient: 'bg-gradient-to-br from-primary/20 to-primary/5',
       iconColor: 'text-primary'
@@ -37,6 +49,10 @@ const BusinessDirections = () => {
       features: [
         'Марганцевая и железная руда',
         'Бентонит высокого качества',
+        { 
+          text: 'Высококачественные металлургические материалы',
+          image: rawMaterials3Image
+        },
         'Феррохром FeCr различных марок',
         'Чугун никельсодержащий NPI',
         'Слябы из нержавеющей стали'
@@ -90,6 +106,15 @@ const BusinessDirections = () => {
             Комплексные решения для металлургических и машиностроительных предприятий. 
             Группа компаний с полным циклом услуг от проектирования до сервисного обслуживания.
           </p>
+          
+          {/* Direction Images Gallery */}
+          <div className="flex flex-wrap justify-center items-center gap-8 mt-12 mb-8">
+            <img src={manipulators2Image} alt="OSKOL" className="h-20 object-contain opacity-80 hover:opacity-100 transition-opacity" />
+            <img src={equipmentLogoImage} alt="Equipment" className="h-20 object-contain opacity-80 hover:opacity-100 transition-opacity" />
+            <img src={materialsImage} alt="Raw Materials" className="h-20 object-contain opacity-80 hover:opacity-100 transition-opacity" />
+            <img src={rawDrillingImage} alt="Raw Drilling" className="h-20 object-contain opacity-80 hover:opacity-100 transition-opacity" />
+            <img src={rawEquipment3Image} alt="Raw Equipment" className="h-20 object-contain opacity-80 hover:opacity-100 transition-opacity" />
+          </div>
         </div>
 
         {/* Directions Grid */}
@@ -118,9 +143,23 @@ const BusinessDirections = () => {
 
                 <div className="space-y-3 mb-8">
                   {direction.features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-start space-x-3">
-                      <CheckCircle2 className={`w-5 h-5 ${direction.iconColor} mt-0.5 flex-shrink-0`} />
-                      <span className="text-muted-foreground">{feature}</span>
+                    <div key={featureIndex}>
+                      {typeof feature === 'object' ? (
+                        <div className="space-y-3">
+                          <div className="flex items-start space-x-3">
+                            <CheckCircle2 className={`w-5 h-5 ${direction.iconColor} mt-0.5 flex-shrink-0`} />
+                            <span className="text-muted-foreground">{feature.text}</span>
+                          </div>
+                          <div className="ml-8">
+                            <img src={feature.image} alt={feature.text} className="h-16 object-contain opacity-90 hover:opacity-100 transition-opacity" />
+                          </div>
+                        </div>
+                      ) : (
+                        <div className="flex items-start space-x-3">
+                          <CheckCircle2 className={`w-5 h-5 ${direction.iconColor} mt-0.5 flex-shrink-0`} />
+                          <span className="text-muted-foreground">{feature}</span>
+                        </div>
+                      )}
                     </div>
                   ))}
                 </div>
