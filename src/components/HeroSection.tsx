@@ -49,7 +49,7 @@ const HeroSection = () => {
               <span className="inline-block px-4 py-2 bg-accent/20 text-accent rounded-full text-sm font-semibold mb-4">
                 С 1994 года на рынке
               </span>
-              <h1 className="heading-hero text-primary mb-6">
+              <h1 className="heading-hero text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] mb-6" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.9), 0 0 10px rgba(255,255,255,0.3)' }}>
                 ОСКОЛ-МЕТ-ТРЕЙД
               </h1>
               <p className="text-xl md:text-2xl text-white/90 font-medium mb-4">
@@ -90,21 +90,21 @@ const HeroSection = () => {
         </div>
 
         {/* Business Directions - Positioned in bottom right */}
-        <div className="absolute bottom-8 right-8 w-80 animate-industrial-fade-in hidden lg:block">
-          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+        <div className="fixed bottom-4 right-4 w-80 animate-industrial-fade-in hidden lg:block z-20">
+          <div className="bg-white/15 backdrop-blur-md rounded-2xl p-6 border border-white/30 shadow-2xl">
             <h3 className="text-xl font-bold text-white mb-4">Направления деятельности</h3>
             <div className="space-y-3">
               {businessDirections.map((direction, index) => (
                 <div 
                   key={index}
-                  className="flex items-start space-x-3 p-3 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300 cursor-pointer"
+                  className="flex items-start space-x-3 p-3 rounded-xl bg-white/10 hover:bg-white/20 transition-all duration-300 cursor-pointer"
                 >
                   <div className="flex-shrink-0">
                     <direction.icon className={`w-6 h-6 ${direction.color}`} />
                   </div>
                   <div>
                     <h4 className="font-semibold text-white text-sm mb-1">{direction.title}</h4>
-                    <p className="text-white/70 text-xs">{direction.description}</p>
+                    <p className="text-white/80 text-xs">{direction.description}</p>
                   </div>
                 </div>
               ))}
