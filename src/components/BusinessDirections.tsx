@@ -2,6 +2,7 @@ import { ArrowRight, CheckCircle2, Factory, Wrench, Flame, Building2 } from 'luc
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import equipmentImage from '@/assets/equipment-manufacturing.jpg';
+const vszManufacturingImage = '/lovable-uploads/9037fa8f-e102-4232-a549-87fbfcd6bdd2.png';
 const cncMachineImage = '/lovable-uploads/b5b9d48f-fa70-463f-b4c5-98e99b19fbaa.png';
 import materialsImage from '@/assets/raw-materials.jpg';
 const rawMaterialsImage = '/lovable-uploads/9676f778-2096-4758-bdfe-13e24c70089a.png';
@@ -66,7 +67,7 @@ const BusinessDirections = () => {
       title: 'Производство ВСЗ',
       subtitle: 'Воронежский Станкостроительный Завод',
       description: 'Собственное производство металлообработки для нефтегазовой, атомной и других отраслей',
-      image: equipmentImage,
+      image: vszManufacturingImage,
       features: [
         'Фрезерная и токарная обработка',
         'Токарно-карусельные работы',
@@ -138,7 +139,7 @@ const BusinessDirections = () => {
               <div className={`${index % 2 === 1 ? 'lg:col-start-1' : ''} animate-industrial-fade-in`}>
                 <Card className="card-industrial overflow-hidden">
                   <div 
-                    className={`${direction.id === 'equipment' || direction.id === 'materials' || direction.id === 'furnaces' ? 'h-96 bg-contain bg-center bg-no-repeat' : 'h-80 bg-cover bg-center'} relative`}
+                    className={`${direction.id === 'equipment' || direction.id === 'materials' || direction.id === 'furnaces' || direction.id === 'manufacturing' ? 'h-96 bg-contain bg-center bg-no-repeat' : 'h-80 bg-cover bg-center'} relative`}
                     style={{ backgroundImage: `url(${direction.image})` }}
                   >
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
