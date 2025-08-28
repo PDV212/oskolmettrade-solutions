@@ -24,15 +24,20 @@ const BusinessDirections = () => {
       title: 'Металлообрабатывающее оборудование',
       subtitle: 'Опыт с 2015 года • Более 2500 станков поставлено',
       description: 'Поставка современного оборудования для машиностроительных и металлургических предприятий',
-      image: cncMachineImage,
+      image: null,
       features: [
+        { 
+          text: 'Основное оборудование',
+          image: cncMachineImage
+        },
         'Вертикальные и горизонтальные обрабатывающие центры с ЧПУ',
         'Токарные обрабатывающие центры с ЧПУ',
         'Шлифовальные станки с ЧПУ',
         'Гидравлические прессы',
         'Роботизированные участки сварки и покраски',
+        'Промышленные манипуляторы и роботы, роботизированные участки сварки и покраски предусматривающие полную автоматизацию ключевых технологических операций — сварки и покраски металлоконструкций — с использованием манипуляторов, интегрированных с цифровыми чертежами и сенсорными системами контроля качества.',
         { 
-          text: 'Промышленные манипуляторы и роботы, роботизированные участки сварки и покраски предусматривающие полную автоматизацию ключевых технологических операций — сварки и покраски металлоконструкций — с использованием манипуляторов, интегрированных с цифровыми чертежами и сенсорными системами контроля качества.',
+          text: 'Роботизированные системы',
           image: manipulatorsImage
         }
       ],
@@ -44,7 +49,7 @@ const BusinessDirections = () => {
       title: 'Металлургическое сырье',
       subtitle: 'Опыт с 1994 года • 25 лет работы с производителями ЮВА',
       description: 'Поставка качественного металлургического сырья и материалов с легирующими элементами',
-      image: rawMaterialsImage,
+      image: null,
       features: [
         'Марганцевая и железная руда',
         'Бентонит высокого качества',
@@ -54,7 +59,11 @@ const BusinessDirections = () => {
         },
         'Феррохром FeCr различных марок',
         'Чугун никельсодержащий NPI',
-        'Слябы из нержавеющей стали'
+        'Слябы из нержавеющей стали',
+        { 
+          text: 'Металлургическое сырье высокого качества',
+          image: rawMaterialsImage
+        }
       ],
       gradient: 'bg-gradient-to-br from-accent/20 to-accent/5',
       iconColor: 'text-accent'
@@ -107,14 +116,14 @@ const BusinessDirections = () => {
           </p>
           
         {/* Direction Images Gallery */}
-        <div className="flex flex-wrap justify-center items-center gap-8 mt-12 mb-8 px-4">
-          <div className="w-60 h-60 flex items-center justify-center bg-muted/50 rounded-lg p-4">
+        <div className="flex justify-center items-center gap-4 mt-12 mb-8 px-4">
+          <div className="w-80 h-80 flex items-center justify-center bg-muted/50 rounded-lg p-4 flex-shrink-0">
             <img src={manipulators2Image} alt="OSKOL" className="max-w-full max-h-full object-contain opacity-80 hover:opacity-100 transition-opacity" />
           </div>
-          <div className="w-60 h-60 flex items-center justify-center bg-muted/50 rounded-lg p-4">
+          <div className="w-80 h-80 flex items-center justify-center bg-muted/50 rounded-lg p-4 flex-shrink-0">
             <img src={equipmentLogoImage} alt="Equipment" className="max-w-full max-h-full object-contain opacity-80 hover:opacity-100 transition-opacity" />
           </div>
-          <div className="w-60 h-60 flex items-center justify-center bg-muted/50 rounded-lg p-4">
+          <div className="w-80 h-80 flex items-center justify-center bg-muted/50 rounded-lg p-4 flex-shrink-0">
             <img src={rawMaterialsMainImage} alt="Raw Materials" className="max-w-full max-h-full object-contain opacity-80 hover:opacity-100 transition-opacity" />
           </div>
         </div>
@@ -154,7 +163,7 @@ const BusinessDirections = () => {
                             <span className="text-muted-foreground">{feature.text}</span>
                           </div>
                           <div className="ml-8">
-                            <div className="w-40 h-40 flex items-center justify-center bg-muted/50 rounded-lg p-4">
+                            <div className="w-80 h-80 flex items-center justify-center bg-muted/50 rounded-lg p-4">
                               <img src={feature.image} alt={feature.text} className="max-w-full max-h-full object-contain opacity-90 hover:opacity-100 transition-opacity" />
                             </div>
                           </div>
@@ -202,24 +211,26 @@ const BusinessDirections = () => {
               </div>
 
               {/* Image */}
-              <div className={`${index % 2 === 1 ? 'lg:col-start-1' : ''} animate-industrial-fade-in`}>
-                <Card className="card-industrial overflow-hidden">
-                  <div 
-                    className={`${direction.id === 'equipment' || direction.id === 'materials' || direction.id === 'furnaces' || direction.id === 'manufacturing' ? 'h-96 bg-contain bg-center bg-no-repeat' : 'h-80 bg-cover bg-center'} relative`}
-                    style={{ backgroundImage: `url(${direction.image})` }}
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                    <div className="absolute bottom-4 left-4 right-4">
-                      <div className="flex items-center space-x-2 text-white">
-                        {direction.icon && (
-                          <direction.icon className="w-6 h-6" />
-                        )}
-                        <span className="font-semibold">{direction.title}</span>
+              {direction.image && (
+                <div className={`${index % 2 === 1 ? 'lg:col-start-1' : ''} animate-industrial-fade-in`}>
+                  <Card className="card-industrial overflow-hidden">
+                    <div 
+                      className={`${direction.id === 'equipment' || direction.id === 'materials' || direction.id === 'furnaces' || direction.id === 'manufacturing' ? 'h-96 bg-contain bg-center bg-no-repeat' : 'h-80 bg-cover bg-center'} relative`}
+                      style={{ backgroundImage: `url(${direction.image})` }}
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                      <div className="absolute bottom-4 left-4 right-4">
+                        <div className="flex items-center space-x-2 text-white">
+                          {direction.icon && (
+                            <direction.icon className="w-6 h-6" />
+                          )}
+                          <span className="font-semibold">{direction.title}</span>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </Card>
-              </div>
+                  </Card>
+                </div>
+              )}
             </div>
           ))}
         </div>
