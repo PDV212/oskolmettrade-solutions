@@ -19,7 +19,7 @@ const Header = () => {
     if (href.startsWith('#')) {
       const element = document.querySelector(href) as HTMLElement;
       if (element) {
-        const headerHeight = 64; // Height of fixed header
+        const headerHeight = 100; // Increased to scroll higher
         const elementPosition = element.offsetTop - headerHeight;
         window.scrollTo({
           top: elementPosition,
@@ -71,10 +71,6 @@ const Header = () => {
 
           {/* Contact Info & CTA */}
           <div className="hidden md:flex items-center space-x-4">
-            <div className="flex items-center space-x-2 text-sm">
-              <Phone className="w-4 h-4 text-primary" />
-              <span className="text-muted-foreground">+7 495 240-91-99</span>
-            </div>
             <Button variant="default" className="btn-industrial" onClick={scrollToContacts}>
               Оставить заявку
             </Button>
