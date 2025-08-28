@@ -58,6 +58,10 @@ const BusinessDirections = () => {
         'Феррохром FeCr различных марок',
         'Чугун никельсодержащий NPI',
         'Слябы из нержавеющей стали',
+        { 
+          text: '',
+          image: rawMaterialsImage
+        }
       ],
       gradient: 'bg-gradient-to-br from-accent/20 to-accent/5',
       iconColor: 'text-accent'
