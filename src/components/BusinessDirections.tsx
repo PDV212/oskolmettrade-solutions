@@ -97,6 +97,7 @@ const BusinessDirections = () => {
           {directions.map((direction, index) => (
             <div 
               key={direction.id}
+              id={direction.id}
               className={`grid lg:grid-cols-2 gap-12 items-center ${
                 index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''
               }`}

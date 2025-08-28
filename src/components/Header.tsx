@@ -8,10 +8,10 @@ const Header = () => {
   const navItems = [
     { name: 'Главная', href: '#home' },
     { name: 'О компании', href: '#directions' },
-    { name: 'Оборудование', href: '#directions' },
-    { name: 'Сырье', href: '#directions' },
-    { name: 'Печи', href: '#directions' },
-    { name: 'Производство ВСЗ', href: '#directions' },
+    { name: 'Оборудование', href: '#equipment' },
+    { name: 'Сырье', href: '#materials' },
+    { name: 'Печи', href: '#furnaces' },
+    { name: 'Производство ВСЗ', href: '#manufacturing' },
     { name: 'Контакты', href: '#contacts' }
   ];
 
@@ -47,7 +47,7 @@ const Header = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex space-x-8">
+          <nav className="hidden xl:flex space-x-6 2xl:space-x-8">
             {navItems.map((item) => (
               <button
                 key={item.name}
@@ -73,7 +73,7 @@ const Header = () => {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 rounded-md hover:bg-muted transition-colors"
+            className="xl:hidden p-2 rounded-md hover:bg-muted transition-colors"
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -81,7 +81,7 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="lg:hidden py-4 border-t border-border">
+          <div className="xl:hidden py-4 border-t border-border">
             <nav className="flex flex-col space-y-3">
               {navItems.map((item) => (
                 <button
