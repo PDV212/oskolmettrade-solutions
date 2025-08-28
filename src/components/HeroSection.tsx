@@ -77,7 +77,7 @@ const HeroSection = () => {
               </Button>
               <Button 
                 variant="outline" 
-                className="px-8 py-4 text-lg text-white border-white/30 hover:bg-white/10"
+                className="px-8 py-4 text-lg text-primary border-white/30 hover:bg-white/20 bg-white/90"
                 onClick={() => {
                   const element = document.querySelector('#directions');
                   if (element) {
