@@ -194,7 +194,6 @@ const BusinessDirections = () => {
                     <ArrowRight className="ml-2 w-4 h-4" />
                   </Button>
                   <Button 
-                    variant="outline" 
                     className="btn-steel"
                     onClick={() => {
                       const element = document.querySelector('#contacts');

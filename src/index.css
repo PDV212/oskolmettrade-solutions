@@ -155,6 +155,15 @@
 
   .btn-steel {
     @apply bg-secondary hover:bg-secondary-hover text-secondary-foreground font-semibold px-6 py-3 rounded-lg transition-all duration-300;
+    color: hsl(var(--secondary-foreground)) !important;
+    background-color: hsl(var(--secondary)) !important;
+    border-color: hsl(var(--secondary)) !important;
+  }
+
+  .btn-steel:hover {
+    color: hsl(var(--secondary-foreground)) !important;
+    background-color: hsl(var(--secondary-hover)) !important;
+    border-color: hsl(var(--secondary-hover)) !important;
   }
 
   /* Industrial Card Styles */
