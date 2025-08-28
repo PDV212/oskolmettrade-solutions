@@ -12,12 +12,18 @@ const MapComponent = () => {
     // Initialize map with the provided token
     mapboxgl.accessToken = 'pk.eyJ1IjoicGR2MjEyIiwiYSI6ImNtZXZmODVwZDBlbzUybHNoOGZjdmFmbW0ifQ.T13IG5O0bU0RCnMMcnB-1Q';
     
-    map.current = new mapboxgl.Map({
-      container: mapContainer.current,
-      style: 'mapbox://styles/mapbox/streets-v12',
-      center: [37.667087, 55.745509], // Москва, ул. Александра Солженицына
-      zoom: 15,
-    });
+    try {
+      map.current = new mapboxgl.Map({
+        container: mapContainer.current,
+        style: 'mapbox://styles/mapbox/light-v11', // Changed to light style for better compatibility
+        center: [37.667087, 55.745509], // Москва, ул. Александра Солженицына
+        zoom: 15,
+        attributionControl: false
+      });
+    } catch (error) {
+      console.error('Error initializing Mapbox:', error);
+      return;
+    }
 
     // Add navigation controls
     map.current.addControl(
