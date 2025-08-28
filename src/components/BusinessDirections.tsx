@@ -4,6 +4,7 @@ import { Card } from '@/components/ui/card';
 import equipmentImage from '@/assets/equipment-manufacturing.jpg';
 const cncMachineImage = '/lovable-uploads/b5b9d48f-fa70-463f-b4c5-98e99b19fbaa.png';
 import materialsImage from '@/assets/raw-materials.jpg';
+const rawMaterialsImage = '/lovable-uploads/9676f778-2096-4758-bdfe-13e24c70089a.png';
 import furnaceImage from '@/assets/metallurgy-furnace.jpg';
 
 const BusinessDirections = () => {
@@ -30,7 +31,7 @@ const BusinessDirections = () => {
       title: 'Металлургическое сырье',
       subtitle: 'Опыт с 1994 года • 25 лет работы с производителями ЮВА',
       description: 'Поставка качественного металлургического сырья и материалов с легирующими элементами',
-      image: materialsImage,
+      image: rawMaterialsImage,
       features: [
         'Марганцевая и железная руда',
         'Бентонит высокого качества',
@@ -136,7 +137,7 @@ const BusinessDirections = () => {
               <div className={`${index % 2 === 1 ? 'lg:col-start-1' : ''} animate-industrial-fade-in`}>
                 <Card className="card-industrial overflow-hidden">
                   <div 
-                    className="h-96 bg-contain bg-center bg-no-repeat relative"
+                    className={`${direction.id === 'equipment' || direction.id === 'materials' ? 'h-96 bg-contain bg-center bg-no-repeat' : 'h-80 bg-cover bg-center'} relative`}
                     style={{ backgroundImage: `url(${direction.image})` }}
                   >
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
