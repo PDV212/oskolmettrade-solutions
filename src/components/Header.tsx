@@ -47,7 +47,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-gradient-accent rounded-lg flex items-center justify-center">
+            <div className="w-10 h-10 bg-accent rounded-lg flex items-center justify-center">
               <span className="text-primary-foreground font-bold text-lg">ОМТ</span>
             </div>
             <div className="hidden md:block">
@@ -105,7 +105,7 @@ const Header = () => {
             <div className="mt-4 pt-4 border-t border-border">
               <div className="flex items-center space-x-2 text-sm mb-3">
                 <Phone className="w-4 h-4 text-primary" />
-                <span className="text-muted-foreground">+7 495 240-91-99</span>
+                <span className="text-muted-foreground">+7 495 240 91 99</span>
               </div>
               <Button variant="default" className="btn-industrial w-full" onClick={scrollToContacts}>
                 Оставить заявку

@@ -72,7 +72,7 @@ const Footer = () => {
                 <div className="flex items-center space-x-3">
                   <Phone className="w-5 h-5 text-accent" />
                   <div>
-                    <p className="font-semibold">+7 495 240-91-99</p>
+                    <p className="font-semibold">+7 495 240 91 99</p>
                     <p className="text-white/70 text-sm">+79090977174</p>
                   </div>
                 </div>
@@ -156,13 +156,6 @@ const Footer = () => {
                   }}
                 >
                   Получить консультацию
-                </Button>
-                
-                <Button 
-                  variant="outline" 
-                  className="w-full border-white/30 text-white hover:bg-white/10"
-                >
-                  Скачать каталог
                 </Button>
               </div>
 
