@@ -11,10 +11,10 @@ const heatingFurnacesImage = '/lovable-uploads/edf23884-f593-4722-b789-00f5ca575
 
 // New images for sections
 const manipulatorsImage = '/lovable-uploads/761c2c04-8071-4122-94b3-bb0d459d2e87.png';
-const rawMaterials3Image = '/lovable-uploads/a6f5d8cf-10e5-4159-9959-51419a44edc9.png';
+const rawMaterials3Image = '/lovable-uploads/raw-materials.png';
 const manipulators2Image = '/lovable-uploads/f95317f5-d336-41bd-bee8-c76ec0ea6a0e.png';
 const equipmentLogoImage = '/lovable-uploads/6ec4623e-736f-469e-b1e3-ec6dbe88be82.png';
-const rawDrillingImage = '/lovable-uploads/edd8aa37-df09-43b8-aaf6-32ba3147f61c.png';
+const rawMaterialsMainImage = '/lovable-uploads/raw-materials.png';
 
 const BusinessDirections = () => {
   const directions = [
@@ -115,7 +115,7 @@ const BusinessDirections = () => {
               <img src={equipmentLogoImage} alt="Equipment" className="max-w-full max-h-full object-contain opacity-80 hover:opacity-100 transition-opacity" />
             </div>
             <div className="w-32 h-32 flex items-center justify-center">
-              <img src={rawDrillingImage} alt="Raw Drilling" className="max-w-full max-h-full object-contain opacity-80 hover:opacity-100 transition-opacity" />
+              <img src={rawMaterialsMainImage} alt="Raw Materials" className="max-w-full max-h-full object-contain opacity-80 hover:opacity-100 transition-opacity" />
             </div>
           </div>
         </div>
