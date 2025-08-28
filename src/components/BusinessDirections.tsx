@@ -2,6 +2,7 @@ import { ArrowRight, CheckCircle2, Factory, Wrench, Flame, Building2 } from 'luc
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import equipmentImage from '@/assets/equipment-manufacturing.jpg';
+const cncMachineImage = '/lovable-uploads/b5b9d48f-fa70-463f-b4c5-98e99b19fbaa.png';
 import materialsImage from '@/assets/raw-materials.jpg';
 import furnaceImage from '@/assets/metallurgy-furnace.jpg';
 
@@ -13,7 +14,7 @@ const BusinessDirections = () => {
       title: 'Металлообрабатывающее оборудование',
       subtitle: 'Опыт с 2015 года • Более 2500 станков поставлено',
       description: 'Поставка современного оборудования для машиностроительных и металлургических предприятий',
-      image: equipmentImage,
+      image: cncMachineImage,
       features: [
         'Вертикальные и горизонтальные обрабатывающие центры с ЧПУ',
         'Токарные обрабатывающие центры с ЧПУ',
