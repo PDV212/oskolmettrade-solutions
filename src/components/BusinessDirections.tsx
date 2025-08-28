@@ -136,7 +136,7 @@ const BusinessDirections = () => {
               <div className={`${index % 2 === 1 ? 'lg:col-start-1' : ''} animate-industrial-fade-in`}>
                 <Card className="card-industrial overflow-hidden">
                   <div 
-                    className="h-80 bg-cover bg-center relative"
+                    className="h-96 bg-contain bg-center bg-no-repeat relative"
                     style={{ backgroundImage: `url(${direction.image})` }}
                   >
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
