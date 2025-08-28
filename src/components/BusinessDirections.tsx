@@ -125,11 +125,32 @@ const BusinessDirections = () => {
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Button className="btn-industrial">
+                  <Button 
+                    className="btn-industrial"
+                    onClick={() => {
+                      if (direction.id === 'manufacturing') {
+                        window.open('https://stankozavod.com/', '_blank');
+                      } else {
+                        const element = document.querySelector('#contacts');
+                        if (element) {
+                          element.scrollIntoView({ behavior: 'smooth' });
+                        }
+                      }
+                    }}
+                  >
                     Подробнее
                     <ArrowRight className="ml-2 w-4 h-4" />
                   </Button>
-                  <Button variant="outline" className="btn-steel">
+                  <Button 
+                    variant="outline" 
+                    className="btn-steel"
+                    onClick={() => {
+                      const element = document.querySelector('#contacts');
+                      if (element) {
+                        element.scrollIntoView({ behavior: 'smooth' });
+                      }
+                    }}
+                  >
                     Получить консультацию
                   </Button>
                 </div>

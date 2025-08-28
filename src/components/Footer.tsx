@@ -72,15 +72,15 @@ const Footer = () => {
                 <div className="flex items-center space-x-3">
                   <Phone className="w-5 h-5 text-accent" />
                   <div>
-                    <p className="font-semibold">+7 (800) 123-45-67</p>
-                    <p className="text-white/70 text-sm">Бесплатно по России</p>
+                    <p className="font-semibold">+7 495 240-91-99</p>
+                    <p className="text-white/70 text-sm">+79090977174</p>
                   </div>
                 </div>
                 
                 <div className="flex items-center space-x-3">
                   <Mail className="w-5 h-5 text-accent" />
                   <div>
-                    <p className="font-semibold">info@oskol-met-trade.ru</p>
+                    <p className="font-semibold">89090977174@mail.ru</p>
                     <p className="text-white/70 text-sm">Ответим в течение часа</p>
                   </div>
                 </div>
@@ -88,8 +88,8 @@ const Footer = () => {
                 <div className="flex items-center space-x-3">
                   <MapPin className="w-5 h-5 text-accent" />
                   <div>
-                    <p className="font-semibold">Белгородская область</p>
-                    <p className="text-white/70 text-sm">Москва</p>
+                    <p className="font-semibold">109004, г. Москва</p>
+                    <p className="text-white/70 text-sm">ул. Александра Солженицына, д. 40, стр. 1</p>
                   </div>
                 </div>
               </div>
@@ -146,7 +146,15 @@ const Footer = () => {
               </p>
 
               <div className="space-y-4">
-                <Button className="w-full bg-accent hover:bg-accent-muted text-white font-semibold">
+                <Button 
+                  className="w-full bg-accent hover:bg-accent-muted text-white font-semibold"
+                  onClick={() => {
+                    const element = document.querySelector('#contacts');
+                    if (element) {
+                      element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
+                >
                   Получить консультацию
                 </Button>
                 

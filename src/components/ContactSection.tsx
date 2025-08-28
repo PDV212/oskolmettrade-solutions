@@ -5,6 +5,7 @@ import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import MapComponent from './MapComponent';
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -18,8 +19,23 @@ const ContactSection = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
+    
+    // Create email body
+    const emailBody = `
+Новая заявка с сайта ОСКОЛ-МЕТ-ТРЕЙД
+
+Имя: ${formData.name}
+Телефон: ${formData.phone}
+Email: ${formData.email}
+Компания: ${formData.company}
+Направление интереса: ${formData.direction}
+Сообщение: ${formData.message}
+
+Дата отправки: ${new Date().toLocaleString('ru-RU')}
+    `.trim();
+
+    const mailtoLink = `mailto:89090977174@mail.ru?subject=Новая заявка с сайта&body=${encodeURIComponent(emailBody)}`;
+    window.location.href = mailtoLink;
   };
 
   const handleInputChange = (field: string, value: string) => {
@@ -30,20 +46,20 @@ const ContactSection = () => {
     {
       icon: Phone,
       title: 'Телефон',
-      details: ['+7 (800) 123-45-67', '+7 (4722) 123-456'],
-      subtitle: 'Бесплатный звонок по России'
+      details: ['+7 495 240-91-99', '+79090977174'],
+      subtitle: 'Звоните в рабочее время'
     },
     {
       icon: Mail,
       title: 'Email',
-      details: ['info@oskol-met-trade.ru', 'sales@oskol-met-trade.ru'],
+      details: ['89090977174@mail.ru'],
       subtitle: 'Ответим в течение часа'
     },
     {
       icon: MapPin,
       title: 'Офисы',
-      details: ['Белгородская область', 'Москва, деловой центр'],
-      subtitle: 'Два офиса для удобства клиентов'
+      details: ['109004, г. Москва,', 'ул. Александра Солженицына, д. 40, стр. 1'],
+      subtitle: 'Москва'
     },
     {
       icon: Clock,
@@ -228,15 +244,9 @@ const ContactSection = () => {
               </div>
             </Card>
 
-            {/* Map Placeholder */}
+            {/* Interactive Map */}
             <Card className="card-industrial">
-              <div className="h-64 bg-muted/50 rounded-lg flex items-center justify-center">
-                <div className="text-center">
-                  <MapPin className="w-12 h-12 text-primary mx-auto mb-2" />
-                  <p className="text-muted-foreground">Интерактивная карта</p>
-                  <p className="text-sm text-muted-foreground">Наши офисы на карте</p>
-                </div>
-              </div>
+              <MapComponent />
             </Card>
           </div>
         </div>

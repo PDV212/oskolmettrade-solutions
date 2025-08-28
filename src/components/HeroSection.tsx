@@ -63,11 +63,28 @@ const HeroSection = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <Button className="btn-industrial bg-primary hover:bg-primary-hover text-primary-foreground px-8 py-4 text-lg">
+              <Button 
+                className="btn-industrial bg-primary hover:bg-primary-hover text-primary-foreground px-8 py-4 text-lg"
+                onClick={() => {
+                  const element = document.querySelector('#contacts');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+              >
                 Подобрать оборудование
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
-              <Button variant="outline" className="px-8 py-4 text-lg text-white border-white/30 hover:bg-white/10">
+              <Button 
+                variant="outline" 
+                className="px-8 py-4 text-lg text-white border-white/30 hover:bg-white/10"
+                onClick={() => {
+                  const element = document.querySelector('#directions');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+              >
                 Наши возможности
               </Button>
             </div>
