@@ -100,12 +100,9 @@ const Header = ({ language = 'ru' }: HeaderProps) => {
             ))}
           </nav>
 
-          {/* Language Selector & Contact Info & CTA */}
+          {/* Language Selector */}
           <div className="hidden md:flex items-center space-x-4">
             <LanguageSelector />
-            <Button variant="default" className="btn-industrial" onClick={scrollToContacts}>
-              {language === 'en' ? 'Contact Us' : language === 'zh' ? '联系我们' : 'Оставить заявку'}
-            </Button>
           </div>
 
           {/* Mobile menu button */}
@@ -135,16 +132,13 @@ const Header = ({ language = 'ru' }: HeaderProps) => {
               ))}
             </nav>
             <div className="mt-4 pt-4 border-t border-border">
-              <div className="flex items-center justify-between mb-3">
+              <div className="flex items-center justify-between">
                 <LanguageSelector />
                 <div className="flex items-center space-x-2 text-sm">
                   <Phone className="w-4 h-4 text-primary" />
                   <span className="text-muted-foreground">+7 495 240 91 99</span>
                 </div>
               </div>
-              <Button variant="default" className="btn-industrial w-full" onClick={scrollToContacts}>
-                {language === 'en' ? 'Contact Us' : language === 'zh' ? '联系我们' : 'Оставить заявку'}
-              </Button>
             </div>
           </div>
         )}
