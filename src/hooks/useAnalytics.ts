@@ -6,23 +6,47 @@ export const useAnalytics = () => {
   const location = useLocation();
   const analytics = Analytics.getInstance();
 
-  // Инициализация аналитики при монтировании
+  // Инициализация аналитики при монтировании (только на клиенте)
   useEffect(() => {
-    analytics.init();
-    analytics.trackTimeOnSite();
-  }, []);
+    if (typeof window !== 'undefined') {
+      analytics.init();
+      analytics.trackTimeOnSite();
+    }
+  }, [analytics]);
 
-  // Отслеживание смены страниц
+  // Отслеживание смены страниц (только на клиенте)
   useEffect(() => {
-    analytics.trackPageView(location.pathname + location.search);
+    if (typeof window !== 'undefined' && analytics) {
+      analytics.trackPageView(location.pathname + location.search);
+    }
   }, [location, analytics]);
 
-  // Возвращаем методы для использования в компонентах
+  // Возвращаем безопасные методы
   return {
-    trackEvent: analytics.trackEvent.bind(analytics),
-    trackConversion: analytics.trackConversion.bind(analytics),
-    trackFormSubmission: analytics.trackFormSubmission.bind(analytics),
-    trackLinkClick: analytics.trackLinkClick.bind(analytics),
-    trackFileDownload: analytics.trackFileDownload.bind(analytics),
+    trackEvent: (event: any) => {
+      if (typeof window !== 'undefined') {
+        analytics.trackEvent(event);
+      }
+    },
+    trackConversion: (goalName: string, value?: number) => {
+      if (typeof window !== 'undefined') {
+        analytics.trackConversion(goalName, value);
+      }
+    },
+    trackFormSubmission: (formName: string) => {
+      if (typeof window !== 'undefined') {
+        analytics.trackFormSubmission(formName);
+      }
+    },
+    trackLinkClick: (linkText: string, url: string) => {
+      if (typeof window !== 'undefined') {
+        analytics.trackLinkClick(linkText, url);
+      }
+    },
+    trackFileDownload: (fileName: string, fileType: string) => {
+      if (typeof window !== 'undefined') {
+        analytics.trackFileDownload(fileName, fileType);
+      }
+    },
   };
 };
