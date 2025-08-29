@@ -2,6 +2,7 @@
 import { ArrowRight, Factory, Wrench, Flame, Building2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import OptimizedImage from '@/components/ui/optimized-image';
+import { IndustryLeaderBadge, ExperienceBadge, TrustedBadge, GrowthBadge } from '@/components/ui/badge-premium';
 import useResponsiveImage from '@/hooks/useResponsiveImage';
 import heroImage from '@/assets/hero-industrial.jpg';
 
@@ -55,10 +56,13 @@ const HeroSection = () => {
         <div className="grid lg:grid-cols-3 gap-12 items-start">
           {/* Left Column - Main Content */}
           <div className="lg:col-span-2 animate-industrial-slide-up">
+            {/* Premium Badges */}
+            <div className="flex flex-wrap gap-3 mb-6">
+              <ExperienceBadge size="lg" animation="float" />
+              <IndustryLeaderBadge size="lg" animation="glow" />
+            </div>
+            
             <div className="mb-6">
-              <span className="inline-block px-4 py-2 bg-accent/20 text-accent rounded-full text-sm font-semibold mb-4">
-                С 1994 года на рынке
-              </span>
               <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-6" style={{ WebkitTextFillColor: 'white', backgroundClip: 'unset', WebkitBackgroundClip: 'unset' }}>
                 ОСКОЛ-МЕТ-ТРЕЙД
               </h1>
@@ -98,8 +102,8 @@ const HeroSection = () => {
               </Button>
             </div>
 
-            {/* Key Stats */}
-            <div className="grid grid-cols-3 gap-4">
+            {/* Enhanced Stats with Badges */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
               <div className="text-center">
                 <div className="text-2xl md:text-3xl font-bold text-accent">30+</div>
                 <div className="text-white/70 text-sm">лет опыта</div>
@@ -111,6 +115,9 @@ const HeroSection = () => {
               <div className="text-center">
                 <div className="text-2xl md:text-3xl font-bold text-accent">4</div>
                 <div className="text-white/70 text-sm">направления</div>
+              </div>
+              <div className="text-center sm:col-span-2 lg:col-span-1">
+                <TrustedBadge size="sm" variant="glass" />
               </div>
             </div>
           </div>

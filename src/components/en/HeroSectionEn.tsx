@@ -1,6 +1,7 @@
 import { ArrowRight, Factory, Wrench, Flame, Building2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import OptimizedImage from '@/components/ui/optimized-image';
+import { IndustryLeaderBadgeEn, ExperienceBadgeEn, TrustedBadgeEn } from '@/components/ui/badge-premium';
 import heroImage from '@/assets/hero-industrial.jpg';
 
 const HeroSectionEn = () => {
@@ -52,10 +53,13 @@ const HeroSectionEn = () => {
         <div className="grid lg:grid-cols-3 gap-12 items-start">
           {/* Left Column - Main Content */}
           <div className="lg:col-span-2 animate-industrial-slide-up">
+            {/* Premium Badges */}
+            <div className="flex flex-wrap gap-3 mb-6">
+              <ExperienceBadgeEn size="lg" animation="float" />
+              <IndustryLeaderBadgeEn size="lg" animation="glow" />
+            </div>
+            
             <div className="mb-6">
-              <span className="inline-block px-4 py-2 bg-accent/20 text-accent rounded-full text-sm font-semibold mb-4">
-                Since 1994 on the market
-              </span>
               <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-6" style={{ WebkitTextFillColor: 'white', backgroundClip: 'unset', WebkitBackgroundClip: 'unset' }}>
                 OSKOL-MET-TRADE
               </h1>
@@ -95,8 +99,8 @@ const HeroSectionEn = () => {
               </Button>
             </div>
 
-            {/* Key Stats */}
-            <div className="grid grid-cols-3 gap-4">
+            {/* Enhanced Stats with Badges */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
               <div className="text-center">
                 <div className="text-2xl md:text-3xl font-bold text-accent">30+</div>
                 <div className="text-white/70 text-sm">years of experience</div>
@@ -108,6 +112,9 @@ const HeroSectionEn = () => {
               <div className="text-center">
                 <div className="text-2xl md:text-3xl font-bold text-accent">4</div>
                 <div className="text-white/70 text-sm">business areas</div>
+              </div>
+              <div className="text-center sm:col-span-2 lg:col-span-1">
+                <TrustedBadgeEn size="sm" variant="glass" />
               </div>
             </div>
           </div>

@@ -9,6 +9,7 @@ import {
   Star
 } from 'lucide-react';
 import { Card } from '@/components/ui/card';
+import { IndustryLeaderBadgeEn, ExperienceBadgeEn, TrustedBadgeEn, GrowthBadgeEn } from '@/components/ui/badge-premium';
 
 const CompanyAdvantagesEn = () => {
   const advantages = [
@@ -68,6 +69,11 @@ const CompanyAdvantagesEn = () => {
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
+          <div className="flex flex-wrap justify-center gap-3 mb-6">
+            <ExperienceBadgeEn size="default" />
+            <IndustryLeaderBadgeEn size="default" />
+            <TrustedBadgeEn size="default" />
+          </div>
           <h2 className="heading-section mb-4">Why Choose Us</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Reliable partner with years of experience, own production 
@@ -119,6 +125,9 @@ const CompanyAdvantagesEn = () => {
         <div className="mt-16">
           <Card className="card-industrial bg-gradient-to-r from-primary/10 via-accent/10 to-secondary/10 border-primary/20">
             <div className="text-center py-8">
+              <div className="flex justify-center gap-3 mb-6">
+                <GrowthBadgeEn size="lg" />
+              </div>
               <div className="flex justify-center mb-4">
                 <Star className="w-12 h-12 text-accent" />
               </div>

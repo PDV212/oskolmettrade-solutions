@@ -266,24 +266,52 @@
     opacity: 1;
   }
 
-  /* Performance optimizations for images */
-  .optimized-image {
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
-    backface-visibility: hidden;
-    transform: translateZ(0);
+  /* Badge premium styles */
+  .badge-glow {
+    box-shadow: 0 0 20px hsl(var(--accent) / 0.5);
   }
 
-  /* Intersection observer optimization */
-  .lazy-image-container {
-    content-visibility: auto;
-    contain-intrinsic-size: 300px 200px;
+  @keyframes glow {
+    0%, 100% {
+      box-shadow: 0 0 20px hsl(var(--accent) / 0.3);
+    }
+    50% {
+      box-shadow: 0 0 30px hsl(var(--accent) / 0.6), 0 0 40px hsl(var(--accent) / 0.4);
+    }
   }
 
-  /* Preload critical images */
-  .priority-image {
-    image-rendering: optimizeQuality;
-    content-visibility: visible;
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  /* Gradient shadows for badges */
+  .shadow-accent-glow {
+    box-shadow: 0 10px 25px hsl(var(--accent) / 0.4), 0 4px 10px hsl(var(--accent) / 0.3);
+  }
+
+  .shadow-primary-glow {
+    box-shadow: 0 10px 25px hsl(var(--primary) / 0.4), 0 4px 10px hsl(var(--primary) / 0.3);
+  }
+
+  .shadow-secondary-glow {
+    box-shadow: 0 10px 25px hsl(var(--secondary) / 0.4), 0 4px 10px hsl(var(--secondary) / 0.3);
+  }
+
+  .shadow-emerald-glow {
+    box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4), 0 4px 10px rgba(16, 185, 129, 0.3);
   }
 
   /* Touch-Friendly Interface Styles */
