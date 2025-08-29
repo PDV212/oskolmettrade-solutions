@@ -91,116 +91,153 @@ Email: ${formData.email}
         </div>
 
         <div className="grid lg:grid-cols-2 gap-16 items-start">
-          {/* Contact Form */}
-          <Card className="card-industrial">
-            <div className="mb-6">
-              <h3 className="text-2xl font-bold text-foreground mb-2">Оставить заявку</h3>
-              <p className="text-muted-foreground">
-                Заполните форму, и мы свяжемся с вами в ближайшее время
-              </p>
-            </div>
+          {/* Left Column: Contact Form + QR Codes */}
+          <div className="space-y-6">
+            {/* Contact Form */}
+            <Card className="card-industrial">
+              <div className="mb-6">
+                <h3 className="text-2xl font-bold text-foreground mb-2">Оставить заявку</h3>
+                <p className="text-muted-foreground">
+                  Заполните форму, и мы свяжемся с вами в ближайшее время
+                </p>
+              </div>
 
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-4">
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-foreground mb-2">
+                      Имя и фамилия *
+                    </label>
+                    <Input
+                      type="text"
+                      value={formData.name}
+                      onChange={(e) => handleInputChange('name', e.target.value)}
+                      placeholder="Введите ваше имя"
+                      required
+                      className="w-full"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-foreground mb-2">
+                      Телефон *
+                    </label>
+                    <Input
+                      type="tel"
+                      value={formData.phone}
+                      onChange={(e) => handleInputChange('phone', e.target.value)}
+                      placeholder="+7 (___) ___-__-__"
+                      required
+                      className="w-full"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-foreground mb-2">
+                      Email *
+                    </label>
+                    <Input
+                      type="email"
+                      value={formData.email}
+                      onChange={(e) => handleInputChange('email', e.target.value)}
+                      placeholder="your@email.com"
+                      required
+                      className="w-full"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-foreground mb-2">
+                      Компания
+                    </label>
+                    <Input
+                      type="text"
+                      value={formData.company}
+                      onChange={(e) => handleInputChange('company', e.target.value)}
+                      placeholder="Название компании"
+                      className="w-full"
+                    />
+                  </div>
+                </div>
+
                 <div>
                   <label className="block text-sm font-medium text-foreground mb-2">
-                    Имя и фамилия *
+                    Направление интереса *
                   </label>
-                  <Input
-                    type="text"
-                    value={formData.name}
-                    onChange={(e) => handleInputChange('name', e.target.value)}
-                    placeholder="Введите ваше имя"
-                    required
+                  <Select onValueChange={(value) => handleInputChange('direction', value)}>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Выберите направление" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {businessDirections.map((direction, index) => (
+                        <SelectItem key={index} value={direction}>
+                          {direction}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-foreground mb-2">
+                    Сообщение
+                  </label>
+                  <Textarea
+                    value={formData.message}
+                    onChange={(e) => handleInputChange('message', e.target.value)}
+                    placeholder="Опишите ваши потребности или задачи..."
+                    rows={4}
                     className="w-full"
                   />
                 </div>
-                <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">
-                    Телефон *
-                  </label>
-                  <Input
-                    type="tel"
-                    value={formData.phone}
-                    onChange={(e) => handleInputChange('phone', e.target.value)}
-                    placeholder="+7 (___) ___-__-__"
-                    required
-                    className="w-full"
+
+                <Button type="submit" className="btn-industrial w-full">
+                  <Send className="mr-2 w-5 h-5" />
+                  Отправить заявку
+                </Button>
+
+                <p className="text-xs text-muted-foreground text-center">
+                  Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности
+                </p>
+              </form>
+            </Card>
+
+            {/* QR Codes Block */}
+            <Card className="card-industrial">
+              <div className="mb-4">
+                <h4 className="font-bold text-foreground mb-2">Свяжитесь с нами через мессенджеры</h4>
+                <p className="text-sm text-muted-foreground">Сканируйте QR-код для быстрой связи</p>
+              </div>
+              <div className="flex justify-center space-x-8">
+                <div className="text-center">
+                  <img 
+                    src="/lovable-uploads/783d99ba-632d-47a7-bc9d-d2c6653ee5cc.png" 
+                    alt="Telegram QR код" 
+                    className="w-24 h-24 mx-auto mb-2 rounded-lg"
                   />
+                  <p className="text-xs text-muted-foreground">Telegram</p>
+                </div>
+                <div className="text-center">
+                  <img 
+                    src="/lovable-uploads/0172be64-08ae-4d0c-b070-7507bf1ca449.png" 
+                    alt="WeChat QR код" 
+                    className="w-24 h-24 mx-auto mb-2 rounded-lg"
+                  />
+                  <p className="text-xs text-muted-foreground">WeChat</p>
+                </div>
+                <div className="text-center">
+                  <img 
+                    src="/lovable-uploads/0667cb35-cc3c-4070-b595-c9700d58f2d9.png" 
+                    alt="WhatsApp QR код" 
+                    className="w-24 h-24 mx-auto mb-2 rounded-lg"
+                  />
+                  <p className="text-xs text-muted-foreground">WhatsApp</p>
                 </div>
               </div>
+            </Card>
+          </div>
 
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">
-                    Email *
-                  </label>
-                  <Input
-                    type="email"
-                    value={formData.email}
-                    onChange={(e) => handleInputChange('email', e.target.value)}
-                    placeholder="your@email.com"
-                    required
-                    className="w-full"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">
-                    Компания
-                  </label>
-                  <Input
-                    type="text"
-                    value={formData.company}
-                    onChange={(e) => handleInputChange('company', e.target.value)}
-                    placeholder="Название компании"
-                    className="w-full"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-foreground mb-2">
-                  Направление интереса *
-                </label>
-                <Select onValueChange={(value) => handleInputChange('direction', value)}>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Выберите направление" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {businessDirections.map((direction, index) => (
-                      <SelectItem key={index} value={direction}>
-                        {direction}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-foreground mb-2">
-                  Сообщение
-                </label>
-                <Textarea
-                  value={formData.message}
-                  onChange={(e) => handleInputChange('message', e.target.value)}
-                  placeholder="Опишите ваши потребности или задачи..."
-                  rows={4}
-                  className="w-full"
-                />
-              </div>
-
-              <Button type="submit" className="btn-industrial w-full">
-                <Send className="mr-2 w-5 h-5" />
-                Отправить заявку
-              </Button>
-
-              <p className="text-xs text-muted-foreground text-center">
-                Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности
-              </p>
-            </form>
-          </Card>
-
-          {/* Contact Information */}
+          {/* Right Column: Contact Information + Map */}
           <div className="space-y-6">
             {/* Contact Cards */}
             <div className="grid sm:grid-cols-2 gap-6">
@@ -244,47 +281,10 @@ Email: ${formData.email}
               </div>
             </Card>
 
-            {/* QR Codes and Map */}
-            <div className="space-y-6">
-              {/* QR Codes Block */}
-              <Card className="card-industrial">
-                <div className="mb-4">
-                  <h4 className="font-bold text-foreground mb-2">Свяжитесь с нами через мессенджеры</h4>
-                  <p className="text-sm text-muted-foreground">Сканируйте QR-код для быстрой связи</p>
-                </div>
-                <div className="flex justify-center space-x-8">
-                  <div className="text-center">
-                    <img 
-                      src="/lovable-uploads/783d99ba-632d-47a7-bc9d-d2c6653ee5cc.png" 
-                      alt="Telegram QR код" 
-                      className="w-24 h-24 mx-auto mb-2 rounded-lg"
-                    />
-                    <p className="text-xs text-muted-foreground">Telegram</p>
-                  </div>
-                  <div className="text-center">
-                    <img 
-                      src="/lovable-uploads/0172be64-08ae-4d0c-b070-7507bf1ca449.png" 
-                      alt="WeChat QR код" 
-                      className="w-24 h-24 mx-auto mb-2 rounded-lg"
-                    />
-                    <p className="text-xs text-muted-foreground">WeChat</p>
-                  </div>
-                  <div className="text-center">
-                    <img 
-                      src="/lovable-uploads/0667cb35-cc3c-4070-b595-c9700d58f2d9.png" 
-                      alt="WhatsApp QR код" 
-                      className="w-24 h-24 mx-auto mb-2 rounded-lg"
-                    />
-                    <p className="text-xs text-muted-foreground">WhatsApp</p>
-                  </div>
-                </div>
-              </Card>
-
-              {/* Interactive Map */}
-              <Card className="card-industrial">
-                <MapComponent />
-              </Card>
-            </div>
+            {/* Interactive Map */}
+            <Card className="card-industrial">
+              <MapComponent />
+            </Card>
           </div>
         </div>
       </div>
