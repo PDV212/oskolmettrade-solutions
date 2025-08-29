@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { TouchSelect, TouchSelectContent, TouchSelectItem, TouchSelectTrigger, TouchSelectValue } from '@/components/ui/touch-optimized-select';
 import MapComponent from './MapComponent';
 import OptimizedImage from '@/components/ui/optimized-image';
 
@@ -103,10 +103,10 @@ Email: ${formData.email}
                 </p>
               </div>
 
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-4">
+              <form onSubmit={handleSubmit} className="mobile-form-spacing">
+                <div className="grid gap-6 md:gap-4 md:grid-cols-2">
                   <div>
-                    <label className="block text-sm font-medium text-foreground mb-2">
+                    <label className="touch-label block text-foreground">
                       Имя и фамилия *
                     </label>
                     <Input
@@ -115,11 +115,11 @@ Email: ${formData.email}
                       onChange={(e) => handleInputChange('name', e.target.value)}
                       placeholder="Введите ваше имя"
                       required
-                      className="w-full"
+                      className="touch-input touch-focus w-full"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-foreground mb-2">
+                    <label className="touch-label block text-foreground">
                       Телефон *
                     </label>
                     <Input
@@ -128,14 +128,15 @@ Email: ${formData.email}
                       onChange={(e) => handleInputChange('phone', e.target.value)}
                       placeholder="+7 (___) ___-__-__"
                       required
-                      className="w-full"
+                      className="touch-input touch-focus w-full"
+                      inputMode="tel"
                     />
                   </div>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-4">
+                <div className="grid gap-6 md:gap-4 md:grid-cols-2">
                   <div>
-                    <label className="block text-sm font-medium text-foreground mb-2">
+                    <label className="touch-label block text-foreground">
                       Email *
                     </label>
                     <Input
@@ -144,11 +145,12 @@ Email: ${formData.email}
                       onChange={(e) => handleInputChange('email', e.target.value)}
                       placeholder="your@email.com"
                       required
-                      className="w-full"
+                      className="touch-input touch-focus w-full"
+                      inputMode="email"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-foreground mb-2">
+                    <label className="touch-label block text-foreground">
                       Компания
                     </label>
                     <Input
@@ -156,31 +158,31 @@ Email: ${formData.email}
                       value={formData.company}
                       onChange={(e) => handleInputChange('company', e.target.value)}
                       placeholder="Название компании"
-                      className="w-full"
+                      className="touch-input touch-focus w-full"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">
+                  <label className="touch-label block text-foreground">
                     Направление интереса *
                   </label>
-                  <Select onValueChange={(value) => handleInputChange('direction', value)}>
-                    <SelectTrigger>
-                      <SelectValue placeholder="Выберите направление" />
-                    </SelectTrigger>
-                    <SelectContent>
+                  <TouchSelect onValueChange={(value) => handleInputChange('direction', value)}>
+                    <TouchSelectTrigger className="touch-focus">
+                      <TouchSelectValue placeholder="Выберите направление" />
+                    </TouchSelectTrigger>
+                    <TouchSelectContent>
                       {businessDirections.map((direction, index) => (
-                        <SelectItem key={index} value={direction}>
+                        <TouchSelectItem key={index} value={direction}>
                           {direction}
-                        </SelectItem>
+                        </TouchSelectItem>
                       ))}
-                    </SelectContent>
-                  </Select>
+                    </TouchSelectContent>
+                  </TouchSelect>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">
+                  <label className="touch-label block text-foreground">
                     Сообщение
                   </label>
                   <Textarea
@@ -188,16 +190,19 @@ Email: ${formData.email}
                     onChange={(e) => handleInputChange('message', e.target.value)}
                     placeholder="Опишите ваши потребности или задачи..."
                     rows={4}
-                    className="w-full"
+                    className="touch-textarea touch-focus w-full resize-none"
                   />
                 </div>
 
-                <Button type="submit" className="btn-industrial w-full">
+                <Button 
+                  type="submit" 
+                  className="btn-industrial touch-button haptic-light w-full"
+                >
                   <Send className="mr-2 w-5 h-5" />
                   Отправить заявку
                 </Button>
 
-                <p className="text-xs text-muted-foreground text-center">
+                <p className="text-sm text-muted-foreground text-center leading-relaxed">
                   Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности
                 </p>
               </form>
@@ -205,43 +210,43 @@ Email: ${formData.email}
 
             {/* QR Codes Block */}
             <Card className="card-industrial">
-              <div className="mb-4">
-                <h4 className="font-bold text-foreground mb-2">Свяжитесь с нами через мессенджеры</h4>
-                <p className="text-sm text-muted-foreground">Сканируйте QR-код для быстрой связи</p>
+              <div className="mb-6">
+                <h4 className="text-xl font-bold text-foreground mb-2">Свяжитесь с нами через мессенджеры</h4>
+                <p className="text-base text-muted-foreground">Сканируйте QR-код для быстрой связи</p>
               </div>
-              <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 md:space-x-8">
-                <div className="text-center">
+              <div className="flex flex-col sm:flex-row justify-center items-center space-y-6 sm:space-y-0 sm:space-x-6 md:space-x-8">
+                <div className="text-center touch-target">
                   <OptimizedImage
                     src="/lovable-uploads/783d99ba-632d-47a7-bc9d-d2c6653ee5cc.png"
                     alt="Telegram QR код"
-                    className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 mx-auto mb-2 rounded-lg"
+                    className="qr-code-responsive mx-auto mb-3 rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer"
                     aspectRatio="square"
                     loading="lazy"
                     sizes="(max-width: 640px) 64px, (max-width: 768px) 80px, 96px"
                   />
-                  <p className="text-xs text-muted-foreground">Telegram</p>
+                  <p className="text-sm font-medium text-muted-foreground">Telegram</p>
                 </div>
-                <div className="text-center">
+                <div className="text-center touch-target">
                   <OptimizedImage
                     src="/lovable-uploads/0172be64-08ae-4d0c-b070-7507bf1ca449.png"
                     alt="WeChat QR код"
-                    className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 mx-auto mb-2 rounded-lg"
+                    className="qr-code-responsive mx-auto mb-3 rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer"
                     aspectRatio="square"
                     loading="lazy"
                     sizes="(max-width: 640px) 64px, (max-width: 768px) 80px, 96px"
                   />
-                  <p className="text-xs text-muted-foreground">WeChat</p>
+                  <p className="text-sm font-medium text-muted-foreground">WeChat</p>
                 </div>
-                <div className="text-center">
+                <div className="text-center touch-target">
                   <OptimizedImage
                     src="/lovable-uploads/0667cb35-cc3c-4070-b595-c9700d58f2d9.png"
                     alt="WhatsApp QR код"
-                    className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 mx-auto mb-2 rounded-lg"
+                    className="qr-code-responsive mx-auto mb-3 rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer"
                     aspectRatio="square"
                     loading="lazy"
                     sizes="(max-width: 640px) 64px, (max-width: 768px) 80px, 96px"
                   />
-                  <p className="text-xs text-muted-foreground">WhatsApp</p>
+                  <p className="text-sm font-medium text-muted-foreground">WhatsApp</p>
                 </div>
               </div>
             </Card>

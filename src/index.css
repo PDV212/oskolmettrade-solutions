@@ -254,4 +254,115 @@
     0% { background-position: 0 0; }
     100% { background-position: 20px 20px; }
   }
+
+  /* Touch-Friendly Interface Styles */
+  .touch-target {
+    @apply min-h-[44px] min-w-[44px]; /* Apple's recommended minimum touch target size */
+    touch-action: manipulation; /* Disable double-tap zoom */
+  }
+
+  .touch-input {
+    @apply h-12 px-4 text-base;
+    min-height: 48px; /* Comfortable touch target */
+    touch-action: manipulation;
+    -webkit-user-select: text;
+    user-select: text;
+  }
+
+  .touch-button {
+    @apply h-12 px-6 text-base font-medium;
+    min-height: 48px;
+    min-width: 48px;
+    touch-action: manipulation;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: all 0.2s ease;
+  }
+
+  .touch-button:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+  }
+
+  .touch-textarea {
+    @apply p-4 text-base;
+    min-height: 120px;
+    touch-action: manipulation;
+    -webkit-user-select: text;
+    user-select: text;
+  }
+
+  .touch-select {
+    @apply h-12 px-4 text-base;
+    min-height: 48px;
+    touch-action: manipulation;
+  }
+
+  .touch-label {
+    @apply text-base font-medium mb-3;
+    min-height: 24px;
+  }
+
+  /* Enhanced focus styles for touch */
+  .touch-focus {
+    @apply focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2;
+    outline: none;
+  }
+
+  /* Touch-friendly dropdowns */
+  .touch-dropdown {
+    @apply bg-background border border-border rounded-lg shadow-lg;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 50;
+  }
+
+  .touch-dropdown-item {
+    @apply px-4 py-3 text-base hover:bg-muted cursor-pointer;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    touch-action: manipulation;
+  }
+
+  .touch-dropdown-item:active {
+    @apply bg-primary/10;
+  }
+
+  /* Mobile form spacing */
+  .mobile-form-spacing {
+    @apply space-y-6;
+  }
+
+  @media (max-width: 768px) {
+    .mobile-form-spacing {
+      @apply space-y-8;
+    }
+    
+    .touch-input, .touch-select, .touch-button {
+      @apply h-14 text-lg;
+      min-height: 56px;
+    }
+    
+    .touch-textarea {
+      min-height: 140px;
+      @apply text-lg;
+    }
+    
+    .touch-label {
+      @apply text-lg mb-4;
+    }
+  }
+
+  /* Haptic feedback simulation */
+  .haptic-light:active {
+    animation: haptic-pulse 0.1s ease;
+  }
+
+  @keyframes haptic-pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.95); }
+    100% { transform: scale(1); }
+  }
 }
