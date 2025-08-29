@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { cn } from '@/lib/utils';
+import CacheManager from '@/utils/cacheManager';
 
 interface OptimizedImageProps {
   src: string;
@@ -34,6 +35,7 @@ const OptimizedImage = ({
   const [hasError, setHasError] = useState(false);
   const [isInView, setIsInView] = useState(priority);
   const imgRef = useRef<HTMLImageElement>(null);
+  const cacheManager = CacheManager.getInstance();
 
   // Intersection Observer for lazy loading
   useEffect(() => {
@@ -59,6 +61,15 @@ const OptimizedImage = ({
 
   const handleLoad = () => {
     setIsLoaded(true);
+    
+    // Кешируем успешно загруженное изображение
+    if (priority) {
+      cacheManager.setLocalCache(`img_${src}`, {
+        loaded: true,
+        timestamp: Date.now()
+      }, 24 * 60 * 60 * 1000); // 24 часа
+    }
+    
     onLoad?.();
   };
 
@@ -113,9 +124,10 @@ const OptimizedImage = ({
           onLoad={handleLoad}
           onError={handleError}
           className={cn(
-            'w-full h-full transition-opacity duration-300',
+            'w-full h-full transition-opacity duration-300 optimized-image',
             getObjectFitClass(),
-            isLoaded ? 'opacity-100' : 'opacity-0'
+            isLoaded ? 'opacity-100' : 'opacity-0',
+            priority && 'priority-image'
           )}
           style={{
             imageRendering: 'crisp-edges'
