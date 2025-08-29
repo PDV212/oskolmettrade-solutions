@@ -3,11 +3,13 @@ import { ArrowRight, Factory, Wrench, Flame, Building2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import OptimizedImage from '@/components/ui/optimized-image';
 import { IndustryLeaderBadge, ExperienceBadge, TrustedBadge, GrowthBadge } from '@/components/ui/badge-premium';
+import { useAnalytics } from '@/hooks/useAnalytics';
 import useResponsiveImage from '@/hooks/useResponsiveImage';
 import heroImage from '@/assets/hero-industrial.jpg';
 
 const HeroSection = () => {
   const heroImageConfig = useResponsiveImage(heroImage);
+  const { trackEvent, trackConversion } = useAnalytics();
   const businessDirections = [
     {
       icon: Wrench,
@@ -79,6 +81,13 @@ const HeroSection = () => {
               <Button 
                 className="btn-industrial bg-primary hover:bg-primary-hover text-primary-foreground px-8 py-4 text-lg"
                 onClick={() => {
+                  trackEvent({
+                    action: 'cta_click',
+                    category: 'engagement',
+                    label: 'hero_equipment_selection'
+                  });
+                  trackConversion('equipment_inquiry');
+                  
                   const element = document.querySelector('#contacts');
                   if (element) {
                     element.scrollIntoView({ behavior: 'smooth' });
@@ -92,6 +101,12 @@ const HeroSection = () => {
                 variant="outline" 
                 className="px-8 py-4 text-lg text-primary border-white/30 hover:bg-white/20 bg-white/90"
                 onClick={() => {
+                  trackEvent({
+                    action: 'cta_click',
+                    category: 'engagement', 
+                    label: 'hero_capabilities'
+                  });
+                  
                   const element = document.querySelector('#directions');
                   if (element) {
                     element.scrollIntoView({ behavior: 'smooth' });

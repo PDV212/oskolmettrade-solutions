@@ -3,6 +3,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { usePerformanceMonitor } from "@/hooks/usePerformanceMonitor";
+import { useAnalytics } from "@/hooks/useAnalytics";
 import Index from "./pages/Index";
 import English from "./pages/English";
 import Chinese from "./pages/Chinese";
@@ -27,6 +28,9 @@ const queryClient = new QueryClient({
 const App = () => {
   // Инициализируем мониторинг производительности
   usePerformanceMonitor();
+  
+  // Инициализируем аналитику
+  useAnalytics();
 
   return (
     <QueryClientProvider client={queryClient}>

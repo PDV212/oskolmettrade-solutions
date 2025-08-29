@@ -7,6 +7,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { TouchSelect, TouchSelectContent, TouchSelectItem, TouchSelectTrigger, TouchSelectValue } from '@/components/ui/touch-optimized-select';
 import MapComponent from './MapComponent';
 import OptimizedImage from '@/components/ui/optimized-image';
+import { useAnalytics } from '@/hooks/useAnalytics';
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -17,9 +18,24 @@ const ContactSection = () => {
     direction: '',
     message: ''
   });
+  
+  const { trackFormSubmission, trackEvent, trackConversion } = useAnalytics();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Отслеживание отправки формы
+    trackFormSubmission('contact_form');
+    trackConversion('lead_generation');
+    trackEvent({
+      action: 'form_submission',
+      category: 'contact',
+      label: formData.direction,
+      custom_parameters: {
+        company: formData.company,
+        direction: formData.direction
+      }
+    });
     
     // Create email body
     const emailBody = `
