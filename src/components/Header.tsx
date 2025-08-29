@@ -78,9 +78,11 @@ const Header = ({ language = 'ru' }: HeaderProps) => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-accent rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-lg">ОМТ</span>
-            </div>
+            <img 
+              src="/lovable-uploads/7557cbae-6813-424d-904e-67463889d6f1.png" 
+              alt="OMT Logo" 
+              className="w-10 h-10 rounded-lg"
+            />
             <div className="hidden md:block">
               <h1 className="text-xl font-bold text-foreground">ОСКОЛ-МЕТ-ТРЕЙД</h1>
               <p className="text-xs text-muted-foreground">Металлообработка • Металлургия • Производство</p>

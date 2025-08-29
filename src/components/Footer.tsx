@@ -54,9 +54,11 @@ const Footer = () => {
             {/* Company Info */}
             <div className="lg:col-span-1">
               <div className="flex items-center space-x-2 mb-6">
-                <div className="w-12 h-12 bg-accent rounded-xl flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">ОМТ</span>
-                </div>
+                <img 
+                  src="/lovable-uploads/7557cbae-6813-424d-904e-67463889d6f1.png" 
+                  alt="OMT Logo" 
+                  className="w-12 h-12 rounded-xl"
+                />
                 <div>
                   <h3 className="text-xl font-bold">ОСКОЛ-МЕТ-ТРЕЙД</h3>
                   <p className="text-white/70 text-sm">С 1994 года</p>
