@@ -1,6 +1,7 @@
 import { ArrowRight, CheckCircle2, Factory, Wrench, Flame, Building2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
+import OptimizedImage from '@/components/ui/optimized-image';
 import equipmentImage from '@/assets/equipment-manufacturing.jpg';
 const vszManufacturingImage = '/lovable-uploads/9037fa8f-e102-4232-a549-87fbfcd6bdd2.png';
 const cncMachineImage = '/lovable-uploads/b5b9d48f-fa70-463f-b4c5-98e99b19fbaa.png';
@@ -119,13 +120,31 @@ const BusinessDirections = () => {
         {/* Direction Images Gallery */}
         <div className="flex justify-center items-center gap-4 mt-12 mb-8 px-4">
           <div className="w-[480px] h-[480px] flex items-center justify-center bg-muted/50 rounded-lg p-4 flex-shrink-0">
-            <img src={manipulators2Image} alt="OSKOL" className="w-[480px] h-[480px] object-contain opacity-80 hover:opacity-100 transition-opacity" />
+            <OptimizedImage 
+              src={manipulators2Image} 
+              alt="OSKOL" 
+              className="w-[480px] h-[480px] opacity-80 hover:opacity-100 transition-opacity" 
+              objectFit="contain"
+              loading="lazy"
+            />
           </div>
           <div className="w-[480px] h-[480px] flex items-center justify-center bg-muted/50 rounded-lg p-4 flex-shrink-0">
-            <img src={equipmentLogoImage} alt="Equipment" className="w-[480px] h-[480px] object-contain opacity-80 hover:opacity-100 transition-opacity" />
+            <OptimizedImage 
+              src={equipmentLogoImage} 
+              alt="Equipment" 
+              className="w-[480px] h-[480px] opacity-80 hover:opacity-100 transition-opacity" 
+              objectFit="contain"
+              loading="lazy"
+            />
           </div>
           <div className="w-[480px] h-[480px] flex items-center justify-center bg-muted/50 rounded-lg p-4 flex-shrink-0">
-            <img src={rawMaterialsMainImage} alt="Raw Materials" className="w-[480px] h-[480px] object-contain opacity-80 hover:opacity-100 transition-opacity" />
+            <OptimizedImage 
+              src={rawMaterialsMainImage} 
+              alt="Raw Materials" 
+              className="w-[480px] h-[480px] opacity-80 hover:opacity-100 transition-opacity" 
+              objectFit="contain"
+              loading="lazy"
+            />
           </div>
         </div>
         </div>
@@ -165,7 +184,13 @@ const BusinessDirections = () => {
                           </div>
                           <div className="ml-8">
                             <div className="w-[480px] h-[480px] flex items-center justify-center bg-muted/50 rounded-lg p-4">
-                              <img src={feature.image} alt={feature.text} className="w-[480px] h-[480px] object-contain opacity-90 hover:opacity-100 transition-opacity" />
+                              <OptimizedImage 
+                                src={feature.image} 
+                                alt={feature.text} 
+                                className="w-[480px] h-[480px] opacity-90 hover:opacity-100 transition-opacity" 
+                                objectFit="contain"
+                                loading="lazy"
+                              />
                             </div>
                           </div>
                         </div>
@@ -214,10 +239,14 @@ const BusinessDirections = () => {
               {direction.image && (
                 <div className={`${index % 2 === 1 ? 'lg:col-start-1' : ''} animate-industrial-fade-in`}>
                   <Card className="card-industrial overflow-hidden">
-                    <div 
-                      className={`${direction.id === 'equipment' || direction.id === 'materials' || direction.id === 'furnaces' || direction.id === 'manufacturing' ? 'h-96 bg-contain bg-center bg-no-repeat' : 'h-80 bg-cover bg-center'} relative`}
-                      style={{ backgroundImage: `url(${direction.image})` }}
-                    >
+                    <div className="relative h-96">
+                      <OptimizedImage
+                        src={direction.image}
+                        alt={direction.title}
+                        className="w-full h-full"
+                        objectFit={direction.id === 'equipment' || direction.id === 'materials' || direction.id === 'furnaces' || direction.id === 'manufacturing' ? 'contain' : 'cover'}
+                        loading="lazy"
+                      />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                       <div className="absolute bottom-4 left-4 right-4">
                         <div className="flex items-center space-x-2 text-white">

@@ -234,25 +234,56 @@
     }
   }
 
-  /* Lazy Loading Placeholder */
+  /* Lazy Loading Placeholder & Optimizations */
   .lazy-loading-placeholder {
-    @apply bg-gradient-to-br from-muted to-muted/50 animate-pulse;
+    @apply bg-gradient-to-br from-muted to-muted/50;
     background-image: linear-gradient(
-      45deg,
-      transparent 25%,
-      rgba(255, 255, 255, 0.1) 25%,
-      rgba(255, 255, 255, 0.1) 50%,
-      transparent 50%,
-      transparent 75%,
-      rgba(255, 255, 255, 0.1) 75%
+      90deg,
+      hsl(var(--muted)) 25%,
+      hsl(var(--muted-foreground) / 0.1) 37%,
+      hsl(var(--muted)) 63%
     );
-    background-size: 20px 20px;
-    animation: slide 1s infinite linear;
+    background-size: 400% 100%;
+    animation: lazy-shimmer 1.4s ease infinite;
   }
 
-  @keyframes slide {
-    0% { background-position: 0 0; }
-    100% { background-position: 20px 20px; }
+  @keyframes lazy-shimmer {
+    0% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  /* Image loading states */
+  .image-loading {
+    transition: opacity 0.3s ease-in-out;
+    will-change: opacity;
+  }
+
+  .image-loading[data-loaded="false"] {
+    opacity: 0;
+  }
+
+  .image-loading[data-loaded="true"] {
+    opacity: 1;
+  }
+
+  /* Performance optimizations for images */
+  .optimized-image {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+  }
+
+  /* Intersection observer optimization */
+  .lazy-image-container {
+    content-visibility: auto;
+    contain-intrinsic-size: 300px 200px;
+  }
+
+  /* Preload critical images */
+  .priority-image {
+    image-rendering: optimizeQuality;
+    content-visibility: visible;
   }
 
   /* Touch-Friendly Interface Styles */
