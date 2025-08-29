@@ -59,13 +59,13 @@ const HeroSection = () => {
               <span className="inline-block px-4 py-2 bg-accent/20 text-accent rounded-full text-sm font-semibold mb-4">
                 С 1994 года на рынке
               </span>
-              <h1 className="heading-hero text-white mb-6" style={{ WebkitTextFillColor: 'white', backgroundClip: 'unset', WebkitBackgroundClip: 'unset' }}>
+              <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-6" style={{ WebkitTextFillColor: 'white', backgroundClip: 'unset', WebkitBackgroundClip: 'unset' }}>
                 ОСКОЛ-МЕТ-ТРЕЙД
               </h1>
-              <p className="text-lead text-white/90 font-medium mb-4">
+              <p className="text-xl md:text-2xl text-white/90 font-medium mb-4">
                 Надежные решения для металлургии и машиностроения
               </p>
-              <p className="text-body text-white/80">
+              <p className="text-lg text-white/80 leading-relaxed">
                 Поставка оборудования, металлургического сырья и производство с 1994 года. 
                 Группа компаний с полным циклом услуг: от проектирования до сервисного обслуживания.
               </p>
@@ -73,8 +73,7 @@ const HeroSection = () => {
 
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <Button 
-                variant="industrial"
-                size="lg"
+                className="btn-industrial bg-primary hover:bg-primary-hover text-primary-foreground px-8 py-4 text-lg"
                 onClick={() => {
                   const element = document.querySelector('#contacts');
                   if (element) {
@@ -87,8 +86,7 @@ const HeroSection = () => {
               </Button>
               <Button 
                 variant="outline" 
-                size="lg"
-                className="text-primary border-white/30 hover:bg-white/20 bg-white/90"
+                className="px-8 py-4 text-lg text-primary border-white/30 hover:bg-white/20 bg-white/90"
                 onClick={() => {
                   const element = document.querySelector('#directions');
                   if (element) {
@@ -103,16 +101,16 @@ const HeroSection = () => {
             {/* Key Stats */}
             <div className="grid grid-cols-3 gap-4">
               <div className="text-center">
-                <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-accent">30+</div>
-                <div className="text-white/70 text-sm md:text-base">лет опыта</div>
+                <div className="text-2xl md:text-3xl font-bold text-accent">30+</div>
+                <div className="text-white/70 text-sm">лет опыта</div>
               </div>
               <div className="text-center">
-                <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-accent">2500+</div>
-                <div className="text-white/70 text-sm md:text-base">станков поставлено</div>
+                <div className="text-2xl md:text-3xl font-bold text-accent">2500+</div>
+                <div className="text-white/70 text-sm">станков поставлено</div>
               </div>
               <div className="text-center">
-                <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-accent">4</div>
-                <div className="text-white/70 text-sm md:text-base">направления</div>
+                <div className="text-2xl md:text-3xl font-bold text-accent">4</div>
+                <div className="text-white/70 text-sm">направления</div>
               </div>
             </div>
           </div>
@@ -121,7 +119,7 @@ const HeroSection = () => {
         {/* Business Directions - Positioned absolutely within hero section */}
         <div className="absolute bottom-0 right-0 w-80 animate-industrial-fade-in hidden lg:block z-20">
           <div className="bg-white/15 backdrop-blur-md rounded-2xl p-6 border border-white/30 shadow-2xl">
-            <h3 className="heading-subsection text-white mb-4">Направления деятельности</h3>
+            <h3 className="text-xl font-bold text-white mb-4">Направления деятельности</h3>
             <div className="space-y-3">
               {businessDirections.map((direction, index) => (
                 <div 
@@ -132,8 +130,8 @@ const HeroSection = () => {
                     <direction.icon className={`w-6 h-6 ${direction.color}`} />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-white text-sm md:text-base mb-1">{direction.title}</h4>
-                    <p className="text-white/80 text-xs md:text-sm">{direction.description}</p>
+                    <h4 className="font-semibold text-white text-sm mb-1">{direction.title}</h4>
+                    <p className="text-white/80 text-xs">{direction.description}</p>
                   </div>
                 </div>
               ))}
