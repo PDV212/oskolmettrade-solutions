@@ -55,7 +55,7 @@ const Footer = () => {
             <div className="lg:col-span-1">
               <div className="flex items-center space-x-2 mb-6">
                 <img 
-                  src="/lovable-uploads/7557cbae-6813-424d-904e-67463889d6f1.png" 
+                  src="/lovable-uploads/b3c22956-096b-4475-8619-90ea784e020b.png" 
                   alt="OMT Logo" 
                   className="w-12 h-12 rounded-xl"
                 />

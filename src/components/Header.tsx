@@ -79,7 +79,7 @@ const Header = ({ language = 'ru' }: HeaderProps) => {
           {/* Logo */}
           <div className="flex items-center space-x-2">
             <img 
-              src="/lovable-uploads/7557cbae-6813-424d-904e-67463889d6f1.png" 
+              src="/lovable-uploads/b3c22956-096b-4475-8619-90ea784e020b.png" 
               alt="OMT Logo" 
               className="w-10 h-10 rounded-lg"
             />
