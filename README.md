@@ -1,139 +1,73 @@
-# ОСКОЛ-МЕТ-ТРЕЙД
+# Welcome to your Lovable project
 
-Корпоративный сайт компании ОСКОЛ-МЕТ-ТРЕЙД - ведущего поставщика металлообрабатывающего оборудования и металлургического сырья.
+## Project info
 
-## Особенности проекта
+**URL**: https://lovable.dev/projects/ae5c55c4-c3b8-41dc-83c8-5b104ec5088b
 
-### 🚀 Технологический стек
-- **React 18** с TypeScript
-- **Vite** для сборки и разработки
-- **Tailwind CSS** для стилизации
-- **Radix UI** для UI компонентов
-- **React Router** для роутинга
-- **Lucide React** для иконок
+## How can I edit this code?
 
-### 🌐 Многоязычность
-- Русский (основной)
-- Английский 
-- Китайский
+There are several ways of editing your application.
 
-### 📊 Аналитика и отслеживание
-- **Google Analytics 4** - веб-аналитика
-- **Яндекс.Метрика** - российская система аналитики
-- **Facebook Pixel** - отслеживание конверсий
+**Use Lovable**
 
-### ⚡ Производительность
-- **Service Worker** для кеширования
-- **Lazy loading** изображений с Intersection Observer
-- **WebP** формат изображений
-- **Minification** CSS и JavaScript
-- **Code splitting** и tree shaking
+Simply visit the [Lovable Project](https://lovable.dev/projects/ae5c55c4-c3b8-41dc-83c8-5b104ec5088b) and start prompting.
 
-### 🎨 Дизайн система
-- Промышленная цветовая схема
-- Градиенты и анимации
-- Премиум бейджи и индикаторы
-- Адаптивный дизайн
-- Touch-friendly интерфейс
+Changes made via Lovable will be committed automatically to this repo.
 
-## Настройка аналитики
+**Use your preferred IDE**
 
-### Google Analytics 4
-1. Откройте файл `src/utils/analytics.ts`
-2. Замените `GA4_MEASUREMENT_ID: 'G-XXXXXXXXXX'` на ваш измерительный ID
-3. Получить ID можно в [Google Analytics](https://analytics.google.com)
+If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
 
-### Яндекс.Метрика
-1. В том же файле замените `YANDEX_COUNTER_ID: 'XXXXXXXX'` на ID вашего счетчика
-2. Получить ID можно в [Яндекс.Метрике](https://metrica.yandex.ru)
+The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
-### Facebook Pixel
-1. Замените `FACEBOOK_PIXEL_ID: 'XXXXXXXXXXXXXXX'` на ваш Pixel ID
-2. Получить ID можно в [Facebook Business Manager](https://business.facebook.com)
+Follow these steps:
 
-## Запуск проекта
+```sh
+# Step 1: Clone the repository using the project's Git URL.
+git clone <YOUR_GIT_URL>
 
-```bash
-# Установка зависимостей
-npm install
+# Step 2: Navigate to the project directory.
+cd <YOUR_PROJECT_NAME>
 
-# Запуск в режиме разработки
+# Step 3: Install the necessary dependencies.
+npm i
+
+# Step 4: Start the development server with auto-reloading and an instant preview.
 npm run dev
-
-# Сборка для продакшена
-npm run build
-
-# Предварительный просмотр сборки
-npm run preview
 ```
 
-## Структура проекта
+**Edit a file directly in GitHub**
 
-```
-src/
-├── components/          # React компоненты
-│   ├── ui/             # UI компоненты (кнопки, карточки)
-│   ├── en/             # Английские версии компонентов
-│   └── zh/             # Китайские версии компонентов
-├── hooks/              # React хуки
-├── pages/              # Страницы приложения
-├── utils/              # Утилиты (аналитика, кеширование)
-└── assets/             # Статические ресурсы
-```
+- Navigate to the desired file(s).
+- Click the "Edit" button (pencil icon) at the top right of the file view.
+- Make your changes and commit the changes.
 
-## Основные компоненты
+**Use GitHub Codespaces**
 
-- **HeroSection** - Главный экран с призывами к действию
-- **BusinessDirections** - Направления деятельности компании
-- **CompanyAdvantages** - Преимущества компании
-- **ContactSection** - Форма обратной связи
-- **OptimizedImage** - Оптимизированный компонент изображений
-- **BadgePremium** - Премиум бейджи и индикаторы
+- Navigate to the main page of your repository.
+- Click on the "Code" button (green button) near the top right.
+- Select the "Codespaces" tab.
+- Click on "New codespace" to launch a new Codespace environment.
+- Edit files directly within the Codespace and commit and push your changes once you're done.
 
-## События аналитики
+## What technologies are used for this project?
 
-Система автоматически отслеживает:
-- Просмотры страниц
-- Клики по CTA кнопкам
-- Отправка форм
-- Конверсии и цели
-- Время на сайте
-- Взаимодействие с контентом
+This project is built with:
 
-## SEO оптимизация
+- Vite
+- TypeScript
+- React
+- shadcn-ui
+- Tailwind CSS
 
-- Семантическая HTML разметка
-- Meta теги и Open Graph
-- Структурированные данные
-- Оптимизированные изображения
-- Быстрая загрузка страниц
-- Мобильная адаптация
+## How can I deploy this project?
 
-## Кеширование
+Simply open [Lovable](https://lovable.dev/projects/ae5c55c4-c3b8-41dc-83c8-5b104ec5088b) and click on Share -> Publish.
 
-- Browser Cache для статических ресурсов
-- Service Worker для offline работы
-- Local Storage для пользовательских данных
-- CDN-friendly архитектура
+## Can I connect a custom domain to my Lovable project?
 
-## Развертывание
+Yes, you can!
 
-Проект готов к развертыванию на:
-- Netlify
-- Vercel  
-- GitHub Pages
-- Любом хостинге со статическими файлами
+To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
-Файлы конфигурации включены:
-- `netlify.toml` - настройки Netlify
-- `public/_headers` - заголовки кеширования
-- `public/manifest.json` - PWA манифест
-
-**Для подключения аналитики после развертывания:**
-1. Получите ваши ID трекинга из соответствующих сервисов
-2. Замените placeholder значения в `src/utils/analytics.ts`
-3. Пересоберите и разверните проект
-
-## Лицензия
-
-Все права защищены © ОСКОЛ-МЕТ-ТРЕЙД, 2024
+Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
