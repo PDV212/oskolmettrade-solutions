@@ -9,6 +9,7 @@ import {
   Star
 } from 'lucide-react';
 import { Card } from '@/components/ui/card';
+import TechnicalTooltip from './TechnicalTooltip';
 
 const CompanyAdvantages = () => {
   const advantages = [
@@ -43,7 +44,7 @@ const CompanyAdvantages = () => {
     {
       icon: Users,
       title: 'Техническая экспертиза',
-      description: 'Наши технические эксперты — доценты ведущих университетов России с минимальным уровнем «кандидат технических наук» в области металлургического машиностроения.',
+      description: <>Наши технические эксперты — доценты ведущих университетов России с минимальным уровнем «кандидат технических наук» в области <TechnicalTooltip tooltip="Отрасль машиностроения, занимающаяся производством оборудования для металлургической промышленности">металлургического машиностроения</TechnicalTooltip>.</>,
       stat: 'Экспертный уровень',
       gradient: 'from-accent/15 to-primary/10'
     },
@@ -71,7 +72,7 @@ const CompanyAdvantages = () => {
           <h2 className="heading-section mb-4">Почему выбирают нас</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Надежный партнер с многолетним опытом, собственным производством 
-            и полным циклом услуг для металлургических предприятий
+            и полным циклом услуг для <TechnicalTooltip tooltip="Предприятия, занимающиеся производством и обработкой металлов, включая чёрную и цветную металлургию">металлургических предприятий</TechnicalTooltip>
           </p>
         </div>
 
@@ -126,7 +127,7 @@ const CompanyAdvantages = () => {
                 Гарантия качества и надежности
               </h3>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Все оборудование проходит строгий контроль качества, 
+                Все оборудование проходит строгий <TechnicalTooltip tooltip="Система проверки соответствия продукции установленным стандартам качества и безопасности">контроль качества</TechnicalTooltip>, 
                 предоставляется техническая поддержка и гарантийное обслуживание
               </p>
             </div>
