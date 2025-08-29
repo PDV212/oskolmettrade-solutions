@@ -57,7 +57,7 @@ const Footer = () => {
                 <img 
                   src="/lovable-uploads/7557cbae-6813-424d-904e-67463889d6f1.png" 
                   alt="OMT Logo" 
-                  className="w-18 h-18 rounded-xl"
+                  className="w-12 h-12 rounded-xl"
                 />
                 <div>
                   <h3 className="text-xl font-bold">ОСКОЛ-МЕТ-ТРЕЙД</h3>

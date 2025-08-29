@@ -81,7 +81,7 @@ const Header = ({ language = 'ru' }: HeaderProps) => {
             <img 
               src="/lovable-uploads/7557cbae-6813-424d-904e-67463889d6f1.png" 
               alt="OMT Logo" 
-              className="w-15 h-15 rounded-lg"
+              className="w-10 h-10 rounded-lg"
             />
             <div className="hidden md:block">
               <h1 className="text-xl font-bold text-foreground">ОСКОЛ-МЕТ-ТРЕЙД</h1>
