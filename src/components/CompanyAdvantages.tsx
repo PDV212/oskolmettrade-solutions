@@ -9,6 +9,7 @@ import {
   Star
 } from 'lucide-react';
 import { Card } from '@/components/ui/card';
+import { ScrollAnimationWrapper } from '@/hooks/useScrollAnimation';
 
 const CompanyAdvantages = () => {
   const advantages = [
@@ -67,33 +68,37 @@ const CompanyAdvantages = () => {
     <section id="advantages" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <ScrollAnimationWrapper animationType="fade-up">
+          <div className="text-center mb-16">
           <h2 className="heading-section mb-4">Почему выбирают нас</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Надежный партнер с многолетним опытом, собственным производством 
             и полным циклом услуг для металлургических предприятий
           </p>
-        </div>
+          </div>
+        </ScrollAnimationWrapper>
 
         {/* Key Numbers */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+        <ScrollAnimationWrapper animationType="scale" delay={200}>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16 stagger-animation">
           {achievements.map((achievement, index) => (
-            <div key={index} className="text-center animate-industrial-fade-in">
+            <div key={index} className="text-center">
               <div className="text-4xl md:text-5xl font-bold text-primary mb-2">
                 {achievement.number}
               </div>
               <div className="text-muted-foreground">{achievement.label}</div>
             </div>
           ))}
-        </div>
+          </div>
+        </ScrollAnimationWrapper>
 
         {/* Advantages Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <ScrollAnimationWrapper animationType="fade-up" delay={400}>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 stagger-animation">
           {advantages.map((advantage, index) => (
             <Card 
               key={index}
-              className="card-industrial animate-industrial-slide-up"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className="card-industrial"
             >
               <div className={`inline-flex p-4 rounded-xl bg-gradient-to-br ${advantage.gradient} mb-6`}>
                 <advantage.icon className="w-8 h-8 text-primary" />
@@ -113,10 +118,12 @@ const CompanyAdvantages = () => {
               </div>
             </Card>
           ))}
-        </div>
+          </div>
+        </ScrollAnimationWrapper>
 
         {/* Quality Assurance Banner */}
-        <div className="mt-16">
+        <ScrollAnimationWrapper animationType="scale" delay={600}>
+          <div className="mt-16">
           <Card className="card-industrial bg-gradient-to-r from-primary/10 via-accent/10 to-secondary/10 border-primary/20">
             <div className="text-center py-8">
               <div className="flex justify-center mb-4">
@@ -131,7 +138,8 @@ const CompanyAdvantages = () => {
               </p>
             </div>
           </Card>
-        </div>
+          </div>
+        </ScrollAnimationWrapper>
       </div>
     </section>
   );

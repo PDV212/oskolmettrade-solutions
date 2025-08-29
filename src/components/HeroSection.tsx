@@ -2,6 +2,7 @@
 import { ArrowRight, Factory, Wrench, Flame, Building2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import heroImage from '@/assets/hero-industrial.jpg';
+import { ScrollAnimationWrapper } from '@/hooks/useScrollAnimation';
 
 const HeroSection = () => {
   const businessDirections = [
@@ -45,7 +46,7 @@ const HeroSection = () => {
       <div className="relative z-10 container mx-auto px-4 py-20">
         <div className="grid lg:grid-cols-3 gap-12 items-start">
           {/* Left Column - Main Content */}
-          <div className="lg:col-span-2 animate-industrial-slide-up">
+          <ScrollAnimationWrapper animationType="fade-up" className="lg:col-span-2">
             <div className="mb-6">
               <span className="inline-block px-4 py-2 bg-accent/20 text-accent rounded-full text-sm font-semibold mb-4">
                 С 1994 года на рынке
@@ -104,11 +105,11 @@ const HeroSection = () => {
                 <div className="text-white/70 text-sm">направления</div>
               </div>
             </div>
-          </div>
+          </ScrollAnimationWrapper>
         </div>
 
         {/* Business Directions - Positioned absolutely within hero section */}
-        <div className="absolute bottom-0 right-0 w-80 animate-industrial-fade-in hidden lg:block z-20">
+        <ScrollAnimationWrapper animationType="slide-right" delay={300} className="absolute bottom-0 right-0 w-80 hidden lg:block z-20">
           <div className="bg-white/15 backdrop-blur-md rounded-2xl p-6 border border-white/30 shadow-2xl">
             <h3 className="text-xl font-bold text-white mb-4">Направления деятельности</h3>
             <div className="space-y-3">
@@ -128,7 +129,7 @@ const HeroSection = () => {
               ))}
             </div>
           </div>
-        </div>
+        </ScrollAnimationWrapper>
       </div>
 
       {/* Scroll Indicator */}

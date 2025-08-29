@@ -190,4 +190,58 @@
   .bg-gradient-steel {
     background: var(--gradient-steel);
   }
+
+  /* Scroll Animation Styles */
+  .animate-scroll-in {
+    opacity: 1;
+    transform: translateY(0px);
+    transition: all 0.8s cubic-bezier(0.17, 0.55, 0.55, 1);
+  }
+
+  .animate-scroll-out {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.17, 0.55, 0.55, 1);
+  }
+
+  .animate-fade-up {
+    transform: translateY(30px);
+  }
+
+  .animate-slide-left {
+    transform: translateX(-30px);
+  }
+
+  .animate-slide-right {
+    transform: translateX(30px);
+  }
+
+  .animate-scale {
+    transform: scale(0.95);
+  }
+
+  /* Stagger animation delays for child elements */
+  .stagger-animation > * {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  .stagger-animation > *:nth-child(1) { animation-delay: 0.1s; }
+  .stagger-animation > *:nth-child(2) { animation-delay: 0.2s; }
+  .stagger-animation > *:nth-child(3) { animation-delay: 0.3s; }
+  .stagger-animation > *:nth-child(4) { animation-delay: 0.4s; }
+  .stagger-animation > *:nth-child(5) { animation-delay: 0.5s; }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Smooth scrolling for the whole page */
+  html {
+    scroll-behavior: smooth;
+  }
 }
