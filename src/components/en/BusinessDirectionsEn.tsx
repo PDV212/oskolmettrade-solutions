@@ -37,7 +37,10 @@ const BusinessDirectionsEn = () => {
         { 
           text: 'Robotic welding and painting sections - industrial manipulators and robots providing complete automation of key technological operations — welding and painting of metal structures — using manipulators integrated with digital drawings and sensor quality control systems',
           image: manipulatorsImage
-        }
+        },
+        'Metal-cutting automated complexes equipped with CNC, with workpiece feeding and finished product receiving systems',
+        'Design and manufacturing of machine tool complexes equipped with CNC systems for automatic and semi-automatic machining',
+        'We work with customers until achieving optimal results'
       ],
       gradient: 'bg-gradient-to-br from-primary/20 to-primary/5',
       iconColor: 'text-primary'

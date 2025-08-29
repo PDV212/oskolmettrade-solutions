@@ -37,7 +37,10 @@ const BusinessDirectionsZh = () => {
         { 
           text: '机器人焊接和喷漆工作站 - 工业机械手和机器人，实现关键技术操作的完全自动化 — 金属结构的焊接和喷漆 — 使用与数字图纸和传感器质量控制系统集成的机械手',
           image: manipulatorsImage
-        }
+        },
+        '配备数控系统的金属切削自动化综合设备，带有工件进料和成品接收系统',
+        '设计和制造配备数控系统的机床综合设备，用于自动和半自动机械加工',
+        '我们与客户合作直到达到最佳效果'
       ],
       gradient: 'bg-gradient-to-br from-primary/20 to-primary/5',
       iconColor: 'text-primary'
