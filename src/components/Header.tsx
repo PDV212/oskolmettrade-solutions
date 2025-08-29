@@ -1,19 +1,49 @@
 import { useState } from 'react';
 import { Menu, X, Phone, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import LanguageSelector from './LanguageSelector';
 
-const Header = () => {
+interface HeaderProps {
+  language?: string;
+}
+
+const Header = ({ language = 'ru' }: HeaderProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const navItems = [
-    { name: 'Главная', href: '#home' },
-    { name: 'О компании', href: '#directions' },
-    { name: 'Оборудование', href: '#equipment' },
-    { name: 'Сырье', href: '#materials' },
-    { name: 'Печи', href: '#furnaces' },
-    { name: 'Производство ВСЗ', href: '#manufacturing' },
-    { name: 'Контакты', href: '#contacts' }
-  ];
+  const getNavItems = () => {
+    if (language === 'en') {
+      return [
+        { name: 'Home', href: '#home' },
+        { name: 'About', href: '#directions' },
+        { name: 'Equipment', href: '#equipment' },
+        { name: 'Materials', href: '#materials' },
+        { name: 'Furnaces', href: '#furnaces' },
+        { name: 'VSZ Production', href: '#manufacturing' },
+        { name: 'Contacts', href: '#contacts' }
+      ];
+    } else if (language === 'zh') {
+      return [
+        { name: '首页', href: '#home' },
+        { name: '关于我们', href: '#directions' },
+        { name: '设备', href: '#equipment' },
+        { name: '原材料', href: '#materials' },
+        { name: '炉子', href: '#furnaces' },
+        { name: 'VSZ生产', href: '#manufacturing' },
+        { name: '联系方式', href: '#contacts' }
+      ];
+    }
+    return [
+      { name: 'Главная', href: '#home' },
+      { name: 'О компании', href: '#directions' },
+      { name: 'Оборудование', href: '#equipment' },
+      { name: 'Сырье', href: '#materials' },
+      { name: 'Печи', href: '#furnaces' },
+      { name: 'Производство ВСЗ', href: '#manufacturing' },
+      { name: 'Контакты', href: '#contacts' }
+    ];
+  };
+
+  const navItems = getNavItems();
 
   const scrollToSection = (href: string) => {
     if (href.startsWith('#')) {
@@ -70,10 +100,11 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* Contact Info & CTA */}
+          {/* Language Selector & Contact Info & CTA */}
           <div className="hidden md:flex items-center space-x-4">
+            <LanguageSelector />
             <Button variant="default" className="btn-industrial" onClick={scrollToContacts}>
-              Оставить заявку
+              {language === 'en' ? 'Contact Us' : language === 'zh' ? '联系我们' : 'Оставить заявку'}
             </Button>
           </div>
 
@@ -104,12 +135,15 @@ const Header = () => {
               ))}
             </nav>
             <div className="mt-4 pt-4 border-t border-border">
-              <div className="flex items-center space-x-2 text-sm mb-3">
-                <Phone className="w-4 h-4 text-primary" />
-                <span className="text-muted-foreground">+7 495 240 91 99</span>
+              <div className="flex items-center justify-between mb-3">
+                <LanguageSelector />
+                <div className="flex items-center space-x-2 text-sm">
+                  <Phone className="w-4 h-4 text-primary" />
+                  <span className="text-muted-foreground">+7 495 240 91 99</span>
+                </div>
               </div>
               <Button variant="default" className="btn-industrial w-full" onClick={scrollToContacts}>
-                Оставить заявку
+                {language === 'en' ? 'Contact Us' : language === 'zh' ? '联系我们' : 'Оставить заявку'}
               </Button>
             </div>
           </div>
