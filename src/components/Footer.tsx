@@ -91,7 +91,7 @@ const Footer = () => {
                   <MapPin className="w-5 h-5 text-accent" />
                   <div>
                     <p className="font-semibold">109004, г. Москва</p>
-                    <p className="text-white/70 text-sm">ул. Александра Солженицына, д. 40, стр. 1</p>
+                    <p className="text-white/70 text-sm">ул. А. Солженицына, д. 40, стр. 1</p>
                   </div>
                 </div>
               </div>

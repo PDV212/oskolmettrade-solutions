@@ -28,7 +28,7 @@ const MapComponent = () => {
       .setLngLat([37.667087, 55.745509])
       .setPopup(
         new mapboxgl.Popup({ offset: 25 }).setHTML(
-          '<div><strong>ОСКОЛ-МЕТ-ТРЕЙД</strong><br/>109004, г. Москва, ул. Александра Солженицына, д. 40, стр. 1</div>'
+          '<div><strong>ОСКОЛ-МЕТ-ТРЕЙД</strong><br/>109004, г. Москва, ул. А. Солженицына, д. 40, стр. 1</div>'
         )
       )
       .addTo(map.current);
