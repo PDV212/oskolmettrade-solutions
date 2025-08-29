@@ -1,7 +1,6 @@
 import { ArrowRight, CheckCircle2, Factory, Wrench, Flame, Building2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { ScrollAnimationWrapper } from '@/hooks/useScrollAnimation';
 import equipmentImage from '@/assets/equipment-manufacturing.jpg';
 const vszManufacturingImage = '/lovable-uploads/9037fa8f-e102-4232-a549-87fbfcd6bdd2.png';
 const cncMachineImage = '/lovable-uploads/b5b9d48f-fa70-463f-b4c5-98e99b19fbaa.png';
@@ -110,45 +109,39 @@ const BusinessDirections = () => {
     <section id="directions" className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <ScrollAnimationWrapper animationType="fade-up">
-          <div className="text-center mb-16">
-            <h2 className="heading-section mb-4">Наши направления деятельности</h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Комплексные решения для металлургических и машиностроительных предприятий. 
-              Группа компаний с полным циклом услуг от проектирования до сервисного обслуживания.
-            </p>
-            
-            {/* Direction Images Gallery */}
-            <div className="flex justify-center items-center gap-4 mt-12 mb-8 px-4">
-              <div className="w-[480px] h-[480px] flex items-center justify-center bg-muted/50 rounded-lg p-4 flex-shrink-0">
-                <img src={manipulators2Image} alt="OSKOL" className="w-[480px] h-[480px] object-contain opacity-80 hover:opacity-100 transition-opacity" />
-              </div>
-              <div className="w-[480px] h-[480px] flex items-center justify-center bg-muted/50 rounded-lg p-4 flex-shrink-0">
-                <img src={equipmentLogoImage} alt="Equipment" className="w-[480px] h-[480px] object-contain opacity-80 hover:opacity-100 transition-opacity" />
-              </div>
-              <div className="w-[480px] h-[480px] flex items-center justify-center bg-muted/50 rounded-lg p-4 flex-shrink-0">
-                <img src={rawMaterialsMainImage} alt="Raw Materials" className="w-[480px] h-[480px] object-contain opacity-80 hover:opacity-100 transition-opacity" />
-              </div>
-            </div>
+        <div className="text-center mb-16">
+          <h2 className="heading-section mb-4">Наши направления деятельности</h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            Комплексные решения для металлургических и машиностроительных предприятий. 
+            Группа компаний с полным циклом услуг от проектирования до сервисного обслуживания.
+          </p>
+          
+        {/* Direction Images Gallery */}
+        <div className="flex justify-center items-center gap-4 mt-12 mb-8 px-4">
+          <div className="w-[480px] h-[480px] flex items-center justify-center bg-muted/50 rounded-lg p-4 flex-shrink-0">
+            <img src={manipulators2Image} alt="OSKOL" className="w-[480px] h-[480px] object-contain opacity-80 hover:opacity-100 transition-opacity" />
           </div>
-        </ScrollAnimationWrapper>
+          <div className="w-[480px] h-[480px] flex items-center justify-center bg-muted/50 rounded-lg p-4 flex-shrink-0">
+            <img src={equipmentLogoImage} alt="Equipment" className="w-[480px] h-[480px] object-contain opacity-80 hover:opacity-100 transition-opacity" />
+          </div>
+          <div className="w-[480px] h-[480px] flex items-center justify-center bg-muted/50 rounded-lg p-4 flex-shrink-0">
+            <img src={rawMaterialsMainImage} alt="Raw Materials" className="w-[480px] h-[480px] object-contain opacity-80 hover:opacity-100 transition-opacity" />
+          </div>
+        </div>
+        </div>
 
         {/* Directions Grid */}
         <div className="space-y-16">
           {directions.map((direction, index) => (
-            <ScrollAnimationWrapper 
+            <div 
               key={direction.id}
-              animationType={index % 2 === 0 ? 'slide-left' : 'slide-right'}
-              delay={200}
+              id={direction.id}
+              className={`grid lg:grid-cols-2 gap-12 items-center ${
+                index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''
+              }`}
             >
-              <div 
-                id={direction.id}
-                className={`grid lg:grid-cols-2 gap-12 items-center ${
-                  index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''
-                }`}
-              >
               {/* Content */}
-              <div className={`${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
+              <div className={`${index % 2 === 1 ? 'lg:col-start-2' : ''} animate-industrial-slide-up`}>
                 <div className={`inline-flex items-center space-x-3 p-4 rounded-xl ${direction.gradient} mb-6`}>
                   {direction.icon && (
                     <direction.icon className={`w-8 h-8 ${direction.iconColor}`} />
@@ -219,7 +212,7 @@ const BusinessDirections = () => {
 
               {/* Image */}
               {direction.image && (
-                <div className={`${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
+                <div className={`${index % 2 === 1 ? 'lg:col-start-1' : ''} animate-industrial-fade-in`}>
                   <Card className="card-industrial overflow-hidden">
                     <div 
                       className={`${direction.id === 'equipment' || direction.id === 'materials' || direction.id === 'furnaces' || direction.id === 'manufacturing' ? 'h-96 bg-contain bg-center bg-no-repeat' : 'h-80 bg-cover bg-center'} relative`}
@@ -239,7 +232,6 @@ const BusinessDirections = () => {
                 </div>
               )}
             </div>
-            </ScrollAnimationWrapper>
           ))}
         </div>
       </div>

@@ -5,7 +5,6 @@ import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { ScrollAnimationWrapper } from '@/hooks/useScrollAnimation';
 import MapComponent from './MapComponent';
 
 const ContactSection = () => {
@@ -83,20 +82,17 @@ Email: ${formData.email}
     <section id="contacts" className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <ScrollAnimationWrapper animationType="fade-up">
-          <div className="text-center mb-16">
+        <div className="text-center mb-16">
           <h2 className="heading-section mb-4">Свяжитесь с нами</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Готовы обсудить ваш проект и подобрать оптимальное решение. 
             Получите профессиональную консультацию от наших экспертов.
           </p>
-          </div>
-        </ScrollAnimationWrapper>
+        </div>
 
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Left Column: Contact Form + QR Codes */}
-          <ScrollAnimationWrapper animationType="slide-left" delay={200}>
-            <div className="space-y-6">
+          <div className="space-y-6">
             {/* Contact Form */}
             <Card className="card-industrial">
               <div className="mb-6">
@@ -240,11 +236,9 @@ Email: ${formData.email}
               </div>
             </Card>
           </div>
-          </ScrollAnimationWrapper>
 
           {/* Right Column: Contact Information + Map */}
-          <ScrollAnimationWrapper animationType="slide-right" delay={400}>
-            <div className="space-y-6">
+          <div className="space-y-6">
             {/* Contact Cards */}
             <div className="grid sm:grid-cols-2 gap-6">
               {contactInfo.map((info, index) => (
@@ -292,7 +286,6 @@ Email: ${formData.email}
               <MapComponent />
             </Card>
           </div>
-          </ScrollAnimationWrapper>
         </div>
       </div>
     </section>
