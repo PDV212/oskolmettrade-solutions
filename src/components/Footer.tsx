@@ -56,7 +56,7 @@ const Footer = () => {
             <div className="lg:col-span-1">
               <div className="flex items-center space-x-2 mb-6">
                 <OptimizedImage
-                  src="/lovable-uploads/b3c22956-096b-4475-8619-90ea784e020b.webp"
+                  src="/lovable-uploads/b3c22956-096b-4475-8619-90ea784e020b.png"
                   alt="OMT Logo"
                   className="w-12 h-12 rounded-xl"
                   aspectRatio="square"

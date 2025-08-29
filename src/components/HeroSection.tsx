@@ -3,7 +3,7 @@ import { ArrowRight, Factory, Wrench, Flame, Building2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import OptimizedImage from '@/components/ui/optimized-image';
 import useResponsiveImage from '@/hooks/useResponsiveImage';
-import heroImage from '@/assets/hero-industrial.webp';
+import heroImage from '@/assets/hero-industrial.jpg';
 
 const HeroSection = () => {
   const heroImageConfig = useResponsiveImage(heroImage);

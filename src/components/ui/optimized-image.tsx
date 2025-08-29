@@ -14,7 +14,6 @@ interface OptimizedImageProps {
   placeholder?: boolean;
   onLoad?: () => void;
   onError?: () => void;
-  enableWebP?: boolean;
 }
 
 const OptimizedImage = ({
@@ -28,7 +27,6 @@ const OptimizedImage = ({
   objectFit = 'cover',
   quality = 85,
   placeholder = true,
-  enableWebP = true,
   onLoad,
   onError
 }: OptimizedImageProps) => {
@@ -89,14 +87,6 @@ const OptimizedImage = ({
     }
   };
 
-  const getWebPSrc = (originalSrc: string) => {
-    if (!enableWebP) return originalSrc;
-    
-    // Convert file extensions to .webp
-    const webpSrc = originalSrc.replace(/\.(jpg|jpeg|png)$/i, '.webp');
-    return webpSrc;
-  };
-
   const shouldShowImage = priority || isInView;
 
   return (
@@ -113,35 +103,8 @@ const OptimizedImage = ({
         <div className="absolute inset-0 bg-gradient-to-br from-muted to-muted/50 animate-pulse" />
       )}
 
-      {/* Main image with WebP support */}
-      {shouldShowImage && !hasError && enableWebP && (
-        <picture>
-          <source 
-            srcSet={getWebPSrc(src)} 
-            type="image/webp"
-            sizes={sizes}
-          />
-          <img
-            src={src}
-            alt={alt}
-            loading={loading}
-            sizes={sizes}
-            onLoad={handleLoad}
-            onError={handleError}
-            className={cn(
-              'w-full h-full transition-opacity duration-300',
-              getObjectFitClass(),
-              isLoaded ? 'opacity-100' : 'opacity-0'
-            )}
-            style={{
-              imageRendering: 'crisp-edges'
-            }}
-          />
-        </picture>
-      )}
-
-      {/* Fallback for when WebP is disabled */}
-      {shouldShowImage && !hasError && !enableWebP && (
+      {/* Main image */}
+      {shouldShowImage && !hasError && (
         <img
           src={src}
           alt={alt}
