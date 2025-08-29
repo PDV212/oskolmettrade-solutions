@@ -108,8 +108,8 @@ const Header = ({ language = 'ru' }: HeaderProps) => {
               aspectRatio="square"
             />
             <div className="hidden md:block">
-              <h1 className="text-xl font-bold text-foreground">ОСКОЛ-МЕТ-ТРЕЙД</h1>
-              <p className="text-xs text-muted-foreground">Металлообработка • Металлургия • Производство</p>
+              <h1 className="text-lg lg:text-xl xl:text-2xl font-bold text-foreground">ОСКОЛ-МЕТ-ТРЕЙД</h1>
+              <p className="text-xs lg:text-sm text-muted-foreground">Металлообработка • Металлургия • Производство</p>
             </div>
           </div>
 
@@ -119,7 +119,7 @@ const Header = ({ language = 'ru' }: HeaderProps) => {
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                className="text-muted-foreground hover:text-primary transition-colors duration-200 font-medium"
+                className="text-sm lg:text-base text-muted-foreground hover:text-primary transition-colors duration-200 font-medium px-2 py-1 rounded-md hover:bg-muted/50"
               >
                 {item.name}
               </button>
