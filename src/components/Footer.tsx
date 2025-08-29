@@ -1,5 +1,6 @@
 import { Phone, Mail, MapPin, ArrowUp, Factory, Wrench, Flame, Building2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import OptimizedImage from '@/components/ui/optimized-image';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -54,10 +55,13 @@ const Footer = () => {
             {/* Company Info */}
             <div className="lg:col-span-1">
               <div className="flex items-center space-x-2 mb-6">
-                <img 
-                  src="/lovable-uploads/b3c22956-096b-4475-8619-90ea784e020b.png" 
-                  alt="OMT Logo" 
+                <OptimizedImage
+                  src="/lovable-uploads/b3c22956-096b-4475-8619-90ea784e020b.png"
+                  alt="OMT Logo"
                   className="w-12 h-12 rounded-xl"
+                  aspectRatio="square"
+                  loading="lazy"
+                  sizes="48px"
                 />
                 <div>
                   <h3 className="text-xl font-bold">ОСКОЛ-МЕТ-ТРЕЙД</h3>

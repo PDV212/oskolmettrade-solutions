@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { Menu, X, Phone, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import LanguageSelector from './LanguageSelector';
+import OptimizedImage from '@/components/ui/optimized-image';
+import useResponsiveImage from '@/hooks/useResponsiveImage';
 
 interface HeaderProps {
   language?: string;
@@ -10,6 +12,9 @@ interface HeaderProps {
 const Header = ({ language = 'ru' }: HeaderProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  
+  const logoSrc = "/lovable-uploads/b3c22956-096b-4475-8619-90ea784e020b.png";
+  const logoConfig = useResponsiveImage(logoSrc);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -93,10 +98,14 @@ const Header = ({ language = 'ru' }: HeaderProps) => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <img 
-              src="/lovable-uploads/b3c22956-096b-4475-8619-90ea784e020b.png" 
+            <OptimizedImage
+              src={logoSrc}
               alt="OMT Logo" 
-              className="w-10 h-10 rounded-lg"
+              className={logoConfig.className}
+              priority={true}
+              loading="eager"
+              sizes={logoConfig.sizes}
+              aspectRatio="square"
             />
             <div className="hidden md:block">
               <h1 className="text-xl font-bold text-foreground">ОСКОЛ-МЕТ-ТРЕЙД</h1>

@@ -6,6 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import MapComponent from '../MapComponent';
+import OptimizedImage from '@/components/ui/optimized-image';
 
 const ContactSectionZh = () => {
   const [formData, setFormData] = useState({
@@ -208,28 +209,37 @@ const ContactSectionZh = () => {
                 <h4 className="font-bold text-foreground mb-2">通过即时通讯联系我们</h4>
                 <p className="text-sm text-muted-foreground">扫描二维码快速沟通</p>
               </div>
-              <div className="flex justify-center space-x-8">
+              <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 md:space-x-8">
                 <div className="text-center">
-                  <img 
-                    src="/lovable-uploads/783d99ba-632d-47a7-bc9d-d2c6653ee5cc.png" 
-                    alt="Telegram二维码" 
-                    className="w-24 h-24 mx-auto mb-2 rounded-lg"
+                  <OptimizedImage
+                    src="/lovable-uploads/783d99ba-632d-47a7-bc9d-d2c6653ee5cc.png"
+                    alt="Telegram二维码"
+                    className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 mx-auto mb-2 rounded-lg"
+                    aspectRatio="square"
+                    loading="lazy"
+                    sizes="(max-width: 640px) 64px, (max-width: 768px) 80px, 96px"
                   />
                   <p className="text-xs text-muted-foreground">Telegram</p>
                 </div>
                 <div className="text-center">
-                  <img 
-                    src="/lovable-uploads/0172be64-08ae-4d0c-b070-7507bf1ca449.png" 
-                    alt="微信二维码" 
-                    className="w-24 h-24 mx-auto mb-2 rounded-lg"
+                  <OptimizedImage
+                    src="/lovable-uploads/0172be64-08ae-4d0c-b070-7507bf1ca449.png"
+                    alt="微信二维码"
+                    className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 mx-auto mb-2 rounded-lg"
+                    aspectRatio="square"
+                    loading="lazy"
+                    sizes="(max-width: 640px) 64px, (max-width: 768px) 80px, 96px"
                   />
                   <p className="text-xs text-muted-foreground">微信</p>
                 </div>
                 <div className="text-center">
-                  <img 
-                    src="/lovable-uploads/0667cb35-cc3c-4070-b595-c9700d58f2d9.png" 
-                    alt="WhatsApp二维码" 
-                    className="w-24 h-24 mx-auto mb-2 rounded-lg"
+                  <OptimizedImage
+                    src="/lovable-uploads/0667cb35-cc3c-4070-b595-c9700d58f2d9.png"
+                    alt="WhatsApp二维码"
+                    className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 mx-auto mb-2 rounded-lg"
+                    aspectRatio="square"
+                    loading="lazy"
+                    sizes="(max-width: 640px) 64px, (max-width: 768px) 80px, 96px"
                   />
                   <p className="text-xs text-muted-foreground">WhatsApp</p>
                 </div>

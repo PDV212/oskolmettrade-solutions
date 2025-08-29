@@ -1,9 +1,12 @@
 
 import { ArrowRight, Factory, Wrench, Flame, Building2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import OptimizedImage from '@/components/ui/optimized-image';
+import useResponsiveImage from '@/hooks/useResponsiveImage';
 import heroImage from '@/assets/hero-industrial.jpg';
 
 const HeroSection = () => {
+  const heroImageConfig = useResponsiveImage(heroImage);
   const businessDirections = [
     {
       icon: Wrench,
@@ -34,10 +37,16 @@ const HeroSection = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center">
       {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroImage})` }}
-      >
+      <div className="absolute inset-0">
+        <OptimizedImage
+          src={heroImage}
+          alt="Промышленное производство ОСКОЛ-МЕТ-ТРЕЙД"
+          className="w-full h-full"
+          objectFit="cover"
+          priority={true}
+          loading="eager"
+          sizes="100vw"
+        />
         <div className="absolute inset-0 bg-gradient-hero opacity-85"></div>
       </div>
 

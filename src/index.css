@@ -190,4 +190,69 @@
   .bg-gradient-steel {
     background: var(--gradient-steel);
   }
+
+  /* Mobile Optimizations for Images */
+  .mobile-optimized-image {
+    @apply object-cover transition-all duration-300;
+    image-rendering: optimizeQuality;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
+  @media (max-width: 768px) {
+    .mobile-optimized-image {
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: crisp-edges;
+    }
+  }
+
+  /* Responsive QR Codes */
+  .qr-code-responsive {
+    @apply w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24;
+    transition: transform 0.2s ease;
+  }
+
+  .qr-code-responsive:hover {
+    @apply scale-105;
+  }
+
+  /* Responsive Logo */
+  .logo-responsive {
+    @apply w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12;
+  }
+
+  /* Hero Image Optimization */
+  .hero-image-optimized {
+    @apply object-cover object-center;
+    image-rendering: optimizeQuality;
+    image-rendering: crisp-edges;
+  }
+
+  @media (min-width: 1024px) {
+    .hero-image-optimized {
+      image-rendering: -webkit-optimize-contrast;
+    }
+  }
+
+  /* Lazy Loading Placeholder */
+  .lazy-loading-placeholder {
+    @apply bg-gradient-to-br from-muted to-muted/50 animate-pulse;
+    background-image: linear-gradient(
+      45deg,
+      transparent 25%,
+      rgba(255, 255, 255, 0.1) 25%,
+      rgba(255, 255, 255, 0.1) 50%,
+      transparent 50%,
+      transparent 75%,
+      rgba(255, 255, 255, 0.1) 75%
+    );
+    background-size: 20px 20px;
+    animation: slide 1s infinite linear;
+  }
+
+  @keyframes slide {
+    0% { background-position: 0 0; }
+    100% { background-position: 20px 20px; }
+  }
+}
 }
