@@ -244,10 +244,47 @@ Email: ${formData.email}
               </div>
             </Card>
 
-            {/* Interactive Map */}
-            <Card className="card-industrial">
-              <MapComponent />
-            </Card>
+            {/* QR Codes and Map */}
+            <div className="space-y-6">
+              {/* QR Codes Block */}
+              <Card className="card-industrial">
+                <div className="mb-4">
+                  <h4 className="font-bold text-foreground mb-2">Свяжитесь с нами через мессенджеры</h4>
+                  <p className="text-sm text-muted-foreground">Сканируйте QR-код для быстрой связи</p>
+                </div>
+                <div className="flex justify-center space-x-8">
+                  <div className="text-center">
+                    <img 
+                      src="/lovable-uploads/783d99ba-632d-47a7-bc9d-d2c6653ee5cc.png" 
+                      alt="Telegram QR код" 
+                      className="w-24 h-24 mx-auto mb-2 rounded-lg"
+                    />
+                    <p className="text-xs text-muted-foreground">Telegram</p>
+                  </div>
+                  <div className="text-center">
+                    <img 
+                      src="/lovable-uploads/0172be64-08ae-4d0c-b070-7507bf1ca449.png" 
+                      alt="WeChat QR код" 
+                      className="w-24 h-24 mx-auto mb-2 rounded-lg"
+                    />
+                    <p className="text-xs text-muted-foreground">WeChat</p>
+                  </div>
+                  <div className="text-center">
+                    <img 
+                      src="/lovable-uploads/0667cb35-cc3c-4070-b595-c9700d58f2d9.png" 
+                      alt="WhatsApp QR код" 
+                      className="w-24 h-24 mx-auto mb-2 rounded-lg"
+                    />
+                    <p className="text-xs text-muted-foreground">WhatsApp</p>
+                  </div>
+                </div>
+              </Card>
+
+              {/* Interactive Map */}
+              <Card className="card-industrial">
+                <MapComponent />
+              </Card>
+            </div>
           </div>
         </div>
       </div>
