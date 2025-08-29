@@ -118,6 +118,7 @@ const HeroSection = () => {
                   key={index}
                   className="flex items-start space-x-3 p-3 rounded-xl bg-white/10 hover:bg-white/20 transition-all duration-300 cursor-pointer"
                   onClick={() => {
+                    console.log('Button clicked!', direction.title);
                     let targetId = '';
                     switch (direction.title) {
                       case 'Металлообрабатывающее оборудование':
@@ -135,10 +136,31 @@ const HeroSection = () => {
                       default:
                         targetId = '#directions';
                     }
-                    const element = document.querySelector(targetId);
-                    if (element) {
-                      element.scrollIntoView({ behavior: 'smooth' });
-                    }
+                    console.log('Looking for element:', targetId);
+                    
+                    // Попробуем несколько раз найти элемент, если он еще не готов из-за анимации
+                    const scrollToElement = (attempt = 0) => {
+                      const element = document.querySelector(targetId);
+                      console.log('Found element:', element, 'Attempt:', attempt);
+                      
+                      if (element) {
+                        element.scrollIntoView({ behavior: 'smooth' });
+                        return;
+                      }
+                      
+                      // Если элемент не найден, попробуем еще раз через 100мс (максимум 5 попыток)
+                      if (attempt < 5) {
+                        setTimeout(() => scrollToElement(attempt + 1), 100);
+                      } else {
+                        // Если не найден, прокрутим к секции направлений
+                        const fallbackElement = document.querySelector('#directions');
+                        if (fallbackElement) {
+                          fallbackElement.scrollIntoView({ behavior: 'smooth' });
+                        }
+                      }
+                    };
+                    
+                    scrollToElement();
                   }}
                 >
                   <div className="flex-shrink-0">
