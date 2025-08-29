@@ -1,6 +1,5 @@
 import { Phone, Mail, MapPin, ArrowUp, Factory, Wrench, Flame, Building2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import TechnicalTooltip from './TechnicalTooltip';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -29,7 +28,7 @@ const Footer = () => {
       icon: Flame
     },
     { 
-      name: <>Производство <TechnicalTooltip tooltip="Вакуумно-струйная закалка - технология термической обработки металлов в вакууме">ВСЗ</TechnicalTooltip></>, 
+      name: 'Производство ВСЗ', 
       href: '#manufacturing',
       icon: Building2
     }
@@ -67,8 +66,8 @@ const Footer = () => {
               </div>
               
               <p className="text-white/80 mb-6 leading-relaxed">
-                Надежный партнер в области поставки <TechnicalTooltip tooltip="Станки, обрабатывающие центры с ЧПУ, роботизированные комплексы">металлообрабатывающего оборудования</TechnicalTooltip>, 
-                <TechnicalTooltip tooltip="Качественные материалы и легирующие элементы для металлургической промышленности">металлургического сырья</TechnicalTooltip> и собственного производства.
+                Надежный партнер в области поставки металлообрабатывающего оборудования, 
+                металлургического сырья и собственного производства.
               </p>
 
               <div className="space-y-4">

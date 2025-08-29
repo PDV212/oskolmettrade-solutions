@@ -6,7 +6,6 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import MapComponent from './MapComponent';
-import TechnicalTooltip from './TechnicalTooltip';
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -172,11 +171,7 @@ Email: ${formData.email}
                     <SelectContent>
                       {businessDirections.map((direction, index) => (
                         <SelectItem key={index} value={direction}>
-                          {direction === 'Производство ВСЗ' ? (
-                            <>Производство <TechnicalTooltip tooltip="Вакуумно-струйная закалка - технология термической обработки металлов в вакууме">ВСЗ</TechnicalTooltip></>
-                          ) : (
-                            direction
-                          )}
+                          {direction}
                         </SelectItem>
                       ))}
                     </SelectContent>

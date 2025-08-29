@@ -1,7 +1,6 @@
 
 import { ArrowRight, Factory, Wrench, Flame, Building2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import TechnicalTooltip from './TechnicalTooltip';
 import heroImage from '@/assets/hero-industrial.jpg';
 
 const HeroSection = () => {
@@ -9,7 +8,7 @@ const HeroSection = () => {
     {
       icon: Wrench,
       title: 'Металлообрабатывающее оборудование',
-      description: <>Станки с <TechnicalTooltip tooltip="Числовое программное управление - система автоматического управления станком по заданной программе">ЧПУ</TechnicalTooltip>, роботизированные комплексы</>,
+      description: 'Станки с ЧПУ, роботизированные комплексы',
       color: 'text-primary'
     },
     {
@@ -21,12 +20,12 @@ const HeroSection = () => {
     {
       icon: Flame,
       title: 'Металлургические печи',
-      description: <><TechnicalTooltip tooltip="Печи для плавки металлов в вакууме">Вакуумные</TechnicalTooltip>, <TechnicalTooltip tooltip="Печи для нагрева металлов с помощью электромагнитной индукции">индукционные</TechnicalTooltip>, газовые печи</>,
+      description: 'Вакуумные, индукционные, газовые печи',
       color: 'text-secondary'
     },
     {
       icon: Building2,
-      title: <>Производство <TechnicalTooltip tooltip="Вакуумно-струйная закалка - технология термической обработки металлов в вакууме">ВСЗ</TechnicalTooltip></>,
+      title: 'Производство ВСЗ',
       description: 'Металлообработка, изготовление деталей',
       color: 'text-primary'
     }
