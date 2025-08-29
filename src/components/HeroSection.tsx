@@ -117,6 +117,29 @@ const HeroSection = () => {
                 <div 
                   key={index}
                   className="flex items-start space-x-3 p-3 rounded-xl bg-white/10 hover:bg-white/20 transition-all duration-300 cursor-pointer"
+                  onClick={() => {
+                    let targetId = '';
+                    switch (direction.title) {
+                      case 'Металлообрабатывающее оборудование':
+                        targetId = '#equipment';
+                        break;
+                      case 'Металлургическое сырье':
+                        targetId = '#materials';
+                        break;
+                      case 'Металлургические печи':
+                        targetId = '#furnaces';
+                        break;
+                      case 'Производство ВСЗ':
+                        targetId = '#manufacturing';
+                        break;
+                      default:
+                        targetId = '#directions';
+                    }
+                    const element = document.querySelector(targetId);
+                    if (element) {
+                      element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
                 >
                   <div className="flex-shrink-0">
                     <direction.icon className={`w-6 h-6 ${direction.color}`} />
