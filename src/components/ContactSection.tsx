@@ -217,7 +217,7 @@ Email: ${formData.email}
               <div className="flex flex-col sm:flex-row justify-center items-center space-y-6 sm:space-y-0 sm:space-x-6 md:space-x-8">
                 <div className="text-center touch-target">
                   <OptimizedImage
-                    src="/lovable-uploads/783d99ba-632d-47a7-bc9d-d2c6653ee5cc.png"
+                    src="/lovable-uploads/783d99ba-632d-47a7-bc9d-d2c6653ee5cc.webp"
                     alt="Telegram QR код"
                     className="qr-code-responsive mx-auto mb-3 rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer"
                     aspectRatio="square"
@@ -228,7 +228,7 @@ Email: ${formData.email}
                 </div>
                 <div className="text-center touch-target">
                   <OptimizedImage
-                    src="/lovable-uploads/0172be64-08ae-4d0c-b070-7507bf1ca449.png"
+                    src="/lovable-uploads/0172be64-08ae-4d0c-b070-7507bf1ca449.webp"
                     alt="WeChat QR код"
                     className="qr-code-responsive mx-auto mb-3 rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer"
                     aspectRatio="square"
@@ -239,7 +239,7 @@ Email: ${formData.email}
                 </div>
                 <div className="text-center touch-target">
                   <OptimizedImage
-                    src="/lovable-uploads/0667cb35-cc3c-4070-b595-c9700d58f2d9.png"
+                    src="/lovable-uploads/0667cb35-cc3c-4070-b595-c9700d58f2d9.webp"
                     alt="WhatsApp QR код"
                     className="qr-code-responsive mx-auto mb-3 rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer"
                     aspectRatio="square"

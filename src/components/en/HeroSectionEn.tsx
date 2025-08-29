@@ -1,7 +1,7 @@
 import { ArrowRight, Factory, Wrench, Flame, Building2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import OptimizedImage from '@/components/ui/optimized-image';
-import heroImage from '@/assets/hero-industrial.jpg';
+import heroImage from '@/assets/hero-industrial.webp';
 
 const HeroSectionEn = () => {
   const businessDirections = [

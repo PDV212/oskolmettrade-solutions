@@ -13,7 +13,7 @@ const Header = ({ language = 'ru' }: HeaderProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   
-  const logoSrc = "/lovable-uploads/b3c22956-096b-4475-8619-90ea784e020b.png";
+  const logoSrc = "/lovable-uploads/b3c22956-096b-4475-8619-90ea784e020b.webp";
   const logoConfig = useResponsiveImage(logoSrc);
 
   useEffect(() => {

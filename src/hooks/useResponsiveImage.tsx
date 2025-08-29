@@ -70,7 +70,7 @@ const useResponsiveImage = (
     };
 
     const getLoading = (src: string): 'lazy' | 'eager' => {
-      // Hero images and logos should load eagerly
+      // Hero images and logos should load eagerly - check for webp versions too
       if (src.includes('hero') || src.includes('b3c22956-096b-4475-8619-90ea784e020b')) {
         return 'eager';
       }
