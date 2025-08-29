@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Phone, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar';
+import { SidebarTrigger } from '@/components/ui/sidebar';
 import LanguageSelector from './LanguageSelector';
 import OptimizedImage from '@/components/ui/optimized-image';
 import useResponsiveImage from '@/hooks/useResponsiveImage';
@@ -90,7 +90,7 @@ const Header = ({ language = 'ru' }: HeaderProps) => {
   };
 
   return (
-    <SidebarProvider>
+    <>
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
           ? 'bg-background/98 backdrop-blur-md border-b border-border shadow-lg' 
@@ -150,7 +150,7 @@ const Header = ({ language = 'ru' }: HeaderProps) => {
 
       {/* Mobile Sidebar */}
       <MobileSidebar language={language} />
-    </SidebarProvider>
+    </>
   );
 };
 

@@ -8,7 +8,7 @@ import Footer from '@/components/Footer';
 
 const English = () => {
   return (
-    <div className="min-h-screen bg-background w-full">
+    <div className="min-h-screen bg-background">
       <Header language="en" />
       <Breadcrumbs language="en" />
       <main>
