@@ -1,16 +1,17 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Phone, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar';
 import LanguageSelector from './LanguageSelector';
 import OptimizedImage from '@/components/ui/optimized-image';
 import useResponsiveImage from '@/hooks/useResponsiveImage';
+import MobileSidebar from './MobileSidebar';
 
 interface HeaderProps {
   language?: string;
 }
 
 const Header = ({ language = 'ru' }: HeaderProps) => {
-  const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   
   const logoSrc = "/lovable-uploads/b3c22956-096b-4475-8619-90ea784e020b.png";
@@ -89,87 +90,67 @@ const Header = ({ language = 'ru' }: HeaderProps) => {
   };
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled 
-        ? 'bg-background/98 backdrop-blur-md border-b border-border shadow-lg' 
-        : 'bg-background/95 backdrop-blur-sm border-b border-border'
-    }`}>
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <OptimizedImage
-              src={logoSrc}
-              alt="OMT Logo" 
-              className={logoConfig.className}
-              priority={true}
-              loading="eager"
-              sizes={logoConfig.sizes}
-              aspectRatio="square"
-            />
-            <div className="hidden md:block">
-              <h1 className="text-xl font-bold text-foreground">ОСКОЛ-МЕТ-ТРЕЙД</h1>
-              <p className="text-xs text-muted-foreground">Металлообработка • Металлургия • Производство</p>
+    <SidebarProvider>
+      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled 
+          ? 'bg-background/98 backdrop-blur-md border-b border-border shadow-lg' 
+          : 'bg-background/95 backdrop-blur-sm border-b border-border'
+      }`}>
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-between h-16">
+            {/* Mobile Sidebar Trigger */}
+            <div className="lg:hidden">
+              <SidebarTrigger className="touch-target p-2 rounded-md hover:bg-muted transition-colors">
+                <Menu className="w-6 h-6" />
+              </SidebarTrigger>
             </div>
-          </div>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex space-x-4 xl:space-x-6 2xl:space-x-8">
-            {navItems.map((item) => (
-              <button
-                key={item.name}
-                onClick={() => scrollToSection(item.href)}
-                className="text-muted-foreground hover:text-primary transition-colors duration-200 font-medium"
-              >
-                {item.name}
-              </button>
-            ))}
-          </nav>
+            {/* Logo */}
+            <div className="flex items-center space-x-2">
+              <OptimizedImage
+                src={logoSrc}
+                alt="OMT Logo" 
+                className={logoConfig.className}
+                priority={true}
+                loading="eager"
+                sizes={logoConfig.sizes}
+                aspectRatio="square"
+              />
+              <div className="hidden md:block">
+                <h1 className="text-xl font-bold text-foreground">ОСКОЛ-МЕТ-ТРЕЙД</h1>
+                <p className="text-xs text-muted-foreground">Металлообработка • Металлургия • Производство</p>
+              </div>
+            </div>
 
-          {/* Language Selector */}
-          <div className="hidden md:flex items-center space-x-4">
-            <LanguageSelector />
-          </div>
-
-          {/* Mobile menu button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 rounded-md hover:bg-muted transition-colors"
-          >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
-        </div>
-
-        {/* Mobile Navigation */}
-        {isOpen && (
-          <div className="lg:hidden py-4 border-t border-border">
-            <nav className="flex flex-col space-y-3">
+            {/* Desktop Navigation */}
+            <nav className="hidden lg:flex space-x-4 xl:space-x-6 2xl:space-x-8">
               {navItems.map((item) => (
                 <button
                   key={item.name}
-                  onClick={() => {
-                    scrollToSection(item.href);
-                    setIsOpen(false);
-                  }}
-                  className="text-muted-foreground hover:text-primary transition-colors duration-200 py-2 px-2 text-left"
+                  onClick={() => scrollToSection(item.href)}
+                  className="text-muted-foreground hover:text-primary transition-colors duration-200 font-medium touch-target"
                 >
                   {item.name}
                 </button>
               ))}
             </nav>
-            <div className="mt-4 pt-4 border-t border-border">
-              <div className="flex items-center justify-between">
-                <LanguageSelector />
-                <div className="flex items-center space-x-2 text-sm">
-                  <Phone className="w-4 h-4 text-primary" />
-                  <span className="text-muted-foreground">+7 495 240 91 99</span>
-                </div>
-              </div>
+
+            {/* Language Selector */}
+            <div className="hidden md:flex items-center space-x-4">
+              <LanguageSelector />
+            </div>
+
+            {/* Mobile Language Selector */}
+            <div className="lg:hidden">
+              <LanguageSelector />
             </div>
           </div>
-        )}
-      </div>
-    </header>
+        </div>
+      </header>
+
+      {/* Mobile Sidebar */}
+      <MobileSidebar language={language} />
+    </SidebarProvider>
   );
 };
 

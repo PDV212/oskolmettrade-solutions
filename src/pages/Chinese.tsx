@@ -8,7 +8,7 @@ import Footer from '@/components/Footer';
 
 const Chinese = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background w-full">
       <Header language="zh" />
       <Breadcrumbs language="zh" />
       <main>
