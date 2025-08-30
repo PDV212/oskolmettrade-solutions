@@ -9,14 +9,14 @@
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "/lovable-uploads/b7075864-6ff9-4927-a0b0-7623f9610d6a.png",
+      "src": "/lovable-uploads/adb38e62-ebf5-4d0f-92a9-272c1f38c8f4.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/lovable-uploads/b7075864-6ff9-4927-a0b0-7623f9610d6a.png",
-      "sizes": "512x512", 
+      "src": "/lovable-uploads/adb38e62-ebf5-4d0f-92a9-272c1f38c8f4.png",
+      "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
     }

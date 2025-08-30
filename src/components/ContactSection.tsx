@@ -248,6 +248,19 @@ Email: ${formData.email}
                   />
                   <p className="text-sm font-medium text-muted-foreground">WhatsApp</p>
                 </div>
+                <div className="text-center touch-target">
+                  <a href="https://meet.google.com/xse-yutb-bzz" target="_blank" rel="noopener noreferrer">
+                    <OptimizedImage
+                      src="/lovable-uploads/google-meet-icon.png"
+                      alt="Google Meet видеоконференция"
+                      className="qr-code-responsive mx-auto mb-3 rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer"
+                      aspectRatio="square"
+                      loading="lazy"
+                      sizes="(max-width: 640px) 64px, (max-width: 768px) 80px, 96px"
+                    />
+                  </a>
+                  <p className="text-sm font-medium text-muted-foreground">Google Meet</p>
+                </div>
               </div>
             </Card>
           </div>
