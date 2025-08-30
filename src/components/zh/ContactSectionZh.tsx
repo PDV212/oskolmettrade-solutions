@@ -232,17 +232,30 @@ const ContactSectionZh = () => {
                   />
                   <p className="text-xs text-muted-foreground">微信</p>
                 </div>
-                <div className="text-center">
-                  <OptimizedImage
-                    src="/lovable-uploads/0667cb35-cc3c-4070-b595-c9700d58f2d9.png"
-                    alt="WhatsApp二维码"
-                    className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 mx-auto mb-2 rounded-lg"
-                    aspectRatio="square"
-                    loading="lazy"
-                    sizes="(max-width: 640px) 64px, (max-width: 768px) 80px, 96px"
-                  />
-                  <p className="text-xs text-muted-foreground">WhatsApp</p>
-                </div>
+                 <div className="text-center">
+                   <OptimizedImage
+                     src="/lovable-uploads/0667cb35-cc3c-4070-b595-c9700d58f2d9.png"
+                     alt="WhatsApp二维码"
+                     className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 mx-auto mb-2 rounded-lg"
+                     aspectRatio="square"
+                     loading="lazy"
+                     sizes="(max-width: 640px) 64px, (max-width: 768px) 80px, 96px"
+                   />
+                   <p className="text-xs text-muted-foreground">WhatsApp</p>
+                 </div>
+                 <div className="text-center">
+                   <a href="https://meet.google.com/xse-yutb-bzz" target="_blank" rel="noopener noreferrer">
+                     <OptimizedImage
+                       src="/lovable-uploads/d5a7f053-6e22-45fa-af96-22e1fe75e95e.png"
+                       alt="Google Meet视频会议"
+                       className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 mx-auto mb-2 rounded-lg cursor-pointer hover:shadow-md transition-shadow"
+                       aspectRatio="square"
+                       loading="lazy"
+                       sizes="(max-width: 640px) 64px, (max-width: 768px) 80px, 96px"
+                     />
+                   </a>
+                   <p className="text-xs text-muted-foreground">Google Meet</p>
+                 </div>
               </div>
             </Card>
           </div>

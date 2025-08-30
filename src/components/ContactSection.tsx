@@ -250,9 +250,9 @@ Email: ${formData.email}
                 </div>
                 <div className="text-center touch-target">
                   <a href="https://meet.google.com/xse-yutb-bzz" target="_blank" rel="noopener noreferrer">
-                    <OptimizedImage
-                      src="/lovable-uploads/google-meet-icon.png"
-                      alt="Google Meet видеоконференция"
+                     <OptimizedImage
+                       src="/lovable-uploads/d5a7f053-6e22-45fa-af96-22e1fe75e95e.png"
+                       alt="Google Meet видеоконференция"
                       className="qr-code-responsive mx-auto mb-3 rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer"
                       aspectRatio="square"
                       loading="lazy"
