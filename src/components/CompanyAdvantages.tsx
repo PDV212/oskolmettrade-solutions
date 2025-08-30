@@ -69,10 +69,28 @@ const CompanyAdvantages = () => {
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="flex flex-wrap justify-center gap-3 mb-6">
-            <ExperienceBadge size="default" />
-            <IndustryLeaderBadge size="default" />
-            <TrustedBadge size="default" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 max-w-6xl mx-auto">
+            <div className="flex justify-center">
+              <img 
+                src="/lovable-uploads/60e96441-47a3-42d5-9d37-25a8643700ee.png" 
+                alt="30 лет опыта" 
+                className="w-full max-w-[300px] h-auto object-contain"
+              />
+            </div>
+            <div className="flex justify-center">
+              <img 
+                src="/lovable-uploads/9fca8bba-f5fc-48ef-afd1-def786998cd2.png" 
+                alt="Лидер отрасли" 
+                className="w-full max-w-[300px] h-auto object-contain"
+              />
+            </div>
+            <div className="flex justify-center">
+              <img 
+                src="/lovable-uploads/1a97cade-fd54-4fd9-a421-51a17f806ae7.png" 
+                alt="Надежный партнер" 
+                className="w-full max-w-[300px] h-auto object-contain"
+              />
+            </div>
           </div>
           <h2 className="heading-section mb-4">Почему выбирают нас</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
