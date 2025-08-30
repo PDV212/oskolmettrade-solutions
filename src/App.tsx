@@ -25,24 +25,30 @@ const queryClient = new QueryClient({
 });
 
 const App = () => {
-  // Инициализируем мониторинг производительности
-  usePerformanceMonitor();
-
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
+        <AppContent />
         <Toaster />
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/en" element={<English />} />
-            <Route path="/zh" element={<Chinese />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>
+  );
+};
+
+const AppContent = () => {
+  // Инициализируем мониторинг производительности внутри провайдеров
+  usePerformanceMonitor();
+
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Index />} />
+        <Route path="/en" element={<English />} />
+        <Route path="/zh" element={<Chinese />} />
+        {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 
