@@ -193,19 +193,6 @@ const CatalogNavigation = () => {
         'Специальные изделия'
       ],
       products: [
-        {
-          id: 'valve-body',
-          name: 'Корпус арматуры',
-          category: 'manufacturing',
-          subcategory: 'Детали для нефтегаза',
-          tags: ['арматура', 'нефтегаз', 'точная обработка'],
-          description: 'Прецизионная обработка корпусов арматуры для нефтегазовой отрасли',
-          specifications: {
-            'Материал': 'Сталь 20Х13',
-            'Точность': '6-7 квалитет',
-            'Шероховатость': 'Ra 1.6'
-          }
-        }
       ]
     }
   ];
@@ -475,14 +462,14 @@ const CatalogNavigation = () => {
                     {viewMode === 'grid' ? (
                       <>
                         {product.image && (
-                          <div className="aspect-video relative">
-                            <OptimizedImage
-                              src={product.image}
-                              alt={product.name}
-                              className="w-full h-full object-cover"
-                              loading="lazy"
-                            />
-                          </div>
+                           <div className="w-full h-48 relative">
+                             <OptimizedImage
+                               src={product.image}
+                               alt={product.name}
+                               className="w-full h-full object-cover"
+                               loading="lazy"
+                             />
+                           </div>
                         )}
                         <div className="p-4">
                           <h4 className="font-semibold mb-2">{product.name}</h4>
