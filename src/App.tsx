@@ -1,6 +1,6 @@
 import React from "react";
 import { Toaster } from "@/components/ui/toaster";
-import { TooltipProvider } from "@/components/ui/tooltip";
+// import { TooltipProvider } from "@/components/ui/tooltip"; // Временно отключено
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { usePerformanceMonitor } from "@/hooks/usePerformanceMonitor";
@@ -28,10 +28,10 @@ const queryClient = new QueryClient({
 const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
+      {/* <TooltipProvider> */}
         <AppContent />
         <Toaster />
-      </TooltipProvider>
+      {/* </TooltipProvider> */}
     </QueryClientProvider>
   );
 };
