@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import CacheManager from '@/utils/cacheManager';
 
 interface PerformanceMetrics {
@@ -12,11 +12,6 @@ interface PerformanceMetrics {
 
 export const usePerformanceMonitor = () => {
   useEffect(() => {
-    // Проверяем что React правильно инициализирован
-    if (typeof React === 'undefined' || !React.useEffect) {
-      console.warn('React not properly initialized, skipping performance monitoring');
-      return;
-    }
     const cacheManager = CacheManager.getInstance();
     
     // Мониторинг загрузки страницы
