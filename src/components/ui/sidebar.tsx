@@ -10,12 +10,12 @@ import { Input } from "@/components/ui/input"
 import { Separator } from "@/components/ui/separator"
 import { Sheet, SheetContent } from "@/components/ui/sheet"
 import { Skeleton } from "@/components/ui/skeleton"
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip"
+// import {
+//   Tooltip,
+//   TooltipContent,
+//   TooltipProvider,
+//   TooltipTrigger,
+// } from "@/components/ui/tooltip" // Временно отключено
 
 const SIDEBAR_COOKIE_NAME = "sidebar:state"
 const SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7
@@ -129,7 +129,7 @@ const SidebarProvider = React.forwardRef<
 
     return (
       <SidebarContext.Provider value={contextValue}>
-        <TooltipProvider delayDuration={0}>
+        {/* <TooltipProvider delayDuration={0}> */}
           <div
             style={
               {
@@ -147,7 +147,7 @@ const SidebarProvider = React.forwardRef<
           >
             {children}
           </div>
-        </TooltipProvider>
+        {/* </TooltipProvider> */}
       </SidebarContext.Provider>
     )
   }
@@ -536,7 +536,7 @@ const SidebarMenuButton = React.forwardRef<
   React.ComponentProps<"button"> & {
     asChild?: boolean
     isActive?: boolean
-    tooltip?: string | React.ComponentProps<typeof TooltipContent>
+    // tooltip?: string | React.ComponentProps<typeof TooltipContent> // Временно отключено
   } & VariantProps<typeof sidebarMenuButtonVariants>
 >(
   (
@@ -545,14 +545,14 @@ const SidebarMenuButton = React.forwardRef<
       isActive = false,
       variant = "default",
       size = "default",
-      tooltip,
+      // tooltip, // Временно отключено
       className,
       ...props
     },
     ref
   ) => {
     const Comp = asChild ? Slot : "button"
-    const { isMobile, state } = useSidebar()
+    // const { isMobile, state } = useSidebar() // Временно отключено
 
     const button = (
       <Comp
@@ -565,27 +565,30 @@ const SidebarMenuButton = React.forwardRef<
       />
     )
 
-    if (!tooltip) {
-      return button
-    }
+    // Временно отключили tooltip функциональность
+    return button
 
-    if (typeof tooltip === "string") {
-      tooltip = {
-        children: tooltip,
-      }
-    }
+    // if (!tooltip) {
+    //   return button
+    // }
 
-    return (
-      <Tooltip>
-        <TooltipTrigger asChild>{button}</TooltipTrigger>
-        <TooltipContent
-          side="right"
-          align="center"
-          hidden={state !== "collapsed" || isMobile}
-          {...tooltip}
-        />
-      </Tooltip>
-    )
+    // if (typeof tooltip === "string") {
+    //   tooltip = {
+    //     children: tooltip,
+    //   }
+    // }
+
+    // return (
+    //   <Tooltip>
+    //     <TooltipTrigger asChild>{button}</TooltipTrigger>
+    //     <TooltipContent
+    //       side="right"
+    //       align="center"
+    //       hidden={state !== "collapsed" || isMobile}
+    //       {...tooltip}
+    //     />
+    //   </Tooltip>
+    // )
   }
 )
 SidebarMenuButton.displayName = "SidebarMenuButton"
