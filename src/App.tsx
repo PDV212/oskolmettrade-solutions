@@ -1,9 +1,9 @@
 import React from "react";
-import { Toaster } from "@/components/ui/toaster";
+// import { Toaster } from "@/components/ui/toaster"; // Временно отключено
 // import { TooltipProvider } from "@/components/ui/tooltip"; // Временно отключено
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { usePerformanceMonitor } from "@/hooks/usePerformanceMonitor";
+// import { usePerformanceMonitor } from "@/hooks/usePerformanceMonitor"; // Временно отключено
 import Index from "./pages/Index";
 import English from "./pages/English";
 import Chinese from "./pages/Chinese";
@@ -28,17 +28,15 @@ const queryClient = new QueryClient({
 const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
-      {/* <TooltipProvider> */}
-        <AppContent />
-        <Toaster />
-      {/* </TooltipProvider> */}
+      <AppContent />
+      {/* <Toaster /> */}
     </QueryClientProvider>
   );
 };
 
 const AppContent = () => {
-  // Инициализируем мониторинг производительности внутри провайдеров
-  usePerformanceMonitor();
+  // Временно отключили мониторинг производительности
+  // usePerformanceMonitor();
 
   return (
     <BrowserRouter>
