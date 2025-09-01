@@ -4,6 +4,7 @@ import BusinessDirections from '@/components/BusinessDirections';
 import CompanyAdvantages from '@/components/CompanyAdvantages';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
+import CatalogNavigation from '@/components/CatalogNavigation';
 
 const Index = () => {
   return (
@@ -12,6 +13,7 @@ const Index = () => {
       <main>
         <HeroSection />
         <BusinessDirections />
+        <CatalogNavigation />
         <CompanyAdvantages />
         <ContactSection />
       </main>
