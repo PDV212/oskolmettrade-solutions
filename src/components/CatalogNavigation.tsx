@@ -130,7 +130,7 @@ const CatalogNavigation = () => {
           subcategory: 'Руды и концентраты',
           tags: ['марганец', 'руда', 'высокое качество'],
           description: 'Высококачественная марганцевая руда для металлургического производства',
-          image: '/lovable-uploads/9676f778-2096-4758-bdfe-13e24c70089a.png',
+          image: '/lovable-uploads/a6f5d8cf-10e5-4159-9959-51419a44edc9.png',
           specifications: {
             'Содержание Mn': '25-30%',
             'Влажность': 'не более 8%',
@@ -144,7 +144,7 @@ const CatalogNavigation = () => {
           subcategory: 'Ферросплавы',
           tags: ['феррохром', 'ферросплав', 'высокоуглеродистый'],
           description: 'Высокоуглеродистый феррохром для производства нержавеющей стали',
-          image: '/lovable-uploads/a6f5d8cf-10e5-4159-9959-51419a44edc9.png',
+          image: '/lovable-uploads/9676f778-2096-4758-bdfe-13e24c70089a.png',
           specifications: {
             'Содержание Cr': '60-65%',
             'Содержание C': '6-8%',
