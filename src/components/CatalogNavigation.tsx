@@ -462,11 +462,11 @@ const CatalogNavigation = () => {
                     {viewMode === 'grid' ? (
                       <>
                         {product.image && (
-                           <div className="w-full h-48 relative">
+                           <div className="w-24 h-24 mx-auto mb-4">
                              <OptimizedImage
                                src={product.image}
                                alt={product.name}
-                               className="w-full h-full object-cover"
+                               className="w-full h-full object-cover rounded"
                                loading="lazy"
                              />
                            </div>
