@@ -15,6 +15,8 @@ interface OptimizedImageProps {
   placeholder?: boolean;
   onLoad?: () => void;
   onError?: () => void;
+  width?: number;
+  height?: number;
 }
 
 const OptimizedImage = ({
@@ -22,14 +24,16 @@ const OptimizedImage = ({
   alt,
   className,
   loading = 'lazy',
-  sizes = '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw',
+  sizes = '(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw',
   priority = false,
   aspectRatio = 'auto',
   objectFit = 'cover',
   quality = 85,
   placeholder = true,
   onLoad,
-  onError
+  onError,
+  width,
+  height
 }: OptimizedImageProps) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
@@ -78,6 +82,23 @@ const OptimizedImage = ({
     onError?.();
   };
 
+  // Оптимизированные размеры изображения
+  const getOptimizedSrc = (originalSrc: string) => {
+    // Если это внешний URL или уже оптимизированный, возвращаем как есть
+    if (originalSrc.startsWith('http') || originalSrc.includes('?')) {
+      return originalSrc;
+    }
+    
+    // Для локальных изображений добавляем параметры оптимизации
+    const params = new URLSearchParams();
+    if (width) params.set('w', width.toString());
+    if (height) params.set('h', height.toString());
+    if (quality && quality !== 85) params.set('q', quality.toString());
+    
+    const queryString = params.toString();
+    return queryString ? `${originalSrc}?${queryString}` : originalSrc;
+  };
+
   const getAspectRatioClass = () => {
     switch (aspectRatio) {
       case 'square': return 'aspect-square';
@@ -99,6 +120,7 @@ const OptimizedImage = ({
   };
 
   const shouldShowImage = priority || isInView;
+  const optimizedSrc = getOptimizedSrc(src);
 
   return (
     <div 
@@ -117,10 +139,12 @@ const OptimizedImage = ({
       {/* Main image */}
       {shouldShowImage && !hasError && (
         <img
-          src={src}
+          src={optimizedSrc}
           alt={alt}
           loading={loading}
           sizes={sizes}
+          width={width}
+          height={height}
           onLoad={handleLoad}
           onError={handleError}
           className={cn(
