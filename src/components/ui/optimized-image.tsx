@@ -17,6 +17,7 @@ interface OptimizedImageProps {
   onError?: () => void;
   width?: number;
   height?: number;
+  itemProp?: string;
 }
 
 const OptimizedImage = ({
@@ -33,7 +34,8 @@ const OptimizedImage = ({
   onLoad,
   onError,
   width,
-  height
+  height,
+  itemProp
 }: OptimizedImageProps) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
@@ -147,6 +149,7 @@ const OptimizedImage = ({
           height={height}
           onLoad={handleLoad}
           onError={handleError}
+          itemProp={itemProp}
           className={cn(
             'w-full h-full transition-opacity duration-300 optimized-image',
             getObjectFitClass(),

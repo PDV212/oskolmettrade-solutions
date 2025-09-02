@@ -5,13 +5,15 @@ import BusinessDirectionsEn from '@/components/en/BusinessDirectionsEn';
 import CompanyAdvantagesEn from '@/components/en/CompanyAdvantagesEn';
 import ContactSectionEn from '@/components/en/ContactSectionEn';
 import Footer from '@/components/Footer';
+import SEOHead, { seoConfigs } from '@/components/SEOHead';
 
 const English = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead {...seoConfigs.en.home} />
       <Header language="en" />
       <Breadcrumbs language="en" />
-      <main>
+      <main itemScope itemType="https://schema.org/WebPage">
         <HeroSectionEn />
         <BusinessDirectionsEn />
         <CompanyAdvantagesEn />

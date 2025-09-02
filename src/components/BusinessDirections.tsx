@@ -158,6 +158,8 @@ const BusinessDirections = () => {
               className={`grid lg:grid-cols-2 gap-12 items-center ${
                 index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''
               }`}
+              itemScope 
+              itemType="https://schema.org/Service"
             >
               {/* Content */}
               <div className={`${index % 2 === 1 ? 'lg:col-start-2' : ''} animate-industrial-slide-up`}>
@@ -166,12 +168,12 @@ const BusinessDirections = () => {
                     <direction.icon className={`w-8 h-8 ${direction.iconColor}`} />
                   )}
                   <div>
-                    <h3 className="text-2xl font-bold text-foreground">{direction.title}</h3>
+                    <h3 className="text-2xl font-bold text-foreground" itemProp="name">{direction.title}</h3>
                     <p className="text-sm text-muted-foreground">{direction.subtitle}</p>
                   </div>
                 </div>
 
-                <p className="text-lg text-industrial mb-6">{direction.description}</p>
+                <p className="text-lg text-industrial mb-6" itemProp="description">{direction.description}</p>
 
                 <div className="space-y-3 mb-8">
                   {direction.features.map((feature, featureIndex) => (

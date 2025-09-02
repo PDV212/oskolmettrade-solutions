@@ -114,15 +114,20 @@ const Header = ({ language = 'ru' }: HeaderProps) => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex space-x-4 xl:space-x-6 2xl:space-x-8">
+          <nav className="hidden lg:flex space-x-4 xl:space-x-6 2xl:space-x-8" itemScope itemType="https://schema.org/SiteNavigationElement">
             {navItems.map((item) => (
-              <button
+              <a
                 key={item.name}
-                onClick={() => scrollToSection(item.href)}
+                href={item.href}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection(item.href);
+                }}
                 className="text-muted-foreground hover:text-primary transition-colors duration-200 font-medium"
+                itemProp="url"
               >
-                {item.name}
-              </button>
+                <span itemProp="name">{item.name}</span>
+              </a>
             ))}
           </nav>
 
@@ -143,26 +148,29 @@ const Header = ({ language = 'ru' }: HeaderProps) => {
         {/* Mobile Navigation */}
         {isOpen && (
           <div className="lg:hidden py-4 border-t border-border">
-            <nav className="flex flex-col space-y-3">
+            <nav className="flex flex-col space-y-3" itemScope itemType="https://schema.org/SiteNavigationElement">
               {navItems.map((item) => (
-                <button
+                <a
                   key={item.name}
-                  onClick={() => {
+                  href={item.href}
+                  onClick={(e) => {
+                    e.preventDefault();
                     scrollToSection(item.href);
                     setIsOpen(false);
                   }}
                   className="text-muted-foreground hover:text-primary transition-colors duration-200 py-2 px-2 text-left"
+                  itemProp="url"
                 >
-                  {item.name}
-                </button>
+                  <span itemProp="name">{item.name}</span>
+                </a>
               ))}
             </nav>
             <div className="mt-4 pt-4 border-t border-border">
               <div className="flex items-center justify-between">
                 <LanguageSelector />
-                <div className="flex items-center space-x-2 text-sm">
+                <div className="flex items-center space-x-2 text-sm" itemScope itemType="https://schema.org/ContactPoint">
                   <Phone className="w-4 h-4 text-primary" />
-                  <span className="text-muted-foreground">+7 495 240 91 99</span>
+                  <span className="text-muted-foreground" itemProp="telephone">+7 495 240 91 99</span>
                 </div>
               </div>
             </div>

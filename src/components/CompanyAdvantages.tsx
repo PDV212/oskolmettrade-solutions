@@ -66,7 +66,7 @@ const CompanyAdvantages = () => {
   ];
 
   return (
-    <section id="advantages" className="py-20 bg-background">
+    <section id="advantages" className="py-20 bg-background" itemScope itemType="https://schema.org/Organization">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -74,33 +74,36 @@ const CompanyAdvantages = () => {
             <div className="flex justify-center">
               <OptimizedImage 
                 src="/lovable-uploads/60e96441-47a3-42d5-9d37-25a8643700ee.png" 
-                alt="30 лет опыта" 
+                alt="30 лет опыта ОСКОЛ-МЕТ-ТРЕЙД" 
                 className="w-full max-w-[300px] h-auto"
                 objectFit="contain"
                 loading="lazy"
+                itemProp="image"
               />
             </div>
             <div className="flex justify-center">
               <OptimizedImage 
                 src="/lovable-uploads/9fca8bba-f5fc-48ef-afd1-def786998cd2.png" 
-                alt="Лидер отрасли" 
+                alt="Лидер отрасли металлообработки" 
                 className="w-full max-w-[300px] h-auto"
                 objectFit="contain"
                 loading="lazy"
+                itemProp="image"
               />
             </div>
             <div className="flex justify-center">
               <OptimizedImage 
                 src="/lovable-uploads/1a97cade-fd54-4fd9-a421-51a17f806ae7.png" 
-                alt="Надежный партнер" 
+                alt="Надежный партнер в металлургии" 
                 className="w-full max-w-[300px] h-auto"
                 objectFit="contain"
                 loading="lazy"
+                itemProp="image"
               />
             </div>
           </div>
-          <h2 className="heading-section mb-4">Почему выбирают нас</h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <h2 className="heading-section mb-4" itemProp="name">Почему выбирают нас</h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto" itemProp="description">
             Надежный партнер с многолетним опытом, собственным производством 
             и полным циклом услуг для металлургических предприятий
           </p>
