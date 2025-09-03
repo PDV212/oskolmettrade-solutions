@@ -5,6 +5,7 @@ import BusinessDirectionsEn from '@/components/en/BusinessDirectionsEn';
 import CompanyAdvantagesEn from '@/components/en/CompanyAdvantagesEn';
 import ContactSectionEn from '@/components/en/ContactSectionEn';
 import Footer from '@/components/Footer';
+import CTAButton from '@/components/CTAButton';
 import SEOHead, { seoConfigs } from '@/components/SEOHead';
 
 const English = () => {
@@ -15,8 +16,11 @@ const English = () => {
       <Breadcrumbs language="en" />
       <main itemScope itemType="https://schema.org/WebPage">
         <HeroSectionEn />
+        <CTAButton language="en" variant="compact" className="py-8" />
         <BusinessDirectionsEn />
+        <CTAButton language="en" />
         <CompanyAdvantagesEn />
+        <CTAButton language="en" />
         <ContactSectionEn />
       </main>
       <Footer />

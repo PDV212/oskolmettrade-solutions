@@ -5,6 +5,7 @@ import BusinessDirectionsZh from '@/components/zh/BusinessDirectionsZh';
 import CompanyAdvantagesZh from '@/components/zh/CompanyAdvantagesZh';
 import ContactSectionZh from '@/components/zh/ContactSectionZh';
 import Footer from '@/components/Footer';
+import CTAButton from '@/components/CTAButton';
 import SEOHead, { seoConfigs } from '@/components/SEOHead';
 
 const Chinese = () => {
@@ -15,8 +16,11 @@ const Chinese = () => {
       <Breadcrumbs language="zh" />
       <main itemScope itemType="https://schema.org/WebPage">
         <HeroSectionZh />
+        <CTAButton language="zh" variant="compact" className="py-8" />
         <BusinessDirectionsZh />
+        <CTAButton language="zh" />
         <CompanyAdvantagesZh />
+        <CTAButton language="zh" />
         <ContactSectionZh />
       </main>
       <Footer />
