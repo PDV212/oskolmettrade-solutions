@@ -13,17 +13,17 @@ const CTAButton: React.FC<CTAButtonProps> = ({ language = 'ru', variant = 'defau
     ru: {
       title: 'Получить коммерческое предложение',
       subtitle: 'Бесплатная консультация и расчёт стоимости',
-      phone: '+7 (920) 200-82-82'
+      phone: '+7 909 097 71 74'
     },
     en: {
       title: 'Get Commercial Proposal',
       subtitle: 'Free consultation and cost calculation', 
-      phone: '+7 (920) 200-82-82'
+      phone: '+7 909 097 71 74'
     },
     zh: {
       title: '获取商业报价',
       subtitle: '免费咨询和成本计算',
-      phone: '+7 (920) 200-82-82'
+      phone: '+7 909 097 71 74'
     }
   };
 
