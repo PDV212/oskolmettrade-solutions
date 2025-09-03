@@ -3,6 +3,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import PerformanceOptimizer from "@/components/PerformanceOptimizer";
 import Index from "./pages/Index";
 import English from "./pages/English";
 import Chinese from "./pages/Chinese";
@@ -25,6 +26,7 @@ function App() {
     <React.StrictMode>
       <QueryClientProvider client={queryClient}>
         <TooltipProvider>
+          <PerformanceOptimizer />
           <BrowserRouter>
             <Routes>
               <Route path="/" element={<Index />} />

@@ -137,7 +137,7 @@ export const seoConfigs = {
         ],
         "contactPoint": {
           "@type": "ContactPoint",
-          "telephone": "+7-495-240-91-99",
+          "telephone": "+7-909-097-71-74",
           "contactType": "customer service",
           "areaServed": ["RU", "KZ", "BY", "CN", "IN"],
           "availableLanguage": ["Russian", "English", "Chinese"]
@@ -193,7 +193,7 @@ export const seoConfigs = {
         "logo": "https://oskol-met-trade.ru/lovable-uploads/b3c22956-096b-4475-8619-90ea784e020b.png",
         "contactPoint": {
           "@type": "ContactPoint",
-          "telephone": "+7-495-240-91-99",
+          "telephone": "+7-909-097-71-74",
           "contactType": "customer service",
           "areaServed": ["RU", "KZ", "BY", "CN", "IN"],
           "availableLanguage": ["Russian", "English", "Chinese"]
@@ -225,7 +225,7 @@ export const seoConfigs = {
         "logo": "https://oskol-met-trade.ru/lovable-uploads/b3c22956-096b-4475-8619-90ea784e020b.png",
         "contactPoint": {
           "@type": "ContactPoint",
-          "telephone": "+7-495-240-91-99",
+          "telephone": "+7-909-097-71-74",
           "contactType": "customer service",
           "areaServed": ["RU", "KZ", "BY", "CN", "IN"],
           "availableLanguage": ["Russian", "English", "Chinese"]

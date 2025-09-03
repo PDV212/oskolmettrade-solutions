@@ -38,7 +38,7 @@ export const organizationSchema = {
   ],
   "contactPoint": {
     "@type": "ContactPoint",
-    "telephone": "+7-495-240-91-99",
+    "telephone": "+7-909-097-71-74",
     "contactType": "customer service",
     "areaServed": ["RU", "KZ", "BY", "CN", "IN"],
     "availableLanguage": ["Russian", "English", "Chinese"],

@@ -1,14 +1,18 @@
-const CACHE_NAME = 'oskol-met-trade-v1';
-const STATIC_CACHE = 'static-v1';
-const DYNAMIC_CACHE = 'dynamic-v1';
-const IMAGE_CACHE = 'images-v1';
+const CACHE_NAME = 'oskol-met-trade-v2025-01-03';
+const STATIC_CACHE = 'static-v2025-01-03';
+const DYNAMIC_CACHE = 'dynamic-v2025-01-03';
+const IMAGE_CACHE = 'images-v2025-01-03';
 
 // Статические ресурсы для кеширования
 const STATIC_ASSETS = [
   '/',
+  '/en',
+  '/zh',
   '/index.html',
-  '/assets/',
-  '/lovable-uploads/',
+  '/manifest.json',
+  '/assets/hero-industrial.jpg',
+  '/lovable-uploads/b3c22956-096b-4475-8619-90ea784e020b.png',
+  '/lovable-uploads/adb38e62-ebf5-4d0f-92a9-272c1f38c8f4.png'
 ];
 
 // Изображения и медиа файлы
