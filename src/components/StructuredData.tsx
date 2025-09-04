@@ -204,4 +204,82 @@ export const faqSchema = {
   ]
 };
 
+export const faqSchemaEn = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What equipment does OSKOL-MET-TRADE supply?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We supply metalworking equipment: CNC machines, machining centers, lathes and grinding machines, hydraulic presses, robotic welding and painting sections."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the company's experience?",
+      "acceptedAnswer": {
+        "@type": "Answer", 
+        "text": "OSKOL-MET-TRADE has been operating since 1994 in metallurgy, engaged in equipment supply since 2015. More than 2500 machines have been delivered during this time."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you provide warranty service?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we provide warranty and post-warranty service through an accredited enterprise in the Urals, ensuring 24/7 support."
+      }
+    },
+    {
+      "@type": "Question", 
+      "name": "Which countries do you deliver to?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our delivery geography covers CIS countries and far abroad, including Russia, Kazakhstan, Belarus, China, India."
+      }
+    }
+  ]
+};
+
+export const faqSchemaZh = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "奥斯科尔-金属-贸易供应什么设备？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "我们供应金属加工设备：数控机床、加工中心、车床和磨床、液压机、机器人焊接和喷漆部分。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "公司有什么经验？",
+      "acceptedAnswer": {
+        "@type": "Answer", 
+        "text": "奥斯科尔-金属-贸易自1994年从事冶金业务，自2015年从事设备供应。期间已交付超过2500台机器。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "你们提供保修服务吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "是的，我们通过乌拉尔地区的认证企业提供保修和售后服务，确保24/7支持。"
+      }
+    },
+    {
+      "@type": "Question", 
+      "name": "你们向哪些国家交付？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "我们的交付地理覆盖独联体国家和远邦，包括俄罗斯、哈萨克斯坦、白俄罗斯、中国、印度。"
+      }
+    }
+  ]
+};
+
 export default StructuredData;
