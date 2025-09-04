@@ -8,11 +8,13 @@ import CatalogNavigation from '@/components/CatalogNavigation';
 import CTAButton from '@/components/CTAButton';
 import SEOHead, { seoConfigs } from '@/components/SEOHead';
 import StructuredData, { organizationSchema, breadcrumbSchema, faqSchema } from '@/components/StructuredData';
+import Analytics from '@/components/Analytics';
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead {...seoConfigs.ru.home} />
+      <Analytics language="ru" />
       <StructuredData type="Organization" data={organizationSchema} />
       <StructuredData type="BreadcrumbList" data={breadcrumbSchema('ru')} />
       <StructuredData type="FAQPage" data={faqSchema} />

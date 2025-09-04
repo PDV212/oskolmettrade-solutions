@@ -9,11 +9,13 @@ import CTAButton from '@/components/CTAButton';
 import CatalogNavigation from '@/components/CatalogNavigation';
 import SEOHead, { seoConfigs } from '@/components/SEOHead';
 import StructuredData, { organizationSchema, breadcrumbSchema, faqSchemaZh } from '@/components/StructuredData';
+import Analytics from '@/components/Analytics';
 
 const Chinese = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead {...seoConfigs.zh.home} />
+      <Analytics language="zh" />
       <StructuredData type="Organization" data={organizationSchema} />
       <StructuredData type="BreadcrumbList" data={breadcrumbSchema('zh')} />
       <StructuredData type="FAQPage" data={faqSchemaZh} />
