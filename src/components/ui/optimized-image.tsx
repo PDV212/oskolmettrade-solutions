@@ -84,21 +84,35 @@ const OptimizedImage = ({
     onError?.();
   };
 
-  // Оптимизированные размеры изображения
+  // Оптимизированные размеры изображения с WebP поддержкой
   const getOptimizedSrc = (originalSrc: string) => {
-    // Если это внешний URL или уже оптимизированный, возвращаем как есть
-    if (originalSrc.startsWith('http') || originalSrc.includes('?')) {
+    // Если это внешний URL, возвращаем как есть
+    if (originalSrc.startsWith('http') && !originalSrc.includes(window.location.host)) {
       return originalSrc;
     }
     
-    // Для локальных изображений добавляем параметры оптимизации
+    // Генерируем WebP версию для поддерживающих браузеров
+    const supportsWebP = (() => {
+      const elem = document.createElement('canvas');
+      return elem.toDataURL && elem.toDataURL('image/webp').indexOf('data:image/webp') === 0;
+    })();
+    
+    let optimizedSrc = originalSrc;
+    
+    // Конвертируем в WebP для лучшего сжатия
+    if (supportsWebP && (originalSrc.endsWith('.jpg') || originalSrc.endsWith('.jpeg') || originalSrc.endsWith('.png'))) {
+      optimizedSrc = originalSrc.replace(/\.(jpg|jpeg|png)$/i, '.webp');
+    }
+    
+    // Добавляем параметры оптимизации для локальных изображений
     const params = new URLSearchParams();
     if (width) params.set('w', width.toString());
     if (height) params.set('h', height.toString());
     if (quality && quality !== 85) params.set('q', quality.toString());
+    params.set('f', 'auto'); // Автоматический формат
     
     const queryString = params.toString();
-    return queryString ? `${originalSrc}?${queryString}` : originalSrc;
+    return queryString ? `${optimizedSrc}?${queryString}` : optimizedSrc;
   };
 
   const getAspectRatioClass = () => {
@@ -138,28 +152,38 @@ const OptimizedImage = ({
         <div className="absolute inset-0 bg-gradient-to-br from-muted to-muted/50 animate-pulse" />
       )}
 
-      {/* Main image */}
+      {/* Picture element with multiple sources for better compatibility */}
       {shouldShowImage && !hasError && (
-        <img
-          src={optimizedSrc}
-          alt={alt}
-          loading={loading}
-          sizes={sizes}
-          width={width}
-          height={height}
-          onLoad={handleLoad}
-          onError={handleError}
-          itemProp={itemProp}
-          className={cn(
-            'w-full h-full transition-opacity duration-300 optimized-image',
-            getObjectFitClass(),
-            isLoaded ? 'opacity-100' : 'opacity-0',
-            priority && 'priority-image'
-          )}
-          style={{
-            imageRendering: 'crisp-edges'
-          }}
-        />
+        <picture>
+          {/* WebP source for modern browsers */}
+          <source 
+            srcSet={`${optimizedSrc.replace(/\.(jpg|jpeg|png)$/i, '.webp')}${optimizedSrc.includes('?') ? '&' : '?'}f=webp`}
+            type="image/webp"
+            sizes={sizes}
+          />
+          {/* Fallback source */}
+          <img
+            src={optimizedSrc}
+            alt={alt}
+            loading={loading}
+            sizes={sizes}
+            width={width}
+            height={height}
+            onLoad={handleLoad}
+            onError={handleError}
+            itemProp={itemProp}
+            className={cn(
+              'w-full h-full transition-opacity duration-300 optimized-image',
+              getObjectFitClass(),
+              isLoaded ? 'opacity-100' : 'opacity-0',
+              priority && 'priority-image'
+            )}
+            style={{
+              imageRendering: 'auto'
+            }}
+            decoding="async"
+          />
+        </picture>
       )}
 
       {/* Error fallback */}

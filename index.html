@@ -2,9 +2,21 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="format-detection" content="telephone=yes" />
+    
+    <!-- Security Headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://mc.yandex.ru; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: http:; connect-src 'self' https: wss:;" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-Frame-Options" content="DENY" />
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+    
+    <!-- Mobile Optimization -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="MobileOptimized" content="width" />
     
     <!-- Critical Performance Hints -->
     <meta name="resource-type" content="Document" />
@@ -26,8 +38,11 @@
     
     <!-- Предзагрузка критических ресурсов -->
     <link rel="preload" href="/lovable-uploads/adb38e62-ebf5-4d0f-92a9-272c1f38c8f4.png" as="image" type="image/png" />
-    <link rel="preload" href="/assets/hero-industrial.jpg" as="image" type="image/jpeg" />
+    <link rel="preload" href="/src/assets/hero-industrial.jpg" as="image" type="image/jpeg" />
     <link rel="preload" href="/src/main.tsx" as="script" />
+    <link rel="prefetch" href="/src/assets/equipment-manufacturing.jpg" as="image" />
+    <link rel="prefetch" href="/src/assets/metallurgy-furnace.jpg" as="image" />
+    <link rel="prefetch" href="/src/assets/raw-materials.jpg" as="image" />
     
     <!-- DNS prefetch для внешних ресурсов -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com" />
