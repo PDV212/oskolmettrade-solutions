@@ -494,48 +494,4 @@
     50% { transform: scale(0.95); }
     100% { transform: scale(1); }
   }
-
-  /* Оптимизация производительности и анимации */
-  .optimized-image {
-    will-change: opacity;
-    image-rendering: auto;
-    max-width: 100%;
-    height: auto;
-  }
-
-  .priority-image {
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
-  }
-
-  /* Мобильная оптимизация */
-  @media (max-width: 768px) {
-    .container {
-      padding-left: 1rem;
-      padding-right: 1rem;
-    }
-    
-    .optimized-image {
-      image-rendering: auto;
-    }
-    
-    /* Улучшение прокрутки на мобильных */
-    body {
-      -webkit-overflow-scrolling: touch;
-      overscroll-behavior-y: contain;
-    }
-  }
-
-  /* Ускорение анимаций */
-  @media (prefers-reduced-motion: no-preference) {
-    * {
-      scroll-behavior: smooth;
-    }
-  }
-
-  /* Улучшение производительности */
-  img[loading="lazy"] {
-    content-visibility: auto;
-    contain: layout style paint;
-  }
 }
