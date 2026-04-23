@@ -9,13 +9,11 @@ import CTAButton from '@/components/CTAButton';
 import CatalogNavigation from '@/components/CatalogNavigation';
 import SEOHead, { seoConfigs } from '@/components/SEOHead';
 import StructuredData, { organizationSchema, breadcrumbSchema, faqSchemaEn } from '@/components/StructuredData';
-import Analytics from '@/components/Analytics';
 
 const English = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead {...seoConfigs.en.home} />
-      <Analytics language="en" />
       <StructuredData type="Organization" data={organizationSchema} />
       <StructuredData type="BreadcrumbList" data={breadcrumbSchema('en')} />
       <StructuredData type="FAQPage" data={faqSchemaEn} />

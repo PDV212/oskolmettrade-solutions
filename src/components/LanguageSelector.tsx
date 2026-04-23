@@ -7,7 +7,6 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { trackLanguageSwitch } from '@/components/Analytics';
 
 const LanguageSelector = () => {
   const navigate = useNavigate();
@@ -29,11 +28,6 @@ const LanguageSelector = () => {
   const currentLanguage = languages.find(lang => lang.code === currentLang);
 
   const handleLanguageChange = (path: string, newLang: string) => {
-    const currentLang = getCurrentLanguage();
-    
-    // Отслеживание смены языка
-    trackLanguageSwitch(currentLang, newLang);
-    
     navigate(path);
   };
 

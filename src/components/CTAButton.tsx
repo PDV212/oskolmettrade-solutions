@@ -1,7 +1,6 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Phone, ArrowRight } from 'lucide-react';
-import { trackButtonClick, trackLead } from '@/components/Analytics';
 
 interface CTAButtonProps {
   language?: 'ru' | 'en' | 'zh';
@@ -31,10 +30,6 @@ const CTAButton: React.FC<CTAButtonProps> = ({ language = 'ru', variant = 'defau
   const content = texts[language];
 
   const handleClick = () => {
-    // Отслеживание клика по CTA кнопке
-    trackButtonClick('cta_phone', 'cta_section', language);
-    trackLead('phone', language);
-    
     window.location.href = `tel:${content.phone}`;
   };
 
