@@ -57,7 +57,7 @@
     --shadow-accent: 0 8px 24px -8px hsl(210 85% 35% / 0.4);
 
     /* Professional Typography */
-    --font-industrial: 'Inter', 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-industrial: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
 
     --radius: 0.5rem;
 
@@ -473,15 +473,6 @@
     .animate-float {
       animation: none;
     }
-  }
-
-  /* Optimize fonts loading */
-  @font-face {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url('https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiJ-Ek-_EeA.woff2') format('woff2');
   }
 
   /* Haptic feedback simulation */

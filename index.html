@@ -11,10 +11,6 @@
     <meta http-equiv="content-language" content="ru-RU" />
     <meta name="referrer" content="origin-when-cross-origin" />
     
-    <!-- Fonts preconnect для ускорения -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="icon" href="/lovable-uploads/adb38e62-ebf5-4d0f-92a9-272c1f38c8f4.png" type="image/png">
     
     <!-- PWA и кеширование -->
@@ -29,59 +25,12 @@
     <link rel="preload" href="/assets/hero-industrial.jpg" as="image" type="image/jpeg" />
     <link rel="preload" href="/src/main.tsx" as="script" />
     
-    <!-- DNS prefetch для внешних ресурсов -->
-    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-    <link rel="dns-prefetch" href="//fonts.gstatic.com" />
-    <link rel="dns-prefetch" href="//www.googletagmanager.com" />
-    <link rel="dns-prefetch" href="//mc.yandex.ru" />
-    
-    <!-- Предзагрузка шрифтов -->
-    <link rel="preload" href="https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiJ-Ek-_EeA.woff2" as="font" type="font/woff2" crossorigin />
-    
-    <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      
-      gtag('config', 'G-XXXXXXXXXX', {
-        page_title: 'ОСКОЛ-МЕТ-ТРЕЙД',
-        page_location: window.location.href,
-        content_group1: 'ru', // Язык по умолчанию
-        custom_map: {'dimension1': 'page_language'},
-        allow_google_signals: true,
-        allow_ad_personalization_signals: true,
-        cookie_expires: 63072000, // 2 года
-        send_page_view: false // Отправляем вручную для лучшего контроля
-      });
-    </script>
-
-    <!-- Яндекс.Метрика -->
-    <script type="text/javascript">
-      (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-      m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-      (window, document, "script", "https://mc.yandex.ru/metrika/watch.js", "ym");
-      
-      ym(12345678, "init", {
-        clickmap: true,
-        trackLinks: true,
-        accurateTrackBounce: true,
-        webvisor: true,
-        defer: true,
-        params: {
-          language: 'ru'
-        }
-      });
-    </script>
-
     <title>ОСКОЛ-МЕТ-ТРЕЙД - Металлообрабатывающее оборудование и сырьё с 1994 года</title>
     <meta name="description" content="ОСКОЛ-МЕТ-ТРЕЙД - поставщик металлообрабатывающего оборудования, станков ЧПУ, металлургического сырья и промышленных печей. 30 лет опыта, собственное производство ВСЗ." />
     <meta name="keywords" content="металлообрабатывающее оборудование, станки ЧПУ, металлургическое сырьё, промышленные печи, роботизированные комплексы, автоматизация производства, ВСЗ, ОСКОЛ-МЕТ-ТРЕЙД" />
     <meta name="author" content="ОСКОЛ-МЕТ-ТРЕЙД" />
     <meta name="robots" content="index, follow" />
     <meta name="language" content="ru" />
-    <link rel="canonical" href="https://oskol-met-trade.ru/" />
 
     <meta property="og:title" content="ОСКОЛ-МЕТ-ТРЕЙД - Металлообрабатывающее оборудование и сырьё" />
     <meta property="og:description" content="Поставка станков ЧПУ, металлургического сырья, промышленных печей. Роботизированные комплексы и автоматизация производства. 30 лет опыта." />
@@ -97,8 +46,6 @@
 
   <body>
     <div id="root"></div>
-    <!-- Яндекс.Метрика noscript -->
-    <noscript><div><img src="https://mc.yandex.ru/watch/12345678" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
