@@ -202,7 +202,7 @@ const Footer = () => {
                 onClick={scrollToTop}
                 variant="outline"
                 size="sm"
-                className="border-white/30 text-blue-800 hover:bg-white/10 hover:text-blue-900"
+                className="border-white/30 text-white hover:bg-white/10 hover:text-white"
               >
                 <ArrowUp className="w-4 h-4 mr-2" />
                 Наверх
