@@ -6,6 +6,7 @@ interface SEOHeadProps {
   keywords?: string;
   language?: 'ru' | 'en' | 'zh';
   ogImage?: string;
+  canonicalUrl?: string;
   structuredData?: Record<string, any>;
 }
 
@@ -15,6 +16,7 @@ const SEOHead = ({
   keywords = "металлообрабатывающее оборудование, станки ЧПУ, металлургическое сырьё, промышленные печи, роботизированные комплексы, автоматизация производства, ВСЗ, ОСКОЛ-МЕТ-ТРЕЙД",
   language = 'ru',
   ogImage = "/lovable-uploads/b3c22956-096b-4475-8619-90ea784e020b.png",
+  canonicalUrl,
   structuredData
 }: SEOHeadProps) => {
 
@@ -48,11 +50,21 @@ const SEOHead = ({
       meta.setAttribute('content', content);
     };
 
+    const resolvedCanonicalUrl = canonicalUrl ?? window.location.href;
+
     updateMetaTag('og:title', title);
     updateMetaTag('og:description', description);
-    updateMetaTag('og:url', window.location.href);
+    updateMetaTag('og:url', resolvedCanonicalUrl);
     updateMetaTag('og:image', ogImage);
     updateMetaTag('og:locale', language === 'ru' ? 'ru_RU' : language === 'en' ? 'en_US' : 'zh_CN');
+
+    let canonicalLink = document.querySelector('link[rel="canonical"]');
+    if (!canonicalLink) {
+      canonicalLink = document.createElement('link');
+      canonicalLink.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonicalLink);
+    }
+    canonicalLink.setAttribute('href', resolvedCanonicalUrl);
 
     // Обновляем Twitter Card теги
     const updateTwitterTag = (name: string, content: string) => {
@@ -99,7 +111,7 @@ const SEOHead = ({
     addHreflang('zh', `${origin}/zh`);
     addHreflang('x-default', `${origin}/`);
 
-  }, [title, description, keywords, language, ogImage, structuredData]);
+  }, [title, description, keywords, language, ogImage, canonicalUrl, structuredData]);
 
   return null;
 };

@@ -1,4 +1,5 @@
 import { Phone, Mail, MapPin, ArrowUp, Factory, Wrench, Flame, Building2 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import OptimizedImage from '@/components/ui/optimized-image';
 
@@ -8,7 +9,8 @@ const Footer = () => {
   const quickLinks = [
     { name: 'О компании', href: '#directions' },
     { name: 'Преимущества', href: '#advantages' },
-    { name: 'Контакты', href: '#contacts' }
+    { name: 'Контакты', href: '#contacts' },
+    { name: 'Информация об обработке данных', href: '/privacy', isRoute: true }
   ];
 
   const services = [
@@ -130,14 +132,25 @@ const Footer = () => {
               <h4 className="text-lg font-bold mb-6">Полезные ссылки</h4>
               <nav className="space-y-3" itemScope itemType="https://schema.org/SiteNavigationElement">
                 {quickLinks.map((link, index) => (
-                  <a
-                    key={index}
-                    href={link.href}
-                    className="block text-white/80 hover:text-accent transition-colors text-sm"
-                    itemProp="url"
-                  >
-                    <span itemProp="name">{link.name}</span>
-                  </a>
+                  link.isRoute ? (
+                    <Link
+                      key={index}
+                      to={link.href}
+                      className="block text-white/80 hover:text-accent transition-colors text-sm"
+                      itemProp="url"
+                    >
+                      <span itemProp="name">{link.name}</span>
+                    </Link>
+                  ) : (
+                    <a
+                      key={index}
+                      href={link.href}
+                      className="block text-white/80 hover:text-accent transition-colors text-sm"
+                      itemProp="url"
+                    >
+                      <span itemProp="name">{link.name}</span>
+                    </a>
+                  )
                 ))}
               </nav>
 
@@ -189,11 +202,9 @@ const Footer = () => {
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               <div className="text-center md:text-left">
                 <p className="text-white/70 text-sm">
-                  © {currentYear} ООО "ОСКОЛ-МЕТ-ТРЕЙД". Все права защищены.
+                  © {currentYear} ООО «ОСКОЛ-МЕТ-ТРЕЙД» · ИНН 3127508337 · ОГРН 1033108702868
                 </p>
                 <div className="flex flex-wrap justify-center md:justify-start gap-4 mt-2 text-xs text-white/60">
-                  <span>ИНН 3127508337</span>
-                  <span>ОГРН 1033108702868</span>
                   <span>Год основания: 1994</span>
                 </div>
               </div>
