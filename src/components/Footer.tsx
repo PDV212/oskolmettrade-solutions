@@ -6,10 +6,9 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const quickLinks = [
-    { name: 'О компании', href: '#about' },
-    { name: 'Наши проекты', href: '#projects' },
-    { name: 'Сертификаты', href: '#certificates' },
-    { name: 'Карьера', href: '#career' }
+    { name: 'О компании', href: '#directions' },
+    { name: 'Преимущества', href: '#advantages' },
+    { name: 'Контакты', href: '#contacts' }
   ];
 
   const services = [
@@ -88,17 +87,23 @@ const Footer = () => {
                   <Mail className="w-5 h-5 text-accent" />
                   <div>
                     <p className="font-semibold" itemProp="email">89090977174@mail.ru</p>
-                    <p className="text-white/70 text-sm">Ответим в течение часа</p>
+                  <p className="text-white/70 text-sm">Для коммерческих и технических запросов</p>
                   </div>
                 </div>
 
                 <div className="flex items-center space-x-3" itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
                   <MapPin className="w-5 h-5 text-accent" />
                   <div>
-                    <p className="font-semibold" itemProp="addressLocality">109004, г. Москва</p>
-                    <p className="text-white/70 text-sm" itemProp="streetAddress">ул. А. Солженицына, д. 40, стр. 1</p>
+                    <p className="font-semibold" itemProp="addressLocality">309181, Белгородская область, Губкин</p>
+                    <p className="text-white/70 text-sm" itemProp="streetAddress">ул. Мира, 20, оф. 312/1</p>
                   </div>
                 </div>
+              </div>
+
+              <div className="mt-6 space-y-2 text-sm text-white/80">
+                <p><span className="font-semibold">ИНН:</span> 3127508337</p>
+                <p><span className="font-semibold">ОГРН:</span> 1033108702868</p>
+                <p><span className="font-semibold">Год основания:</span> 1994</p>
               </div>
             </div>
 
@@ -134,23 +139,6 @@ const Footer = () => {
                     <span itemProp="name">{link.name}</span>
                   </a>
                 ))}
-                {/* Additional internal links */}
-                <a
-                  href="#advantages"
-                  className="block text-white/80 hover:text-accent transition-colors text-sm"
-                  itemProp="url"
-                >
-                  <span itemProp="name">Наши преимущества</span>
-                </a>
-                <a
-                  href="https://stankozavod.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block text-white/80 hover:text-accent transition-colors text-sm"
-                  itemProp="url"
-                >
-                  <span itemProp="name">ВСЗ Производство</span>
-                </a>
               </nav>
 
               <div className="mt-8">
@@ -165,10 +153,9 @@ const Footer = () => {
 
             {/* CTA Section */}
             <div>
-              <h4 className="text-lg font-bold mb-6">Начать сотрудничество</h4>
+              <h4 className="text-lg font-bold mb-6">Реквизиты</h4>
               <p className="text-white/80 mb-6 text-sm">
-                Получите бесплатную консультацию и коммерческое предложение 
-                от наших экспертов уже сегодня.
+                ООО «ОСКОЛ-МЕТ-ТРЕЙД» — статичная информационная B2B-визитка без веб-форм и без сбора персональных данных.
               </p>
 
               <div className="space-y-4">
@@ -181,17 +168,17 @@ const Footer = () => {
                     }
                   }}
                 >
-                  Получить консультацию
+                  Перейти к контактам
                 </Button>
               </div>
 
               <div className="mt-8 p-4 bg-white/10 rounded-xl border border-white/20">
-                <h5 className="font-semibold mb-2">Ключевые преимущества:</h5>
+                <h5 className="font-semibold mb-2">Юридические данные:</h5>
                 <div className="space-y-1 text-sm text-white/80">
-                  <p>• 30+ лет опыта работы</p>
-                  <p>• 2500+ поставленных станков</p>
-                  <p>• Собственное производство</p>
-                  <p>• Полный цикл услуг</p>
+                  <p>• ООО «ОСКОЛ-МЕТ-ТРЕЙД»</p>
+                  <p>• ИНН: 3127508337</p>
+                  <p>• ОГРН: 1033108702868</p>
+                  <p>• Юр. адрес: 309181, Белгородская область, Губкин, ул. Мира, 20, оф. 312/1</p>
                 </div>
               </div>
             </div>
@@ -205,15 +192,9 @@ const Footer = () => {
                   © {currentYear} ООО "ОСКОЛ-МЕТ-ТРЕЙД". Все права защищены.
                 </p>
                 <div className="flex flex-wrap justify-center md:justify-start gap-4 mt-2 text-xs text-white/60">
-                  <a href="#privacy" className="hover:text-accent transition-colors">
-                    Политика конфиденциальности
-                  </a>
-                  <a href="#terms" className="hover:text-accent transition-colors">
-                    Условия использования
-                  </a>
-                  <a href="#sitemap" className="hover:text-accent transition-colors">
-                    Карта сайта
-                  </a>
+                  <span>ИНН 3127508337</span>
+                  <span>ОГРН 1033108702868</span>
+                  <span>Год основания: 1994</span>
                 </div>
               </div>
 

@@ -69,7 +69,7 @@ const CTAButton: React.FC<CTAButtonProps> = ({ language = 'ru', variant = 'defau
             <ArrowRight className="w-6 h-6 ml-3 group-hover:translate-x-1 transition-transform" />
           </Button>
           <div className="mt-4 text-sm text-muted-foreground">
-            Звоните прямо сейчас или оставьте заявку
+            Звоните напрямую по указанному номеру
           </div>
         </div>
       </div>
