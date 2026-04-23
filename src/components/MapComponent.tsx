@@ -1,50 +1,60 @@
-import React, { useEffect, useRef } from 'react';
-import mapboxgl from 'mapbox-gl';
-import 'mapbox-gl/dist/mapbox-gl.css';
+import OptimizedImage from '@/components/ui/optimized-image';
+import staticMapImage from '@/assets/static-map-yandex.png';
 
-const MapComponent = () => {
-  const mapContainer = useRef<HTMLDivElement>(null);
-  const map = useRef<mapboxgl.Map | null>(null);
+interface MapComponentProps {
+  language?: 'ru' | 'en' | 'zh';
+}
 
-  useEffect(() => {
-    if (!mapContainer.current || map.current) return;
+const mapContent = {
+  ru: {
+    alt: 'Статичная карта проезда к офису ОСКОЛ-МЕТ-ТРЕЙД',
+    title: 'Адрес офиса в Москве',
+    address: '109004, г. Москва, ул. А. Солженицына, д. 40, стр. 1',
+    linkLabel: 'Открыть в Яндекс.Картах',
+  },
+  en: {
+    alt: 'Static location map of the OSKOL-MET-TRADE office',
+    title: 'Moscow office address',
+    address: '109004, Moscow, Aleksandra Solzhenitsyna Street, 40 building 1',
+    linkLabel: 'Open in Yandex Maps',
+  },
+  zh: {
+    alt: '奥斯科尔-金属-贸易办公室静态地图',
+    title: '莫斯科办公室地址',
+    address: '109004，莫斯科，亚历山大·索尔仁尼琴街40号1栋',
+    linkLabel: '在 Yandex 地图中打开',
+  },
+} as const;
 
-    // Set Mapbox access token
-    mapboxgl.accessToken = 'pk.eyJ1IjoicGR2MjEyIiwiYSI6ImNtZXZmODVwZDBlbzUybHNoOGZjdmFmbW0ifQ.T13IG5O0bU0RCnMMcnB-1Q';
+const mapLink = 'https://yandex.ru/maps/-/CHg1zP8A';
 
-    // Initialize the map
-    map.current = new mapboxgl.Map({
-      container: mapContainer.current,
-      style: 'mapbox://styles/mapbox/streets-v12',
-      center: [37.667087, 55.745509],
-      zoom: 15
-    });
-
-    // Add navigation control
-    map.current.addControl(new mapboxgl.NavigationControl(), 'top-right');
-
-    // Add marker
-    new mapboxgl.Marker()
-      .setLngLat([37.667087, 55.745509])
-      .setPopup(
-        new mapboxgl.Popup({ offset: 25 }).setHTML(
-          '<div><strong>ОСКОЛ-МЕТ-ТРЕЙД</strong><br/>109004, г. Москва, ул. А. Солженицына, д. 40, стр. 1</div>'
-        )
-      )
-      .addTo(map.current);
-
-    // Cleanup function
-    return () => {
-      if (map.current) {
-        map.current.remove();
-        map.current = null;
-      }
-    };
-  }, []);
+const MapComponent = ({ language = 'ru' }: MapComponentProps) => {
+  const content = mapContent[language];
 
   return (
-    <div className="w-full h-64 rounded-lg overflow-hidden">
-      <div ref={mapContainer} className="w-full h-full" />
+    <div className="space-y-4">
+      <div className="overflow-hidden rounded-lg border border-border bg-card">
+        <OptimizedImage
+          src={staticMapImage}
+          alt={content.alt}
+          className="w-full h-auto"
+          aspectRatio="video"
+          loading="lazy"
+          sizes="(max-width: 768px) 100vw, 50vw"
+        />
+      </div>
+      <div className="space-y-2">
+        <p className="text-base font-semibold text-foreground">{content.title}</p>
+        <p className="text-sm leading-relaxed text-muted-foreground">{content.address}</p>
+        <a
+          href={mapLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex text-sm font-medium text-primary transition-colors hover:text-primary-hover"
+        >
+          {content.linkLabel}
+        </a>
+      </div>
     </div>
   );
 };
