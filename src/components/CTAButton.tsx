@@ -1,7 +1,6 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Phone, ArrowRight } from 'lucide-react';
-import { trackButtonClick, trackLead } from '@/components/Analytics';
 
 interface CTAButtonProps {
   language?: 'ru' | 'en' | 'zh';
@@ -31,10 +30,6 @@ const CTAButton: React.FC<CTAButtonProps> = ({ language = 'ru', variant = 'defau
   const content = texts[language];
 
   const handleClick = () => {
-    // Отслеживание клика по CTA кнопке
-    trackButtonClick('cta_phone', 'cta_section', language);
-    trackLead('phone', language);
-    
     window.location.href = `tel:${content.phone}`;
   };
 
@@ -74,7 +69,7 @@ const CTAButton: React.FC<CTAButtonProps> = ({ language = 'ru', variant = 'defau
             <ArrowRight className="w-6 h-6 ml-3 group-hover:translate-x-1 transition-transform" />
           </Button>
           <div className="mt-4 text-sm text-muted-foreground">
-            Звоните прямо сейчас или оставьте заявку
+            Звоните напрямую по указанному номеру
           </div>
         </div>
       </div>

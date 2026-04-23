@@ -4,7 +4,6 @@ interface SEOHeadProps {
   title?: string;
   description?: string;
   keywords?: string;
-  canonicalUrl?: string;
   language?: 'ru' | 'en' | 'zh';
   ogImage?: string;
   structuredData?: Record<string, any>;
@@ -14,7 +13,6 @@ const SEOHead = ({
   title = "ОСКОЛ-МЕТ-ТРЕЙД - Металлообрабатывающее оборудование и сырьё с 1994 года",
   description = "ОСКОЛ-МЕТ-ТРЕЙД - надежный поставщик металлообрабатывающего оборудования, станков ЧПУ, металлургического сырья и промышленных печей. 30 лет опыта, собственное производство ВСЗ, полный цикл услуг.",
   keywords = "металлообрабатывающее оборудование, станки ЧПУ, металлургическое сырьё, промышленные печи, роботизированные комплексы, автоматизация производства, ВСЗ, ОСКОЛ-МЕТ-ТРЕЙД",
-  canonicalUrl = "https://oskol-met-trade.ru/",
   language = 'ru',
   ogImage = "/lovable-uploads/b3c22956-096b-4475-8619-90ea784e020b.png",
   structuredData
@@ -36,15 +34,6 @@ const SEOHead = ({
       metaKeywords.setAttribute('content', keywords);
     }
 
-    // Обновляем canonical URL
-    let canonical = document.querySelector('link[rel="canonical"]');
-    if (!canonical) {
-      canonical = document.createElement('link');
-      canonical.setAttribute('rel', 'canonical');
-      document.head.appendChild(canonical);
-    }
-    canonical.setAttribute('href', canonicalUrl);
-
     // Обновляем язык документа
     document.documentElement.lang = language;
 
@@ -61,7 +50,7 @@ const SEOHead = ({
 
     updateMetaTag('og:title', title);
     updateMetaTag('og:description', description);
-    updateMetaTag('og:url', canonicalUrl);
+    updateMetaTag('og:url', window.location.href);
     updateMetaTag('og:image', ogImage);
     updateMetaTag('og:locale', language === 'ru' ? 'ru_RU' : language === 'en' ? 'en_US' : 'zh_CN');
 
@@ -104,12 +93,13 @@ const SEOHead = ({
       hreflang.setAttribute('href', url);
     };
 
-    addHreflang('ru', 'https://oskol-met-trade.ru/');
-    addHreflang('en', 'https://oskol-met-trade.ru/en');
-    addHreflang('zh', 'https://oskol-met-trade.ru/zh');
-    addHreflang('x-default', 'https://oskol-met-trade.ru/');
+    const origin = window.location.origin;
+    addHreflang('ru', `${origin}/`);
+    addHreflang('en', `${origin}/en`);
+    addHreflang('zh', `${origin}/zh`);
+    addHreflang('x-default', `${origin}/`);
 
-  }, [title, description, keywords, canonicalUrl, language, ogImage, structuredData]);
+  }, [title, description, keywords, language, ogImage, structuredData]);
 
   return null;
 };
@@ -121,7 +111,6 @@ export const seoConfigs = {
       title: "ОСКОЛ-МЕТ-ТРЕЙД - Металлообрабатывающее оборудование и сырьё с 1994 года",
       description: "ОСКОЛ-МЕТ-ТРЕЙД - надежный поставщик металлообрабатывающего оборудования, станков ЧПУ, металлургического сырья и промышленных печей. 30 лет опыта, собственное производство ВСЗ, полный цикл услуг.",
       keywords: "металлообрабатывающее оборудование, станки ЧПУ, металлургическое сырьё, промышленные печи, роботизированные комплексы, автоматизация производства, ВСЗ, ОСКОЛ-МЕТ-ТРЕЙД",
-      canonicalUrl: "https://oskol-met-trade.ru/",
       language: 'ru' as const,
       structuredData: {
         "@context": "https://schema.org",
@@ -181,7 +170,6 @@ export const seoConfigs = {
       title: "OSKOL-MET-TRADE - Metalworking Equipment & Raw Materials Since 1994",
       description: "OSKOL-MET-TRADE - reliable supplier of metalworking equipment, CNC machines, metallurgical raw materials and industrial furnaces. 30 years of experience, own VSZ production, full service cycle.",
       keywords: "metalworking equipment, CNC machines, metallurgical raw materials, industrial furnaces, robotic systems, production automation, VSZ, OSKOL-MET-TRADE",
-      canonicalUrl: "https://oskol-met-trade.ru/en",
       language: 'en' as const,
       structuredData: {
         "@context": "https://schema.org",
@@ -213,7 +201,6 @@ export const seoConfigs = {
       title: "奥斯科尔-金属-贸易 - 自1994年以来的金属加工设备和原材料",
       description: "奥斯科尔-金属-贸易 - 金属加工设备、数控机床、冶金原材料和工业炉的可靠供应商。30年经验，自有VSZ生产，全周期服务。",
       keywords: "金属加工设备, 数控机床, 冶金原材料, 工业炉, 机器人系统, 生产自动化, VSZ, 奥斯科尔-金属-贸易",
-      canonicalUrl: "https://oskol-met-trade.ru/zh",
       language: 'zh' as const,
       structuredData: {
         "@context": "https://schema.org",

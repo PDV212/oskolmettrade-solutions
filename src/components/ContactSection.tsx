@@ -1,82 +1,54 @@
-import { useState } from 'react';
-import { Phone, Mail, MapPin, Clock, Send, CheckCircle2 } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Phone, Mail, MapPin, Clock, MessageCircle } from 'lucide-react';
 import { Card } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { TouchSelect, TouchSelectContent, TouchSelectItem, TouchSelectTrigger, TouchSelectValue } from '@/components/ui/touch-optimized-select';
 import MapComponent from './MapComponent';
 import OptimizedImage from '@/components/ui/optimized-image';
 
 const ContactSection = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    email: '',
-    company: '',
-    direction: '',
-    message: ''
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    // Create email body
-    const emailBody = `
-Новая заявка с сайта ОСКОЛ-МЕТ-ТРЕЙД
-
-Имя: ${formData.name}
-Телефон: ${formData.phone}
-Email: ${formData.email}
-Компания: ${formData.company}
-Направление интереса: ${formData.direction}
-Сообщение: ${formData.message}
-
-Дата отправки: ${new Date().toLocaleString('ru-RU')}
-    `.trim();
-
-    const mailtoLink = `mailto:89090977174@mail.ru?subject=Новая заявка с сайта&body=${encodeURIComponent(emailBody)}`;
-    window.location.href = mailtoLink;
-  };
-
-  const handleInputChange = (field: string, value: string) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
-  };
-
-  const contactInfo = [
+  const contactCards = [
     {
       icon: Phone,
-      title: 'Телефон',
-      details: ['+7 495 240 91 99', '+7 909 097 71 74'],
-      subtitle: 'Звоните в рабочее время'
+      title: 'Телефон +7 495 240 91 99',
+      href: 'tel:+74952409199',
+      description: 'Основной городской номер для переговоров и согласования поставок.'
+    },
+    {
+      icon: Phone,
+      title: 'Телефон +7 909 097 71 74',
+      href: 'tel:+79090977174',
+      description: 'Мобильный контакт для оперативной связи с менеджером.'
     },
     {
       icon: Mail,
-      title: 'Email',
-      details: ['89090977174@mail.ru'],
-      subtitle: 'Ответим в течение часа'
+      title: 'Email 89090977174@mail.ru',
+      href: 'mailto:89090977174@mail.ru',
+      description: 'Для коммерческих запросов, спецификаций и обмена документами.'
     },
     {
-      icon: MapPin,
-      title: 'Офисы',
-      details: ['109004, г. Москва,', 'ул. А. Солженицына, д. 40, стр. 1'],
-      subtitle: 'Москва'
-    },
-    {
-      icon: Clock,
-      title: 'Режим работы',
-      details: ['Пн-Пт: 8:00 - 18:00', 'Сб: 9:00 - 15:00'],
-      subtitle: 'Московское время'
+      icon: MessageCircle,
+      title: 'Telegram',
+      href: 'https://t.me/имя_канала',
+      description: 'Напишите напрямую в Telegram или отсканируйте QR-код ниже.'
     }
   ];
 
-  const businessDirections = [
-    'Металлообрабатывающее оборудование',
-    'Металлургическое сырье',
-    'Металлургические печи',
-    'Производство ВСЗ',
-    'Техническая консультация',
-    'Другое'
+  const messengerCards = [
+    {
+      title: 'Telegram',
+      href: 'https://t.me/имя_канала',
+      image: '/lovable-uploads/783d99ba-632d-47a7-bc9d-d2c6653ee5cc.png',
+      alt: 'QR-код Telegram'
+    },
+    {
+      title: 'WhatsApp',
+      href: 'https://wa.me/79090977174',
+      image: '/lovable-uploads/0667cb35-cc3c-4070-b595-c9700d58f2d9.png',
+      alt: 'QR-код WhatsApp'
+    },
+    {
+      title: 'WeChat',
+      image: '/lovable-uploads/0172be64-08ae-4d0c-b070-7507bf1ca449.png',
+      alt: 'QR-код WeChat'
+    }
   ];
 
   return (
@@ -92,184 +64,97 @@ Email: ${formData.email}
         </div>
 
         <div className="grid lg:grid-cols-2 gap-16 items-start">
-          {/* Left Column: Contact Form + QR Codes */}
           <div className="space-y-6">
-            {/* Contact Form */}
             <Card className="card-industrial">
               <div className="mb-6">
-                <h3 className="text-2xl font-bold text-foreground mb-2">Оставить заявку</h3>
+                <h3 className="text-2xl font-bold text-foreground mb-2">Контакты для связи</h3>
                 <p className="text-muted-foreground">
-                  Заполните форму, и мы свяжемся с вами в ближайшее время
+                  Свяжитесь с нами по телефону, email или через мессенджеры — без форм и передачи персональных данных через сайт.
                 </p>
               </div>
 
-              <form onSubmit={handleSubmit} className="mobile-form-spacing">
-                <div className="grid gap-6 md:gap-4 md:grid-cols-2">
-                  <div>
-                    <label className="touch-label block text-foreground">
-                      Имя и фамилия *
-                    </label>
-                    <Input
-                      type="text"
-                      value={formData.name}
-                      onChange={(e) => handleInputChange('name', e.target.value)}
-                      placeholder="Введите ваше имя"
-                      required
-                      className="touch-input touch-focus w-full"
-                    />
-                  </div>
-                  <div>
-                    <label className="touch-label block text-foreground">
-                      Телефон *
-                    </label>
-                    <Input
-                      type="tel"
-                      value={formData.phone}
-                      onChange={(e) => handleInputChange('phone', e.target.value)}
-                      placeholder="+7 (___) ___-__-__"
-                      required
-                      className="touch-input touch-focus w-full"
-                      inputMode="tel"
-                    />
-                  </div>
-                </div>
-
-                <div className="grid gap-6 md:gap-4 md:grid-cols-2">
-                  <div>
-                    <label className="touch-label block text-foreground">
-                      Email *
-                    </label>
-                    <Input
-                      type="email"
-                      value={formData.email}
-                      onChange={(e) => handleInputChange('email', e.target.value)}
-                      placeholder="your@email.com"
-                      required
-                      className="touch-input touch-focus w-full"
-                      inputMode="email"
-                    />
-                  </div>
-                  <div>
-                    <label className="touch-label block text-foreground">
-                      Компания
-                    </label>
-                    <Input
-                      type="text"
-                      value={formData.company}
-                      onChange={(e) => handleInputChange('company', e.target.value)}
-                      placeholder="Название компании"
-                      className="touch-input touch-focus w-full"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label className="touch-label block text-foreground">
-                    Направление интереса *
-                  </label>
-                  <TouchSelect onValueChange={(value) => handleInputChange('direction', value)}>
-                    <TouchSelectTrigger className="touch-focus">
-                      <TouchSelectValue placeholder="Выберите направление" />
-                    </TouchSelectTrigger>
-                    <TouchSelectContent>
-                      {businessDirections.map((direction, index) => (
-                        <TouchSelectItem key={index} value={direction}>
-                          {direction}
-                        </TouchSelectItem>
-                      ))}
-                    </TouchSelectContent>
-                  </TouchSelect>
-                </div>
-
-                <div>
-                  <label className="touch-label block text-foreground">
-                    Сообщение
-                  </label>
-                  <Textarea
-                    value={formData.message}
-                    onChange={(e) => handleInputChange('message', e.target.value)}
-                    placeholder="Опишите ваши потребности или задачи..."
-                    rows={4}
-                    className="touch-textarea touch-focus w-full resize-none"
-                  />
-                </div>
-
-                <Button 
-                  type="submit" 
-                  className="btn-industrial touch-button haptic-light w-full"
-                >
-                  <Send className="mr-2 w-5 h-5" />
-                  Отправить заявку
-                </Button>
-
-                <p className="text-sm text-muted-foreground text-center leading-relaxed">
-                  Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности
-                </p>
-              </form>
+              <div className="grid gap-4 sm:grid-cols-2">
+                {contactCards.map((item) => (
+                  <a
+                    key={item.title}
+                    href={item.href}
+                    target={item.href.startsWith('http') ? '_blank' : undefined}
+                    rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                    className="rounded-lg border border-border bg-background p-4 transition-colors hover:border-primary"
+                  >
+                    <div className="mb-3 inline-flex rounded-lg bg-primary/10 p-3 text-primary">
+                      <item.icon className="h-5 w-5" />
+                    </div>
+                    <p className="text-base font-semibold text-foreground">{item.title}</p>
+                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.description}</p>
+                  </a>
+                ))}
+              </div>
             </Card>
 
-            {/* QR Codes Block */}
             <Card className="card-industrial">
               <div className="mb-6">
                 <h4 className="text-xl font-bold text-foreground mb-2">Свяжитесь с нами через мессенджеры</h4>
-                <p className="text-base text-muted-foreground">Сканируйте QR-код для быстрой связи</p>
+                <p className="text-base text-muted-foreground">Используйте прямые ссылки или отсканируйте QR-код.</p>
               </div>
-              <div className="flex flex-col sm:flex-row justify-center items-center space-y-6 sm:space-y-0 sm:space-x-6 md:space-x-8">
-                <div className="text-center touch-target">
-                  <OptimizedImage
-                    src="/lovable-uploads/783d99ba-632d-47a7-bc9d-d2c6653ee5cc.png"
-                    alt="Telegram QR код"
-                    className="qr-code-responsive mx-auto mb-3 rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer"
-                    aspectRatio="square"
-                    loading="lazy"
-                    sizes="(max-width: 640px) 64px, (max-width: 768px) 80px, 96px"
-                  />
-                  <p className="text-sm font-medium text-muted-foreground">Telegram</p>
+              <div className="grid gap-6 sm:grid-cols-3">
+                {messengerCards.map((item) => {
+                  const content = (
+                    <>
+                      <OptimizedImage
+                        src={item.image}
+                        alt={item.alt}
+                        className="qr-code-responsive mx-auto mb-3 rounded-lg shadow-sm"
+                        aspectRatio="square"
+                        loading="lazy"
+                        sizes="(max-width: 640px) 64px, (max-width: 768px) 80px, 96px"
+                      />
+                      <p className="text-sm font-semibold text-foreground">{item.title}</p>
+                    </>
+                  );
+
+                  return item.href ? (
+                    <a key={item.title} href={item.href} target="_blank" rel="noopener noreferrer" className="text-center">
+                      {content}
+                    </a>
+                  ) : (
+                    <div key={item.title} className="text-center">
+                      {content}
+                    </div>
+                  );
+                })}
+              </div>
+              <div className="mt-6 space-y-2 rounded-lg bg-muted/50 p-4">
+                <div className="flex items-start gap-3">
+                  <Clock className="mt-0.5 h-5 w-5 text-primary" />
+                  <div>
+                    <p className="font-semibold text-foreground">Режим работы</p>
+                    <p className="text-sm text-muted-foreground">Пн–Пт 8:00–18:00, Сб 9:00–15:00</p>
+                  </div>
                 </div>
-                <div className="text-center touch-target">
-                  <OptimizedImage
-                    src="/lovable-uploads/0172be64-08ae-4d0c-b070-7507bf1ca449.png"
-                    alt="WeChat QR код"
-                    className="qr-code-responsive mx-auto mb-3 rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer"
-                    aspectRatio="square"
-                    loading="lazy"
-                    sizes="(max-width: 640px) 64px, (max-width: 768px) 80px, 96px"
-                  />
-                  <p className="text-sm font-medium text-muted-foreground">WeChat</p>
-                </div>
-                <div className="text-center touch-target">
-                  <OptimizedImage
-                    src="/lovable-uploads/0667cb35-cc3c-4070-b595-c9700d58f2d9.png"
-                    alt="WhatsApp QR код"
-                    className="qr-code-responsive mx-auto mb-3 rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer"
-                    aspectRatio="square"
-                    loading="lazy"
-                    sizes="(max-width: 640px) 64px, (max-width: 768px) 80px, 96px"
-                  />
-                  <p className="text-sm font-medium text-muted-foreground">WhatsApp</p>
-                </div>
-                <div className="text-center touch-target">
-                  <a href="https://meet.google.com/xse-yutb-bzz" target="_blank" rel="noopener noreferrer">
-                     <OptimizedImage
-                       src="/lovable-uploads/d5a7f053-6e22-45fa-af96-22e1fe75e95e.png"
-                       alt="Google Meet видеоконференция"
-                      className="qr-code-responsive mx-auto mb-3 rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer"
-                      aspectRatio="square"
-                      loading="lazy"
-                      sizes="(max-width: 640px) 64px, (max-width: 768px) 80px, 96px"
-                    />
-                  </a>
-                  <p className="text-sm font-medium text-muted-foreground">Google Meet</p>
-                </div>
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  Сайт носит информационный характер и не собирает персональные данные посетителей. Для связи используйте указанные выше контакты.
+                </p>
               </div>
             </Card>
           </div>
 
-          {/* Right Column: Contact Information + Map */}
           <div className="space-y-6">
-            {/* Contact Cards */}
             <div className="grid sm:grid-cols-2 gap-6">
-              {contactInfo.map((info, index) => (
+              {[
+                {
+                  icon: MapPin,
+                  title: 'Адрес',
+                  details: ['109004, г. Москва, ул. А. Солженицына, д. 40, стр. 1'],
+                  subtitle: 'Офис и переговоры по предварительному согласованию'
+                },
+                {
+                  icon: Clock,
+                  title: 'Режим работы',
+                  details: ['Пн–Пт 8:00–18:00', 'Сб 9:00–15:00'],
+                  subtitle: 'Московское время'
+                }
+              ].map((info, index) => (
                 <Card key={index} className="card-industrial">
                   <div className="flex items-start space-x-4">
                     <div className="flex-shrink-0 p-3 bg-primary/10 rounded-xl">
@@ -291,27 +176,25 @@ Email: ${formData.email}
               ))}
             </div>
 
-            {/* Quick Benefits */}
             <Card className="card-industrial bg-gradient-to-br from-primary/5 to-accent/5">
-              <h4 className="font-bold text-foreground mb-4">Что вы получите:</h4>
+              <h4 className="font-bold text-foreground mb-4">Формат взаимодействия</h4>
               <div className="space-y-3">
                 {[
-                  'Бесплатную консультацию эксперта',
-                  'Подбор оптимального оборудования',
-                  'Расчет стоимости проекта',
-                  'Техническое предложение'
+                  'Переговоры согласовываем индивидуально по телефону',
+                  'Технические запросы принимаем по email и в мессенджерах',
+                  'Сайт используется только как информационная B2B-визитка',
+                  'Онлайн-формы, веб-аналитика и сбор персональных данных отключены'
                 ].map((benefit, index) => (
                   <div key={index} className="flex items-center space-x-3">
-                    <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
+                    <MessageCircle className="w-5 h-5 text-primary flex-shrink-0" />
                     <span className="text-muted-foreground">{benefit}</span>
                   </div>
                 ))}
               </div>
             </Card>
 
-            {/* Interactive Map */}
             <Card className="card-industrial">
-              <MapComponent />
+              <MapComponent language="ru" />
             </Card>
           </div>
         </div>

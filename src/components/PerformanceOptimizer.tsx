@@ -22,15 +22,10 @@ const PerformanceOptimizer = () => {
         document.head.appendChild(link);
       };
 
-      // 3. Предзагрузка критических шрифтов
-      preloadResource('https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiJ-Ek-_EeA.woff2', 'font', 'font/woff2');
+      // 3. Локальные ресурсы интерфейса
+      dnsPrefetch(window.location.origin);
 
-      // 4. DNS prefetch для аналитики и других сервисов
-      dnsPrefetch('//www.googletagmanager.com');
-      dnsPrefetch('//mc.yandex.ru');
-      dnsPrefetch('//fonts.googleapis.com');
-
-      // 5. Lazy loading для изображений
+      // 4. Lazy loading для изображений
       const images = document.querySelectorAll('img[data-src]');
       const imageObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
@@ -45,7 +40,7 @@ const PerformanceOptimizer = () => {
 
       images.forEach(img => imageObserver.observe(img));
 
-      // 6. Оптимизация для Core Web Vitals
+      // 5. Оптимизация для Core Web Vitals
       if ('requestIdleCallback' in window) {
         requestIdleCallback(() => {
           // Предзагружаем некритичные ресурсы в idle time
@@ -62,7 +57,7 @@ const PerformanceOptimizer = () => {
         });
       }
 
-      // 7. Оптимизация скроллинга
+      // 6. Оптимизация скроллинга
       let ticking = false;
       const handleScroll = () => {
         if (!ticking) {
@@ -75,7 +70,7 @@ const PerformanceOptimizer = () => {
 
       window.addEventListener('scroll', handleScroll, { passive: true });
 
-      // 8. Compression hint для браузера
+      // 7. Compression hint для браузера
       if ('serviceWorker' in navigator && 'caches' in window) {
         // Service worker уже регистрируется в main.tsx
         console.log('Performance optimizations applied');
