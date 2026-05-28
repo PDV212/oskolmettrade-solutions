@@ -1,0 +1,38 @@
+# ОСКОЛ-МЕТ-ТРЕЙД
+
+> ООО «ОСКОЛ-МЕТ-ТРЕЙД» — поставщик металлообрабатывающего оборудования, металлургического сырья, промышленных печей и роботизированных комплексов. На рынке металлургии и машиностроения с 1994 года. Юр. адрес: 309181, Белгородская область, г. Губкин, ул. Мира, 20, оф. 312/1. ИНН 3127508337, ОГРН 1033108702868.
+
+OSKOL-MET-TRADE LLC is a Russian B2B industrial supplier of metalworking equipment (CNC machines, machining centers, robotic welding and painting lines, hydraulic presses), metallurgical raw materials (manganese ore, ferrochrome, bentonite, nickel-containing pig iron) and industrial furnaces (vacuum-arc, induction, gas). Founded 1994. Headquarters: Gubkin, Belgorod Region, Russia. Delivers to CIS, China and India. Operates own manufacturing site (VSZ / stankozavod.com) and provides engineering, installation, warranty and post-warranty service.
+
+This site is an informational B2B card. It does not collect personal data. Contact via phone, email or WhatsApp listed on the contact page.
+
+## Pages
+- [Главная (RU)](/): обзор компании, направления деятельности, преимущества, контакты.
+- [Home (EN)](/en): company overview, business lines, advantages, contacts.
+- [首页 (ZH)](/zh): 公司概况、业务方向、优势、联系方式.
+- [Информация об обработке данных](/privacy): notice that the site does not collect personal data.
+
+## Business lines
+- Металлообрабатывающее оборудование: станки с ЧПУ, обрабатывающие центры, токарные, фрезерные и шлифовальные станки, гидравлические прессы.
+- Роботизированные участки сварки и покраски: промышленные манипуляторы и роботы с расчётом траекторий на базе AI и 3D-анализа чертежей Tekla Structures, с коррекцией по лазерным датчикам.
+- Металлургическое сырьё: марганцевая руда, феррохром, бентонит, никельсодержащий чугун.
+- Металлургические печи: вакуумно-дуговые, индукционные, газовые.
+- Производство ВСЗ (stankozavod.com): механообработка и изготовление деталей.
+- Инжиниринг, монтаж, пуско-наладка, гарантийное и постгарантийное обслуживание.
+
+## Key facts
+- Год основания: 1994.
+- Поставка оборудования: с 2015 года.
+- Поставлено более 2500 станков.
+- География поставок: Россия, Казахстан, Беларусь, Китай, Индия.
+- Языки сайта: ru, en, zh.
+- Реквизиты: ИНН 3127508337, ОГРН 1033108702868.
+
+## Contact
+- Телефон: +7-909-097-71-74
+- Сайт производства: https://stankozavod.com/
+- Канонический URL: https://oskolmettrade-solutions.lovable.app/
+
+## Optional
+- [robots.txt](/robots.txt)
+- [sitemap.xml](/sitemap.xml)
