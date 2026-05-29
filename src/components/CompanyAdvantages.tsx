@@ -110,7 +110,7 @@ const CompanyAdvantages = () => {
         </div>
 
         {/* Key Numbers */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+        <section aria-label="Ключевые показатели компании" className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
           {achievements.map((achievement, index) => (
             <div key={index} className="text-center animate-industrial-fade-in">
               <div className="text-4xl md:text-5xl font-bold text-primary mb-2">
@@ -119,33 +119,31 @@ const CompanyAdvantages = () => {
               <div className="text-muted-foreground">{achievement.label}</div>
             </div>
           ))}
-        </div>
+        </section>
 
         {/* Advantages Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {advantages.map((advantage, index) => (
-            <Card 
-              key={index}
-              className="card-industrial animate-industrial-slide-up"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <div className={`inline-flex p-4 rounded-xl bg-gradient-to-br ${advantage.gradient} mb-6`}>
-                <advantage.icon className="w-8 h-8 text-primary" />
-              </div>
-              
-              <div className="mb-4">
-                <div className="flex items-center justify-between mb-2">
-                  <h3 className="text-xl font-bold text-foreground">{advantage.title}</h3>
-                  <span className="text-sm font-semibold text-accent">{advantage.stat}</span>
+            <article key={index} style={{ animationDelay: `${index * 0.1}s` }} className="animate-industrial-slide-up">
+              <Card className="card-industrial h-full">
+                <div className={`inline-flex p-4 rounded-xl bg-gradient-to-br ${advantage.gradient} mb-6`}>
+                  <advantage.icon className="w-8 h-8 text-primary" />
                 </div>
-                <p className="text-muted-foreground leading-relaxed">{advantage.description}</p>
-              </div>
+                
+                <header className="mb-4">
+                  <div className="flex items-center justify-between mb-2">
+                    <h3 className="text-xl font-bold text-foreground">{advantage.title}</h3>
+                    <span className="text-sm font-semibold text-accent">{advantage.stat}</span>
+                  </div>
+                  <p className="text-muted-foreground leading-relaxed">{advantage.description}</p>
+                </header>
 
-              <div className="flex items-center space-x-2 text-sm text-primary">
-                <CheckCircle2 className="w-4 h-4" />
-                <span className="font-medium">Подтверждено практикой</span>
-              </div>
-            </Card>
+                <div className="flex items-center space-x-2 text-sm text-primary">
+                  <CheckCircle2 className="w-4 h-4" />
+                  <span className="font-medium">Подтверждено практикой</span>
+                </div>
+              </Card>
+            </article>
           ))}
         </div>
 
