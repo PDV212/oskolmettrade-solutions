@@ -67,7 +67,7 @@ const Footer = () => {
                 />
                 <div>
                   <h3 className="text-xl font-bold" itemProp="name">ОСКОЛ-МЕТ-ТРЕЙД</h3>
-                  <p className="text-white/70 text-sm">С 1994 года</p>
+                  <p className="text-white/70 text-sm">С <time dateTime="1994" itemProp="foundingDate">1994</time> года</p>
                 </div>
               </div>
               
