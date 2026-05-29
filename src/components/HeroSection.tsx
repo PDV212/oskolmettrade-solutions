@@ -70,7 +70,7 @@ const HeroSection = () => {
                 Надежные решения для металлургии и машиностроения
               </p>
               <p className="text-lg text-white/80 leading-relaxed">
-                Поставка оборудования, металлургического сырья и производство с 1994 года. 
+                Поставка оборудования, металлургического сырья и производство с <time dateTime="1994">1994 года</time>. 
                 Группа компаний с полным циклом услуг: от проектирования до сервисного обслуживания.
               </p>
             </div>
@@ -103,7 +103,7 @@ const HeroSection = () => {
             </div>
 
             {/* Enhanced Stats with Badges */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+            <section aria-label="Ключевые показатели" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
               <div className="text-center">
                 <div className="text-2xl md:text-3xl font-bold text-accent">30+</div>
                 <div className="text-white/70 text-sm">лет опыта</div>
@@ -119,7 +119,7 @@ const HeroSection = () => {
               <div className="text-center sm:col-span-2 lg:col-span-1">
                 <TrustedBadge size="sm" variant="glass" />
               </div>
-            </div>
+            </section>
           </div>
         </div>
 

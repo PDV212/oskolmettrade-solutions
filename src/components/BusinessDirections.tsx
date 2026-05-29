@@ -152,7 +152,7 @@ const BusinessDirections = () => {
         {/* Directions Grid */}
         <div className="space-y-16">
           {directions.map((direction, index) => (
-            <div 
+            <article 
               key={direction.id}
               id={direction.id}
               className={`grid lg:grid-cols-2 gap-12 items-center ${
@@ -163,7 +163,7 @@ const BusinessDirections = () => {
             >
               {/* Content */}
               <div className={`${index % 2 === 1 ? 'lg:col-start-2' : ''} animate-industrial-slide-up`}>
-                <div className={`inline-flex items-center space-x-3 p-4 rounded-xl ${direction.gradient} mb-6`}>
+                <header className={`inline-flex items-center space-x-3 p-4 rounded-xl ${direction.gradient} mb-6`}>
                   {direction.icon && (
                     <direction.icon className={`w-8 h-8 ${direction.iconColor}`} />
                   )}
@@ -171,11 +171,11 @@ const BusinessDirections = () => {
                     <h3 className="text-2xl font-bold text-foreground" itemProp="name">{direction.title}</h3>
                     <p className="text-sm text-muted-foreground">{direction.subtitle}</p>
                   </div>
-                </div>
+                </header>
 
                 <p className="text-lg text-industrial mb-6" itemProp="description">{direction.description}</p>
 
-                <div className="space-y-3 mb-8">
+                <section aria-label="Особенности" className="space-y-3 mb-8">
                   {direction.features.map((feature, featureIndex) => (
                     <div key={featureIndex}>
                       {typeof feature === 'object' ? (
@@ -184,7 +184,7 @@ const BusinessDirections = () => {
                             <CheckCircle2 className={`w-5 h-5 ${direction.iconColor} mt-0.5 flex-shrink-0`} />
                             <span className="text-muted-foreground">{feature.text}</span>
                           </div>
-                          <div className="ml-8">
+                          <figure className="ml-8">
                             <div className="w-[480px] h-[480px] flex items-center justify-center bg-muted/50 rounded-lg p-4">
                               <OptimizedImage 
                                 src={feature.image} 
@@ -194,7 +194,10 @@ const BusinessDirections = () => {
                                 loading="lazy"
                               />
                             </div>
-                          </div>
+                            {feature.text && (
+                              <figcaption className="sr-only">{feature.text}</figcaption>
+                            )}
+                          </figure>
                         </div>
                       ) : (
                         <div className="flex items-start space-x-3">
@@ -204,7 +207,7 @@ const BusinessDirections = () => {
                       )}
                     </div>
                   ))}
-                </div>
+                </section>
 
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button 
@@ -239,7 +242,7 @@ const BusinessDirections = () => {
 
               {/* Image */}
               {direction.image && (
-                <div className={`${index % 2 === 1 ? 'lg:col-start-1' : ''} animate-industrial-fade-in`}>
+                <figure className={`${index % 2 === 1 ? 'lg:col-start-1' : ''} animate-industrial-fade-in`}>
                   <Card className="card-industrial overflow-hidden">
                     <div className="relative h-96">
                       <OptimizedImage
@@ -250,19 +253,19 @@ const BusinessDirections = () => {
                         loading="lazy"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                      <div className="absolute bottom-4 left-4 right-4">
+                      <figcaption className="absolute bottom-4 left-4 right-4">
                         <div className="flex items-center space-x-2 text-white">
                           {direction.icon && (
                             <direction.icon className="w-6 h-6" />
                           )}
                           <span className="font-semibold">{direction.title}</span>
                         </div>
-                      </div>
+                      </figcaption>
                     </div>
                   </Card>
-                </div>
+                </figure>
               )}
-            </div>
+            </article>
           ))}
         </div>
       </div>

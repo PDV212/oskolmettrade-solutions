@@ -63,19 +63,20 @@ const ContactSection = () => {
 
               <div className="grid gap-4 sm:grid-cols-2">
                 {contactCards.map((item) => (
-                  <a
-                    key={item.title}
-                    href={item.href}
-                    target={item.href.startsWith('http') ? '_blank' : undefined}
-                    rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                    className="rounded-lg border border-border bg-background p-4 transition-colors hover:border-primary"
-                  >
-                    <div className="mb-3 inline-flex rounded-lg bg-primary/10 p-3 text-primary">
-                      <item.icon className="h-5 w-5" />
-                    </div>
-                    <p className="text-base font-semibold text-foreground">{item.title}</p>
-                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.description}</p>
-                  </a>
+                  <article key={item.title}>
+                    <a
+                      href={item.href}
+                      target={item.href.startsWith('http') ? '_blank' : undefined}
+                      rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                      className="block rounded-lg border border-border bg-background p-4 transition-colors hover:border-primary"
+                    >
+                      <div className="mb-3 inline-flex rounded-lg bg-primary/10 p-3 text-primary">
+                        <item.icon className="h-5 w-5" />
+                      </div>
+                      <p className="text-base font-semibold text-foreground">{item.title}</p>
+                      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.description}</p>
+                    </a>
+                  </article>
                 ))}
               </div>
             </Card>

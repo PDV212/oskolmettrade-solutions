@@ -67,7 +67,7 @@ const Footer = () => {
                 />
                 <div>
                   <h3 className="text-xl font-bold" itemProp="name">ОСКОЛ-МЕТ-ТРЕЙД</h3>
-                  <p className="text-white/70 text-sm">С 1994 года</p>
+                  <p className="text-white/70 text-sm">С <time dateTime="1994" itemProp="foundingDate">1994</time> года</p>
                 </div>
               </div>
               
@@ -105,7 +105,7 @@ const Footer = () => {
               <div className="mt-6 space-y-2 text-sm text-white/80">
                 <p><span className="font-semibold">ИНН:</span> 3127508337</p>
                 <p><span className="font-semibold">ОГРН:</span> 1033108702868</p>
-                <p><span className="font-semibold">Год основания:</span> 1994</p>
+                <p><span className="font-semibold">Год основания:</span> <time dateTime="1994">1994</time></p>
               </div>
             </div>
 
