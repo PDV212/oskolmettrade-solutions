@@ -126,52 +126,30 @@ export const seoConfigs = {
       language: 'ru' as const,
       structuredData: {
         "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "ОСКОЛ-МЕТ-ТРЕЙД",
-        "alternateName": "ООО ОСКОЛ-МЕТ-ТРЕЙД",
-        "description": "Поставка металлообрабатывающего оборудования, станков ЧПУ, металлургического сырья и промышленных печей с 1994 года",
-        "foundingDate": "1994",
-        "url": "https://oskol-met-trade.ru",
-        "logo": "https://oskol-met-trade.ru/lovable-uploads/b3c22956-096b-4475-8619-90ea784e020b.png",
-        "sameAs": [
-          "https://stankozavod.com/"
-        ],
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "telephone": "+7-909-097-71-74",
-          "contactType": "customer service",
-          "areaServed": ["RU", "KZ", "BY", "CN", "IN"],
-          "availableLanguage": ["Russian", "English", "Chinese"]
-        },
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "ул. А. Солженицына, д. 40, стр. 1",
-          "addressLocality": "Москва",
-          "postalCode": "109004",
-          "addressCountry": "RU"
-        },
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "4.8",
-          "reviewCount": "150",
-          "bestRating": "5"
-        },
-        "offers": [
+        "@graph": [
           {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Product",
-              "name": "Металлообрабатывающее оборудование",
-              "description": "Станки с ЧПУ, обрабатывающие центры, роботизированные комплексы"
-            }
+            "@type": "Organization",
+            "name": "ОСКОЛ-МЕТ-ТРЕЙД",
+            "url": "https://oskolmettrade-solutions.lovable.app",
+            "foundingDate": "1994",
+            "description": "Поставка металлообрабатывающего оборудования из ЮВА с 1994 года",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "ул. Мира, 20, оф. 312/1",
+              "addressLocality": "Губкин",
+              "addressRegion": "Белгородская область",
+              "postalCode": "309181",
+              "addressCountry": "RU"
+            },
+            "telephone": "+7-495-240-91-99",
+            "email": "89090977174@mail.ru",
+            "sameAs": []
           },
           {
-            "@type": "Offer", 
-            "itemOffered": {
-              "@type": "Product",
-              "name": "Металлургическое сырьё",
-              "description": "Марганцевая руда, феррохром, бентонит, никельсодержащий чугун"
-            }
+            "@type": "WebSite",
+            "name": "ОСКОЛ-МЕТ-ТРЕЙД",
+            "url": "https://oskolmettrade-solutions.lovable.app",
+            "inLanguage": ["ru", "en", "zh"]
           }
         ]
       }
