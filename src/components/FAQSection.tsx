@@ -135,12 +135,13 @@ const FAQSection = ({ language = 'ru' }: FAQSectionProps) => {
             itemProp="mainEntity"
             itemType="https://schema.org/Question"
             open={i === 0}
+            data-question-id={`faq-${i + 1}`}
           >
             <summary
               className="flex cursor-pointer items-start justify-between gap-4 font-semibold text-foreground"
               itemProp="name"
             >
-              <span>{item.q}</span>
+              <h3 className="text-base font-semibold leading-snug text-foreground m-0">{item.q}</h3>
               <span
                 aria-hidden="true"
                 className="mt-1 shrink-0 text-primary transition-transform group-open:rotate-45 text-xl leading-none"

@@ -7,7 +7,7 @@ import Footer from '@/components/Footer';
 import CatalogNavigation from '@/components/CatalogNavigation';
 import CTAButton from '@/components/CTAButton';
 import SEOHead, { seoConfigs } from '@/components/SEOHead';
-import StructuredData, { organizationSchema, breadcrumbSchema, faqSchema } from '@/components/StructuredData';
+import StructuredData, { organizationSchema, breadcrumbSchema } from '@/components/StructuredData';
 import AISummary from '@/components/AISummary';
 import FAQSection from '@/components/FAQSection';
 import AISchemas from '@/components/AISchemas';
@@ -18,7 +18,6 @@ const Index = () => {
       <SEOHead {...seoConfigs.ru.home} />
       <StructuredData type="Organization" data={organizationSchema} />
       <StructuredData type="BreadcrumbList" data={breadcrumbSchema('ru')} />
-      <StructuredData type="FAQPage" data={faqSchema} />
       <AISchemas />
       <Header language="ru" />
       <main itemScope itemType="https://schema.org/WebPage">
