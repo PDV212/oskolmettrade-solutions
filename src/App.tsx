@@ -9,6 +9,7 @@ import Index from "./pages/Index";
 import English from "./pages/English";
 import Chinese from "./pages/Chinese";
 import Privacy from "./pages/Privacy";
+import CncMachines from "./pages/CncMachines";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient({
@@ -34,6 +35,7 @@ function App() {
             <Route path="/en" element={<English />} />
             <Route path="/zh" element={<Chinese />} />
             <Route path="/privacy" element={<Privacy />} />
+            <Route path="/cnc-machines" element={<CncMachines />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <CookieBanner />
