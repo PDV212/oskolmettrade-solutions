@@ -37,6 +37,7 @@ function App() {
             <Route path="/zh" element={<Chinese />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/cnc-machines" element={<CncMachines />} />
+            <Route path="/about" element={<About />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <CookieBanner />
