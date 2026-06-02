@@ -1,5 +1,5 @@
 interface StructuredDataProps {
-  type: 'Organization' | 'Product' | 'Service' | 'FAQPage' | 'BreadcrumbList';
+  type: 'Organization' | 'Product' | 'Service' | 'FAQPage' | 'BreadcrumbList' | 'AboutPage';
   data: Record<string, any>;
 }
 
