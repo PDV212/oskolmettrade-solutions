@@ -10,6 +10,7 @@ import English from "./pages/English";
 import Chinese from "./pages/Chinese";
 import Privacy from "./pages/Privacy";
 import CncMachines from "./pages/CncMachines";
+import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient({
