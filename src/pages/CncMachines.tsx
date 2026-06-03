@@ -148,6 +148,42 @@ const CncMachines = () => {
             </div>
           </section>
 
+          <section aria-labelledby="comparison-heading" className="mb-12">
+            <h2 id="comparison-heading" className="text-2xl md:text-3xl font-bold text-foreground mb-6">
+              Сравнение типов станков ЧПУ
+            </h2>
+            <figure>
+              <figcaption className="text-sm text-muted-foreground mb-3">
+                Сравнительная таблица точности, применения и ценового сегмента станков с ЧПУ
+              </figcaption>
+              <div className="overflow-x-auto rounded-lg border border-border">
+                <table className="w-full text-left">
+                  <thead className="bg-muted sticky top-0 z-10">
+                    <tr>
+                      <th scope="col" className="px-4 py-3 font-semibold whitespace-nowrap">Тип станка</th>
+                      <th scope="col" className="px-4 py-3 font-semibold whitespace-nowrap">Точность</th>
+                      <th scope="col" className="px-4 py-3 font-semibold whitespace-nowrap">Применение</th>
+                      <th scope="col" className="px-4 py-3 font-semibold whitespace-nowrap">Ценовой сегмент</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {comparisonRows.map((r, i) => (
+                      <tr
+                        key={r.type}
+                        className={`border-t border-border ${i % 2 === 1 ? 'bg-muted/50' : 'bg-card'}`}
+                      >
+                        <td className="px-4 py-3 font-medium whitespace-nowrap">{r.type}</td>
+                        <td className="px-4 py-3 text-muted-foreground whitespace-nowrap">{r.accuracy}</td>
+                        <td className="px-4 py-3 text-muted-foreground">{r.application}</td>
+                        <td className="px-4 py-3 text-muted-foreground whitespace-nowrap">{r.price}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </figure>
+          </section>
+
           <section aria-labelledby="why-heading" className="mb-12">
             <h2 id="why-heading" className="text-2xl md:text-3xl font-bold text-foreground mb-6">Почему мы</h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
