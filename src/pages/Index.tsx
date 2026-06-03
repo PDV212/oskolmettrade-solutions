@@ -11,6 +11,7 @@ import StructuredData, { organizationSchema, breadcrumbSchema } from '@/componen
 import AISummary from '@/components/AISummary';
 import FAQSection from '@/components/FAQSection';
 import AISchemas from '@/components/AISchemas';
+import KeyFacts from '@/components/KeyFacts';
 
 const Index = () => {
   return (
@@ -29,6 +30,7 @@ const Index = () => {
         <CatalogNavigation />
         <CTAButton language="ru" variant="compact" className="py-8" />
         <CompanyAdvantages />
+        <KeyFacts />
         <FAQSection language="ru" />
         <CTAButton language="ru" />
         <ContactSection />
