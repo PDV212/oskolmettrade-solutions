@@ -39,6 +39,7 @@ function App() {
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/cnc-machines" element={<CncMachines />} />
             <Route path="/about" element={<About />} />
+            <Route path="/cases" element={<Cases />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <CookieBanner />
