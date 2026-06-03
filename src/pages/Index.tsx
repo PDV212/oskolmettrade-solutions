@@ -11,6 +11,7 @@ import StructuredData, { organizationSchema, breadcrumbSchema } from '@/componen
 import AISummary from '@/components/AISummary';
 import FAQSection from '@/components/FAQSection';
 import AISchemas from '@/components/AISchemas';
+import KeyFacts from '@/components/KeyFacts';
 
 const Index = () => {
   return (
