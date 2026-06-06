@@ -77,9 +77,13 @@ const SEOHead = ({
       meta.setAttribute('content', content);
     };
 
+    updateTwitterTag('twitter:card', 'summary_large_image');
     updateTwitterTag('twitter:title', title);
     updateTwitterTag('twitter:description', description);
     updateTwitterTag('twitter:image', ogImage);
+    updateMetaTag('og:type', 'website');
+    updateMetaTag('og:site_name', 'ОСКОЛ-МЕТ-ТРЕЙД');
+
 
     // Добавляем структурированные данные
     if (structuredData) {
