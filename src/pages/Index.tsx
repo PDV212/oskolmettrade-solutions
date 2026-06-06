@@ -12,6 +12,8 @@ import AISummary from '@/components/AISummary';
 import FAQSection from '@/components/FAQSection';
 import AISchemas from '@/components/AISchemas';
 import KeyFacts from '@/components/KeyFacts';
+import SpeakableSchema from '@/components/SpeakableSchema';
+
 
 const Index = () => {
   return (
