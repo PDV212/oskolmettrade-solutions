@@ -273,9 +273,45 @@ const CatalogNavigation = () => {
     setSearchQuery('');
   };
 
+  const categoryLabels: Record<string, string> = {
+    equipment: 'Металлообрабатывающее оборудование',
+    materials: 'Металлургическое сырье',
+    furnaces: 'Металлургические печи',
+    manufacturing: 'Изделия производства ВСЗ'
+  };
+
+  const siteUrl = 'https://oskolmettrade-solutions.lovable.app';
+  const productsSchema = {
+    '@context': 'https://schema.org',
+    '@graph': allProducts.map(p => ({
+      '@type': 'Product',
+      '@id': `${siteUrl}/#product-${p.id}`,
+      name: p.name,
+      description: p.description,
+      image: p.image ? `${siteUrl}${p.image}` : undefined,
+      brand: { '@type': 'Brand', name: 'ОСКОЛ-МЕТ-ТРЕЙД' },
+      category: `${categoryLabels[p.category] ?? p.category} / ${p.subcategory}`,
+      offers: {
+        '@type': 'Offer',
+        availability: 'https://schema.org/InStock',
+        priceCurrency: 'RUB',
+        price: p.price && p.price !== 'По запросу' ? p.price : '0',
+        priceSpecification: !p.price || p.price === 'По запросу'
+          ? { '@type': 'PriceSpecification', price: 'по запросу', priceCurrency: 'RUB' }
+          : undefined,
+        seller: { '@type': 'Organization', name: 'ОСКОЛ-МЕТ-ТРЕЙД' }
+      }
+    }))
+  };
+
   return (
     <section id="catalog" className="py-20 bg-background">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productsSchema) }}
+      />
       <div className="container mx-auto px-4">
+
         {/* Заголовок */}
         <div className="text-center mb-12">
           <h2 className="heading-section mb-4">Каталог продукции</h2>
