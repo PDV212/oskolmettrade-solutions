@@ -9,7 +9,7 @@ const facts = [
 
 const KeyFacts = () => {
   return (
-    <section aria-labelledby="key-facts-heading" className="py-12 bg-background">
+    <section id="key-facts" aria-labelledby="key-facts-heading" className="py-12 bg-background">
       <div className="container mx-auto px-4 max-w-4xl">
         <div className="rounded-xl border border-primary/20 bg-gradient-to-br from-primary/10 via-accent/5 to-primary/10 p-6 md:p-8 shadow-industrial">
           <h2 id="key-facts-heading" className="text-2xl md:text-3xl font-bold text-foreground mb-6">
