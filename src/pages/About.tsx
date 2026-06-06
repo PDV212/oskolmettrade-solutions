@@ -162,6 +162,12 @@ const About = () => {
       />
       <StructuredData type="BreadcrumbList" data={breadcrumbSchema} />
       <StructuredData type="AboutPage" data={aboutPageSchema} />
+      <SpeakableSchema
+        url="https://oskolmettrade-solutions.lovable.app/about"
+        name="ОСКОЛ-МЕТ-ТРЕЙД — Ключевые факты о компании"
+        cssSelectors={['#metrics-heading', '#history-heading']}
+      />
+
 
       <Header language="ru" />
 
