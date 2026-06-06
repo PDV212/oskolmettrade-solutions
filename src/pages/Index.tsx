@@ -22,6 +22,12 @@ const Index = () => {
       <StructuredData type="Organization" data={organizationSchema} />
       <StructuredData type="BreadcrumbList" data={breadcrumbSchema('ru')} />
       <AISchemas />
+      <SpeakableSchema
+        url="https://oskolmettrade-solutions.lovable.app/"
+        name="ОСКОЛ-МЕТ-ТРЕЙД — Ключевые факты о компании"
+        cssSelectors={['#key-facts', '#key-facts-heading']}
+      />
+
       <Header language="ru" />
       <main itemScope itemType="https://schema.org/WebPage">
         <HeroSection />
