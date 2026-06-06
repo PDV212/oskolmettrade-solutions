@@ -12,6 +12,8 @@ import AISummary from '@/components/AISummary';
 import FAQSection from '@/components/FAQSection';
 import AISchemas from '@/components/AISchemas';
 import KeyFacts from '@/components/KeyFacts';
+import SpeakableSchema from '@/components/SpeakableSchema';
+
 
 const Index = () => {
   return (
@@ -20,6 +22,12 @@ const Index = () => {
       <StructuredData type="Organization" data={organizationSchema} />
       <StructuredData type="BreadcrumbList" data={breadcrumbSchema('ru')} />
       <AISchemas />
+      <SpeakableSchema
+        url="https://oskolmettrade-solutions.lovable.app/"
+        name="ОСКОЛ-МЕТ-ТРЕЙД — Ключевые факты о компании"
+        cssSelectors={['#key-facts', '#key-facts-heading']}
+      />
+
       <Header language="ru" />
       <main itemScope itemType="https://schema.org/WebPage">
         <HeroSection />

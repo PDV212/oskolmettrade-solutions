@@ -2,6 +2,8 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import SEOHead from '@/components/SEOHead';
 import StructuredData from '@/components/StructuredData';
+import SpeakableSchema from '@/components/SpeakableSchema';
+
 import { Award, Building2, Globe, Users } from 'lucide-react';
 
 const breadcrumbSchema = {
@@ -160,6 +162,12 @@ const About = () => {
       />
       <StructuredData type="BreadcrumbList" data={breadcrumbSchema} />
       <StructuredData type="AboutPage" data={aboutPageSchema} />
+      <SpeakableSchema
+        url="https://oskolmettrade-solutions.lovable.app/about"
+        name="ОСКОЛ-МЕТ-ТРЕЙД — Ключевые факты о компании"
+        cssSelectors={['#metrics-heading', '#history-heading']}
+      />
+
 
       <Header language="ru" />
 
