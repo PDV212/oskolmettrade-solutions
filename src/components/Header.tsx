@@ -31,6 +31,7 @@ const Header = ({ language = 'ru' }: HeaderProps) => {
       return [
         { name: 'Home', href: '#home' },
         { name: 'About', href: '#directions' },
+        { name: 'Company', href: '/en/company' },
         { name: 'Equipment', href: '#equipment' },
         { name: 'Materials', href: '#materials' },
         { name: 'Furnaces', href: '#furnaces' },
@@ -41,6 +42,7 @@ const Header = ({ language = 'ru' }: HeaderProps) => {
       return [
         { name: '首页', href: '#home' },
         { name: '关于我们', href: '#directions' },
+        { name: '公司信息', href: '/zh/company' },
         { name: '设备', href: '#equipment' },
         { name: '原材料', href: '#materials' },
         { name: '炉子', href: '#furnaces' },
@@ -51,6 +53,7 @@ const Header = ({ language = 'ru' }: HeaderProps) => {
     return [
       { name: 'Главная', href: '#home' },
       { name: 'О компании', href: '#directions' },
+      { name: 'Реквизиты', href: '/ru/company' },
       { name: 'Оборудование', href: '#equipment' },
       { name: 'Сырье', href: '#materials' },
       { name: 'Печи', href: '#furnaces' },
@@ -62,6 +65,10 @@ const Header = ({ language = 'ru' }: HeaderProps) => {
   const navItems = getNavItems();
 
   const scrollToSection = (href: string) => {
+    if (href.startsWith('/')) {
+      window.location.href = href;
+      return;
+    }
     if (href.startsWith('#')) {
       const element = document.querySelector(href) as HTMLElement;
       if (element) {
