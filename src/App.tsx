@@ -12,6 +12,7 @@ import Privacy from "./pages/Privacy";
 import CncMachines from "./pages/CncMachines";
 import About from "./pages/About";
 import Cases from "./pages/Cases";
+import Company from "./pages/Company";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient({
@@ -40,6 +41,10 @@ function App() {
             <Route path="/cnc-machines" element={<CncMachines />} />
             <Route path="/about" element={<About />} />
             <Route path="/cases" element={<Cases />} />
+            <Route path="/company" element={<Company lang="ru" />} />
+            <Route path="/ru/company" element={<Company lang="ru" />} />
+            <Route path="/en/company" element={<Company lang="en" />} />
+            <Route path="/zh/company" element={<Company lang="zh" />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <CookieBanner />
