@@ -14,6 +14,7 @@ import About from "./pages/About";
 import Cases from "./pages/Cases";
 import Company from "./pages/Company";
 import NotFound from "./pages/NotFound";
+import LegalPlaceholder from "./pages/LegalPlaceholder";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -45,6 +46,14 @@ function App() {
             <Route path="/ru/company" element={<Company lang="ru" />} />
             <Route path="/en/company" element={<Company lang="en" />} />
             <Route path="/zh/company" element={<Company lang="zh" />} />
+            <Route path="/personal-data-consent" element={<LegalPlaceholder lang="ru" topic="consent" />} />
+            <Route path="/cookies" element={<LegalPlaceholder lang="ru" topic="cookies" />} />
+            <Route path="/en/privacy" element={<LegalPlaceholder lang="en" topic="privacy" />} />
+            <Route path="/en/personal-data-consent" element={<LegalPlaceholder lang="en" topic="consent" />} />
+            <Route path="/en/cookies" element={<LegalPlaceholder lang="en" topic="cookies" />} />
+            <Route path="/zh/privacy" element={<LegalPlaceholder lang="zh" topic="privacy" />} />
+            <Route path="/zh/personal-data-consent" element={<LegalPlaceholder lang="zh" topic="consent" />} />
+            <Route path="/zh/cookies" element={<LegalPlaceholder lang="zh" topic="cookies" />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <CookieBanner />

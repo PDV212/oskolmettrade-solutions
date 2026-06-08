@@ -36,7 +36,7 @@ const Chinese = () => {
         <CTAButton language="zh" />
         <ContactSectionZh />
       </main>
-      <Footer />
+      <Footer language="zh" />
     </div>
   );
 };
