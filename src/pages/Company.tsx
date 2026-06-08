@@ -333,7 +333,7 @@ const Company = ({ lang }: CompanyProps) => {
         </article>
       </main>
 
-      <Footer />
+      <Footer language={lang} />
     </div>
   );
 };

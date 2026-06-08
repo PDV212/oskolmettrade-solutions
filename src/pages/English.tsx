@@ -36,7 +36,7 @@ const English = () => {
         <CTAButton language="en" />
         <ContactSectionEn />
       </main>
-      <Footer />
+      <Footer language="en" />
     </div>
   );
 };
