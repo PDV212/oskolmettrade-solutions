@@ -15,6 +15,7 @@ import Cases from "./pages/Cases";
 import Company from "./pages/Company";
 import NotFound from "./pages/NotFound";
 import LegalPlaceholder from "./pages/LegalPlaceholder";
+import Faq from "./pages/Faq";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -54,6 +55,9 @@ function App() {
             <Route path="/zh/privacy" element={<LegalPlaceholder lang="zh" topic="privacy" />} />
             <Route path="/zh/personal-data-consent" element={<LegalPlaceholder lang="zh" topic="consent" />} />
             <Route path="/zh/cookies" element={<LegalPlaceholder lang="zh" topic="cookies" />} />
+            <Route path="/en/faq" element={<Faq lang="en" />} />
+            <Route path="/ru/faq" element={<Faq lang="ru" />} />
+            <Route path="/zh/faq" element={<Faq lang="zh" />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <CookieBanner />
