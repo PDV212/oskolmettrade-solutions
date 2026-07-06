@@ -157,7 +157,7 @@ const OptimizedImage = ({
             priority && 'priority-image'
           )}
           style={{
-            imageRendering: 'crisp-edges'
+            imageRendering: 'auto'
           }}
         />
       )}
