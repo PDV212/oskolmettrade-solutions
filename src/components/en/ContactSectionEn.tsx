@@ -97,7 +97,7 @@ const ContactSectionEn = () => {
                 <h4 className="font-bold text-foreground mb-2">Contact us via messengers</h4>
                 <p className="text-sm text-muted-foreground">Use direct links or scan the QR code.</p>
               </div>
-              <div className="grid gap-6 sm:grid-cols-2">
+              <div className="grid gap-6 sm:grid-cols-3">
                 {messengerCards.map((item) => {
                   const content = (
                     <>

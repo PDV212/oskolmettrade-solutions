@@ -98,7 +98,7 @@ const ContactSection = () => {
                 <h4 className="text-xl font-bold text-foreground mb-2">Свяжитесь с нами через мессенджеры</h4>
                 <p className="text-base text-muted-foreground">Используйте прямые ссылки или отсканируйте QR-код.</p>
               </div>
-              <div className="grid gap-6 sm:grid-cols-2">
+              <div className="grid gap-6 sm:grid-cols-3">
                 {messengerCards.map((item) => {
                   const content = (
                     <>
