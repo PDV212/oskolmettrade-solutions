@@ -23,9 +23,21 @@ const ContactSectionZh = () => {
       href: 'mailto:89090977174@mail.ru',
       description: '适用于报价请求、技术资料和文件往来。'
     },
+    {
+      icon: MessageCircle,
+      title: 'Telegram',
+      href: 'https://t.me/имя_канала',
+      description: '可直接打开 Telegram 或扫描下方二维码。'
+    }
   ];
 
   const messengerCards = [
+    {
+      title: 'Telegram',
+      href: 'https://t.me/имя_канала',
+      image: '/lovable-uploads/783d99ba-632d-47a7-bc9d-d2c6653ee5cc.png',
+      alt: 'Telegram二维码'
+    },
     {
       title: 'WhatsApp',
       href: 'https://wa.me/79090977174',

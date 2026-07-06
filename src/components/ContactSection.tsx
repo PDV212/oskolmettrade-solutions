@@ -33,6 +33,12 @@ const ContactSection = () => {
 
   const messengerCards = [
     {
+      title: 'Telegram',
+      href: 'https://t.me/имя_канала',
+      image: '/lovable-uploads/783d99ba-632d-47a7-bc9d-d2c6653ee5cc.png',
+      alt: 'QR-код Telegram'
+    },
+    {
       title: 'WhatsApp',
       href: 'https://wa.me/79090977174',
       image: '/lovable-uploads/0667cb35-cc3c-4070-b595-c9700d58f2d9.png',
