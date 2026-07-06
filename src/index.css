@@ -194,16 +194,9 @@
   /* Mobile Optimizations for Images */
   .mobile-optimized-image {
     @apply object-cover transition-all duration-300;
-    image-rendering: optimizeQuality;
+    image-rendering: auto;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-  }
-
-  @media (max-width: 768px) {
-    .mobile-optimized-image {
-      image-rendering: -webkit-optimize-contrast;
-      image-rendering: crisp-edges;
-    }
   }
 
   /* Responsive QR Codes */
@@ -224,15 +217,9 @@
   /* Hero Image Optimization */
   .hero-image-optimized {
     @apply object-cover object-center;
-    image-rendering: optimizeQuality;
-    image-rendering: crisp-edges;
+    image-rendering: auto;
   }
 
-  @media (min-width: 1024px) {
-    .hero-image-optimized {
-      image-rendering: -webkit-optimize-contrast;
-    }
-  }
 
   /* Lazy Loading Placeholder & Optimizations */
   .lazy-loading-placeholder {
