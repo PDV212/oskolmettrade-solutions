@@ -11,8 +11,11 @@ import {
 import { Card } from '@/components/ui/card';
 import OptimizedImage from '@/components/ui/optimized-image';
 import { IndustryLeaderBadgeZh, ExperienceBadgeZh, TrustedBadgeZh, GrowthBadgeZh } from '@/components/ui/badge-premium';
+import { trustSignals, isPubliclyVerified } from '@/data/companyRegistry';
 
 const CompanyAdvantagesZh = () => {
+  const showEquipmentDelivered = isPubliclyVerified(trustSignals.equipmentDelivered);
+  const showAsianPartners = isPubliclyVerified(trustSignals.asianPartnerFactories);
   const advantages = [
     {
       icon: Award,
@@ -21,11 +24,11 @@ const CompanyAdvantagesZh = () => {
       stat: '30年',
       gradient: 'from-primary/20 to-primary/5'
     },
-    {
+    showEquipmentDelivered && {
       icon: Globe,
       title: '国际供应',
-      description: '供应超过2500台机床，地理范围覆盖独联体和远外国家',
-      stat: '2500+台机床',
+      description: '地理范围覆盖独联体和其他海外市场',
+      stat: '独联体与海外',
       gradient: 'from-accent/20 to-accent/5'
     },
     {
@@ -56,14 +59,14 @@ const CompanyAdvantagesZh = () => {
       stat: '交钥匙',
       gradient: 'from-secondary/15 to-primary/10'
     }
-  ];
+  ].filter(Boolean) as Array<{ icon: typeof Award; title: string; description: string; stat: string; gradient: string }>;
 
   const achievements = [
     { number: '30+', label: '年经验' },
-    { number: '2500+', label: '台机床供应' },
+    showEquipmentDelivered && { number: '2500+', label: '台机床供应' },
     { number: '4', label: '业务方向' },
-    { number: '25', label: '年与东南亚合作' }
-  ];
+    showAsianPartners && { number: '25', label: '年与东南亚合作' }
+  ].filter(Boolean) as Array<{ number: string; label: string }>;
 
   return (
     <section id="advantages" className="py-20 bg-background">
