@@ -23,21 +23,9 @@ const ContactSection = () => {
       href: 'mailto:89090977174@mail.ru',
       description: 'Для коммерческих запросов, спецификаций и обмена документами.'
     },
-    {
-      icon: MessageCircle,
-      title: 'Telegram',
-      href: 'https://t.me/имя_канала',
-      description: 'Напишите напрямую в Telegram или отсканируйте QR-код ниже.'
-    }
   ];
 
   const messengerCards = [
-    {
-      title: 'Telegram',
-      href: 'https://t.me/имя_канала',
-      image: '/lovable-uploads/783d99ba-632d-47a7-bc9d-d2c6653ee5cc.png',
-      alt: 'QR-код Telegram'
-    },
     {
       title: 'WhatsApp',
       href: 'https://wa.me/79090977174',
