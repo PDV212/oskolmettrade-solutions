@@ -19,22 +19,22 @@ const CompanyAdvantages = () => {
   const advantages = [
     {
       icon: Award,
-      title: 'Многолетний опыт',
-      description: '30 лет работы в металлургии с 1994 года и поставки оборудования с 2015 года',
-      stat: '30 лет',
+      title: 'Отраслевой опыт с 1994 года',
+      description: 'Отраслевой опыт команды и основателя бизнеса формируется с 1994 года; ООО «ОСКОЛ-МЕТ-ТРЕЙД» продолжает и развивает этот опыт.',
+      stat: 'Опыт команды с 1994 года',
       gradient: 'from-primary/20 to-primary/5'
     },
     showEquipmentDelivered && {
       icon: Globe,
-      title: 'Международные поставки',
-      description: 'География поставок охватывает страны СНГ и дальнего зарубежья',
-      stat: 'СНГ и дальнее зарубежье',
+      title: 'География международного опыта',
+      description: 'Совокупный международный опыт команды и компаний, созданных основателем в разные периоды, охватывает Россию, Беларусь, Казахстан, Китай, Индию, Индонезию, Израиль, Италию, Малайзию и Филиппины.',
+      stat: 'СНГ, Азия, Ближний Восток, Европа',
       gradient: 'from-accent/20 to-accent/5'
     },
     {
       icon: Shield,
       title: 'Полный цикл услуг',
-      description: 'Группа компаний с собственным производством, торговлей, логистикой и сервисом',
+      description: 'Совместные проекты в области поставок оборудования, сырья, металлургических печей и производственной кооперации с ВСЗ.',
       stat: '4 направления',
       gradient: 'from-secondary/20 to-secondary/5'
     },
@@ -47,9 +47,9 @@ const CompanyAdvantages = () => {
     },
     {
       icon: Users,
-      title: 'Техническая экспертиза',
-      description: 'Наши технические эксперты — доценты ведущих университетов России с минимальным уровнем «кандидат технических наук» в области металлургического машиностроения.',
-      stat: 'Экспертный уровень',
+      title: 'Технический директор',
+      description: 'Технический директор — Кургузов Сергей Анатольевич, кандидат технических наук, доцент по технологии машиностроения.',
+      stat: 'к.т.н., доцент',
       gradient: 'from-accent/15 to-primary/10'
     },
     {
@@ -62,8 +62,8 @@ const CompanyAdvantages = () => {
   ].filter(Boolean) as Array<{ icon: typeof Award; title: string; description: string; stat: string; gradient: string }>;
 
   const achievements = [
-    { number: '30+', label: 'лет опыта работы' },
-    showEquipmentDelivered && { number: '2500+', label: 'станков поставлено' },
+    { number: '1994', label: 'опыт команды' },
+    showEquipmentDelivered && { number: '≈2 500', label: 'единиц — совокупный опыт' },
     { number: '4', label: 'направления деятельности' },
     showAsianPartners && { number: '25', label: 'лет работы с ЮВА' }
   ].filter(Boolean) as Array<{ number: string; label: string }>;
