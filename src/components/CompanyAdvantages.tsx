@@ -11,8 +11,11 @@ import {
 import { Card } from '@/components/ui/card';
 import OptimizedImage from '@/components/ui/optimized-image';
 import { IndustryLeaderBadge, ExperienceBadge, TrustedBadge, GrowthBadge } from '@/components/ui/badge-premium';
+import { trustSignals, isPubliclyVerified } from '@/data/companyRegistry';
 
 const CompanyAdvantages = () => {
+  const showEquipmentDelivered = isPubliclyVerified(trustSignals.equipmentDelivered);
+  const showAsianPartners = isPubliclyVerified(trustSignals.asianPartnerFactories);
   const advantages = [
     {
       icon: Award,
@@ -21,11 +24,11 @@ const CompanyAdvantages = () => {
       stat: '30 лет',
       gradient: 'from-primary/20 to-primary/5'
     },
-    {
+    showEquipmentDelivered && {
       icon: Globe,
       title: 'Международные поставки',
-      description: 'Более 2500 станков поставлено, география охватывает страны СНГ и дальнего зарубежья',
-      stat: '2500+ станков',
+      description: 'География поставок охватывает страны СНГ и дальнего зарубежья',
+      stat: 'СНГ и дальнее зарубежье',
       gradient: 'from-accent/20 to-accent/5'
     },
     {
