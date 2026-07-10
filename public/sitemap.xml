@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
-
   <url>
     <loc>https://www.xn-----llccbycikqb3afub.xn--p1ai/</loc>
     <changefreq>weekly</changefreq>
@@ -11,7 +10,6 @@
     <xhtml:link rel="alternate" hreflang="zh" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/zh"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/"/>
   </url>
-
   <url>
     <loc>https://www.xn-----llccbycikqb3afub.xn--p1ai/en</loc>
     <changefreq>weekly</changefreq>
@@ -21,7 +19,6 @@
     <xhtml:link rel="alternate" hreflang="zh" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/zh"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/"/>
   </url>
-
   <url>
     <loc>https://www.xn-----llccbycikqb3afub.xn--p1ai/zh</loc>
     <changefreq>weekly</changefreq>
@@ -31,11 +28,60 @@
     <xhtml:link rel="alternate" hreflang="zh" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/zh"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/"/>
   </url>
-
+  <url>
+    <loc>https://www.xn-----llccbycikqb3afub.xn--p1ai/company</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/company"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/en/company"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/zh/company"/>
+  </url>
+  <url>
+    <loc>https://www.xn-----llccbycikqb3afub.xn--p1ai/en/company</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.xn-----llccbycikqb3afub.xn--p1ai/zh/company</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.xn-----llccbycikqb3afub.xn--p1ai/about</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.xn-----llccbycikqb3afub.xn--p1ai/cases</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.xn-----llccbycikqb3afub.xn--p1ai/cnc-machines</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.xn-----llccbycikqb3afub.xn--p1ai/ru/faq</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/ru/faq"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/en/faq"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/zh/faq"/>
+  </url>
+  <url>
+    <loc>https://www.xn-----llccbycikqb3afub.xn--p1ai/en/faq</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.xn-----llccbycikqb3afub.xn--p1ai/zh/faq</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
   <url>
     <loc>https://www.xn-----llccbycikqb3afub.xn--p1ai/privacy</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
-
 </urlset>
