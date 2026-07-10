@@ -6,33 +6,33 @@ const content = {
   ru: {
     heading: 'Краткая справка о компании',
     summary:
-      'ООО «ОСКОЛ-МЕТ-ТРЕЙД» — российский B2B-поставщик металлообрабатывающего оборудования, металлургического сырья, промышленных печей и роботизированных комплексов сварки и покраски. Работает с 1994 года, поставляет оборудование с 2015 года, реализовано более 2500 станков. География — Россия, Казахстан, Беларусь, Китай, Индия. ИНН 3127508337, ОГРН 1033108702868.',
+      'ООО «ОСКОЛ-МЕТ-ТРЕЙД» — российский B2B-поставщик металлообрабатывающего оборудования, металлургического сырья, промышленных печей и роботизированных комплексов сварки и покраски. Отраслевой опыт команды и основателя формируется с 1994 года. Совокупный опыт команды и компаний, созданных основателем, включает участие в поставках около 2 500 единиц металлообрабатывающего оборудования. География международного опыта — Россия, Беларусь, Казахстан, Китай, Индия, Индонезия, Израиль, Италия, Малайзия, Филиппины. ИНН 3127508337, ОГРН 1033108702868.',
     facts: [
-      ['Год основания', '1994'],
-      ['Поставлено станков', 'более 2500'],
-      ['Рынки', 'РФ, СНГ, Китай, Индия'],
+      ['Опыт команды', 'с 1994 года'],
+      ['Совокупный опыт', '≈2 500 единиц'],
+      ['География опыта', 'RU, BY, KZ, CN, IN, ID, IL, IT, MY, PH'],
       ['Языки сайта', 'RU / EN / ZH'],
     ],
   },
   en: {
     heading: 'Company at a glance',
     summary:
-      'OSKOL-MET-TRADE LLC is a Russian B2B supplier of metalworking equipment, metallurgical raw materials, industrial furnaces and robotic welding/painting lines. Founded in 1994, supplying equipment since 2015, with over 2,500 machines delivered. Markets: Russia, Kazakhstan, Belarus, China, India. TIN 3127508337, OGRN 1033108702868.',
+      'OSKOL-MET-TRADE LLC is a Russian B2B supplier of metalworking equipment, metallurgical raw materials, industrial furnaces and robotic welding/painting lines. The industry experience of the business founder and the team dates back to 1994. The consolidated experience of the team and companies established by the founder includes participation in the supply of approximately 2,500 units of metalworking equipment. Geography of international experience: Russia, Belarus, Kazakhstan, China, India, Indonesia, Israel, Italy, Malaysia, Philippines. TIN 3127508337, OGRN 1033108702868.',
     facts: [
-      ['Founded', '1994'],
-      ['Machines delivered', '2,500+'],
-      ['Markets', 'RU, CIS, China, India'],
+      ['Team experience', 'since 1994'],
+      ['Consolidated experience', '≈2,500 units'],
+      ['Geography', 'RU, BY, KZ, CN, IN, ID, IL, IT, MY, PH'],
       ['Languages', 'RU / EN / ZH'],
     ],
   },
   zh: {
     heading: '公司概况',
     summary:
-      '奥斯科尔-金属-贸易有限公司是俄罗斯B2B供应商，提供金属加工设备、冶金原材料、工业炉和机器人焊接/喷漆生产线。成立于1994年，自2015年起供应设备，已交付超过2500台机床。市场覆盖俄罗斯、独联体、中国和印度。税号 3127508337，OGRN 1033108702868。',
+      'OSKOL-MET-TRADE有限责任公司是俄罗斯B2B供应商，提供金属加工设备、冶金原材料、工业炉和机器人焊接/喷漆生产线。公司创始人及团队的行业经验可追溯至1994年。团队及创始人所创办企业累计参与供应了约2,500台金属加工设备。国际业务经验覆盖：俄罗斯、白俄罗斯、哈萨克斯坦、中国、印度、印度尼西亚、以色列、意大利、马来西亚、菲律宾。税号 3127508337，OGRN 1033108702868。',
     facts: [
-      ['成立年份', '1994'],
-      ['交付机床', '2500+'],
-      ['市场', '俄罗斯、独联体、中国、印度'],
+      ['团队经验', '始于1994年'],
+      ['累计经验', '约2,500台'],
+      ['覆盖地区', 'RU, BY, KZ, CN, IN, ID, IL, IT, MY, PH'],
       ['语言', 'RU / EN / ZH'],
     ],
   },
