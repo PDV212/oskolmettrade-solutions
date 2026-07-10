@@ -97,7 +97,7 @@ const ContactSectionEn = () => {
                 <h4 className="font-bold text-foreground mb-2">Contact us via messengers</h4>
                 <p className="text-sm text-muted-foreground">Use direct links or scan the QR code.</p>
               </div>
-              <div className="grid gap-6 sm:grid-cols-2">
+              <div className="grid gap-6 sm:grid-cols-3">
                 {messengerCards.map((item) => {
                   const content = (
                     <>
@@ -110,6 +110,9 @@ const ContactSectionEn = () => {
                         sizes="(max-width: 640px) 64px, (max-width: 768px) 80px, 96px"
                       />
                       <p className="text-xs font-semibold text-foreground">{item.title}</p>
+                      {item.description && (
+                        <p className="mt-1 text-xs leading-relaxed text-muted-foreground">{item.description}</p>
+                      )}
                     </>
                   );
 
@@ -135,6 +138,9 @@ const ContactSectionEn = () => {
                 <p className="text-sm leading-relaxed text-muted-foreground">
                   This website is for informational purposes only and does not collect visitors’ personal data. Please use the contacts above for communication.
                 </p>
+                <p className="text-xs leading-relaxed text-muted-foreground">
+                  When following links to WhatsApp, WeChat, email or Yandex Maps, the respective external service rules apply.
+                </p>
               </div>
             </Card>
           </div>
@@ -144,8 +150,11 @@ const ContactSectionEn = () => {
               {[
                 {
                   icon: MapPin,
-                  title: 'Address',
-                  details: ['109004, Moscow, Aleksandra Solzhenitsyna Street, 40 building 1'],
+                  title: 'Addresses',
+                  details: [
+                    'Moscow office (for commercial projects): 109004, Moscow, Aleksandra Solzhenitsyna Street, 40 building 1',
+                    'Registered legal address: 20 Mira Street, office 312/1, Gubkin, Belgorod Region, 309181, Russia'
+                  ],
                   subtitle: 'Office meetings by prior phone arrangement'
                 },
                 {
