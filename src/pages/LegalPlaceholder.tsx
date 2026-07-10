@@ -10,7 +10,7 @@ interface Props {
   topic: Topic;
 }
 
-const SITE = 'https://www.xn-----llccbycikqb3afub.xn--p1ai';
+
 
 const content: Record<Topic, Record<Lang, { title: string; intro: string; body: string[] }>> = {
   privacy: {
