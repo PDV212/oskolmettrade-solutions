@@ -94,6 +94,16 @@ const pathFor = (topic: Topic, lang: Lang) => {
 
 const LegalPlaceholder = ({ lang, topic }: Props) => {
   const c = content[topic][lang];
+  // Consent page is legacy — hide from search indexes.
+  if (topic === 'consent' && typeof document !== 'undefined') {
+    let meta = document.querySelector('meta[name="robots"]');
+    if (!meta) {
+      meta = document.createElement('meta');
+      meta.setAttribute('name', 'robots');
+      document.head.appendChild(meta);
+    }
+    meta.setAttribute('content', 'noindex, nofollow');
+  }
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
