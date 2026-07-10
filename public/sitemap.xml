@@ -83,5 +83,54 @@
     <loc>https://www.xn-----llccbycikqb3afub.xn--p1ai/privacy</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/privacy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/en/privacy"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/zh/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/en/privacy"/>
+  </url>
+  <url>
+    <loc>https://www.xn-----llccbycikqb3afub.xn--p1ai/en/privacy</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/privacy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/en/privacy"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/zh/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/en/privacy"/>
+  </url>
+  <url>
+    <loc>https://www.xn-----llccbycikqb3afub.xn--p1ai/zh/privacy</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/privacy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/en/privacy"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/zh/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/en/privacy"/>
+  </url>
+  <url>
+    <loc>https://www.xn-----llccbycikqb3afub.xn--p1ai/cookies</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/cookies"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/en/cookies"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/zh/cookies"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/en/cookies"/>
+  </url>
+  <url>
+    <loc>https://www.xn-----llccbycikqb3afub.xn--p1ai/en/cookies</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/cookies"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/en/cookies"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/zh/cookies"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/en/cookies"/>
+  </url>
+  <url>
+    <loc>https://www.xn-----llccbycikqb3afub.xn--p1ai/zh/cookies</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/cookies"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/en/cookies"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/zh/cookies"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/en/cookies"/>
   </url>
 </urlset>

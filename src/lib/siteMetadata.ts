@@ -50,6 +50,8 @@ export const HREFLANG_GROUPS = {
     xDefault: "en",
   },
   faq: { ru: "/ru/faq", en: "/en/faq", zh: "/zh/faq", xDefault: "en" },
+  privacy: { ru: "/privacy", en: "/en/privacy", zh: "/zh/privacy", xDefault: "en" },
+  cookies: { ru: "/cookies", en: "/en/cookies", zh: "/zh/cookies", xDefault: "en" },
 } as const satisfies Record<string, HreflangGroup>;
 
 export type HreflangGroupKey = keyof typeof HREFLANG_GROUPS;
