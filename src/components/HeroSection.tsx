@@ -5,9 +5,11 @@ import OptimizedImage from '@/components/ui/optimized-image';
 import { IndustryLeaderBadge, ExperienceBadge, TrustedBadge, GrowthBadge } from '@/components/ui/badge-premium';
 import useResponsiveImage from '@/hooks/useResponsiveImage';
 import heroImage from '@/assets/hero-industrial.jpg';
+import { trustSignals, isPubliclyVerified } from '@/data/companyRegistry';
 
 const HeroSection = () => {
   const heroImageConfig = useResponsiveImage(heroImage);
+  const showEquipmentDelivered = isPubliclyVerified(trustSignals.equipmentDelivered);
   const businessDirections = [
     {
       icon: Wrench,
@@ -108,10 +110,12 @@ const HeroSection = () => {
                 <div className="text-2xl md:text-3xl font-bold text-accent">30+</div>
                 <div className="text-white/70 text-sm">лет опыта</div>
               </div>
-              <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-accent">2500+</div>
-                <div className="text-white/70 text-sm">станков поставлено</div>
-              </div>
+              {showEquipmentDelivered && (
+                <div className="text-center">
+                  <div className="text-2xl md:text-3xl font-bold text-accent">2500+</div>
+                  <div className="text-white/70 text-sm">станков поставлено</div>
+                </div>
+              )}
               <div className="text-center">
                 <div className="text-2xl md:text-3xl font-bold text-accent">4</div>
                 <div className="text-white/70 text-sm">направления</div>
