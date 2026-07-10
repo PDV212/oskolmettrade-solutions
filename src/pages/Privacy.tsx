@@ -18,7 +18,7 @@ const Privacy = () => {
             <header className="space-y-4">
               <h1 className="heading-section text-left">Информация об обработке данных</h1>
               <p className="whitespace-pre-line text-base leading-relaxed text-muted-foreground">
-                {'Сайт oskolmettrade-solutions.lovable.app принадлежит ООО «ОСКОЛ-МЕТ-ТРЕЙД»\n(ИНН 3127508337, ОГРН 1033108702868).'}
+                {'Сайт принадлежит ООО «ОСКОЛ-МЕТ-ТРЕЙД»\n(ИНН 3127508337, ОГРН 1033108702868).'}
               </p>
             </header>
 
