@@ -59,6 +59,21 @@ const teamMembers = [
   }
 ];
 
+const timelineEvents = [
+  {
+    year: '1994',
+    dateTime: '1994',
+    title: 'Начало отраслевого опыта основателя',
+    description: 'Начинают работу первые компании основателя бизнеса в сфере металлургии и промышленного оборудования.'
+  },
+  {
+    year: '2015',
+    dateTime: '2015',
+    title: 'Специализированные поставки оборудования',
+    description: 'ООО «ОСКОЛ-МЕТ-ТРЕЙД» ведёт специализированную поставку станков с ЧПУ и обрабатывающих центров.'
+  }
+];
+
 const metrics = [
   { value: '1994', label: 'опыт команды с', icon: Building2 },
   { value: '≈2 500', label: 'единиц — совокупный опыт', icon: Award },
@@ -79,9 +94,8 @@ const About = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="О компании — 30 лет на рынке промышленного оборудования | ОСКОЛ-МЕТ-ТРЕЙД"
-        description="История компании ОСКОЛ-МЕТ-ТРЕЙД с 1994 года. Команда экспертов, 2500+ поставок станков, собственное производство ВСЗ, сертифицированные партнёры."
-        keywords="ОСКОЛ-МЕТ-ТРЕЙД, о компании, история компании, промышленное оборудование, станки ЧПУ, металлургическое сырьё"
+        title="О компании ОСКОЛ-МЕТ-ТРЕЙД — оборудование и сырьё для металлургии"
+        description="ООО «ОСКОЛ-МЕТ-ТРЕЙД» — B2B-поставщик промышленного оборудования и сырья. Отраслевой опыт команды и основателя — с 1994 года."
         canonicalUrl="https://oskolmettrade-solutions.lovable.app/about"
       />
       <StructuredData type="BreadcrumbList" data={breadcrumbSchema} />
@@ -105,12 +119,12 @@ const About = () => {
               <span className="text-foreground">О компании</span>
             </nav>
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
-              ОСКОЛ-МЕТ-ТРЕЙД: <time dateTime="1994">30 лет</time> на рынке промышленного оборудования
+              О компании ОСКОЛ-МЕТ-ТРЕЙД
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl">
-              С <time dateTime="1994">1994</time> года мы поставляем металлообрабатывающее оборудование,
-              металлургическое сырьё и промышленные печи предприятиям России, Казахстана, Беларуси, Китая и Индии.
-              Наша миссия — надёжные поставки, техническая экспертиза и долгосрочные партнёрства.
+              Отраслевой опыт команды и основателя бизнеса формируется с <time dateTime="1994">1994 года</time>,
+              когда начали работу первые компании основателя. ООО «ОСКОЛ-МЕТ-ТРЕЙД» продолжает и развивает
+              этот опыт в сфере металлургии и промышленного оборудования.
             </p>
           </header>
 
@@ -150,7 +164,7 @@ const About = () => {
           {/* Team */}
           <section aria-labelledby="team-heading" className="mb-16">
             <h2 id="team-heading" className="text-2xl md:text-3xl font-bold text-foreground mb-8">
-              Наша команда
+              Технический эксперт
             </h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {teamMembers.map((member) => (
