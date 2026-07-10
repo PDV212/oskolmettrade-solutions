@@ -202,7 +202,7 @@ const Company = ({ lang }: CompanyProps) => {
 
       <Header language={lang} />
 
-      <main className="pt-20" itemScope itemType="https://schema.org/AboutPage">
+      <main id="main-content" className="pt-20" itemScope itemType="https://schema.org/AboutPage">
         <article className="container mx-auto px-4 py-12 max-w-5xl">
           {/* Hero */}
           <header className="mb-12 pb-8 border-b border-border">

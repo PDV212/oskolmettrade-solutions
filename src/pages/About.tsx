@@ -171,7 +171,7 @@ const About = () => {
 
       <Header language="ru" />
 
-      <main className="pt-20" itemScope itemType="https://schema.org/AboutPage">
+      <main id="main-content" className="pt-20" itemScope itemType="https://schema.org/AboutPage">
         <article className="container mx-auto px-4 py-12 max-w-6xl">
           {/* Hero */}
           <header className="mb-16">

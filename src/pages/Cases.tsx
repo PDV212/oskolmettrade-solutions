@@ -130,7 +130,7 @@ const Cases = () => {
 
       <Header language="ru" />
 
-      <main className="pt-20" itemScope itemType="https://schema.org/WebPage">
+      <main id="main-content" className="pt-20" itemScope itemType="https://schema.org/WebPage">
         <article className="container mx-auto px-4 py-12 max-w-6xl">
           <header className="mb-12">
             <nav aria-label="breadcrumb" className="text-sm text-muted-foreground mb-4">
