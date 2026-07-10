@@ -164,9 +164,47 @@ const Footer = ({ language = 'ru' }: FooterProps) => {
   const currentYear = new Date().getFullYear();
   const t = translations[language];
 
+  // Central registry-driven values (single source of truth)
+  const registryShortName = tField(companyIdentity.shortName.value, language);
+  const registryLegalName = tField(companyIdentity.legalName.value, language);
+  const registryAddress = tField(companyIdentity.address.value, language);
+  const registryFounded = companyIdentity.foundedYear.value;
+  const registryINN = legalIdentifiers.INN.value;
+  const registryOGRN = legalIdentifiers.OGRN.value;
+
+  const legalLines =
+    language === 'en'
+      ? [
+          `• ${registryLegalName}`,
+          `• INN: ${registryINN}`,
+          `• OGRN: ${registryOGRN}`,
+          `• Registered address: ${registryAddress}`,
+        ]
+      : language === 'zh'
+      ? [
+          `• ${registryLegalName}`,
+          `• 纳税人识别号 (INN): ${registryINN}`,
+          `• 国家注册号 (OGRN): ${registryOGRN}`,
+          `• 注册地址: ${registryAddress}`,
+        ]
+      : [
+          `• ${registryLegalName}`,
+          `• ИНН: ${registryINN}`,
+          `• ОГРН: ${registryOGRN}`,
+          `• Юр. адрес: ${registryAddress}`,
+        ];
+
+  const copyrightLine =
+    language === 'en'
+      ? `© ${currentYear} ${registryLegalName} · INN ${registryINN} · OGRN ${registryOGRN}`
+      : language === 'zh'
+      ? `© ${currentYear} ${registryLegalName} · INN ${registryINN} · OGRN ${registryOGRN}`
+      : `© ${currentYear} ${registryLegalName} · ИНН ${registryINN} · ОГРН ${registryOGRN}`;
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
 
   return (
     <footer
