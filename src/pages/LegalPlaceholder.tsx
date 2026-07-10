@@ -120,7 +120,7 @@ const LegalPlaceholder = ({ lang, topic }: Props) => {
         canonicalUrl={`${SITE}${pathFor(topic, lang)}`}
       />
       <Header language={lang} />
-      <main className="py-16">
+      <main id="main-content" className="py-16">
         <section className="container mx-auto max-w-4xl px-4">
           <article className="space-y-6 rounded-lg border border-border bg-card p-6 shadow-sm sm:p-8">
             <h1 className="heading-section text-left">{c.title}</h1>

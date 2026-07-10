@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import PerformanceOptimizer from "@/components/PerformanceOptimizer";
 import CookieBanner from "@/components/CookieBanner";
+import SkipLink from "@/components/SkipLink";
 import Index from "./pages/Index";
 import English from "./pages/English";
 import Chinese from "./pages/Chinese";
@@ -35,6 +36,7 @@ function App() {
       <TooltipProvider>
         <PerformanceOptimizer />
         <BrowserRouter>
+          <SkipLink />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/en" element={<English />} />

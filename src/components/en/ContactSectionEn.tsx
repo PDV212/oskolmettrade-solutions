@@ -23,21 +23,9 @@ const ContactSectionEn = () => {
       href: 'mailto:89090977174@mail.ru',
       description: 'Use email for RFQs, specifications and document exchange.'
     },
-    {
-      icon: MessageCircle,
-      title: 'Telegram',
-      href: 'https://t.me/имя_канала',
-      description: 'Open Telegram directly or scan the QR code below.'
-    }
   ];
 
   const messengerCards = [
-    {
-      title: 'Telegram',
-      href: 'https://t.me/имя_канала',
-      image: '/lovable-uploads/783d99ba-632d-47a7-bc9d-d2c6653ee5cc.png',
-      alt: 'Telegram QR code'
-    },
     {
       title: 'WhatsApp',
       href: 'https://wa.me/79090977174',
@@ -97,7 +85,7 @@ const ContactSectionEn = () => {
                 <h4 className="font-bold text-foreground mb-2">Contact us via messengers</h4>
                 <p className="text-sm text-muted-foreground">Use direct links or scan the QR code.</p>
               </div>
-              <div className="grid gap-6 sm:grid-cols-3">
+              <div className="grid gap-6 sm:grid-cols-2">
                 {messengerCards.map((item) => {
                   const content = (
                     <>

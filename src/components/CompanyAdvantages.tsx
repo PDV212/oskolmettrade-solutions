@@ -11,8 +11,11 @@ import {
 import { Card } from '@/components/ui/card';
 import OptimizedImage from '@/components/ui/optimized-image';
 import { IndustryLeaderBadge, ExperienceBadge, TrustedBadge, GrowthBadge } from '@/components/ui/badge-premium';
+import { trustSignals, isPubliclyVerified } from '@/data/companyRegistry';
 
 const CompanyAdvantages = () => {
+  const showEquipmentDelivered = isPubliclyVerified(trustSignals.equipmentDelivered);
+  const showAsianPartners = isPubliclyVerified(trustSignals.asianPartnerFactories);
   const advantages = [
     {
       icon: Award,
@@ -21,11 +24,11 @@ const CompanyAdvantages = () => {
       stat: '30 лет',
       gradient: 'from-primary/20 to-primary/5'
     },
-    {
+    showEquipmentDelivered && {
       icon: Globe,
       title: 'Международные поставки',
-      description: 'Более 2500 станков поставлено, география охватывает страны СНГ и дальнего зарубежья',
-      stat: '2500+ станков',
+      description: 'География поставок охватывает страны СНГ и дальнего зарубежья',
+      stat: 'СНГ и дальнее зарубежье',
       gradient: 'from-accent/20 to-accent/5'
     },
     {
@@ -56,14 +59,14 @@ const CompanyAdvantages = () => {
       stat: 'Под ключ',
       gradient: 'from-secondary/15 to-primary/10'
     }
-  ];
+  ].filter(Boolean) as Array<{ icon: typeof Award; title: string; description: string; stat: string; gradient: string }>;
 
   const achievements = [
     { number: '30+', label: 'лет опыта работы' },
-    { number: '2500+', label: 'станков поставлено' },
+    showEquipmentDelivered && { number: '2500+', label: 'станков поставлено' },
     { number: '4', label: 'направления деятельности' },
-    { number: '25', label: 'лет работы с ЮВА' }
-  ];
+    showAsianPartners && { number: '25', label: 'лет работы с ЮВА' }
+  ].filter(Boolean) as Array<{ number: string; label: string }>;
 
   return (
     <section id="advantages" className="py-20 bg-background" itemScope itemType="https://schema.org/Organization">

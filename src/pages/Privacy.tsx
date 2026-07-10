@@ -12,7 +12,7 @@ const Privacy = () => {
         canonicalUrl="https://oskolmettrade-solutions.lovable.app/privacy"
       />
       <Header language="ru" />
-      <main className="py-16">
+      <main id="main-content" className="py-16">
         <section className="container mx-auto max-w-4xl px-4">
           <article className="space-y-8 rounded-lg border border-border bg-card p-6 shadow-sm sm:p-8">
             <header className="space-y-4">

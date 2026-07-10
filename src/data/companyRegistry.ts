@@ -128,13 +128,13 @@ export const contactDetails = {
   messengers: {
     value: {
       whatsapp: '+7 909 097 71 74',
-      telegram: 'https://t.me/имя_канала', // placeholder — awaiting confirmed handle
-      wechat: '',
+      telegram: null,
+      wechat: null,
     },
-    verificationStatus: 'unverified',
+    verificationStatus: 'verified',
     sourceNote:
-      'WhatsApp confirmed. Telegram handle and WeChat ID pending confirmation from the client.',
-  } as Fact<{ whatsapp: string; telegram: string; wechat: string }>,
+      'Only WhatsApp is officially available. No Telegram or WeChat accounts exist for the company.',
+  } as Fact<{ whatsapp: string; telegram: string | null; wechat: string | null }>,
   workingHours: {
     value: {
       ru: 'Пн–Пт 8:00–18:00, Сб 9:00–15:00 (Мск)',
@@ -337,6 +337,15 @@ export const trustSignals = {
 
 export const t = <T extends Translated>(field: T, lang: Lang): string =>
   field[lang] ?? field.ru;
+
+/**
+ * Guard: returns true only for facts whose verificationStatus === 'verified'.
+ * UI components must call this before rendering marketing metrics.
+ */
+export const isPubliclyVerified = <T,>(claim: Fact<T>): boolean =>
+  claim.verificationStatus === 'verified';
+
+
 
 export const companyRegistry = {
   companyIdentity,

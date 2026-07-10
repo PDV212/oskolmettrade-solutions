@@ -11,8 +11,11 @@ import {
 import { Card } from '@/components/ui/card';
 import OptimizedImage from '@/components/ui/optimized-image';
 import { IndustryLeaderBadgeEn, ExperienceBadgeEn, TrustedBadgeEn, GrowthBadgeEn } from '@/components/ui/badge-premium';
+import { trustSignals, isPubliclyVerified } from '@/data/companyRegistry';
 
 const CompanyAdvantagesEn = () => {
+  const showEquipmentDelivered = isPubliclyVerified(trustSignals.equipmentDelivered);
+  const showAsianPartners = isPubliclyVerified(trustSignals.asianPartnerFactories);
   const advantages = [
     {
       icon: Award,
@@ -21,11 +24,11 @@ const CompanyAdvantagesEn = () => {
       stat: '30 years',
       gradient: 'from-primary/20 to-primary/5'
     },
-    {
+    showEquipmentDelivered && {
       icon: Globe,
       title: 'International Deliveries',
-      description: 'More than 2500 machines delivered, geography covers CIS and foreign countries',
-      stat: '2500+ machines',
+      description: 'Geography covers CIS and other foreign markets',
+      stat: 'CIS & abroad',
       gradient: 'from-accent/20 to-accent/5'
     },
     {
@@ -56,14 +59,14 @@ const CompanyAdvantagesEn = () => {
       stat: 'Turnkey',
       gradient: 'from-secondary/15 to-primary/10'
     }
-  ];
+  ].filter(Boolean) as Array<{ icon: typeof Award; title: string; description: string; stat: string; gradient: string }>;
 
   const achievements = [
     { number: '30+', label: 'years of experience' },
-    { number: '2500+', label: 'machines delivered' },
+    showEquipmentDelivered && { number: '2500+', label: 'machines delivered' },
     { number: '4', label: 'business areas' },
-    { number: '25', label: 'years working with SEA' }
-  ];
+    showAsianPartners && { number: '25', label: 'years working with SEA' }
+  ].filter(Boolean) as Array<{ number: string; label: string }>;
 
   return (
     <section id="advantages" className="py-20 bg-background">

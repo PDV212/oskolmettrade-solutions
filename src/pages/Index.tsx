@@ -29,7 +29,7 @@ const Index = () => {
       />
 
       <Header language="ru" />
-      <main itemScope itemType="https://schema.org/WebPage">
+      <main id="main-content" itemScope itemType="https://schema.org/WebPage">
         <HeroSection />
         <AISummary language="ru" />
         <CTAButton language="ru" variant="compact" className="py-8" />
