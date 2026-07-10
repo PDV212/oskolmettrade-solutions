@@ -56,10 +56,6 @@ function App() {
             <Route path="/personal-data-consent" element={<LegalPlaceholder lang="ru" topic="consent" />} />
             <Route path="/en/personal-data-consent" element={<LegalPlaceholder lang="en" topic="consent" />} />
             <Route path="/zh/personal-data-consent" element={<LegalPlaceholder lang="zh" topic="consent" />} />
-            <Route path="/en/cookies" element={<LegalPlaceholder lang="en" topic="cookies" />} />
-            <Route path="/zh/privacy" element={<LegalPlaceholder lang="zh" topic="privacy" />} />
-            <Route path="/zh/personal-data-consent" element={<LegalPlaceholder lang="zh" topic="consent" />} />
-            <Route path="/zh/cookies" element={<LegalPlaceholder lang="zh" topic="cookies" />} />
             <Route path="/en/faq" element={<Faq lang="en" />} />
             <Route path="/ru/faq" element={<Faq lang="ru" />} />
             <Route path="/zh/faq" element={<Faq lang="zh" />} />
