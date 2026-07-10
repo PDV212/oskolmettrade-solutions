@@ -40,7 +40,12 @@ function App() {
             <Route path="/" element={<Index />} />
             <Route path="/en" element={<English />} />
             <Route path="/zh" element={<Chinese />} />
-            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/privacy" element={<LegalPage lang="ru" topic="privacy" />} />
+            <Route path="/en/privacy" element={<LegalPage lang="en" topic="privacy" />} />
+            <Route path="/zh/privacy" element={<LegalPage lang="zh" topic="privacy" />} />
+            <Route path="/cookies" element={<LegalPage lang="ru" topic="cookies" />} />
+            <Route path="/en/cookies" element={<LegalPage lang="en" topic="cookies" />} />
+            <Route path="/zh/cookies" element={<LegalPage lang="zh" topic="cookies" />} />
             <Route path="/cnc-machines" element={<CncMachines />} />
             <Route path="/about" element={<About />} />
             <Route path="/cases" element={<Cases />} />
@@ -49,9 +54,8 @@ function App() {
             <Route path="/en/company" element={<Company lang="en" />} />
             <Route path="/zh/company" element={<Company lang="zh" />} />
             <Route path="/personal-data-consent" element={<LegalPlaceholder lang="ru" topic="consent" />} />
-            <Route path="/cookies" element={<LegalPlaceholder lang="ru" topic="cookies" />} />
-            <Route path="/en/privacy" element={<LegalPlaceholder lang="en" topic="privacy" />} />
             <Route path="/en/personal-data-consent" element={<LegalPlaceholder lang="en" topic="consent" />} />
+            <Route path="/zh/personal-data-consent" element={<LegalPlaceholder lang="zh" topic="consent" />} />
             <Route path="/en/cookies" element={<LegalPlaceholder lang="en" topic="cookies" />} />
             <Route path="/zh/privacy" element={<LegalPlaceholder lang="zh" topic="privacy" />} />
             <Route path="/zh/personal-data-consent" element={<LegalPlaceholder lang="zh" topic="consent" />} />
