@@ -6,7 +6,7 @@ import { ShieldCheck, Globe2, Factory, MessageSquare } from 'lucide-react';
 
 type Lang = 'ru' | 'en' | 'zh';
 
-const SITE = 'https://oskolmettrade-solutions.lovable.app';
+const SITE = 'https://www.xn-----llccbycikqb3afub.xn--p1ai';
 
 const content = {
   ru: {

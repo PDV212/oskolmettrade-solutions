@@ -9,7 +9,7 @@ const Privacy = () => {
         title="Информация об обработке персональных данных | ОСКОЛ-МЕТ-ТРЕЙД"
         description="Информация об обработке персональных данных на сайте ООО «ОСКОЛ-МЕТ-ТРЕЙД»."
         language="ru"
-        canonicalUrl="https://oskolmettrade-solutions.lovable.app/privacy"
+        canonicalUrl="https://www.xn-----llccbycikqb3afub.xn--p1ai/privacy"
       />
       <Header language="ru" />
       <main id="main-content" className="py-16">

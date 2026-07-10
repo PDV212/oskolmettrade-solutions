@@ -280,7 +280,7 @@ const CatalogNavigation = () => {
     manufacturing: 'Изделия производства ВСЗ'
   };
 
-  const siteUrl = 'https://oskolmettrade-solutions.lovable.app';
+  const siteUrl = 'https://www.xn-----llccbycikqb3afub.xn--p1ai';
   const productsSchema = {
     '@context': 'https://schema.org',
     '@graph': allProducts.map(p => ({

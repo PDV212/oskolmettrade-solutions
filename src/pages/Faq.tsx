@@ -272,7 +272,7 @@ const FaqPage = ({ lang }: FaqPageProps) => {
   const origin =
     typeof window !== "undefined"
       ? window.location.origin
-      : "https://oskolmettrade-solutions.lovable.app";
+      : "https://www.xn-----llccbycikqb3afub.xn--p1ai";
   const path = lang === "ru" ? "/ru/faq" : lang === "en" ? "/en/faq" : "/zh/faq";
 
   return (

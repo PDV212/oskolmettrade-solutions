@@ -8,8 +8,8 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://oskolmettrade-solutions.lovable.app/" },
-    { "@type": "ListItem", "position": 2, "name": "Реализованные проекты", "item": "https://oskolmettrade-solutions.lovable.app/cases" }
+    { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://www.xn-----llccbycikqb3afub.xn--p1ai/" },
+    { "@type": "ListItem", "position": 2, "name": "Реализованные проекты", "item": "https://www.xn-----llccbycikqb3afub.xn--p1ai/cases" }
   ]
 };
 
@@ -120,7 +120,7 @@ const Cases = () => {
         title="Реализованные проекты — кейсы ОСКОЛ-МЕТ-ТРЕЙД"
         description="Реальные кейсы поставки станков ЧПУ, металлургического сырья, роботизированных комплексов и промышленных печей. 30+ лет опыта, 2500+ поставок."
         keywords="кейсы ОСКОЛ-МЕТ-ТРЕЙД, реализованные проекты, поставка ЧПУ, роботизированная сварка, металлургическое сырьё, промышленные печи"
-        canonicalUrl="https://oskolmettrade-solutions.lovable.app/cases"
+        canonicalUrl="https://www.xn-----llccbycikqb3afub.xn--p1ai/cases"
       />
       <StructuredData type="BreadcrumbList" data={breadcrumbSchema} />
       <script

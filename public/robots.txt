@@ -17,4 +17,4 @@ Allow: /
 User-agent: Googlebot
 Allow: /
 
-Sitemap: https://oskolmettrade-solutions.lovable.app/sitemap.xml
+Sitemap: https://www.xn-----llccbycikqb3afub.xn--p1ai/sitemap.xml

@@ -23,7 +23,7 @@ const Index = () => {
       <StructuredData type="BreadcrumbList" data={breadcrumbSchema('ru')} />
       <AISchemas />
       <SpeakableSchema
-        url="https://oskolmettrade-solutions.lovable.app/"
+        url="https://www.xn-----llccbycikqb3afub.xn--p1ai/"
         name="ОСКОЛ-МЕТ-ТРЕЙД — Ключевые факты о компании"
         cssSelectors={['#key-facts', '#key-facts-heading']}
       />
