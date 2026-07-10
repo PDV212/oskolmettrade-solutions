@@ -268,13 +268,11 @@ const Footer = ({ language = 'ru' }: FooterProps) => {
                 <div className="flex items-start space-x-3" itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
                   <MapPin className="w-5 h-5 text-accent mt-1" />
                   <div>
-                    <p className="font-semibold" itemProp="addressLocality">
-                      309181, {language === 'en' ? 'Belgorod region, Gubkin' : language === 'zh' ? '别尔哥罗德州，古布金' : 'Белгородская область, Губкин'}
-                    </p>
-                    <p className="text-white/70 text-sm" itemProp="streetAddress">
-                      {language === 'en' ? 'Mira str., 20, office 312/1' : language === 'zh' ? 'Mira 街 20 号 312/1 办公室' : 'ул. Мира, 20, оф. 312/1'}
+                    <p className="font-semibold" itemProp="streetAddress">
+                      {registryAddress}
                     </p>
                   </div>
+
                 </div>
               </div>
             </div>
