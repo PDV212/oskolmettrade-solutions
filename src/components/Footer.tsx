@@ -380,7 +380,7 @@ const Footer = ({ language = 'ru' }: FooterProps) => {
           <div className="border-t border-white/20 pt-8">
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               <div className="text-center md:text-left">
-                <p className="text-white/70 text-sm">{t.copyright(currentYear)}</p>
+                <p className="text-white/70 text-sm">{copyrightLine}</p>
                 <div className="flex flex-wrap justify-center md:justify-start gap-4 mt-2 text-xs text-white/60">
                   <span>{t.foundedShort}</span>
                 </div>
