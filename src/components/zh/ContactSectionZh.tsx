@@ -97,7 +97,7 @@ const ContactSectionZh = () => {
                 <h4 className="font-bold text-foreground mb-2">通过即时通讯联系我们</h4>
                 <p className="text-sm text-muted-foreground">可使用直接链接或扫描二维码。</p>
               </div>
-              <div className="grid gap-6 sm:grid-cols-2">
+              <div className="grid gap-6 sm:grid-cols-3">
                 {messengerCards.map((item) => {
                   const content = (
                     <>
@@ -110,6 +110,9 @@ const ContactSectionZh = () => {
                         sizes="(max-width: 640px) 64px, (max-width: 768px) 80px, 96px"
                       />
                       <p className="text-xs font-semibold text-foreground">{item.title}</p>
+                      {item.description && (
+                        <p className="mt-1 text-xs leading-relaxed text-muted-foreground">{item.description}</p>
+                      )}
                     </>
                   );
 
@@ -135,6 +138,9 @@ const ContactSectionZh = () => {
                 <p className="text-sm leading-relaxed text-muted-foreground">
                   本网站仅提供信息展示，不收集访客个人数据。请使用以上联系方式进行沟通。
                 </p>
+                <p className="text-xs leading-relaxed text-muted-foreground">
+                  访问 WhatsApp、WeChat、电子邮件或 Yandex 地图链接时，将适用相应外部服务的规则。
+                </p>
               </div>
             </Card>
           </div>
@@ -145,7 +151,10 @@ const ContactSectionZh = () => {
                 {
                   icon: MapPin,
                   title: '地址',
-                  details: ['109004，莫斯科，亚历山大·索尔仁尼琴街40号1栋'],
+                  details: [
+                    '莫斯科办公室（用于商务项目）：109004，莫斯科，亚历山大·索尔仁尼琴街40号1栋',
+                    '注册法定地址：俄罗斯别尔哥罗德州古布金市米拉街20号312/1办公室，邮编309181'
+                  ],
                   subtitle: '办公会面需提前电话预约'
                 },
                 {
