@@ -9,7 +9,7 @@ const Privacy = () => {
         title="Информация об обработке персональных данных | ОСКОЛ-МЕТ-ТРЕЙД"
         description="Информация об обработке персональных данных на сайте ООО «ОСКОЛ-МЕТ-ТРЕЙД»."
         language="ru"
-        canonicalUrl="https://oskolmettrade-solutions.lovable.app/privacy"
+        canonicalUrl="https://www.xn-----llccbycikqb3afub.xn--p1ai/privacy"
       />
       <Header language="ru" />
       <main id="main-content" className="py-16">
@@ -18,7 +18,7 @@ const Privacy = () => {
             <header className="space-y-4">
               <h1 className="heading-section text-left">Информация об обработке данных</h1>
               <p className="whitespace-pre-line text-base leading-relaxed text-muted-foreground">
-                {'Сайт oskolmettrade-solutions.lovable.app принадлежит ООО «ОСКОЛ-МЕТ-ТРЕЙД»\n(ИНН 3127508337, ОГРН 1033108702868).'}
+                {'Сайт принадлежит ООО «ОСКОЛ-МЕТ-ТРЕЙД»\n(ИНН 3127508337, ОГРН 1033108702868).'}
               </p>
             </header>
 

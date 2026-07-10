@@ -10,8 +10,8 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://oskolmettrade-solutions.lovable.app/" },
-    { "@type": "ListItem", "position": 2, "name": "О компании", "item": "https://oskolmettrade-solutions.lovable.app/about" }
+    { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://www.xn-----llccbycikqb3afub.xn--p1ai/" },
+    { "@type": "ListItem", "position": 2, "name": "О компании", "item": "https://www.xn-----llccbycikqb3afub.xn--p1ai/about" }
   ]
 };
 
@@ -20,13 +20,13 @@ const aboutPageSchema = {
   "@type": "AboutPage",
   "name": "О компании ОСКОЛ-МЕТ-ТРЕЙД",
   "description": "Отраслевой опыт команды и основателя — с 1994 года. Поставка металлообрабатывающего оборудования, металлургического сырья и промышленных печей.",
-  "url": "https://oskolmettrade-solutions.lovable.app/about",
+  "url": "https://www.xn-----llccbycikqb3afub.xn--p1ai/about",
   "mainEntity": {
     "@type": "Organization",
     "name": "ОСКОЛ-МЕТ-ТРЕЙД",
     "alternateName": "ООО ОСКОЛ-МЕТ-ТРЕЙД",
     "description": "Поставка металлообрабатывающего оборудования и металлургического сырья",
-    "url": "https://oskolmettrade-solutions.lovable.app",
+    "url": "https://www.xn-----llccbycikqb3afub.xn--p1ai",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "ул. Мира, 20, оф. 312/1",
@@ -96,12 +96,12 @@ const About = () => {
       <SEOHead
         title="О компании ОСКОЛ-МЕТ-ТРЕЙД — оборудование и сырьё для металлургии"
         description="ООО «ОСКОЛ-МЕТ-ТРЕЙД» — B2B-поставщик промышленного оборудования и сырья. Отраслевой опыт команды и основателя — с 1994 года."
-        canonicalUrl="https://oskolmettrade-solutions.lovable.app/about"
+        canonicalUrl="https://www.xn-----llccbycikqb3afub.xn--p1ai/about"
       />
       <StructuredData type="BreadcrumbList" data={breadcrumbSchema} />
       <StructuredData type="AboutPage" data={aboutPageSchema} />
       <SpeakableSchema
-        url="https://oskolmettrade-solutions.lovable.app/about"
+        url="https://www.xn-----llccbycikqb3afub.xn--p1ai/about"
         name="ОСКОЛ-МЕТ-ТРЕЙД — Ключевые факты о компании"
         cssSelectors={['#metrics-heading', '#history-heading']}
       />

@@ -4,7 +4,7 @@
  * Рендерятся отдельными <script type="application/ld+json"> блоками.
  */
 
-const BASE_URL = 'https://oskolmettrade-solutions.lovable.app';
+const BASE_URL = 'https://www.xn-----llccbycikqb3afub.xn--p1ai';
 
 const websiteSchema = {
   '@context': 'https://schema.org',

@@ -132,7 +132,7 @@ export const seoConfigs = {
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "ОСКОЛ-МЕТ-ТРЕЙД",
-        "url": "https://oskolmettrade-solutions.lovable.app",
+        "url": "https://www.xn-----llccbycikqb3afub.xn--p1ai",
         "description": "Поставка металлообрабатывающего оборудования и металлургического сырья",
         "address": {
           "@type": "PostalAddress",
@@ -158,8 +158,8 @@ export const seoConfigs = {
         "@type": "Organization",
         "name": "OSKOL-MET-TRADE",
         "description": "Supplier of metalworking equipment, CNC machines, metallurgical raw materials and industrial furnaces",
-        "url": "https://oskolmettrade-solutions.lovable.app/en",
-        "logo": "https://oskolmettrade-solutions.lovable.app/lovable-uploads/b3c22956-096b-4475-8619-90ea784e020b.png",
+        "url": "https://www.xn-----llccbycikqb3afub.xn--p1ai/en",
+        "logo": "https://www.xn-----llccbycikqb3afub.xn--p1ai/lovable-uploads/b3c22956-096b-4475-8619-90ea784e020b.png",
         "contactPoint": {
           "@type": "ContactPoint",
           "telephone": "+7-909-097-71-74",
@@ -189,8 +189,8 @@ export const seoConfigs = {
         "@type": "Organization",
         "name": "OSKOL-MET-TRADE",
         "description": "金属加工设备、数控机床、冶金原材料和工业炉的供应商",
-        "url": "https://oskolmettrade-solutions.lovable.app/zh",
-        "logo": "https://oskolmettrade-solutions.lovable.app/lovable-uploads/b3c22956-096b-4475-8619-90ea784e020b.png",
+        "url": "https://www.xn-----llccbycikqb3afub.xn--p1ai/zh",
+        "logo": "https://www.xn-----llccbycikqb3afub.xn--p1ai/lovable-uploads/b3c22956-096b-4475-8619-90ea784e020b.png",
         "contactPoint": {
           "@type": "ContactPoint",
           "telephone": "+7-909-097-71-74",

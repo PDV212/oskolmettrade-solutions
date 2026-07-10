@@ -8,9 +8,9 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://oskolmettrade-solutions.lovable.app/" },
-    { "@type": "ListItem", "position": 2, "name": "Оборудование", "item": "https://oskolmettrade-solutions.lovable.app/#equipment" },
-    { "@type": "ListItem", "position": 3, "name": "Станки с ЧПУ", "item": "https://oskolmettrade-solutions.lovable.app/cnc-machines" }
+    { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://www.xn-----llccbycikqb3afub.xn--p1ai/" },
+    { "@type": "ListItem", "position": 2, "name": "Оборудование", "item": "https://www.xn-----llccbycikqb3afub.xn--p1ai/#equipment" },
+    { "@type": "ListItem", "position": 3, "name": "Станки с ЧПУ", "item": "https://www.xn-----llccbycikqb3afub.xn--p1ai/cnc-machines" }
   ]
 };
 
@@ -23,7 +23,7 @@ const serviceSchema = {
   "provider": {
     "@type": "Organization",
     "name": "ОСКОЛ-МЕТ-ТРЕЙД",
-    "url": "https://oskolmettrade-solutions.lovable.app"
+    "url": "https://www.xn-----llccbycikqb3afub.xn--p1ai"
   },
   "description": "Поставка станков с ЧПУ: токарные, фрезерные, шлифовальные обрабатывающие центры с гарантией и сервисом."
 };
@@ -85,7 +85,7 @@ const CncMachines = () => {
         title="Станки с ЧПУ — поставка с 1994 года | ОСКОЛ-МЕТ-ТРЕЙД"
         description="Поставка станков с ЧПУ: токарные, фрезерные, шлифовальные обрабатывающие центры. 30+ лет опыта, 2500+ поставок, гарантия и сервис по всей России."
         keywords="станки с ЧПУ, токарные станки ЧПУ, фрезерные обрабатывающие центры, поставка станков, ОСКОЛ-МЕТ-ТРЕЙД"
-        canonicalUrl="https://oskolmettrade-solutions.lovable.app/cnc-machines"
+        canonicalUrl="https://www.xn-----llccbycikqb3afub.xn--p1ai/cnc-machines"
       />
       <StructuredData type="BreadcrumbList" data={breadcrumbSchema} />
       <StructuredData type="Service" data={serviceSchema} />
