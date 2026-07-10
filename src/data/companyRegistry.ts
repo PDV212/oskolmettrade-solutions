@@ -338,6 +338,15 @@ export const trustSignals = {
 export const t = <T extends Translated>(field: T, lang: Lang): string =>
   field[lang] ?? field.ru;
 
+/**
+ * Guard: returns true only for facts whose verificationStatus === 'verified'.
+ * UI components must call this before rendering marketing metrics.
+ */
+export const isPubliclyVerified = <T,>(claim: Fact<T>): boolean =>
+  claim.verificationStatus === 'verified';
+
+
+
 export const companyRegistry = {
   companyIdentity,
   legalIdentifiers,
