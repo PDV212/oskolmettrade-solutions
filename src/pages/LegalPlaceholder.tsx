@@ -10,7 +10,7 @@ interface Props {
   topic: Topic;
 }
 
-const SITE = 'https://www.xn-----llccbycikqb3afub.xn--p1ai';
+
 
 const content: Record<Topic, Record<Lang, { title: string; intro: string; body: string[] }>> = {
   privacy: {
@@ -94,23 +94,16 @@ const pathFor = (topic: Topic, lang: Lang) => {
 
 const LegalPlaceholder = ({ lang, topic }: Props) => {
   const c = content[topic][lang];
-  // Consent page is legacy — hide from search indexes.
-  if (topic === 'consent' && typeof document !== 'undefined') {
-    let meta = document.querySelector('meta[name="robots"]');
-    if (!meta) {
-      meta = document.createElement('meta');
-      meta.setAttribute('name', 'robots');
-      document.head.appendChild(meta);
-    }
-    meta.setAttribute('content', 'noindex, nofollow');
-  }
+  // Legal placeholders have no verified translated equivalents:
+  // emit a self-canonical only, and noindex the legacy consent page.
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
         title={`${c.title} | OSKOL-MET-TRADE`}
         description={c.intro}
         language={lang}
-        canonicalUrl={`${SITE}${pathFor(topic, lang)}`}
+        path={pathFor(topic, lang)}
+        noindex={topic === 'consent'}
       />
       <Header language={lang} />
       <main id="main-content" className="py-16">

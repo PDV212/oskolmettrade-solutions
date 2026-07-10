@@ -269,10 +269,6 @@ const FaqPage = ({ lang }: FaqPageProps) => {
     })),
   };
 
-  const origin =
-    typeof window !== "undefined"
-      ? window.location.origin
-      : "https://www.xn-----llccbycikqb3afub.xn--p1ai";
   const path = lang === "ru" ? "/ru/faq" : lang === "en" ? "/en/faq" : "/zh/faq";
 
   return (
@@ -281,7 +277,8 @@ const FaqPage = ({ lang }: FaqPageProps) => {
         title={c.title}
         description={c.description}
         language={lang}
-        canonicalUrl={`${origin}${path}`}
+        path={path}
+        hreflangGroup="faq"
         structuredData={faqSchema}
       />
       <Header />

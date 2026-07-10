@@ -85,7 +85,8 @@ const CncMachines = () => {
         title="Станки с ЧПУ — поставка с 1994 года | ОСКОЛ-МЕТ-ТРЕЙД"
         description="Поставка станков с ЧПУ: токарные, фрезерные, шлифовальные обрабатывающие центры. 30+ лет опыта, 2500+ поставок, гарантия и сервис по всей России."
         keywords="станки с ЧПУ, токарные станки ЧПУ, фрезерные обрабатывающие центры, поставка станков, ОСКОЛ-МЕТ-ТРЕЙД"
-        canonicalUrl="https://www.xn-----llccbycikqb3afub.xn--p1ai/cnc-machines"
+        language="ru"
+        path="/cnc-machines"
       />
       <StructuredData type="BreadcrumbList" data={breadcrumbSchema} />
       <StructuredData type="Service" data={serviceSchema} />

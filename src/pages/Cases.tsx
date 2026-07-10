@@ -120,7 +120,8 @@ const Cases = () => {
         title="Реализованные проекты — кейсы ОСКОЛ-МЕТ-ТРЕЙД"
         description="Реальные кейсы поставки станков ЧПУ, металлургического сырья, роботизированных комплексов и промышленных печей. 30+ лет опыта, 2500+ поставок."
         keywords="кейсы ОСКОЛ-МЕТ-ТРЕЙД, реализованные проекты, поставка ЧПУ, роботизированная сварка, металлургическое сырьё, промышленные печи"
-        canonicalUrl="https://www.xn-----llccbycikqb3afub.xn--p1ai/cases"
+        language="ru"
+        path="/cases"
       />
       <StructuredData type="BreadcrumbList" data={breadcrumbSchema} />
       <script
