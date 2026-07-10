@@ -41,8 +41,8 @@ const content: Record<Lang, FaqContent> = {
             a: "We supply vertical and horizontal CNC machining centers (VMC-850 and similar), CNC turning centers (CNC-320), CNC grinding machines, hydraulic presses, and fully automated robotic welding and painting lines with AI-trajectory planning.",
           },
           {
-            q: "Since when has the company been supplying equipment?",
-            a: "Equipment supply operations began in 2015. Over 2,500 machines have been delivered to enterprises in Russia, Kazakhstan, Belarus, China, and India.",
+            q: "Since when has the team supplied equipment?",
+            a: "Equipment supply operations of OSKOL-MET-TRADE LLC began in 2015. The consolidated experience of the team and companies established by the business founder at different times includes participation in the supply of approximately 2,500 units of metalworking equipment. The figure is based on a consolidated reference list and may be verified by individual project.",
           },
           {
             q: "Do you provide installation and warranty service?",
@@ -62,8 +62,8 @@ const content: Record<Lang, FaqContent> = {
             a: "We work on CIF, FOB, and CPT terms. Minimum order quantities depend on the product. Contact us for a commercial proposal.",
           },
           {
-            q: "How long has the company worked with Southeast Asian suppliers?",
-            a: "Since 1994 — over 25 years of direct relationships with manufacturers in India, China, and Southeast Asia.",
+            q: "How long has the team worked with Southeast Asian suppliers?",
+            a: "The industry experience of the founder and the team dates back to 1994, when the founder\u2019s first companies began operating. OSKOL-MET-TRADE LLC continues and develops this expertise across relationships with manufacturers in India, China and Southeast Asia.",
           },
         ],
       },
@@ -83,16 +83,16 @@ const content: Record<Lang, FaqContent> = {
             a: "No. The website does not use web forms, analytics trackers, or cookies for data collection. All communication is via phone, email, and messengers. No personal data is collected or processed through the website.",
           },
           {
-            q: "What markets does the company serve?",
-            a: "Primary markets: Russia, Kazakhstan, Belarus. Export markets: China, India. The company has experience with CIS and international logistics.",
+            q: "What markets are covered by the team's international experience?",
+            a: "The consolidated international experience of the team and companies established by the business founder covers Russia, Belarus, Kazakhstan, China, India, Indonesia, Israel, Italy, Malaysia and the Philippines.",
           },
           {
-            q: "Who are the technical experts at OSKOL-MET-TRADE?",
-            a: "Our technical team includes specialists holding the academic title of Candidate of Technical Sciences (PhD equivalent) in metallurgical engineering, affiliated with leading Russian technical universities.",
+            q: "Who is the named technical expert at OSKOL-MET-TRADE?",
+            a: "Technical Director \u2014 Sergey Anatolyevich Kurguzov, Candidate of Technical Sciences and Associate Professor in Manufacturing Engineering Technology. He is the only named technical expert on the site.",
           },
           {
             q: "How do I request a commercial proposal?",
-            a: "Send your technical requirements by email to 89090977174@mail.ru or contact us via WhatsApp at +7 909 097 71 74. Working hours: Mon–Fri 8:00–18:00, Sat 9:00–15:00 Moscow time.",
+            a: "Send your technical requirements by email to 89090977174@mail.ru or contact us via WhatsApp at +7 909 097 71 74. Working hours: Mon\u2013Fri 8:00\u201318:00, Sat 9:00\u201315:00 Moscow time.",
           },
         ],
       },
@@ -116,8 +116,8 @@ const content: Record<Lang, FaqContent> = {
             a: "Поставляем вертикальные и горизонтальные обрабатывающие центры с ЧПУ (VMC-850 и аналоги), токарные центры с ЧПУ (CNC-320), шлифовальные станки с ЧПУ, гидравлические прессы и полностью автоматизированные роботизированные линии сварки и покраски с AI-расчётом траекторий.",
           },
           {
-            q: "С какого года компания поставляет оборудование?",
-            a: "Поставки оборудования начались в 2015 году. Более 2 500 станков отгружено предприятиям в России, Казахстане, Беларуси, Китае и Индии.",
+            q: "С какого года команда поставляет оборудование?",
+            a: "Поставки оборудования ООО «ОСКОЛ-МЕТ-ТРЕЙД» начались в 2015 году. Совокупный опыт команды и компаний, созданных основателем бизнеса в разные периоды, включает участие в поставках около 2 500 единиц металлообрабатывающего оборудования. Данные основаны на консолидированном референс-листе и уточняются по отдельным проектам.",
           },
           {
             q: "Предоставляется ли монтаж и гарантийное обслуживание?",
@@ -137,8 +137,8 @@ const content: Record<Lang, FaqContent> = {
             a: "Работаем на условиях CIF, FOB и CPT. Минимальные объёмы заказа зависят от продукта. Свяжитесь с нами для коммерческого предложения.",
           },
           {
-            q: "Как долго компания работает с поставщиками Юго-Восточной Азии?",
-            a: "С 1994 года — более 25 лет прямых отношений с производителями в Индии, Китае и странах ЮВА.",
+            q: "Как долго команда работает с поставщиками Юго-Восточной Азии?",
+            a: "Отраслевой опыт основателя и команды формируется с 1994 года, когда начали работу первые компании основателя. ООО «ОСКОЛ-МЕТ-ТРЕЙД» продолжает и развивает этот опыт во взаимоотношениях с производителями Индии, Китая и стран ЮВА.",
           },
         ],
       },
@@ -158,12 +158,12 @@ const content: Record<Lang, FaqContent> = {
             a: "Нет. Сайт не использует веб-формы, аналитические трекеры или cookies для сбора данных. Вся коммуникация ведётся по телефону, e-mail и в мессенджерах. Персональные данные через сайт не собираются и не обрабатываются.",
           },
           {
-            q: "Какие рынки обслуживает компания?",
-            a: "Основные рынки: Россия, Казахстан, Беларусь. Экспортные рынки: Китай, Индия. Компания имеет опыт работы с СНГ и международной логистикой.",
+            q: "Какие рынки охватывает международный опыт команды?",
+            a: "Совокупный международный опыт команды и компаний, созданных основателем бизнеса, охватывает Россию, Беларусь, Казахстан, Китай, Индию, Индонезию, Израиль, Италию, Малайзию и Филиппины.",
           },
           {
-            q: "Кто технические эксперты ОСКОЛ-МЕТ-ТРЕЙД?",
-            a: "В технической команде — специалисты с учёной степенью кандидата технических наук в области металлургии, связанные с ведущими российскими техническими вузами.",
+            q: "Кто указан техническим экспертом ОСКОЛ-МЕТ-ТРЕЙД?",
+            a: "Технический директор — Кургузов Сергей Анатольевич, кандидат технических наук, доцент по технологии машиностроения. Он является единственным поимённо указанным техническим экспертом на сайте.",
           },
           {
             q: "Как запросить коммерческое предложение?",
@@ -191,8 +191,8 @@ const content: Record<Lang, FaqContent> = {
             a: "我们供应立式和卧式数控加工中心（VMC-850及同类）、数控车床中心（CNC-320）、数控磨床、液压机以及具有AI轨迹规划的全自动机器人焊接和喷漆生产线。",
           },
           {
-            q: "公司从何时开始供应设备？",
-            a: "设备供应业务始于2015年。已向俄罗斯、哈萨克斯坦、白俄罗斯、中国和印度的企业交付了超过2500台机床。",
+            q: "团队从何时开始供应设备？",
+            a: "OSKOL-MET-TRADE有限责任公司的设备供应业务始于2015年。公司创始人在不同时期创办的企业及其团队，累计参与供应了约2,500台金属加工设备。该数据基于汇总项目清单，具体项目可进一步核实。",
           },
           {
             q: "是否提供安装和保修服务？",
@@ -212,8 +212,8 @@ const content: Record<Lang, FaqContent> = {
             a: "我们按CIF、FOB和CPT条款工作。最小订货量取决于产品。请联系我们获取商业报价。",
           },
           {
-            q: "公司与东南亚供应商合作多久了？",
-            a: "自1994年起——与印度、中国及东南亚生产商建立直接关系已超过25年。",
+            q: "团队与东南亚供应商合作多久了？",
+            a: "创始人及团队的行业经验可追溯至1994年，当时创始人创办的首批企业开始运营。OSKOL-MET-TRADE有限责任公司延续并发展了与印度、中国及东南亚生产商的合作经验。",
           },
         ],
       },
@@ -233,12 +233,12 @@ const content: Record<Lang, FaqContent> = {
             a: "不收集。本网站不使用网页表单、分析跟踪器或用于数据收集的cookies。所有沟通通过电话、电子邮件和即时通讯工具进行。本网站不收集或处理任何个人数据。",
           },
           {
-            q: "公司服务哪些市场？",
-            a: "主要市场：俄罗斯、哈萨克斯坦、白俄罗斯。出口市场：中国、印度。公司具有独联体及国际物流经验。",
+            q: "团队的国际业务经验覆盖哪些市场？",
+            a: "团队和创始人所创办企业的累计国际经验涵盖俄罗斯、白俄罗斯、哈萨克斯坦、中国、印度、印度尼西亚、以色列、意大利、马来西亚和菲律宾。",
           },
           {
-            q: "奥斯科尔-金属-贸易的技术专家是谁？",
-            a: "我们的技术团队包括拥有冶金工程领域技术科学副博士（相当于PhD）学位的专家，他们与俄罗斯领先的技术大学有合作关系。",
+            q: "OSKOL-MET-TRADE指定的技术专家是谁？",
+            a: "技术总监：谢尔盖·阿纳托利耶维奇·库尔古佐夫，技术科学副博士，机械制造工艺学副教授。他是网站上唯一署名的技术专家。",
           },
           {
             q: "如何申请商业报价？",
