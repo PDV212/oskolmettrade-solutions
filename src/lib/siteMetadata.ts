@@ -52,6 +52,14 @@ export const HREFLANG_GROUPS = {
   faq: { ru: "/ru/faq", en: "/en/faq", zh: "/zh/faq", xDefault: "en" },
   privacy: { ru: "/privacy", en: "/en/privacy", zh: "/zh/privacy", xDefault: "en" },
   cookies: { ru: "/cookies", en: "/en/cookies", zh: "/zh/cookies", xDefault: "en" },
+  about: { ru: "/about", en: "/en/about", zh: "/zh/about", xDefault: "en" },
+  cases: { ru: "/cases", en: "/en/cases", zh: "/zh/cases", xDefault: "en" },
+  cncMachines: {
+    ru: "/cnc-machines",
+    en: "/en/cnc-machines",
+    zh: "/zh/cnc-machines",
+    xDefault: "en",
+  },
 } as const satisfies Record<string, HreflangGroup>;
 
 export type HreflangGroupKey = keyof typeof HREFLANG_GROUPS;
