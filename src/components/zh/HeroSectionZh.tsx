@@ -107,10 +107,12 @@ const HeroSectionZh = () => {
                 <div className="text-2xl md:text-3xl font-bold text-accent">30+</div>
                 <div className="text-white/70 text-sm">年经验</div>
               </div>
-              <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-accent">2500+</div>
-                <div className="text-white/70 text-sm">台设备供应</div>
-              </div>
+              {showEquipmentDelivered && (
+                <div className="text-center">
+                  <div className="text-2xl md:text-3xl font-bold text-accent">2500+</div>
+                  <div className="text-white/70 text-sm">台设备供应</div>
+                </div>
+              )}
               <div className="text-center">
                 <div className="text-2xl md:text-3xl font-bold text-accent">4</div>
                 <div className="text-white/70 text-sm">业务方向</div>
