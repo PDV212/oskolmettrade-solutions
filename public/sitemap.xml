@@ -50,16 +50,82 @@
     <loc>https://www.xn-----llccbycikqb3afub.xn--p1ai/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/about"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/en/about"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/zh/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/en/about"/>
+  </url>
+  <url>
+    <loc>https://www.xn-----llccbycikqb3afub.xn--p1ai/en/about</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/about"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/en/about"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/zh/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/en/about"/>
+  </url>
+  <url>
+    <loc>https://www.xn-----llccbycikqb3afub.xn--p1ai/zh/about</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/about"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/en/about"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/zh/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/en/about"/>
   </url>
   <url>
     <loc>https://www.xn-----llccbycikqb3afub.xn--p1ai/cases</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/cases"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/en/cases"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/zh/cases"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/en/cases"/>
+  </url>
+  <url>
+    <loc>https://www.xn-----llccbycikqb3afub.xn--p1ai/en/cases</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/cases"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/en/cases"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/zh/cases"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/en/cases"/>
+  </url>
+  <url>
+    <loc>https://www.xn-----llccbycikqb3afub.xn--p1ai/zh/cases</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/cases"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/en/cases"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/zh/cases"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/en/cases"/>
   </url>
   <url>
     <loc>https://www.xn-----llccbycikqb3afub.xn--p1ai/cnc-machines</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/cnc-machines"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/en/cnc-machines"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/zh/cnc-machines"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/en/cnc-machines"/>
+  </url>
+  <url>
+    <loc>https://www.xn-----llccbycikqb3afub.xn--p1ai/en/cnc-machines</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/cnc-machines"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/en/cnc-machines"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/zh/cnc-machines"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/en/cnc-machines"/>
+  </url>
+  <url>
+    <loc>https://www.xn-----llccbycikqb3afub.xn--p1ai/zh/cnc-machines</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/cnc-machines"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/en/cnc-machines"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/zh/cnc-machines"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.xn-----llccbycikqb3afub.xn--p1ai/en/cnc-machines"/>
   </url>
   <url>
     <loc>https://www.xn-----llccbycikqb3afub.xn--p1ai/ru/faq</loc>
