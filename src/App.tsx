@@ -8,7 +8,7 @@ import SkipLink from "@/components/SkipLink";
 import Index from "./pages/Index";
 import English from "./pages/English";
 import Chinese from "./pages/Chinese";
-import Privacy from "./pages/Privacy";
+import LegalPage from "./pages/LegalPage";
 import CncMachines from "./pages/CncMachines";
 import About from "./pages/About";
 import Cases from "./pages/Cases";
