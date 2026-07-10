@@ -25,7 +25,19 @@ const ContactSection = () => {
     },
   ];
 
-  const messengerCards = [
+  const messengerCards: Array<{
+    title: string;
+    href?: string;
+    image: string;
+    alt: string;
+    description?: string;
+  }> = [
+    {
+      title: 'Telegram',
+      image: '/lovable-uploads/783d99ba-632d-47a7-bc9d-d2c6653ee5cc.png',
+      alt: 'QR-код Telegram для связи с ОСКОЛ-МЕТ-ТРЕЙД',
+      description: 'Отсканируйте QR-код, чтобы связаться с нами через Telegram.'
+    },
     {
       title: 'WhatsApp',
       href: 'https://wa.me/79090977174',
