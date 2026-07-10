@@ -2,6 +2,11 @@ import { Phone, Mail, MapPin, ArrowUp, Factory, Wrench, Flame, Building2 } from 
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import OptimizedImage from '@/components/ui/optimized-image';
+import {
+  companyIdentity,
+  legalIdentifiers,
+  t as tField,
+} from '@/data/companyRegistry';
 
 type Lang = 'ru' | 'en' | 'zh';
 
@@ -159,9 +164,47 @@ const Footer = ({ language = 'ru' }: FooterProps) => {
   const currentYear = new Date().getFullYear();
   const t = translations[language];
 
+  // Central registry-driven values (single source of truth)
+  const registryShortName = tField(companyIdentity.shortName.value, language);
+  const registryLegalName = tField(companyIdentity.legalName.value, language);
+  const registryAddress = tField(companyIdentity.address.value, language);
+  const registryFounded = companyIdentity.foundedYear.value;
+  const registryINN = legalIdentifiers.INN.value;
+  const registryOGRN = legalIdentifiers.OGRN.value;
+
+  const legalLines =
+    language === 'en'
+      ? [
+          `• ${registryLegalName}`,
+          `• INN: ${registryINN}`,
+          `• OGRN: ${registryOGRN}`,
+          `• Registered address: ${registryAddress}`,
+        ]
+      : language === 'zh'
+      ? [
+          `• ${registryLegalName}`,
+          `• 纳税人识别号 (INN): ${registryINN}`,
+          `• 国家注册号 (OGRN): ${registryOGRN}`,
+          `• 注册地址: ${registryAddress}`,
+        ]
+      : [
+          `• ${registryLegalName}`,
+          `• ИНН: ${registryINN}`,
+          `• ОГРН: ${registryOGRN}`,
+          `• Юр. адрес: ${registryAddress}`,
+        ];
+
+  const copyrightLine =
+    language === 'en'
+      ? `© ${currentYear} ${registryLegalName} · INN ${registryINN} · OGRN ${registryOGRN}`
+      : language === 'zh'
+      ? `© ${currentYear} ${registryLegalName} · INN ${registryINN} · OGRN ${registryOGRN}`
+      : `© ${currentYear} ${registryLegalName} · ИНН ${registryINN} · ОГРН ${registryOGRN}`;
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
 
   return (
     <footer
@@ -192,12 +235,13 @@ const Footer = ({ language = 'ru' }: FooterProps) => {
                 />
                 <div>
                   <h3 className="text-xl font-bold" itemProp="name">
-                    {language === 'ru' ? 'ОСКОЛ-МЕТ-ТРЕЙД' : 'OSKOL-MET-TRADE'}
+                    {registryShortName}
                   </h3>
                   <p className="text-white/70 text-sm">
-                    {t.sinceLabel} <time dateTime="1994" itemProp="foundingDate">1994</time> {t.sinceSuffix}
+                    {t.sinceLabel} <time dateTime={String(registryFounded)} itemProp="foundingDate">{registryFounded}</time> {t.sinceSuffix}
                   </p>
                 </div>
+
               </div>
 
               <p className="text-white/80 mb-6 leading-relaxed" itemProp="description">
@@ -224,13 +268,11 @@ const Footer = ({ language = 'ru' }: FooterProps) => {
                 <div className="flex items-start space-x-3" itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
                   <MapPin className="w-5 h-5 text-accent mt-1" />
                   <div>
-                    <p className="font-semibold" itemProp="addressLocality">
-                      309181, {language === 'en' ? 'Belgorod region, Gubkin' : language === 'zh' ? '别尔哥罗德州，古布金' : 'Белгородская область, Губкин'}
-                    </p>
-                    <p className="text-white/70 text-sm" itemProp="streetAddress">
-                      {language === 'en' ? 'Mira str., 20, office 312/1' : language === 'zh' ? 'Mira 街 20 号 312/1 办公室' : 'ул. Мира, 20, оф. 312/1'}
+                    <p className="font-semibold" itemProp="streetAddress">
+                      {registryAddress}
                     </p>
                   </div>
+
                 </div>
               </div>
             </div>
@@ -326,7 +368,7 @@ const Footer = ({ language = 'ru' }: FooterProps) => {
               <div className="mt-8 p-4 bg-white/10 rounded-xl border border-white/20">
                 <h5 className="font-semibold mb-2">{t.legalTitle}</h5>
                 <div className="space-y-1 text-sm text-white/80">
-                  {t.legalLines.map((line, i) => (
+                  {legalLines.map((line, i) => (
                     <p key={i}>{line}</p>
                   ))}
                 </div>
@@ -338,7 +380,7 @@ const Footer = ({ language = 'ru' }: FooterProps) => {
           <div className="border-t border-white/20 pt-8">
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               <div className="text-center md:text-left">
-                <p className="text-white/70 text-sm">{t.copyright(currentYear)}</p>
+                <p className="text-white/70 text-sm">{copyrightLine}</p>
                 <div className="flex flex-wrap justify-center md:justify-start gap-4 mt-2 text-xs text-white/60">
                   <span>{t.foundedShort}</span>
                 </div>
