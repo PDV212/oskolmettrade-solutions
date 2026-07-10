@@ -235,12 +235,13 @@ const Footer = ({ language = 'ru' }: FooterProps) => {
                 />
                 <div>
                   <h3 className="text-xl font-bold" itemProp="name">
-                    {language === 'ru' ? 'ОСКОЛ-МЕТ-ТРЕЙД' : 'OSKOL-MET-TRADE'}
+                    {registryShortName}
                   </h3>
                   <p className="text-white/70 text-sm">
-                    {t.sinceLabel} <time dateTime="1994" itemProp="foundingDate">1994</time> {t.sinceSuffix}
+                    {t.sinceLabel} <time dateTime={String(registryFounded)} itemProp="foundingDate">{registryFounded}</time> {t.sinceSuffix}
                   </p>
                 </div>
+
               </div>
 
               <p className="text-white/80 mb-6 leading-relaxed" itemProp="description">
