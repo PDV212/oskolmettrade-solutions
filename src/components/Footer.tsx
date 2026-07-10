@@ -368,7 +368,7 @@ const Footer = ({ language = 'ru' }: FooterProps) => {
               <div className="mt-8 p-4 bg-white/10 rounded-xl border border-white/20">
                 <h5 className="font-semibold mb-2">{t.legalTitle}</h5>
                 <div className="space-y-1 text-sm text-white/80">
-                  {t.legalLines.map((line, i) => (
+                  {legalLines.map((line, i) => (
                     <p key={i}>{line}</p>
                   ))}
                 </div>
