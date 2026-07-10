@@ -285,7 +285,7 @@ const FaqPage = ({ lang }: FaqPageProps) => {
         structuredData={faqSchema}
       />
       <Header />
-      <main className="flex-1 container mx-auto px-4 py-12 md:py-16">
+      <main id="main-content" className="flex-1 container mx-auto px-4 py-12 md:py-16">
         <article>
           <header className="max-w-3xl mb-10">
             <h1 className="text-3xl md:text-4xl font-bold text-foreground">

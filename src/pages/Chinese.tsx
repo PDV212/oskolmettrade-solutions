@@ -23,7 +23,7 @@ const Chinese = () => {
       <AISchemas />
       <Header language="zh" />
       <Breadcrumbs language="zh" />
-      <main itemScope itemType="https://schema.org/WebPage">
+      <main id="main-content" itemScope itemType="https://schema.org/WebPage">
         <HeroSectionZh />
         <AISummary language="zh" />
         <CTAButton language="zh" variant="compact" className="py-8" />

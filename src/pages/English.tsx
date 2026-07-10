@@ -23,7 +23,7 @@ const English = () => {
       <AISchemas />
       <Header language="en" />
       <Breadcrumbs language="en" />
-      <main itemScope itemType="https://schema.org/WebPage">
+      <main id="main-content" itemScope itemType="https://schema.org/WebPage">
         <HeroSectionEn />
         <AISummary language="en" />
         <CTAButton language="en" variant="compact" className="py-8" />
