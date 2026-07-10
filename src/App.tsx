@@ -46,9 +46,15 @@ function App() {
             <Route path="/cookies" element={<LegalPage lang="ru" topic="cookies" />} />
             <Route path="/en/cookies" element={<LegalPage lang="en" topic="cookies" />} />
             <Route path="/zh/cookies" element={<LegalPage lang="zh" topic="cookies" />} />
-            <Route path="/cnc-machines" element={<CncMachines />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/cases" element={<Cases />} />
+            <Route path="/cnc-machines" element={<CncMachines lang="ru" />} />
+            <Route path="/en/cnc-machines" element={<CncMachines lang="en" />} />
+            <Route path="/zh/cnc-machines" element={<CncMachines lang="zh" />} />
+            <Route path="/about" element={<About lang="ru" />} />
+            <Route path="/en/about" element={<About lang="en" />} />
+            <Route path="/zh/about" element={<About lang="zh" />} />
+            <Route path="/cases" element={<Cases lang="ru" />} />
+            <Route path="/en/cases" element={<Cases lang="en" />} />
+            <Route path="/zh/cases" element={<Cases lang="zh" />} />
             <Route path="/company" element={<Company lang="ru" />} />
             <Route path="/ru/company" element={<Company lang="ru" />} />
             <Route path="/en/company" element={<Company lang="en" />} />
