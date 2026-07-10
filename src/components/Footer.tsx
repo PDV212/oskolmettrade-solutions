@@ -2,6 +2,11 @@ import { Phone, Mail, MapPin, ArrowUp, Factory, Wrench, Flame, Building2 } from 
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import OptimizedImage from '@/components/ui/optimized-image';
+import {
+  companyIdentity,
+  legalIdentifiers,
+  t as tField,
+} from '@/data/companyRegistry';
 
 type Lang = 'ru' | 'en' | 'zh';
 
