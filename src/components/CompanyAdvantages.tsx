@@ -59,14 +59,14 @@ const CompanyAdvantages = () => {
       stat: 'Под ключ',
       gradient: 'from-secondary/15 to-primary/10'
     }
-  ];
+  ].filter(Boolean) as Array<{ icon: typeof Award; title: string; description: string; stat: string; gradient: string }>;
 
   const achievements = [
     { number: '30+', label: 'лет опыта работы' },
-    { number: '2500+', label: 'станков поставлено' },
+    showEquipmentDelivered && { number: '2500+', label: 'станков поставлено' },
     { number: '4', label: 'направления деятельности' },
-    { number: '25', label: 'лет работы с ЮВА' }
-  ];
+    showAsianPartners && { number: '25', label: 'лет работы с ЮВА' }
+  ].filter(Boolean) as Array<{ number: string; label: string }>;
 
   return (
     <section id="advantages" className="py-20 bg-background" itemScope itemType="https://schema.org/Organization">
