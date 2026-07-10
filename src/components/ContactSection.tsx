@@ -25,7 +25,19 @@ const ContactSection = () => {
     },
   ];
 
-  const messengerCards = [
+  const messengerCards: Array<{
+    title: string;
+    href?: string;
+    image: string;
+    alt: string;
+    description?: string;
+  }> = [
+    {
+      title: 'Telegram',
+      image: '/lovable-uploads/783d99ba-632d-47a7-bc9d-d2c6653ee5cc.png',
+      alt: 'QR-код Telegram для связи с ОСКОЛ-МЕТ-ТРЕЙД',
+      description: 'Отсканируйте QR-код, чтобы связаться с нами через Telegram.'
+    },
     {
       title: 'WhatsApp',
       href: 'https://wa.me/79090977174',
@@ -86,19 +98,22 @@ const ContactSection = () => {
                 <h4 className="text-xl font-bold text-foreground mb-2">Свяжитесь с нами через мессенджеры</h4>
                 <p className="text-base text-muted-foreground">Используйте прямые ссылки или отсканируйте QR-код.</p>
               </div>
-              <div className="grid gap-6 sm:grid-cols-2">
+              <div className="grid gap-6 sm:grid-cols-3">
                 {messengerCards.map((item) => {
                   const content = (
                     <>
                       <OptimizedImage
                         src={item.image}
                         alt={item.alt}
-                        className="qr-code-responsive mx-auto mb-3 rounded-lg shadow-sm"
+                        className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 mx-auto mb-3 rounded-lg shadow-sm"
                         aspectRatio="square"
                         loading="lazy"
                         sizes="(max-width: 640px) 64px, (max-width: 768px) 80px, 96px"
                       />
                       <p className="text-sm font-semibold text-foreground">{item.title}</p>
+                      {item.description && (
+                        <p className="mt-1 text-xs leading-relaxed text-muted-foreground">{item.description}</p>
+                      )}
                     </>
                   );
 
@@ -124,6 +139,9 @@ const ContactSection = () => {
                 <p className="text-sm leading-relaxed text-muted-foreground">
                   Сайт носит информационный характер и не собирает персональные данные посетителей. Для связи используйте указанные выше контакты.
                 </p>
+                <p className="text-xs leading-relaxed text-muted-foreground">
+                  При переходе по ссылкам на WhatsApp, WeChat, email или Яндекс Карты применяются правила соответствующего внешнего сервиса.
+                </p>
               </div>
             </Card>
           </div>
@@ -133,9 +151,12 @@ const ContactSection = () => {
               {[
                 {
                   icon: MapPin,
-                  title: 'Адрес',
-                  details: ['109004, г. Москва, ул. А. Солженицына, д. 40, стр. 1'],
-                  subtitle: 'Офис и переговоры по предварительному согласованию'
+                  title: 'Адреса',
+                  details: [
+                    'Офис в Москве (для коммерческих проектов): 109004, г. Москва, ул. А. Солженицына, д. 40, стр. 1',
+                    'Юридический адрес: 309181, Белгородская область, г. Губкин, ул. Мира, 20, оф. 312/1'
+                  ],
+                  subtitle: 'Встречи в офисе — по предварительному согласованию'
                 },
                 {
                   icon: Clock,
