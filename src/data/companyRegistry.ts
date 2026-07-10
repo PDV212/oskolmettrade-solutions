@@ -56,7 +56,7 @@ export const companyIdentity = {
   foundedYear: {
     value: 1994,
     verificationStatus: 'verified',
-    sourceNote: 'Company founding year, EGRUL registry.',
+    sourceNote: 'Year when the founder\u2019s first companies began operating in metallurgy and industrial equipment. Represents the industry experience of the founder and team; not the founding date of OSKOL-MET-TRADE LLC itself.',
   } as Fact<number>,
   address: {
     value: {
@@ -189,9 +189,9 @@ export const services: Fact<ServiceItem[]> = {
       id: 'manufacturing',
       anchor: '#manufacturing',
       name: {
-        ru: 'Производство ВСЗ',
-        en: 'VSZ in-house production',
-        zh: 'VSZ 自有生产',
+        ru: 'Производственные возможности ВСЗ',
+        en: 'VSZ Manufacturing Capabilities',
+        zh: 'VSZ制造能力',
       },
     },
   ],
