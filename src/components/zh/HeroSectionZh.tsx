@@ -69,8 +69,7 @@ const HeroSectionZh = () => {
                 冶金与机械工程的可靠解决方案
               </p>
               <p className="text-lg text-white/80 leading-relaxed">
-                自1994年以来从事设备供应、冶金原材料供应和生产。
-                集团公司提供全周期服务：从设计到售后服务。
+                公司创始人及团队在冶金和工业设备领域的经验可追溯至1994年，当时创始人创建的首批企业开始运营。OSKOL-MET-TRADE有限责任公司延续并发展了这些行业经验。
               </p>
             </div>
 
@@ -105,12 +104,12 @@ const HeroSectionZh = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
               <div className="text-center">
                 <div className="text-2xl md:text-3xl font-bold text-accent">30+</div>
-                <div className="text-white/70 text-sm">年经验</div>
+                <div className="text-white/70 text-sm">团队经验始于1994年</div>
               </div>
               {showEquipmentDelivered && (
                 <div className="text-center">
-                  <div className="text-2xl md:text-3xl font-bold text-accent">2500+</div>
-                  <div className="text-white/70 text-sm">台设备供应</div>
+                  <div className="text-2xl md:text-3xl font-bold text-accent">约2,500</div>
+                  <div className="text-white/70 text-sm">台 — 累计项目经验</div>
                 </div>
               )}
               <div className="text-center">
