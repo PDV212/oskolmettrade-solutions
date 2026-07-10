@@ -19,22 +19,22 @@ const CompanyAdvantagesZh = () => {
   const advantages = [
     {
       icon: Award,
-      title: '多年经验',
-      description: '自1994年以来在冶金领域工作30年，自2015年以来设备供应',
-      stat: '30年',
+      title: '行业经验始于1994年',
+      description: '公司创始人及团队在冶金和工业设备领域的经验可追溯至1994年；OSKOL-MET-TRADE有限责任公司延续并发展了这些行业经验。',
+      stat: '团队经验始于1994年',
       gradient: 'from-primary/20 to-primary/5'
     },
     showEquipmentDelivered && {
       icon: Globe,
-      title: '国际供应',
-      description: '地理范围覆盖独联体和其他海外市场',
-      stat: '独联体与海外',
+      title: '国际业务经验覆盖地区',
+      description: '团队与创始人所创办企业的累计国际经验涵盖俄罗斯、白俄罗斯、哈萨克斯坦、中国、印度、印度尼西亚、以色列、意大利、马来西亚和菲律宾。',
+      stat: '独联体、亚洲、中东、欧洲',
       gradient: 'from-accent/20 to-accent/5'
     },
     {
       icon: Shield,
       title: '全周期服务',
-      description: '集团公司拥有自己的生产、贸易、物流和服务',
+      description: '在设备供应、原材料、冶金炉及与VSZ的生产合作等方面开展联合项目。',
       stat: '4个方向',
       gradient: 'from-secondary/20 to-secondary/5'
     },
@@ -47,9 +47,9 @@ const CompanyAdvantagesZh = () => {
     },
     {
       icon: Users,
-      title: '技术专长',
-      description: '我们的技术专家是俄罗斯领先大学的副教授，在冶金机械工程领域具有最低"技术科学候选人"水平。',
-      stat: '专家级',
+      title: '技术总监',
+      description: '技术总监：谢尔盖·阿纳托利耶维奇·库尔古佐夫，技术科学副博士，机械制造工艺学副教授。',
+      stat: '副博士，副教授',
       gradient: 'from-accent/15 to-primary/10'
     },
     {
@@ -62,8 +62,8 @@ const CompanyAdvantagesZh = () => {
   ].filter(Boolean) as Array<{ icon: typeof Award; title: string; description: string; stat: string; gradient: string }>;
 
   const achievements = [
-    { number: '30+', label: '年经验' },
-    showEquipmentDelivered && { number: '2500+', label: '台机床供应' },
+    { number: '1994', label: '团队经验始于' },
+    showEquipmentDelivered && { number: '约2,500', label: '台 — 累计项目经验' },
     { number: '4', label: '业务方向' },
     showAsianPartners && { number: '25', label: '年与东南亚合作' }
   ].filter(Boolean) as Array<{ number: string; label: string }>;

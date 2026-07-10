@@ -18,8 +18,8 @@ const data: Record<'ru' | 'en' | 'zh', { heading: string; intro: string; items: 
         a: 'Станки с ЧПУ, обрабатывающие центры, токарные, фрезерные и шлифовальные станки, гидравлические прессы, роботизированные участки сварки и покраски с AI-расчётом траекторий по 3D-чертежам Tekla Structures.',
       },
       {
-        q: 'С какого года работает компания?',
-        a: 'Компания работает в металлургии с 1994 года. Поставкой оборудования занимается с 2015 года, за это время реализовано более 2 500 станков.',
+        q: 'С какого года формируется отраслевой опыт?',
+        a: 'Отраслевой опыт команды и основателя бизнеса формируется с 1994 года, когда начали работу первые компании основателя. ООО «ОСКОЛ-МЕТ-ТРЕЙД» продолжает и развивает этот опыт. Совокупный опыт включает участие в поставках около 2 500 единиц металлообрабатывающего оборудования.',
       },
       {
         q: 'В какие страны осуществляется поставка?',
@@ -49,8 +49,8 @@ const data: Record<'ru' | 'en' | 'zh', { heading: string; intro: string; items: 
         a: 'CNC machines, machining centers, lathes, milling and grinding machines, hydraulic presses, and robotic welding and painting lines with AI-driven trajectory planning based on Tekla Structures 3D models.',
       },
       {
-        q: 'Since when has the company operated?',
-        a: 'In metallurgy since 1994 and in equipment supply since 2015. More than 2,500 machines have been delivered.',
+        q: 'Since when has the team\u2019s industry experience been formed?',
+        a: 'The industry experience of the business founder and the team dates back to 1994, when the founder\u2019s first companies began operating. OSKOL-MET-TRADE LLC continues and develops this expertise. Consolidated experience includes participation in the supply of approximately 2,500 units of metalworking equipment.',
       },
       {
         q: 'Which countries do you supply to?',
@@ -80,8 +80,8 @@ const data: Record<'ru' | 'en' | 'zh', { heading: string; intro: string; items: 
         a: '数控机床、加工中心、车床、铣床、磨床、液压机以及基于Tekla Structures三维模型进行AI轨迹规划的机器人焊接和喷漆生产线。',
       },
       {
-        q: '公司成立多久了？',
-        a: '自1994年起从事冶金业务，自2015年起供应设备，已交付超过2500台机床。',
+        q: '团队的行业经验始于何时？',
+        a: '公司创始人及团队的行业经验可追溯至1994年，当时创始人创建的首批企业开始运营。OSKOL-MET-TRADE有限责任公司延续并发展了这些经验。团队及创始人所创办企业累计参与供应了约2,500台金属加工设备。',
       },
       {
         q: '向哪些国家供货？',

@@ -4,7 +4,6 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import PerformanceOptimizer from "@/components/PerformanceOptimizer";
-import CookieBanner from "@/components/CookieBanner";
 import SkipLink from "@/components/SkipLink";
 import Index from "./pages/Index";
 import English from "./pages/English";
@@ -62,7 +61,6 @@ function App() {
             <Route path="/zh/faq" element={<Faq lang="zh" />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
-          <CookieBanner />
         </BrowserRouter>
         <Toaster />
       </TooltipProvider>

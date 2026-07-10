@@ -15,61 +15,47 @@ const SITE = 'https://oskolmettrade-solutions.lovable.app';
 const content: Record<Topic, Record<Lang, { title: string; intro: string; body: string[] }>> = {
   privacy: {
     ru: {
-      title: 'Информация об обработке персональных данных',
+      title: 'Информация об обработке данных',
       intro:
-        'Сайт ООО «ОСКОЛ-МЕТ-ТРЕЙД» — статичный B2B-ресурс без форм сбора данных. Документ будет дополнен.',
-      body: [
-        'Сайт не содержит форм обратной связи, регистрации, корзины или иных механизмов сбора персональных данных.',
-        'Используются только технические файлы, необходимые для отображения страниц.',
-        'Полный текст политики будет опубликован в ближайшее время.',
-      ],
+        'На сайте отсутствуют формы обратной связи, рекламные трекеры и подключённые компанией системы веб-аналитики. Для доставки содержимого и обеспечения безопасности хостинг-провайдер может обрабатывать необходимые технические данные. При переходе по ссылкам на email, WhatsApp, WeChat или Яндекс Карты применяются правила соответствующего внешнего сервиса.',
+      body: [],
     },
     en: {
       title: 'Personal data processing notice',
       intro:
-        'The OSKOL-MET-TRADE LLC website is a static B2B information resource that does not collect personal data. This page is a placeholder and will be completed.',
-      body: [
-        'The website does not contain feedback forms, registration, shopping cart, or any other mechanism for collecting personal data.',
-        'Only technical files required to display the pages are used.',
-        'The full policy text will be published soon.',
-      ],
+        'The website contains no contact forms, advertising trackers or web analytics systems enabled by the company. The hosting provider may process technical data required to deliver content and maintain security. When following links to email, WhatsApp, WeChat or Yandex Maps, the respective external service rules apply.',
+      body: [],
     },
     zh: {
       title: '个人数据处理说明',
       intro:
-        'OSKOL-MET-TRADE 有限责任公司网站为静态 B2B 信息资源，不收集个人数据。本页面为占位内容，稍后将完善。',
-      body: [
-        '本网站不包含反馈表单、注册、购物车或任何其他个人数据收集机制。',
-        '仅使用展示页面所需的技术文件。',
-        '完整政策文本将于近期公布。',
-      ],
+        '本网站不含联系表单、广告跟踪器或由本公司启用的网站分析系统。托管服务商可能会处理提供网站内容和保障安全所必需的技术数据。当访问电子邮件、WhatsApp、微信或Yandex地图链接时，适用相应外部服务的规则。',
+      body: [],
     },
   },
   consent: {
     ru: {
       title: 'Согласие на обработку персональных данных',
       intro:
-        'Документ-заглушка. Полный текст согласия на обработку персональных данных будет опубликован позднее.',
+        'На сайте нет форм для сбора персональных данных, поэтому отдельное согласие через сайт не собирается.',
       body: [
-        'Поскольку сайт не содержит форм, согласие требуется только при добровольном обращении по телефону, e-mail или мессенджерам.',
-        'Полный текст согласия и правовые основания обработки (ст. 6 ФЗ-152) будут добавлены здесь.',
+        'Если вы добровольно обращаетесь по телефону, электронной почте или в WhatsApp, применяются правила соответствующего внешнего сервиса.',
       ],
     },
     en: {
       title: 'Consent for personal data processing',
       intro:
-        'Placeholder document. The full consent text will be published here later.',
+        'The website has no forms for collecting personal data, so no separate consent is collected via the website.',
       body: [
-        'Since the website has no forms, consent is only required when you voluntarily reach out via phone, email or messengers.',
-        'The full consent wording and legal basis for processing will be added here.',
+        'If you voluntarily reach out by phone, email or WhatsApp, the rules of the respective external service apply.',
       ],
     },
     zh: {
       title: '个人数据处理同意书',
-      intro: '占位文档。完整的同意书文本稍后将在此发布。',
+      intro:
+        '本网站不含用于收集个人数据的表单，因此不会通过本网站单独收集同意。',
       body: [
-        '由于网站不含任何表单，仅当您主动通过电话、电子邮件或即时通讯工具联系我们时才需要同意。',
-        '完整的同意书文本及处理的法律依据将于此处补充。',
+        '如您主动通过电话、电子邮件或WhatsApp联系我们，则适用相应外部服务的规则。',
       ],
     },
   },
@@ -77,27 +63,24 @@ const content: Record<Topic, Record<Lang, { title: string; intro: string; body: 
     ru: {
       title: 'Использование файлов cookie',
       intro:
-        'На сайте используются исключительно технические cookie, необходимые для корректной работы страниц. Документ будет дополнен.',
+        'Сайт не устанавливает собственных cookie для аналитики или рекламы. Хостинг-провайдер и браузер могут использовать технические cookie/локальное хранилище, необходимые для корректной работы страниц и безопасности.',
       body: [
-        'Рекламные пиксели, системы веб-аналитики и сторонние трекеры не подключены.',
         'Вы можете отключить cookie в настройках браузера — это может повлиять на корректность отображения сайта.',
       ],
     },
     en: {
       title: 'Cookies policy',
       intro:
-        'The website uses only technical cookies required for the pages to function correctly. This page is a placeholder and will be completed.',
+        'The website does not set its own cookies for analytics or advertising. The hosting provider and the browser may use technical cookies or local storage required for the pages to function correctly and securely.',
       body: [
-        'No advertising pixels, analytics systems or third-party trackers are connected.',
         'You may disable cookies in your browser settings — this may affect how the website is displayed.',
       ],
     },
     zh: {
       title: 'Cookie 使用政策',
       intro:
-        '本网站仅使用页面正常运行所需的技术性 cookie。本页面为占位内容，稍后将完善。',
+        '本网站不设置用于分析或广告的自有 cookie。托管服务商和浏览器可能会使用页面正常运行和安全所必需的技术性 cookie 或本地存储。',
       body: [
-        '未接入任何广告像素、网站分析系统或第三方跟踪器。',
         '您可以在浏览器设置中禁用 cookie，这可能会影响网站的显示效果。',
       ],
     },
@@ -111,6 +94,16 @@ const pathFor = (topic: Topic, lang: Lang) => {
 
 const LegalPlaceholder = ({ lang, topic }: Props) => {
   const c = content[topic][lang];
+  // Consent page is legacy — hide from search indexes.
+  if (topic === 'consent' && typeof document !== 'undefined') {
+    let meta = document.querySelector('meta[name="robots"]');
+    if (!meta) {
+      meta = document.createElement('meta');
+      meta.setAttribute('name', 'robots');
+      document.head.appendChild(meta);
+    }
+    meta.setAttribute('content', 'noindex, nofollow');
+  }
   return (
     <div className="min-h-screen bg-background">
       <SEOHead

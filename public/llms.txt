@@ -1,17 +1,21 @@
 # OSKOL-MET-TRADE LLC
 
-> Russian B2B industrial company founded in 1994. Supplies metalworking
-> equipment (CNC, robotic lines), metallurgical raw materials (ferrochrome,
-> manganese ore, NPI), industrial furnaces (vacuum, induction, gas),
-> and operates own metalworking plant VSZ in Voronezh.
-> INN: 3127508337. Markets: Russia, CIS, China, India.
+> Russian B2B industrial company. Supplies metalworking equipment
+> (CNC, robotic lines), metallurgical raw materials (ferrochrome,
+> manganese ore, NPI), and industrial furnaces (vacuum, induction,
+> gas). The industry experience of the team and the business founder
+> dates back to 1994, when the founder's first companies began
+> operating in metallurgy and industrial equipment. Consolidated
+> experience of the team and the founder's companies includes
+> participation in the supply of approximately 2,500 units of
+> metalworking equipment. VSZ (Voronezh Machine Tool Plant) is a
+> separate legal entity connected by common ownership whose
+> manufacturing capabilities may be used for joint projects.
+> INN: 3127508337. OGRN: 1033108702868.
+> Geography of international experience: Russia, Belarus, Kazakhstan,
+> China, India, Indonesia, Israel, Italy, Malaysia, Philippines.
 
 ## Key pages
 
 - [Company overview](/en/company)
-- [Metalworking equipment](/en/equipment)
-- [Metallurgical raw materials](/en/materials)
-- [Metallurgical furnaces](/en/furnaces)
-- [VSZ production](/en/vsz)
 - [FAQ — products and delivery](/en/faq)
-- [Glossary of metallurgical terms](/en/glossary)

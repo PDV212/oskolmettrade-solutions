@@ -16,10 +16,10 @@ interface FooterProps {
 
 const translations = {
   ru: {
-    sinceLabel: 'С',
+    sinceLabel: 'Опыт команды с',
     sinceSuffix: 'года',
     description:
-      'Надежный партнер в области поставки металлообрабатывающего оборудования, металлургического сырья и собственного производства.',
+      'Надежный B2B-партнёр в области поставки металлообрабатывающего оборудования, металлургического сырья и производственной кооперации.',
     commercialEmail: 'Для коммерческих и технических запросов',
     directionsTitle: 'Наши направления',
     quickLinksTitle: 'Полезные ссылки',
@@ -27,13 +27,8 @@ const translations = {
     requisitesText:
       'ООО «ОСКОЛ-МЕТ-ТРЕЙД» — статичная информационная B2B-визитка без веб-форм и без сбора персональных данных.',
     legalTitle: 'Юридические данные:',
-    legalLines: [
-      '• ООО «ОСКОЛ-МЕТ-ТРЕЙД»',
-      '• ИНН: 3127508337',
-      '• ОГРН: 1033108702868',
-      '• Юр. адрес: 309181, Белгородская область, Губкин, ул. Мира, 20, оф. 312/1',
-    ],
-    foundedLabel: 'Год основания:',
+    legalLines: [] as string[],
+    foundedLabel: 'Опыт команды с:',
     workingHoursTitle: 'Режим работы:',
     workdays: 'Пн-Пт',
     saturday: 'Сб',
@@ -42,18 +37,17 @@ const translations = {
     backToTop: 'Наверх',
     copyright: (year: number) =>
       `© ${year} ООО «ОСКОЛ-МЕТ-ТРЕЙД» · ИНН 3127508337 · ОГРН 1033108702868`,
-    foundedShort: 'Год основания: 1994',
+    foundedShort: 'Опыт команды с 1994 года',
     legalLinksTitle: 'Конфиденциальность и комплаенс',
     legalLinks: [
       { name: 'Информация об обработке данных', href: '/privacy' },
-      { name: 'Согласие на обработку персональных данных', href: '/personal-data-consent' },
       { name: 'Использование cookie', href: '/cookies' },
     ],
     services: [
       'Металлообрабатывающее оборудование',
       'Металлургическое сырьё',
       'Металлургические печи',
-      'Производство ВСЗ',
+      'Производственные возможности ВСЗ',
     ],
     quickLinks: [
       { name: 'О компании', href: '#directions' },
@@ -63,10 +57,10 @@ const translations = {
     ],
   },
   en: {
-    sinceLabel: 'Since',
+    sinceLabel: 'Team experience since',
     sinceSuffix: '',
     description:
-      'Reliable B2B partner for metalworking equipment, metallurgical raw materials, and our own production lines.',
+      'Reliable B2B partner for metalworking equipment, metallurgical raw materials and manufacturing cooperation.',
     commercialEmail: 'For commercial and technical inquiries',
     directionsTitle: 'Our directions',
     quickLinksTitle: 'Useful links',
@@ -74,13 +68,8 @@ const translations = {
     requisitesText:
       'OSKOL-MET-TRADE LLC is a static B2B information page with no web forms and no collection of personal data.',
     legalTitle: 'Legal information:',
-    legalLines: [
-      '• OSKOL-MET-TRADE LLC',
-      '• INN: 3127508337',
-      '• OGRN: 1033108702868',
-      '• Registered address: 309181, Belgorod region, Gubkin, Mira str., 20, office 312/1',
-    ],
-    foundedLabel: 'Founded:',
+    legalLines: [] as string[],
+    foundedLabel: 'Team experience since:',
     workingHoursTitle: 'Working hours:',
     workdays: 'Mon-Fri',
     saturday: 'Sat',
@@ -89,18 +78,17 @@ const translations = {
     backToTop: 'Top',
     copyright: (year: number) =>
       `© ${year} OSKOL-MET-TRADE LLC · INN 3127508337 · OGRN 1033108702868`,
-    foundedShort: 'Founded in 1994',
+    foundedShort: 'Team experience since 1994',
     legalLinksTitle: 'Privacy & compliance',
     legalLinks: [
       { name: 'Personal data processing notice', href: '/en/privacy' },
-      { name: 'Consent for personal data processing', href: '/en/personal-data-consent' },
       { name: 'Cookies policy', href: '/en/cookies' },
     ],
     services: [
       'Metalworking equipment',
       'Metallurgical raw materials',
       'Industrial furnaces',
-      'VSZ in-house production',
+      'VSZ Manufacturing Capabilities',
     ],
     quickLinks: [
       { name: 'About the company', href: '#directions' },
@@ -110,10 +98,10 @@ const translations = {
     ],
   },
   zh: {
-    sinceLabel: '自',
-    sinceSuffix: '年起',
+    sinceLabel: '团队经验始于',
+    sinceSuffix: '年',
     description:
-      'OSKOL-MET-TRADE 是金属加工设备、冶金原材料供应及自有生产的可靠 B2B 合作伙伴。',
+      'OSKOL-MET-TRADE 是金属加工设备、冶金原材料供应及生产合作的可靠 B2B 合作伙伴。',
     commercialEmail: '商务与技术咨询',
     directionsTitle: '业务方向',
     quickLinksTitle: '常用链接',
@@ -121,13 +109,8 @@ const translations = {
     requisitesText:
       'OSKOL-MET-TRADE 有限责任公司是一个静态 B2B 信息页面，不含任何网页表单，也不收集个人数据。',
     legalTitle: '法律信息：',
-    legalLines: [
-      '• OSKOL-MET-TRADE 有限责任公司',
-      '• 纳税人识别号 (INN): 3127508337',
-      '• 国家注册号 (OGRN): 1033108702868',
-      '• 注册地址: 俄罗斯别尔哥罗德州古布金市 Mira 街 20 号 312/1 办公室，邮编 309181',
-    ],
-    foundedLabel: '成立年份：',
+    legalLines: [] as string[],
+    foundedLabel: '团队经验始于：',
     workingHoursTitle: '工作时间：',
     workdays: '周一至周五',
     saturday: '周六',
@@ -136,18 +119,17 @@ const translations = {
     backToTop: '返回顶部',
     copyright: (year: number) =>
       `© ${year} OSKOL-MET-TRADE LLC · INN 3127508337 · OGRN 1033108702868`,
-    foundedShort: '成立于 1994 年',
+    foundedShort: '团队经验始于1994年',
     legalLinksTitle: '隐私与合规',
     legalLinks: [
       { name: '个人数据处理说明', href: '/zh/privacy' },
-      { name: '个人数据处理同意书', href: '/zh/personal-data-consent' },
       { name: 'Cookie 使用政策', href: '/zh/cookies' },
     ],
     services: [
       '金属加工设备',
       '冶金原材料',
       '工业熔炉',
-      'VSZ 自有生产',
+      'VSZ制造能力',
     ],
     quickLinks: [
       { name: '关于公司', href: '#directions' },

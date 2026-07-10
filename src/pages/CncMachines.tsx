@@ -23,10 +23,9 @@ const serviceSchema = {
   "provider": {
     "@type": "Organization",
     "name": "ОСКОЛ-МЕТ-ТРЕЙД",
-    "url": "https://oskolmettrade-solutions.lovable.app",
-    "foundingDate": "1994"
+    "url": "https://oskolmettrade-solutions.lovable.app"
   },
-  "description": "Поставка станков с ЧПУ из ЮВА с 1994 года: токарные, фрезерные, шлифовальные обрабатывающие центры с гарантией и сервисом."
+  "description": "Поставка станков с ЧПУ: токарные, фрезерные, шлифовальные обрабатывающие центры с гарантией и сервисом."
 };
 
 const machineTypes = [

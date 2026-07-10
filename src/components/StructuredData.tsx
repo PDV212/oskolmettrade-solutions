@@ -24,8 +24,7 @@ export const organizationSchema = {
   "@type": "Organization",
   "name": "ОСКОЛ-МЕТ-ТРЕЙД",
   "alternateName": "ООО ОСКОЛ-МЕТ-ТРЕЙД",
-  "description": "Поставка металлообрабатывающего оборудования, станков ЧПУ, металлургического сырья и промышленных печей с 1994 года",
-  "foundingDate": "1994",
+  "description": "Поставка металлообрабатывающего оборудования, станков ЧПУ, металлургического сырья и промышленных печей. Отраслевой опыт команды и основателя — с 1994 года.",
   "url": "https://oskol-met-trade.ru",
   "logo": "https://oskol-met-trade.ru/lovable-uploads/b3c22956-096b-4475-8619-90ea784e020b.png",
   "image": [

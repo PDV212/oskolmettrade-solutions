@@ -69,8 +69,7 @@ const HeroSectionEn = () => {
                 Reliable solutions for metallurgy and mechanical engineering
               </p>
               <p className="text-lg text-white/80 leading-relaxed">
-                Supply of equipment, metallurgical raw materials and production since 1994. 
-                Group of companies with a full cycle of services: from design to service maintenance.
+                The industry experience of the business founder and the team dates back to 1994, when the founder's first companies began operating in metallurgy and industrial equipment. OSKOL-MET-TRADE LLC continues and develops this expertise.
               </p>
             </div>
 
@@ -105,12 +104,12 @@ const HeroSectionEn = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
               <div className="text-center">
                 <div className="text-2xl md:text-3xl font-bold text-accent">30+</div>
-                <div className="text-white/70 text-sm">years of experience</div>
+                <div className="text-white/70 text-sm">team experience since 1994</div>
               </div>
               {showEquipmentDelivered && (
                 <div className="text-center">
-                  <div className="text-2xl md:text-3xl font-bold text-accent">2500+</div>
-                  <div className="text-white/70 text-sm">machines delivered</div>
+                  <div className="text-2xl md:text-3xl font-bold text-accent">≈2,500</div>
+                  <div className="text-white/70 text-sm">units — consolidated experience</div>
                 </div>
               )}
               <div className="text-center">

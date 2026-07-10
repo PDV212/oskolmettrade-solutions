@@ -23,7 +23,7 @@ const BusinessDirectionsEn = () => {
       id: 'equipment',
       icon: Wrench,
       title: 'Metalworking Equipment',
-      subtitle: 'Experience since 2015 • More than 2500 machines delivered',
+      subtitle: 'Experience since 2015 • ≈2,500 units — consolidated experience',
       description: 'Supply of modern equipment for mechanical engineering and metallurgical enterprises',
       image: null,
       features: [
@@ -49,7 +49,7 @@ const BusinessDirectionsEn = () => {
     {
       id: 'materials',
       title: 'Metallurgical Raw Materials',
-      subtitle: 'Experience since 1994 • 25 years of work with Southeast Asian manufacturers',
+      subtitle: 'Team industry experience since 1994',
       description: 'Supply of quality metallurgical raw materials and materials with alloying elements',
       image: null,
       features: [
@@ -90,9 +90,9 @@ const BusinessDirectionsEn = () => {
     {
       id: 'manufacturing',
       icon: Building2,
-      title: 'VSZ Production',
-      subtitle: 'Voronezh Machine Tool Plant',
-      description: 'Own metalworking production for oil and gas, nuclear and other industries',
+      title: 'VSZ Manufacturing Capabilities',
+      subtitle: 'Voronezh Machine Tool Plant — separate legal entity',
+      description: 'The manufacturing capabilities of Voronezh Machine Tool Plant may be used for joint projects. OSKOL-MET-TRADE LLC and VSZ are separate legal entities connected by common ownership.',
       image: vszManufacturingImage,
       features: [
         'Milling and turning',

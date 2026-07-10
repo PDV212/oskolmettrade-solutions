@@ -19,22 +19,22 @@ const CompanyAdvantagesEn = () => {
   const advantages = [
     {
       icon: Award,
-      title: 'Years of Experience',
-      description: '30 years of work in metallurgy since 1994 and equipment supply since 2015',
-      stat: '30 years',
+      title: 'Industry experience since 1994',
+      description: 'The industry experience of the business founder and the team dates back to 1994; OSKOL-MET-TRADE LLC continues and develops this expertise.',
+      stat: 'Team experience since 1994',
       gradient: 'from-primary/20 to-primary/5'
     },
     showEquipmentDelivered && {
       icon: Globe,
-      title: 'International Deliveries',
-      description: 'Geography covers CIS and other foreign markets',
-      stat: 'CIS & abroad',
+      title: 'Geography of international experience',
+      description: 'The consolidated international experience of the team and the founder\u2019s companies covers Russia, Belarus, Kazakhstan, China, India, Indonesia, Israel, Italy, Malaysia and the Philippines.',
+      stat: 'CIS, Asia, Middle East, Europe',
       gradient: 'from-accent/20 to-accent/5'
     },
     {
       icon: Shield,
       title: 'Full Service Cycle',
-      description: 'Group of companies with own production, trading, logistics and service',
+      description: 'Joint projects for equipment supply, raw materials, metallurgical furnaces and manufacturing cooperation with VSZ.',
       stat: '4 directions',
       gradient: 'from-secondary/20 to-secondary/5'
     },
@@ -47,9 +47,9 @@ const CompanyAdvantagesEn = () => {
     },
     {
       icon: Users,
-      title: 'Technical Expertise',
-      description: 'Our technical experts are associate professors of leading Russian universities with a minimum level of "Candidate of Technical Sciences" in the field of metallurgical engineering.',
-      stat: 'Expert level',
+      title: 'Technical Director',
+      description: 'Technical Director \u2014 Sergey Anatolyevich Kurguzov, Candidate of Technical Sciences and Associate Professor in Manufacturing Engineering Technology.',
+      stat: 'PhD, Associate Professor',
       gradient: 'from-accent/15 to-primary/10'
     },
     {
@@ -62,8 +62,8 @@ const CompanyAdvantagesEn = () => {
   ].filter(Boolean) as Array<{ icon: typeof Award; title: string; description: string; stat: string; gradient: string }>;
 
   const achievements = [
-    { number: '30+', label: 'years of experience' },
-    showEquipmentDelivered && { number: '2500+', label: 'machines delivered' },
+    { number: '1994', label: 'team experience since' },
+    showEquipmentDelivered && { number: '\u22482,500', label: 'units \u2014 consolidated experience' },
     { number: '4', label: 'business areas' },
     showAsianPartners && { number: '25', label: 'years working with SEA' }
   ].filter(Boolean) as Array<{ number: string; label: string }>;
