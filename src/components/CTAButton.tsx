@@ -14,7 +14,7 @@ const CTAButton: React.FC<CTAButtonProps> = ({ language = 'ru', variant = 'defau
       title: 'Получить коммерческое предложение',
       subtitle: 'Бесплатная консультация и расчёт стоимости',
       phone: '+7 909 097 71 74',
-      note: 'Звоните напрямую по указанному номеру'
+      note: 'Позвоните напрямую по указанному номеру'
     },
     en: {
       title: 'Get Commercial Proposal',
