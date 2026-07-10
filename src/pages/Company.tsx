@@ -10,7 +10,7 @@ const SITE = 'https://www.xn-----llccbycikqb3afub.xn--p1ai';
 
 const content = {
   ru: {
-    canonical: `${SITE}/ru/company`,
+    canonical: `${SITE}/company`,
     title: 'О компании ОСКОЛ-МЕТ-ТРЕЙД — B2B-поставщик промышленного оборудования',
     description: 'ООО «ОСКОЛ-МЕТ-ТРЕЙД» — B2B-поставщик промышленного оборудования и сырья для металлургии и машиностроения. Отраслевой опыт команды и основателя — с 1994 года.',
     keywords: 'ОСКОЛ-МЕТ-ТРЕЙД, о компании, реквизиты, ИНН, ОГРН, B2B поставщик, промышленное оборудование',
@@ -194,7 +194,8 @@ const Company = ({ lang }: CompanyProps) => {
         description={t.description}
         keywords={t.keywords}
         language={lang}
-        canonicalUrl={t.canonical}
+        path={lang === 'en' ? '/en/company' : lang === 'zh' ? '/zh/company' : '/company'}
+        hreflangGroup="company"
         structuredData={organizationSchema}
       />
       <StructuredData type="Organization" data={organizationSchema} />

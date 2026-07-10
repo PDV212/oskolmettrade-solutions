@@ -96,7 +96,8 @@ const About = () => {
       <SEOHead
         title="О компании ОСКОЛ-МЕТ-ТРЕЙД — оборудование и сырьё для металлургии"
         description="ООО «ОСКОЛ-МЕТ-ТРЕЙД» — B2B-поставщик промышленного оборудования и сырья. Отраслевой опыт команды и основателя — с 1994 года."
-        canonicalUrl="https://www.xn-----llccbycikqb3afub.xn--p1ai/about"
+        language="ru"
+        path="/about"
       />
       <StructuredData type="BreadcrumbList" data={breadcrumbSchema} />
       <StructuredData type="AboutPage" data={aboutPageSchema} />
