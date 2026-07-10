@@ -23,7 +23,7 @@ const BusinessDirectionsZh = () => {
       id: 'equipment',
       icon: Wrench,
       title: '金属加工设备',
-      subtitle: '自2015年经验 • 超过2500台机床供应',
+      subtitle: '自2015年经验 • 约2,500台 — 累计项目经验',
       description: '为机械工程和冶金企业供应现代化设备',
       image: null,
       features: [
@@ -49,7 +49,7 @@ const BusinessDirectionsZh = () => {
     {
       id: 'materials',
       title: '冶金原材料',
-      subtitle: '自1994年经验 • 与东南亚制造商合作25年',
+      subtitle: '团队行业经验始于1994年',
       description: '供应高质量的冶金原材料和含合金元素的材料',
       image: null,
       features: [
@@ -90,9 +90,9 @@ const BusinessDirectionsZh = () => {
     {
       id: 'manufacturing',
       icon: Building2,
-      title: 'VSZ生产',
-      subtitle: '沃罗涅日机床厂',
-      description: '为石油天然气、核能和其他行业自有金属加工生产',
+      title: 'VSZ制造能力',
+      subtitle: '沃罗涅日机床厂 — 独立法人实体',
+      description: '沃罗涅日机床厂的制造能力可用于联合项目。OSKOL-MET-TRADE有限责任公司与VSZ为两个独立法人实体，由同一所有者关联。',
       image: vszManufacturingImage,
       features: [
         '铣削和车削加工',
