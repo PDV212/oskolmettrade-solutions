@@ -182,27 +182,8 @@ const About = ({ lang = 'ru' }: AboutProps) => {
             </div>
           </section>
 
-          <section aria-labelledby="partners-heading" className="mb-8">
-            <h2 id="partners-heading" className="text-2xl md:text-3xl font-bold text-foreground mb-8">
-              {aboutContent.sections.partners[lang]}
-            </h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-              {aboutContent.partners.map((partner) => (
-                <figure
-                  key={partner.ru}
-                  className="rounded-lg border border-border bg-card p-4 flex flex-col items-center justify-center min-h-[120px]"
-                >
-                  <div className="w-12 h-12 rounded-lg bg-muted flex items-center justify-center mb-2">
-                    <Building2 className="w-6 h-6 text-muted-foreground" aria-hidden="true" />
-                  </div>
-                  <figcaption className="text-xs text-muted-foreground text-center leading-tight">
-                    {partner[lang]}
-                  </figcaption>
-                </figure>
-              ))}
-            </div>
-          </section>
         </article>
+
       </main>
 
       <Footer language={lang} />
