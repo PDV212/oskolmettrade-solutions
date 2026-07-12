@@ -55,7 +55,7 @@ const content: Record<Lang, FaqContent> = {
         items: [
           {
             q: "What metallurgical raw materials are available?",
-            a: "We supply manganese ore, high-carbon ferrochrome FeCr60 and FeCr52, nickel-containing pig iron (NPI), bentonite, high-quality metallurgical materials, and stainless steel slabs.",
+            a: "Offered raw-material categories include manganese ore, ferrochrome FeCr, nickel-containing pig iron (NPI), bentonite, iron ore and stainless-steel slabs. Grade, chemical composition, particle size, origin, volume and delivery terms are determined for each lot and fixed in the specification and contract.",
           },
           {
             q: "What are the delivery terms for raw materials?",
