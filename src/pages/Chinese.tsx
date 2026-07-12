@@ -29,7 +29,7 @@ const Chinese = () => {
         <CTAButton language="zh" variant="compact" className="py-8" />
         <BusinessDirectionsZh />
         <CTAButton language="zh" />
-        <CatalogNavigation />
+        <CatalogNavigation language="zh" />
         <CTAButton language="zh" variant="compact" className="py-8" />
         <CompanyAdvantagesZh />
         <FAQSection language="zh" />
