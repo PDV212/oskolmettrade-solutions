@@ -42,7 +42,7 @@ const content: Record<Lang, FaqContent> = {
           },
           {
             q: "Since when has the team supplied equipment?",
-            a: "Equipment supply operations of OSKOL-MET-TRADE LLC began in 2015. The consolidated experience of the team and companies established by the business founder at different times includes participation in the supply of approximately 2,500 units of metalworking equipment. The figure is based on a consolidated reference list and may be verified by individual project.",
+            a: "Equipment supply operations of OSKOL-MET-TRADE LLC began in 2015. The founder's industry work and the team's accumulated experience date from 1994; that date is not the start date of the current legal entity. Consolidated volume figures are pending approved public evidence and are therefore not published here.",
           },
           {
             q: "Do you provide installation and warranty service?",
