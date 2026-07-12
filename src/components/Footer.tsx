@@ -220,7 +220,7 @@ const Footer = ({ language = 'ru' }: FooterProps) => {
                     {registryShortName}
                   </h3>
                   <p className="text-white/70 text-sm">
-                    {t.sinceLabel} <time dateTime={String(registryFounded)} itemProp="foundingDate">{registryFounded}</time> {t.sinceSuffix}
+                    {t.sinceLabel} <time dateTime={String(registryExperienceSince)}>{registryExperienceSince}</time> {t.sinceSuffix}
                   </p>
                 </div>
 
