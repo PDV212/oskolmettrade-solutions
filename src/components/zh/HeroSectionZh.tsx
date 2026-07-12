@@ -53,10 +53,8 @@ const HeroSectionZh = () => {
         <div className="grid lg:grid-cols-3 gap-12 items-start">
           {/* Left Column - Main Content */}
           <div className="lg:col-span-2 animate-industrial-slide-up">
-            {/* Premium Badges */}
             <div className="flex flex-wrap gap-3 mb-6">
-              <ExperienceBadgeZh size="lg" animation="float" />
-              <IndustryLeaderBadgeZh size="lg" animation="glow" />
+              <TrustedBadgeZh size="lg" />
             </div>
             
             <div className="mb-6">
@@ -67,7 +65,7 @@ const HeroSectionZh = () => {
                 冶金与机械工程的可靠解决方案
               </p>
               <p className="text-lg text-white/80 leading-relaxed">
-                公司创始人及团队在冶金和工业设备领域的经验可追溯至1994年，当时创始人创建的首批企业开始运营。OSKOL-MET-TRADE有限责任公司延续并发展了这些行业经验。
+                创始人的行业工作及团队经验积累始于 1994 年。该日期并非当前法人实体 OSKOL-MET-TRADE 有限责任公司的成立或经营起始日期。
               </p>
             </div>
 
