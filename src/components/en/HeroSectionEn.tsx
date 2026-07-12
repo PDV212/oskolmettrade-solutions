@@ -53,10 +53,8 @@ const HeroSectionEn = () => {
         <div className="grid lg:grid-cols-3 gap-12 items-start">
           {/* Left Column - Main Content */}
           <div className="lg:col-span-2 animate-industrial-slide-up">
-            {/* Premium Badges */}
             <div className="flex flex-wrap gap-3 mb-6">
-              <ExperienceBadgeEn size="lg" animation="float" />
-              <IndustryLeaderBadgeEn size="lg" animation="glow" />
+              <TrustedBadgeEn size="lg" />
             </div>
             
             <div className="mb-6">
