@@ -46,7 +46,7 @@ const content: Record<Lang, FaqContent> = {
           },
           {
             q: "Do you provide installation and warranty service?",
-            a: "Yes. Post-warranty service is provided through an accredited enterprise in the Ural region. Technical support is available 24/7.",
+            a: "Warranty and after-sales terms are fixed in the contract for each individual project and depend on the equipment supplier and the region of installation. Universal warranty durations and 24/7 coverage claims are not made without approved supporting evidence.",
           },
         ],
       },
