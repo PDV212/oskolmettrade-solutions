@@ -56,10 +56,9 @@ const HeroSection = () => {
         <div className="grid lg:grid-cols-3 gap-12 items-start">
           {/* Left Column - Main Content */}
           <div className="lg:col-span-2 animate-industrial-slide-up">
-            {/* Premium Badges */}
+            {/* Trust badge only — unsupported "Industry Leader" / "30 лет опыта" removed */}
             <div className="flex flex-wrap gap-3 mb-6">
-              <ExperienceBadge size="lg" animation="float" />
-              <IndustryLeaderBadge size="lg" animation="glow" />
+              <TrustedBadge size="lg" />
             </div>
             
             <div className="mb-6">
