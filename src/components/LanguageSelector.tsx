@@ -28,13 +28,33 @@ const LanguageSelector = () => {
   const currentLang = getCurrentLanguage();
   const currentLanguage = languages.find((l) => l.code === currentLang);
 
-  // Resolve the equivalent path in the target language using known route groups.
+  // Explicit route-equivalence map for pages that are intentionally excluded
+  // from public hreflang metadata (e.g. temporary noindex Cases notices).
+  // Keeping this separate from HREFLANG_GROUPS lets the language switch send
+  // visitors to the equivalent language page without publishing hreflang.
+  const EXPLICIT_EQUIVALENTS: ReadonlyArray<Record<SupportedLanguage, string>> = [
+    { ru: '/cases', en: '/en/cases', zh: '/zh/cases' },
+    // /ru/company is a duplicate alias that permanently redirects to /company.
+    { ru: '/company', en: '/en/company', zh: '/zh/company' },
+  ];
+
+  // Resolve the equivalent path in the target language using known route groups
+  // and the explicit non-hreflang equivalents above.
   const resolveTarget = (target: SupportedLanguage, homePath: string): string => {
     const pathname = location.pathname;
     for (const group of Object.values(HREFLANG_GROUPS)) {
       if (pathname === group.ru || pathname === group.en || pathname === group.zh) {
         return group[target];
       }
+    }
+    for (const group of EXPLICIT_EQUIVALENTS) {
+      if (pathname === group.ru || pathname === group.en || pathname === group.zh) {
+        return group[target];
+      }
+    }
+    // Legacy /ru/company alias — treat as canonical /company for switching.
+    if (pathname === '/ru/company') {
+      return target === 'ru' ? '/company' : target === 'en' ? '/en/company' : '/zh/company';
     }
     return homePath;
   };
