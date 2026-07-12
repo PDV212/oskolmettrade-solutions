@@ -63,7 +63,7 @@ const content: Record<Lang, FaqContent> = {
           },
           {
             q: "How long has the team worked with Southeast Asian suppliers?",
-            a: "The industry experience of the founder and the team dates back to 1994, when the founder\u2019s first companies began operating. OSKOL-MET-TRADE LLC continues and develops this expertise across relationships with manufacturers in India, China and Southeast Asia.",
+            a: "The founder's industry work and the team's accumulated experience date from 1994. Specific manufacturer relationships used on any given project are agreed per contract; the site does not list them without approved public evidence.",
           },
         ],
       },
