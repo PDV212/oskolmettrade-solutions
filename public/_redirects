@@ -1,0 +1,13 @@
+# Netlify redirects.
+# Order matters: existing files (prerendered route HTML, static assets) are
+# served BEFORE any of these rules by Netlify's file-first resolution.
+# Rules below only fire when no matching file exists.
+
+# 1. Permanent redirect: /ru/company is a duplicate alias of /company.
+/ru/company            /company            301!
+
+# 2. SPA fallback: unknown routes reach the React app so React Router can
+#    render NotFound. Prerendered HTML files are served first automatically
+#    (Netlify file-based routing), so this does NOT shadow /en, /zh,
+#    /company, /en/company, etc.
+/*                     /index.html         200

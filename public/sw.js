@@ -1,14 +1,16 @@
-const CACHE_NAME = 'oskol-met-trade-v2025-01-03';
-const STATIC_CACHE = 'static-v2025-01-03';
-const DYNAMIC_CACHE = 'dynamic-v2025-01-03';
-const IMAGE_CACHE = 'images-v2025-01-03';
+// Cache version bumped after prerender rollout so every client discards
+// any pre-remediation HTML/JS (which could otherwise serve the Russian
+// homepage shell for /en, /zh and other prerendered language routes).
+const CACHE_NAME = 'oskol-met-trade-v2026-07-12-prerender';
+const STATIC_CACHE = 'static-v2026-07-12-prerender';
+const DYNAMIC_CACHE = 'dynamic-v2026-07-12-prerender';
+const IMAGE_CACHE = 'images-v2026-07-12-prerender';
 
-// Статические ресурсы для кеширования
+// Precache only truly static, language-neutral assets. HTML documents are
+// intentionally excluded so each route always fetches its own prerendered
+// HTML from the network (network-first below) and never gets served the
+// Russian homepage as a substitute for /en or /zh.
 const STATIC_ASSETS = [
-  '/',
-  '/en',
-  '/zh',
-  '/index.html',
   '/manifest.json',
   '/assets/hero-industrial.jpg',
   '/lovable-uploads/b3c22956-096b-4475-8619-90ea784e020b.png',

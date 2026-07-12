@@ -68,6 +68,23 @@
   to = "/.netlify/functions/:splat"
   status = 200
 
+# Permanent redirect: /ru/company is a duplicate alias of the canonical /company.
+# Netlify serves existing prerendered files (dist/en/index.html,
+# dist/company/index.html, etc.) before applying these rules, so this does
+# NOT interfere with prerendered language routes.
+[[redirects]]
+  from = "/ru/company"
+  to = "/company"
+  status = 301
+  force = true
+
+# SPA fallback for unknown routes only. `force = false` (default) means
+# Netlify tries the filesystem first; prerendered HTML wins.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
 # Gzip compression
 [build.environment]
   NODE_VERSION = "18"
