@@ -29,7 +29,7 @@ const English = () => {
         <CTAButton language="en" variant="compact" className="py-8" />
         <BusinessDirectionsEn />
         <CTAButton language="en" />
-        <CatalogNavigation />
+        <CatalogNavigation language="en" />
         <CTAButton language="en" variant="compact" className="py-8" />
         <CompanyAdvantagesEn />
         <FAQSection language="en" />
