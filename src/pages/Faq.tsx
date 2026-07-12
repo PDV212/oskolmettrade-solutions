@@ -88,7 +88,7 @@ const content: Record<Lang, FaqContent> = {
           },
           {
             q: "Who is the named technical expert at OSKOL-MET-TRADE?",
-            a: "Technical Director \u2014 Sergey Anatolyevich Kurguzov, Candidate of Technical Sciences and Associate Professor in Manufacturing Engineering Technology. He is the only named technical expert on the site.",
+            a: "The company does not publish individual expert academic credentials on the website until a reviewed public or redacted supporting document is available for disclosure.",
           },
           {
             q: "How do I request a commercial proposal?",
