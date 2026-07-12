@@ -38,11 +38,11 @@ const content: Record<Lang, FaqContent> = {
         items: [
           {
             q: "What CNC equipment does OSKOL-MET-TRADE supply?",
-            a: "We supply vertical and horizontal CNC machining centers (VMC-850 and similar), CNC turning centers (CNC-320), CNC grinding machines, hydraulic presses, and fully automated robotic welding and painting lines with AI-trajectory planning.",
+            a: "Category-level offered directions include vertical and horizontal CNC machining centers, CNC turning centers, CNC grinding machines, hydraulic presses, and robotic welding and painting systems. Specific model, configuration and automation scope are agreed per project and fixed in the commercial proposal and contract.",
           },
           {
             q: "Since when has the team supplied equipment?",
-            a: "Equipment supply operations of OSKOL-MET-TRADE LLC began in 2015. The founder's industry work and the team's accumulated experience date from 1994; that date is not the start date of the current legal entity. Consolidated volume figures are pending approved public evidence and are therefore not published here.",
+            a: "The founder's industry work and the team's accumulated experience date from 1994; that date is not the start date of the current legal entity OSKOL-MET-TRADE LLC. Consolidated volume figures and the exact LLC registration date are not published here pending approved public evidence.",
           },
           {
             q: "Do you provide installation and warranty service?",
