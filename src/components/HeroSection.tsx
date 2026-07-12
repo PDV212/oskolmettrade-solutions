@@ -2,14 +2,12 @@
 import { ArrowRight, Factory, Wrench, Flame, Building2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import OptimizedImage from '@/components/ui/optimized-image';
-import { IndustryLeaderBadge, ExperienceBadge, TrustedBadge, GrowthBadge } from '@/components/ui/badge-premium';
+import { TrustedBadge } from '@/components/ui/badge-premium';
 import useResponsiveImage from '@/hooks/useResponsiveImage';
 import heroImage from '@/assets/hero-industrial.jpg';
-import { trustSignals, isPubliclyVerified } from '@/data/companyRegistry';
 
 const HeroSection = () => {
   const heroImageConfig = useResponsiveImage(heroImage);
-  const showEquipmentDelivered = isPubliclyVerified(trustSignals.equipmentDelivered);
   const businessDirections = [
     {
       icon: Wrench,
