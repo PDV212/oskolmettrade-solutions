@@ -70,4 +70,19 @@ export const CLAIM_REGISTER: ClaimRecord[] = [
   { id: "cond-installments-repeat", category: "service-condition", statement: "Installment plans for repeat customers", status: "unsupported", publicDisclosureApproved: false },
   { id: "cert-expert-degree", category: "certification", statement: "Named expert holds Candidate of Technical Sciences degree with Docent title", status: "requires-owner-verification", publicDisclosureApproved: false },
   { id: "claim-leading-manufacturers-sea", category: "partnership", statement: "Direct supply from leading manufacturers of Southeast Asia", status: "unsupported", publicDisclosureApproved: false },
+
+  /* -------- Catalog positions — owner-confirmed as offered, but
+   * technical parameters / manufacturer / country of origin / image
+   * identity / certificates require approved public documents before
+   * they may be re-published. -------- */
+  { id: "catalog-vmc-850-specs", category: "technical-specification", statement: "VMC-850 working area 850×500×500 mm, accuracy ±0.005 mm, spindle 7.5 kW", status: "requires-owner-verification", publicDisclosureApproved: false },
+  { id: "catalog-cnc-320-specs", category: "technical-specification", statement: "CNC-320 machining diameter 320 mm, length 750 mm, Fanuc 0i-TD control", status: "requires-owner-verification", publicDisclosureApproved: false },
+  { id: "catalog-robotic-welding-specs", category: "technical-specification", statement: "Robotic welding cell reach 2100 mm, payload 20 kg, ±0.08 mm positioning, 'fully automated'", status: "requires-owner-verification", publicDisclosureApproved: false },
+  { id: "catalog-mr25-chemistry", category: "technical-specification", statement: "МР-25 manganese ore Mn 25–30%, moisture ≤8%, fraction 0–40 mm, universal quality claim", status: "requires-owner-verification", publicDisclosureApproved: false },
+  { id: "catalog-fecr60-chemistry", category: "technical-specification", statement: "FeCr60 ferrochrome Cr 60–65%, C 6–8%, size 10–50 mm as universal composition", status: "requires-owner-verification", publicDisclosureApproved: false },
+  { id: "catalog-ip10-capacity", category: "technical-specification", statement: "ИП-10 induction furnace 10 t capacity, 6000 kW, 250 Hz, 'high efficiency'", status: "requires-owner-verification", publicDisclosureApproved: false },
+  { id: "catalog-manufacturer-identity", category: "partnership", statement: "Manufacturer identity for each catalog position (VMC-850, CNC-320, robotic cell, МР-25, FeCr60, ИП-10)", status: "requires-owner-verification", publicDisclosureApproved: false },
+  { id: "catalog-country-of-origin", category: "partnership", statement: "Country of origin for each catalog position", status: "requires-owner-verification", publicDisclosureApproved: false },
+  { id: "catalog-image-identity", category: "certification", statement: "Whether each catalog image depicts the exact model/grade offered vs. category illustration", status: "requires-owner-verification", publicDisclosureApproved: false },
+  { id: "catalog-public-documents", category: "certification", statement: "Public manufacturer catalogues, passports, test reports and certificates for each position", status: "requires-owner-verification", publicDisclosureApproved: false },
 ];
