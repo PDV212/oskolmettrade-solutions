@@ -1,3 +1,12 @@
+/**
+ * DEVELOPMENT-ONLY CLAIM REGISTER — NOT IMPORTED BY PRODUCTION CODE.
+ *
+ * Kept under /docs so bundlers do not include it in any JavaScript
+ * shipped to visitors. Do not import from src/. Move review here
+ * when tracking which unsupported claims still need approved
+ * evidence before they can be restored to public content.
+ */
+
 /* ============================================================
  * DEVELOPMENT-ONLY CLAIM REGISTER
  * ============================================================
