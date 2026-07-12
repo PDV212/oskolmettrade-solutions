@@ -65,7 +65,7 @@ const HeroSectionEn = () => {
                 Reliable solutions for metallurgy and mechanical engineering
               </p>
               <p className="text-lg text-white/80 leading-relaxed">
-                The industry experience of the business founder and the team dates back to 1994, when the founder's first companies began operating in metallurgy and industrial equipment. OSKOL-MET-TRADE LLC continues and develops this expertise.
+                The founder's industry work and the team's accumulated experience date from 1994. This is not the start date of the current legal entity, OSKOL-MET-TRADE LLC.
               </p>
             </div>
 
