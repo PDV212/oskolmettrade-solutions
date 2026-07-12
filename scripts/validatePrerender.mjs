@@ -137,7 +137,7 @@ if (ruHomeHtml) {
 console.log("[validate] Route matrix:");
 for (const r of matrix) {
   console.log(
-    `  ${r.path.padEnd(22)} ${String(r.size).padStart(6)}B lang=${r.lang} h1=${r.h1Count} hreflang=[${r.hreflangs}] jsonld=[${r.jsonLdTypes}]`
+    `  ${r.path.padEnd(22)} ${String(r.size).padStart(6)}B lang=${r.lang} h1=${r.h1Count} main=${r.mainCount} visible=${r.visibleLen} hreflang=[${r.hreflangs}] jsonld=[${r.jsonLdTypes}]`
   );
 }
 
