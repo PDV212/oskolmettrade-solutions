@@ -62,7 +62,7 @@ for (const route of ROUTES) {
   const jsonLdTypes = [...html.matchAll(/"@type"\s*:\s*"([^"]+)"/g)].map((m) => m[1]);
   const marker = html.includes(`data-ssr-route="${route.path}"`);
   const hasLegacyStub = /data-prerendered="true"/.test(html);
-  const rootMatch = html.match(/<div id="root"[^>]*>([\s\S]*)<\/div>\s*<script\s+type="module"/);
+  const rootMatch = html.match(/<div id="root"[^>]*>([\s\S]*)<\/div>\s*<\/body>/i);
   const rootInner = rootMatch ? rootMatch[1] : "";
   const visibleText = rootInner
     .replace(/<script[\s\S]*?<\/script>/gi, "")
