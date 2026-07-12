@@ -5,7 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && node scripts/prerender.mjs && node scripts/validatePrerender.mjs",
+    "build:client": "vite build",
+    "prerender": "node scripts/prerender.mjs",
+    "validate:prerender": "node scripts/validatePrerender.mjs",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview"
