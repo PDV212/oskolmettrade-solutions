@@ -10,9 +10,9 @@
  * source. All other prior statements have been either removed or
  * rewritten as conservative, contract-qualified descriptions.
  *
- * See `CLAIM_REGISTER` at the bottom of this file — it is a
- * development-only typed audit trail. It is NOT rendered anywhere in
- * the DOM and is NOT emitted in any JSON-LD.
+ * See `/docs/claim-register.ts` for the development-only audit trail of
+ * unsupported/quarantined claims. It is kept outside `src/` so it is not
+ * imported into the production JavaScript bundle.
  */
 
 export type ContentLanguage = "ru" | "en" | "zh";
