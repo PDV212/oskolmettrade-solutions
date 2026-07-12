@@ -165,7 +165,7 @@ const organizationSchema = {
     postalCode: '309181',
     addressCountry: 'RU',
   },
-  areaServed: ['RU', 'BY', 'KZ', 'CN', 'IN', 'ID', 'IL', 'IT', 'MY', 'PH'],
+  areaServed: ['RU'],
   knowsLanguage: ['ru', 'en', 'zh'],
   description: 'B2B supplier of industrial equipment and raw materials for metallurgy and mechanical engineering.',
 };
