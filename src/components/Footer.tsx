@@ -150,7 +150,7 @@ const Footer = ({ language = 'ru' }: FooterProps) => {
   const registryShortName = tField(companyIdentity.shortName.value, language);
   const registryLegalName = tField(companyIdentity.legalName.value, language);
   const registryAddress = tField(companyIdentity.address.value, language);
-  const registryFounded = companyIdentity.foundedYear.value;
+  const registryExperienceSince = companyIdentity.founderTeamExperienceStartYear.value;
   const registryINN = legalIdentifiers.INN.value;
   const registryOGRN = legalIdentifiers.OGRN.value;
 
