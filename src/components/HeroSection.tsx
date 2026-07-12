@@ -100,24 +100,15 @@ const HeroSection = () => {
               </Button>
             </div>
 
-            {/* Enhanced Stats with Badges */}
-            <section aria-label="Ключевые показатели" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+            {/* Stats — unsupported LLC-30+, ≈2 500 units and factory metrics removed */}
+            <section aria-label="Ключевые показатели" className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
               <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-accent">30+</div>
-                <div className="text-white/70 text-sm">опыт команды с 1994 года</div>
+                <div className="text-2xl md:text-3xl font-bold text-accent">1994</div>
+                <div className="text-white/70 text-sm">отраслевой опыт основателя и команды с</div>
               </div>
-              {showEquipmentDelivered && (
-                <div className="text-center">
-                  <div className="text-2xl md:text-3xl font-bold text-accent">≈2 500</div>
-                  <div className="text-white/70 text-sm">единиц — совокупный опыт</div>
-                </div>
-              )}
               <div className="text-center">
                 <div className="text-2xl md:text-3xl font-bold text-accent">4</div>
-                <div className="text-white/70 text-sm">направления</div>
-              </div>
-              <div className="text-center sm:col-span-2 lg:col-span-1">
-                <TrustedBadge size="sm" variant="glass" />
+                <div className="text-white/70 text-sm">направления деятельности</div>
               </div>
             </section>
           </div>
