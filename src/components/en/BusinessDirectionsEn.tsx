@@ -23,7 +23,7 @@ const BusinessDirectionsEn = () => {
       id: 'equipment',
       icon: Wrench,
       title: 'Metalworking Equipment',
-      subtitle: 'Experience since 2015 • ≈2,500 units — consolidated experience',
+      subtitle: 'OSKOL-MET-TRADE LLC equipment supply direction — since 2015',
       description: 'Supply of modern equipment for mechanical engineering and metallurgical enterprises',
       image: null,
       features: [
