@@ -53,7 +53,7 @@ const translations = {
       { name: 'О компании', href: '#directions' },
       { name: 'Преимущества', href: '#advantages' },
       { name: 'Контакты', href: '#contacts' },
-      { name: 'Реквизиты компании', href: '/ru/company', isRoute: true },
+      { name: 'Реквизиты компании', href: '/company', isRoute: true },
     ],
   },
   en: {

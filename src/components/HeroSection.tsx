@@ -2,14 +2,12 @@
 import { ArrowRight, Factory, Wrench, Flame, Building2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import OptimizedImage from '@/components/ui/optimized-image';
-import { IndustryLeaderBadge, ExperienceBadge, TrustedBadge, GrowthBadge } from '@/components/ui/badge-premium';
+import { TrustedBadge } from '@/components/ui/badge-premium';
 import useResponsiveImage from '@/hooks/useResponsiveImage';
 import heroImage from '@/assets/hero-industrial.jpg';
-import { trustSignals, isPubliclyVerified } from '@/data/companyRegistry';
 
 const HeroSection = () => {
   const heroImageConfig = useResponsiveImage(heroImage);
-  const showEquipmentDelivered = isPubliclyVerified(trustSignals.equipmentDelivered);
   const businessDirections = [
     {
       icon: Wrench,
@@ -58,10 +56,9 @@ const HeroSection = () => {
         <div className="grid lg:grid-cols-3 gap-12 items-start">
           {/* Left Column - Main Content */}
           <div className="lg:col-span-2 animate-industrial-slide-up">
-            {/* Premium Badges */}
+            {/* Trust badge only — unsupported "Industry Leader" / "30 лет опыта" removed */}
             <div className="flex flex-wrap gap-3 mb-6">
-              <ExperienceBadge size="lg" animation="float" />
-              <IndustryLeaderBadge size="lg" animation="glow" />
+              <TrustedBadge size="lg" />
             </div>
             
             <div className="mb-6">
@@ -103,24 +100,15 @@ const HeroSection = () => {
               </Button>
             </div>
 
-            {/* Enhanced Stats with Badges */}
-            <section aria-label="Ключевые показатели" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+            {/* Stats — unsupported LLC-30+, ≈2 500 units and factory metrics removed */}
+            <section aria-label="Ключевые показатели" className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
               <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-accent">30+</div>
-                <div className="text-white/70 text-sm">опыт команды с 1994 года</div>
+                <div className="text-2xl md:text-3xl font-bold text-accent">1994</div>
+                <div className="text-white/70 text-sm">отраслевой опыт основателя и команды с</div>
               </div>
-              {showEquipmentDelivered && (
-                <div className="text-center">
-                  <div className="text-2xl md:text-3xl font-bold text-accent">≈2 500</div>
-                  <div className="text-white/70 text-sm">единиц — совокупный опыт</div>
-                </div>
-              )}
               <div className="text-center">
                 <div className="text-2xl md:text-3xl font-bold text-accent">4</div>
-                <div className="text-white/70 text-sm">направления</div>
-              </div>
-              <div className="text-center sm:col-span-2 lg:col-span-1">
-                <TrustedBadge size="sm" variant="glass" />
+                <div className="text-white/70 text-sm">направления деятельности</div>
               </div>
             </section>
           </div>

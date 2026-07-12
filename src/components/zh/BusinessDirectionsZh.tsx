@@ -23,7 +23,7 @@ const BusinessDirectionsZh = () => {
       id: 'equipment',
       icon: Wrench,
       title: '金属加工设备',
-      subtitle: '自2015年经验 • 约2,500台 — 累计项目经验',
+      subtitle: 'OSKOL-MET-TRADE 有限责任公司设备供应方向 — 自 2015 年起',
       description: '为机械工程和冶金企业供应现代化设备',
       image: null,
       features: [

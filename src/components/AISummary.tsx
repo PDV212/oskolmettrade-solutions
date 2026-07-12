@@ -2,37 +2,44 @@ interface AISummaryProps {
   language?: 'ru' | 'en' | 'zh';
 }
 
+/**
+ * Conservative multilingual company summary.
+ * Unsupported metrics (≈2,500 units, ten-country geography, 25+ Asian
+ * factories, 30+ years applied to the LLC) removed pending approved
+ * public evidence. The 1994 date appears only as founder / team
+ * industry experience — never as a company operation date.
+ */
 const content = {
   ru: {
     heading: 'Краткая справка о компании',
     summary:
-      'ООО «ОСКОЛ-МЕТ-ТРЕЙД» — российский B2B-поставщик металлообрабатывающего оборудования, металлургического сырья, промышленных печей и роботизированных комплексов сварки и покраски. Отраслевой опыт команды и основателя формируется с 1994 года. Совокупный опыт команды и компаний, созданных основателем, включает участие в поставках около 2 500 единиц металлообрабатывающего оборудования. География международного опыта — Россия, Беларусь, Казахстан, Китай, Индия, Индонезия, Израиль, Италия, Малайзия, Филиппины. ИНН 3127508337, ОГРН 1033108702868.',
+      'ООО «ОСКОЛ-МЕТ-ТРЕЙД» — российский B2B-поставщик металлообрабатывающего оборудования, металлургического сырья, промышленных печей и роботизированных комплексов сварки и покраски. Отраслевая работа основателя и накопление опыта команды начались в 1994 году; эта дата не является датой начала деятельности текущего юридического лица. ИНН 3127508337, ОГРН 1033108702868. Юридический адрес: 309181, Белгородская область, г. Губкин, ул. Мира, 20, оф. 312/1.',
     facts: [
-      ['Опыт команды', 'с 1994 года'],
-      ['Совокупный опыт', '≈2 500 единиц'],
-      ['География опыта', 'RU, BY, KZ, CN, IN, ID, IL, IT, MY, PH'],
+      ['Опыт команды и основателя', 'с 1994 года'],
+      ['Юридические реквизиты', 'ИНН 3127508337, ОГРН 1033108702868'],
+      ['Направления', 'Оборудование, сырьё, печи, кооперация'],
       ['Языки сайта', 'RU / EN / ZH'],
     ],
   },
   en: {
     heading: 'Company at a glance',
     summary:
-      'OSKOL-MET-TRADE LLC is a Russian B2B supplier of metalworking equipment, metallurgical raw materials, industrial furnaces and robotic welding/painting lines. The industry experience of the business founder and the team dates back to 1994. The consolidated experience of the team and companies established by the founder includes participation in the supply of approximately 2,500 units of metalworking equipment. Geography of international experience: Russia, Belarus, Kazakhstan, China, India, Indonesia, Israel, Italy, Malaysia, Philippines. TIN 3127508337, OGRN 1033108702868.',
+      "OSKOL-MET-TRADE LLC is a Russian B2B supplier of metalworking equipment, metallurgical raw materials, industrial furnaces and robotic welding/painting lines. The founder's industry work and the team's accumulated experience date from 1994. This is not the start date of the current legal entity. INN 3127508337, OGRN 1033108702868. Registered office: 20 Mira St., office 312/1, Gubkin, Belgorod Region, 309181, Russia.",
     facts: [
-      ['Team experience', 'since 1994'],
-      ['Consolidated experience', '≈2,500 units'],
-      ['Geography', 'RU, BY, KZ, CN, IN, ID, IL, IT, MY, PH'],
+      ['Team & founder experience', 'since 1994'],
+      ['Legal identity', 'INN 3127508337, OGRN 1033108702868'],
+      ['Business areas', 'Equipment, raw materials, furnaces, cooperation'],
       ['Languages', 'RU / EN / ZH'],
     ],
   },
   zh: {
     heading: '公司概况',
     summary:
-      'OSKOL-MET-TRADE有限责任公司是俄罗斯B2B供应商，提供金属加工设备、冶金原材料、工业炉和机器人焊接/喷漆生产线。公司创始人及团队的行业经验可追溯至1994年。团队及创始人所创办企业累计参与供应了约2,500台金属加工设备。国际业务经验覆盖：俄罗斯、白俄罗斯、哈萨克斯坦、中国、印度、印度尼西亚、以色列、意大利、马来西亚、菲律宾。税号 3127508337，OGRN 1033108702868。',
+      'OSKOL-MET-TRADE 有限责任公司是俄罗斯 B2B 供应商，提供金属加工设备、冶金原材料、工业炉以及机器人焊接和喷漆生产线。创始人的行业工作及团队经验积累始于 1994 年。该日期并非当前法人实体的成立或经营起始日期。税号 3127508337，OGRN 1033108702868。注册地址：俄罗斯别尔哥罗德州古布金市米拉街 20 号 312/1 办公室，邮编 309181。',
     facts: [
-      ['团队经验', '始于1994年'],
-      ['累计经验', '约2,500台'],
-      ['覆盖地区', 'RU, BY, KZ, CN, IN, ID, IL, IT, MY, PH'],
+      ['团队与创始人经验', '始于 1994 年'],
+      ['法定信息', '税号 3127508337，OGRN 1033108702868'],
+      ['业务方向', '设备、原材料、工业炉、生产合作'],
       ['语言', 'RU / EN / ZH'],
     ],
   },

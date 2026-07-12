@@ -1,12 +1,10 @@
 import { ArrowRight, Factory, Wrench, Flame, Building2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import OptimizedImage from '@/components/ui/optimized-image';
-import { IndustryLeaderBadgeEn, ExperienceBadgeEn, TrustedBadgeEn } from '@/components/ui/badge-premium';
+import { TrustedBadgeEn } from '@/components/ui/badge-premium';
 import heroImage from '@/assets/hero-industrial.jpg';
-import { trustSignals, isPubliclyVerified } from '@/data/companyRegistry';
 
 const HeroSectionEn = () => {
-  const showEquipmentDelivered = isPubliclyVerified(trustSignals.equipmentDelivered);
   const businessDirections = [
     {
       icon: Wrench,
@@ -55,10 +53,8 @@ const HeroSectionEn = () => {
         <div className="grid lg:grid-cols-3 gap-12 items-start">
           {/* Left Column - Main Content */}
           <div className="lg:col-span-2 animate-industrial-slide-up">
-            {/* Premium Badges */}
             <div className="flex flex-wrap gap-3 mb-6">
-              <ExperienceBadgeEn size="lg" animation="float" />
-              <IndustryLeaderBadgeEn size="lg" animation="glow" />
+              <TrustedBadgeEn size="lg" />
             </div>
             
             <div className="mb-6">
@@ -69,7 +65,7 @@ const HeroSectionEn = () => {
                 Reliable solutions for metallurgy and mechanical engineering
               </p>
               <p className="text-lg text-white/80 leading-relaxed">
-                The industry experience of the business founder and the team dates back to 1994, when the founder's first companies began operating in metallurgy and industrial equipment. OSKOL-MET-TRADE LLC continues and develops this expertise.
+                The founder's industry work and the team's accumulated experience date from 1994. This is not the start date of the current legal entity, OSKOL-MET-TRADE LLC.
               </p>
             </div>
 
@@ -99,25 +95,15 @@ const HeroSectionEn = () => {
                 Our Capabilities
               </Button>
             </div>
-
-            {/* Enhanced Stats with Badges */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+            {/* Stats — unsupported LLC-30+, ≈2,500 units and factory metrics removed */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
               <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-accent">30+</div>
-                <div className="text-white/70 text-sm">team experience since 1994</div>
+                <div className="text-2xl md:text-3xl font-bold text-accent">1994</div>
+                <div className="text-white/70 text-sm">team & founder industry experience since</div>
               </div>
-              {showEquipmentDelivered && (
-                <div className="text-center">
-                  <div className="text-2xl md:text-3xl font-bold text-accent">≈2,500</div>
-                  <div className="text-white/70 text-sm">units — consolidated experience</div>
-                </div>
-              )}
               <div className="text-center">
                 <div className="text-2xl md:text-3xl font-bold text-accent">4</div>
                 <div className="text-white/70 text-sm">business areas</div>
-              </div>
-              <div className="text-center sm:col-span-2 lg:col-span-1">
-                <TrustedBadgeEn size="sm" variant="glass" />
               </div>
             </div>
           </div>

@@ -2,7 +2,7 @@ import React from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import PerformanceOptimizer from "@/components/PerformanceOptimizer";
 import SkipLink from "@/components/SkipLink";
 import Index from "./pages/Index";
@@ -56,7 +56,8 @@ function App() {
             <Route path="/en/cases" element={<Cases lang="en" />} />
             <Route path="/zh/cases" element={<Cases lang="zh" />} />
             <Route path="/company" element={<Company lang="ru" />} />
-            <Route path="/ru/company" element={<Company lang="ru" />} />
+            {/* /ru/company is a duplicate alias — permanent client redirect to canonical /company */}
+            <Route path="/ru/company" element={<Navigate to="/company" replace />} />
             <Route path="/en/company" element={<Company lang="en" />} />
             <Route path="/zh/company" element={<Company lang="zh" />} />
             <Route path="/personal-data-consent" element={<LegalPlaceholder lang="ru" topic="consent" />} />

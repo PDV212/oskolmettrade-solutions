@@ -42,11 +42,11 @@ const content: Record<Lang, FaqContent> = {
           },
           {
             q: "Since when has the team supplied equipment?",
-            a: "Equipment supply operations of OSKOL-MET-TRADE LLC began in 2015. The consolidated experience of the team and companies established by the business founder at different times includes participation in the supply of approximately 2,500 units of metalworking equipment. The figure is based on a consolidated reference list and may be verified by individual project.",
+            a: "Equipment supply operations of OSKOL-MET-TRADE LLC began in 2015. The founder's industry work and the team's accumulated experience date from 1994; that date is not the start date of the current legal entity. Consolidated volume figures are pending approved public evidence and are therefore not published here.",
           },
           {
             q: "Do you provide installation and warranty service?",
-            a: "Yes. Post-warranty service is provided through an accredited enterprise in the Ural region. Technical support is available 24/7.",
+            a: "Warranty and after-sales terms are fixed in the contract for each individual project and depend on the equipment supplier and the region of installation. Universal warranty durations and 24/7 coverage claims are not made without approved supporting evidence.",
           },
         ],
       },
@@ -63,7 +63,7 @@ const content: Record<Lang, FaqContent> = {
           },
           {
             q: "How long has the team worked with Southeast Asian suppliers?",
-            a: "The industry experience of the founder and the team dates back to 1994, when the founder\u2019s first companies began operating. OSKOL-MET-TRADE LLC continues and develops this expertise across relationships with manufacturers in India, China and Southeast Asia.",
+            a: "The founder's industry work and the team's accumulated experience date from 1994. Specific manufacturer relationships used on any given project are agreed per contract; the site does not list them without approved public evidence.",
           },
         ],
       },
@@ -88,7 +88,7 @@ const content: Record<Lang, FaqContent> = {
           },
           {
             q: "Who is the named technical expert at OSKOL-MET-TRADE?",
-            a: "Technical Director \u2014 Sergey Anatolyevich Kurguzov, Candidate of Technical Sciences and Associate Professor in Manufacturing Engineering Technology. He is the only named technical expert on the site.",
+            a: "The company does not publish individual expert academic credentials on the website until a reviewed public or redacted supporting document is available for disclosure.",
           },
           {
             q: "How do I request a commercial proposal?",
@@ -117,11 +117,11 @@ const content: Record<Lang, FaqContent> = {
           },
           {
             q: "С какого года команда поставляет оборудование?",
-            a: "Поставки оборудования ООО «ОСКОЛ-МЕТ-ТРЕЙД» начались в 2015 году. Совокупный опыт команды и компаний, созданных основателем бизнеса в разные периоды, включает участие в поставках около 2 500 единиц металлообрабатывающего оборудования. Данные основаны на консолидированном референс-листе и уточняются по отдельным проектам.",
+            a: "Поставки оборудования ООО «ОСКОЛ-МЕТ-ТРЕЙД» начались в 2015 году. Отраслевая работа основателя и накопление опыта команды начались в 1994 году; эта дата не является датой начала деятельности текущего юридического лица. Совокупные количественные показатели не публикуются до подтверждения общедоступными источниками.",
           },
           {
             q: "Предоставляется ли монтаж и гарантийное обслуживание?",
-            a: "Да. Постгарантийное обслуживание выполняется через аккредитованное предприятие на Урале. Техническая поддержка доступна 24/7.",
+            a: "Условия гарантийного и постгарантийного обслуживания фиксируются в договоре под конкретный проект и зависят от поставщика оборудования и региона монтажа. Универсальные обязательства по сроку гарантии и круглосуточному сервису без утверждённого подтверждающего источника не заявляются.",
           },
         ],
       },
@@ -138,7 +138,7 @@ const content: Record<Lang, FaqContent> = {
           },
           {
             q: "Как долго команда работает с поставщиками Юго-Восточной Азии?",
-            a: "Отраслевой опыт основателя и команды формируется с 1994 года, когда начали работу первые компании основателя. ООО «ОСКОЛ-МЕТ-ТРЕЙД» продолжает и развивает этот опыт во взаимоотношениях с производителями Индии, Китая и стран ЮВА.",
+            a: "Отраслевая работа основателя и накопление опыта команды начались в 1994 году. Конкретные производственные партнёрства по каждому проекту согласуются в договоре; на сайте они не перечисляются без утверждённых публичных источников.",
           },
         ],
       },
@@ -163,7 +163,7 @@ const content: Record<Lang, FaqContent> = {
           },
           {
             q: "Кто указан техническим экспертом ОСКОЛ-МЕТ-ТРЕЙД?",
-            a: "Технический директор — Кургузов Сергей Анатольевич, кандидат технических наук, доцент по технологии машиностроения. Он является единственным поимённо указанным техническим экспертом на сайте.",
+            a: "Индивидуальные академические степени и учёные звания сотрудников не публикуются на сайте до появления утверждённого публичного или редактированного подтверждающего документа.",
           },
           {
             q: "Как запросить коммерческое предложение?",
@@ -192,11 +192,11 @@ const content: Record<Lang, FaqContent> = {
           },
           {
             q: "团队从何时开始供应设备？",
-            a: "OSKOL-MET-TRADE有限责任公司的设备供应业务始于2015年。公司创始人在不同时期创办的企业及其团队，累计参与供应了约2,500台金属加工设备。该数据基于汇总项目清单，具体项目可进一步核实。",
+            a: "OSKOL-MET-TRADE 有限责任公司的设备供应业务始于 2015 年。创始人的行业工作及团队经验积累始于 1994 年；该日期并非当前法人实体的成立或经营起始日期。累计数量指标在获得可公开的证据前不予公布。",
           },
           {
             q: "是否提供安装和保修服务？",
-            a: "是的。售后服务通过乌拉尔地区的认证企业提供。技术支持7×24小时可用。",
+            a: "保修和售后服务条款按每个具体项目在合同中约定，取决于设备供应方和安装所在地区。未获得批准的支持证据前，不作出统一的保修期限或 24/7 服务承诺。",
           },
         ],
       },
@@ -213,7 +213,7 @@ const content: Record<Lang, FaqContent> = {
           },
           {
             q: "团队与东南亚供应商合作多久了？",
-            a: "创始人及团队的行业经验可追溯至1994年，当时创始人创办的首批企业开始运营。OSKOL-MET-TRADE有限责任公司延续并发展了与印度、中国及东南亚生产商的合作经验。",
+            a: "创始人的行业工作及团队经验积累始于 1994 年。任何具体项目所使用的制造商合作关系均按合同单独约定；网站在无可公开证据的情况下不予列示。",
           },
         ],
       },
@@ -238,7 +238,7 @@ const content: Record<Lang, FaqContent> = {
           },
           {
             q: "OSKOL-MET-TRADE指定的技术专家是谁？",
-            a: "技术总监：谢尔盖·阿纳托利耶维奇·库尔古佐夫，技术科学副博士，机械制造工艺学副教授。他是网站上唯一署名的技术专家。",
+            a: "在获得可公开或经过编辑的支持文件之前，网站不公布个人员工的学位或学术职称信息。",
           },
           {
             q: "如何申请商业报价？",
