@@ -1,0 +1,404 @@
+{
+  "src/AppShell.tsx": [
+    "/assets/hero-industrial-DrkVVapx.jpg",
+    "/assets/equipment-manufacturing-05vLmLC9.jpg",
+    "/assets/raw-materials-BC40ykbr.jpg",
+    "/assets/static-map-yandex-DTsHSf8e.png"
+  ],
+  "src/assets/equipment-manufacturing.jpg": [
+    "/assets/hero-industrial-DrkVVapx.jpg",
+    "/assets/equipment-manufacturing-05vLmLC9.jpg",
+    "/assets/raw-materials-BC40ykbr.jpg",
+    "/assets/static-map-yandex-DTsHSf8e.png"
+  ],
+  "src/assets/hero-industrial.jpg": [
+    "/assets/hero-industrial-DrkVVapx.jpg",
+    "/assets/equipment-manufacturing-05vLmLC9.jpg",
+    "/assets/raw-materials-BC40ykbr.jpg",
+    "/assets/static-map-yandex-DTsHSf8e.png"
+  ],
+  "src/assets/raw-materials.jpg": [
+    "/assets/hero-industrial-DrkVVapx.jpg",
+    "/assets/equipment-manufacturing-05vLmLC9.jpg",
+    "/assets/raw-materials-BC40ykbr.jpg",
+    "/assets/static-map-yandex-DTsHSf8e.png"
+  ],
+  "src/assets/static-map-yandex.png": [
+    "/assets/hero-industrial-DrkVVapx.jpg",
+    "/assets/equipment-manufacturing-05vLmLC9.jpg",
+    "/assets/raw-materials-BC40ykbr.jpg",
+    "/assets/static-map-yandex-DTsHSf8e.png"
+  ],
+  "src/components/AISchemas.tsx": [
+    "/assets/hero-industrial-DrkVVapx.jpg",
+    "/assets/equipment-manufacturing-05vLmLC9.jpg",
+    "/assets/raw-materials-BC40ykbr.jpg",
+    "/assets/static-map-yandex-DTsHSf8e.png"
+  ],
+  "src/components/AISummary.tsx": [
+    "/assets/hero-industrial-DrkVVapx.jpg",
+    "/assets/equipment-manufacturing-05vLmLC9.jpg",
+    "/assets/raw-materials-BC40ykbr.jpg",
+    "/assets/static-map-yandex-DTsHSf8e.png"
+  ],
+  "src/components/Breadcrumbs.tsx": [
+    "/assets/hero-industrial-DrkVVapx.jpg",
+    "/assets/equipment-manufacturing-05vLmLC9.jpg",
+    "/assets/raw-materials-BC40ykbr.jpg",
+    "/assets/static-map-yandex-DTsHSf8e.png"
+  ],
+  "src/components/BusinessDirections.tsx": [
+    "/assets/hero-industrial-DrkVVapx.jpg",
+    "/assets/equipment-manufacturing-05vLmLC9.jpg",
+    "/assets/raw-materials-BC40ykbr.jpg",
+    "/assets/static-map-yandex-DTsHSf8e.png"
+  ],
+  "src/components/BusinessDirectionsView.tsx": [
+    "/assets/hero-industrial-DrkVVapx.jpg",
+    "/assets/equipment-manufacturing-05vLmLC9.jpg",
+    "/assets/raw-materials-BC40ykbr.jpg",
+    "/assets/static-map-yandex-DTsHSf8e.png"
+  ],
+  "src/components/CTAButton.tsx": [
+    "/assets/hero-industrial-DrkVVapx.jpg",
+    "/assets/equipment-manufacturing-05vLmLC9.jpg",
+    "/assets/raw-materials-BC40ykbr.jpg",
+    "/assets/static-map-yandex-DTsHSf8e.png"
+  ],
+  "src/components/CatalogNavigation.tsx": [
+    "/assets/hero-industrial-DrkVVapx.jpg",
+    "/assets/equipment-manufacturing-05vLmLC9.jpg",
+    "/assets/raw-materials-BC40ykbr.jpg",
+    "/assets/static-map-yandex-DTsHSf8e.png"
+  ],
+  "src/components/CompanyAdvantages.tsx": [
+    "/assets/hero-industrial-DrkVVapx.jpg",
+    "/assets/equipment-manufacturing-05vLmLC9.jpg",
+    "/assets/raw-materials-BC40ykbr.jpg",
+    "/assets/static-map-yandex-DTsHSf8e.png"
+  ],
+  "src/components/ContactSection.tsx": [
+    "/assets/hero-industrial-DrkVVapx.jpg",
+    "/assets/equipment-manufacturing-05vLmLC9.jpg",
+    "/assets/raw-materials-BC40ykbr.jpg",
+    "/assets/static-map-yandex-DTsHSf8e.png"
+  ],
+  "src/components/FAQSection.tsx": [
+    "/assets/hero-industrial-DrkVVapx.jpg",
+    "/assets/equipment-manufacturing-05vLmLC9.jpg",
+    "/assets/raw-materials-BC40ykbr.jpg",
+    "/assets/static-map-yandex-DTsHSf8e.png"
+  ],
+  "src/components/Footer.tsx": [
+    "/assets/hero-industrial-DrkVVapx.jpg",
+    "/assets/equipment-manufacturing-05vLmLC9.jpg",
+    "/assets/raw-materials-BC40ykbr.jpg",
+    "/assets/static-map-yandex-DTsHSf8e.png"
+  ],
+  "src/components/Header.tsx": [
+    "/assets/hero-industrial-DrkVVapx.jpg",
+    "/assets/equipment-manufacturing-05vLmLC9.jpg",
+    "/assets/raw-materials-BC40ykbr.jpg",
+    "/assets/static-map-yandex-DTsHSf8e.png"
+  ],
+  "src/components/HeroSection.tsx": [
+    "/assets/hero-industrial-DrkVVapx.jpg",
+    "/assets/equipment-manufacturing-05vLmLC9.jpg",
+    "/assets/raw-materials-BC40ykbr.jpg",
+    "/assets/static-map-yandex-DTsHSf8e.png"
+  ],
+  "src/components/KeyFacts.tsx": [
+    "/assets/hero-industrial-DrkVVapx.jpg",
+    "/assets/equipment-manufacturing-05vLmLC9.jpg",
+    "/assets/raw-materials-BC40ykbr.jpg",
+    "/assets/static-map-yandex-DTsHSf8e.png"
+  ],
+  "src/components/LanguageSelector.tsx": [
+    "/assets/hero-industrial-DrkVVapx.jpg",
+    "/assets/equipment-manufacturing-05vLmLC9.jpg",
+    "/assets/raw-materials-BC40ykbr.jpg",
+    "/assets/static-map-yandex-DTsHSf8e.png"
+  ],
+  "src/components/MapComponent.tsx": [
+    "/assets/hero-industrial-DrkVVapx.jpg",
+    "/assets/equipment-manufacturing-05vLmLC9.jpg",
+    "/assets/raw-materials-BC40ykbr.jpg",
+    "/assets/static-map-yandex-DTsHSf8e.png"
+  ],
+  "src/components/PerformanceOptimizer.tsx": [
+    "/assets/hero-industrial-DrkVVapx.jpg",
+    "/assets/equipment-manufacturing-05vLmLC9.jpg",
+    "/assets/raw-materials-BC40ykbr.jpg",
+    "/assets/static-map-yandex-DTsHSf8e.png"
+  ],
+  "src/components/SEOHead.tsx": [
+    "/assets/hero-industrial-DrkVVapx.jpg",
+    "/assets/equipment-manufacturing-05vLmLC9.jpg",
+    "/assets/raw-materials-BC40ykbr.jpg",
+    "/assets/static-map-yandex-DTsHSf8e.png"
+  ],
+  "src/components/SkipLink.tsx": [
+    "/assets/hero-industrial-DrkVVapx.jpg",
+    "/assets/equipment-manufacturing-05vLmLC9.jpg",
+    "/assets/raw-materials-BC40ykbr.jpg",
+    "/assets/static-map-yandex-DTsHSf8e.png"
+  ],
+  "src/components/SpeakableSchema.tsx": [
+    "/assets/hero-industrial-DrkVVapx.jpg",
+    "/assets/equipment-manufacturing-05vLmLC9.jpg",
+    "/assets/raw-materials-BC40ykbr.jpg",
+    "/assets/static-map-yandex-DTsHSf8e.png"
+  ],
+  "src/components/StructuredData.tsx": [
+    "/assets/hero-industrial-DrkVVapx.jpg",
+    "/assets/equipment-manufacturing-05vLmLC9.jpg",
+    "/assets/raw-materials-BC40ykbr.jpg",
+    "/assets/static-map-yandex-DTsHSf8e.png"
+  ],
+  "src/components/en/BusinessDirectionsEn.tsx": [
+    "/assets/hero-industrial-DrkVVapx.jpg",
+    "/assets/equipment-manufacturing-05vLmLC9.jpg",
+    "/assets/raw-materials-BC40ykbr.jpg",
+    "/assets/static-map-yandex-DTsHSf8e.png"
+  ],
+  "src/components/en/CompanyAdvantagesEn.tsx": [
+    "/assets/hero-industrial-DrkVVapx.jpg",
+    "/assets/equipment-manufacturing-05vLmLC9.jpg",
+    "/assets/raw-materials-BC40ykbr.jpg",
+    "/assets/static-map-yandex-DTsHSf8e.png"
+  ],
+  "src/components/en/ContactSectionEn.tsx": [
+    "/assets/hero-industrial-DrkVVapx.jpg",
+    "/assets/equipment-manufacturing-05vLmLC9.jpg",
+    "/assets/raw-materials-BC40ykbr.jpg",
+    "/assets/static-map-yandex-DTsHSf8e.png"
+  ],
+  "src/components/en/HeroSectionEn.tsx": [
+    "/assets/hero-industrial-DrkVVapx.jpg",
+    "/assets/equipment-manufacturing-05vLmLC9.jpg",
+    "/assets/raw-materials-BC40ykbr.jpg",
+    "/assets/static-map-yandex-DTsHSf8e.png"
+  ],
+  "src/components/ui/badge-premium.tsx": [
+    "/assets/hero-industrial-DrkVVapx.jpg",
+    "/assets/equipment-manufacturing-05vLmLC9.jpg",
+    "/assets/raw-materials-BC40ykbr.jpg",
+    "/assets/static-map-yandex-DTsHSf8e.png"
+  ],
+  "src/components/ui/badge.tsx": [
+    "/assets/hero-industrial-DrkVVapx.jpg",
+    "/assets/equipment-manufacturing-05vLmLC9.jpg",
+    "/assets/raw-materials-BC40ykbr.jpg",
+    "/assets/static-map-yandex-DTsHSf8e.png"
+  ],
+  "src/components/ui/button.tsx": [
+    "/assets/hero-industrial-DrkVVapx.jpg",
+    "/assets/equipment-manufacturing-05vLmLC9.jpg",
+    "/assets/raw-materials-BC40ykbr.jpg",
+    "/assets/static-map-yandex-DTsHSf8e.png"
+  ],
+  "src/components/ui/card.tsx": [
+    "/assets/hero-industrial-DrkVVapx.jpg",
+    "/assets/equipment-manufacturing-05vLmLC9.jpg",
+    "/assets/raw-materials-BC40ykbr.jpg",
+    "/assets/static-map-yandex-DTsHSf8e.png"
+  ],
+  "src/components/ui/collapsible.tsx": [
+    "/assets/hero-industrial-DrkVVapx.jpg",
+    "/assets/equipment-manufacturing-05vLmLC9.jpg",
+    "/assets/raw-materials-BC40ykbr.jpg",
+    "/assets/static-map-yandex-DTsHSf8e.png"
+  ],
+  "src/components/ui/dropdown-menu.tsx": [
+    "/assets/hero-industrial-DrkVVapx.jpg",
+    "/assets/equipment-manufacturing-05vLmLC9.jpg",
+    "/assets/raw-materials-BC40ykbr.jpg",
+    "/assets/static-map-yandex-DTsHSf8e.png"
+  ],
+  "src/components/ui/input.tsx": [
+    "/assets/hero-industrial-DrkVVapx.jpg",
+    "/assets/equipment-manufacturing-05vLmLC9.jpg",
+    "/assets/raw-materials-BC40ykbr.jpg",
+    "/assets/static-map-yandex-DTsHSf8e.png"
+  ],
+  "src/components/ui/optimized-image.tsx": [
+    "/assets/hero-industrial-DrkVVapx.jpg",
+    "/assets/equipment-manufacturing-05vLmLC9.jpg",
+    "/assets/raw-materials-BC40ykbr.jpg",
+    "/assets/static-map-yandex-DTsHSf8e.png"
+  ],
+  "src/components/ui/toast.tsx": [
+    "/assets/hero-industrial-DrkVVapx.jpg",
+    "/assets/equipment-manufacturing-05vLmLC9.jpg",
+    "/assets/raw-materials-BC40ykbr.jpg",
+    "/assets/static-map-yandex-DTsHSf8e.png"
+  ],
+  "src/components/ui/toaster.tsx": [
+    "/assets/hero-industrial-DrkVVapx.jpg",
+    "/assets/equipment-manufacturing-05vLmLC9.jpg",
+    "/assets/raw-materials-BC40ykbr.jpg",
+    "/assets/static-map-yandex-DTsHSf8e.png"
+  ],
+  "src/components/ui/tooltip.tsx": [
+    "/assets/hero-industrial-DrkVVapx.jpg",
+    "/assets/equipment-manufacturing-05vLmLC9.jpg",
+    "/assets/raw-materials-BC40ykbr.jpg",
+    "/assets/static-map-yandex-DTsHSf8e.png"
+  ],
+  "src/components/zh/BusinessDirectionsZh.tsx": [
+    "/assets/hero-industrial-DrkVVapx.jpg",
+    "/assets/equipment-manufacturing-05vLmLC9.jpg",
+    "/assets/raw-materials-BC40ykbr.jpg",
+    "/assets/static-map-yandex-DTsHSf8e.png"
+  ],
+  "src/components/zh/CompanyAdvantagesZh.tsx": [
+    "/assets/hero-industrial-DrkVVapx.jpg",
+    "/assets/equipment-manufacturing-05vLmLC9.jpg",
+    "/assets/raw-materials-BC40ykbr.jpg",
+    "/assets/static-map-yandex-DTsHSf8e.png"
+  ],
+  "src/components/zh/ContactSectionZh.tsx": [
+    "/assets/hero-industrial-DrkVVapx.jpg",
+    "/assets/equipment-manufacturing-05vLmLC9.jpg",
+    "/assets/raw-materials-BC40ykbr.jpg",
+    "/assets/static-map-yandex-DTsHSf8e.png"
+  ],
+  "src/components/zh/HeroSectionZh.tsx": [
+    "/assets/hero-industrial-DrkVVapx.jpg",
+    "/assets/equipment-manufacturing-05vLmLC9.jpg",
+    "/assets/raw-materials-BC40ykbr.jpg",
+    "/assets/static-map-yandex-DTsHSf8e.png"
+  ],
+  "src/data/businessDirections.ts": [
+    "/assets/hero-industrial-DrkVVapx.jpg",
+    "/assets/equipment-manufacturing-05vLmLC9.jpg",
+    "/assets/raw-materials-BC40ykbr.jpg",
+    "/assets/static-map-yandex-DTsHSf8e.png"
+  ],
+  "src/data/catalog.ts": [
+    "/assets/hero-industrial-DrkVVapx.jpg",
+    "/assets/equipment-manufacturing-05vLmLC9.jpg",
+    "/assets/raw-materials-BC40ykbr.jpg",
+    "/assets/static-map-yandex-DTsHSf8e.png"
+  ],
+  "src/data/companyRegistry.ts": [
+    "/assets/hero-industrial-DrkVVapx.jpg",
+    "/assets/equipment-manufacturing-05vLmLC9.jpg",
+    "/assets/raw-materials-BC40ykbr.jpg",
+    "/assets/static-map-yandex-DTsHSf8e.png"
+  ],
+  "src/data/legalContent.ts": [
+    "/assets/hero-industrial-DrkVVapx.jpg",
+    "/assets/equipment-manufacturing-05vLmLC9.jpg",
+    "/assets/raw-materials-BC40ykbr.jpg",
+    "/assets/static-map-yandex-DTsHSf8e.png"
+  ],
+  "src/data/pageContent.ts": [
+    "/assets/hero-industrial-DrkVVapx.jpg",
+    "/assets/equipment-manufacturing-05vLmLC9.jpg",
+    "/assets/raw-materials-BC40ykbr.jpg",
+    "/assets/static-map-yandex-DTsHSf8e.png"
+  ],
+  "src/entry-server.tsx": [
+    "/assets/hero-industrial-DrkVVapx.jpg",
+    "/assets/equipment-manufacturing-05vLmLC9.jpg",
+    "/assets/raw-materials-BC40ykbr.jpg",
+    "/assets/static-map-yandex-DTsHSf8e.png"
+  ],
+  "src/hooks/use-toast.ts": [
+    "/assets/hero-industrial-DrkVVapx.jpg",
+    "/assets/equipment-manufacturing-05vLmLC9.jpg",
+    "/assets/raw-materials-BC40ykbr.jpg",
+    "/assets/static-map-yandex-DTsHSf8e.png"
+  ],
+  "src/hooks/useResponsiveImage.tsx": [
+    "/assets/hero-industrial-DrkVVapx.jpg",
+    "/assets/equipment-manufacturing-05vLmLC9.jpg",
+    "/assets/raw-materials-BC40ykbr.jpg",
+    "/assets/static-map-yandex-DTsHSf8e.png"
+  ],
+  "src/lib/siteMetadata.ts": [
+    "/assets/hero-industrial-DrkVVapx.jpg",
+    "/assets/equipment-manufacturing-05vLmLC9.jpg",
+    "/assets/raw-materials-BC40ykbr.jpg",
+    "/assets/static-map-yandex-DTsHSf8e.png"
+  ],
+  "src/lib/utils.ts": [
+    "/assets/hero-industrial-DrkVVapx.jpg",
+    "/assets/equipment-manufacturing-05vLmLC9.jpg",
+    "/assets/raw-materials-BC40ykbr.jpg",
+    "/assets/static-map-yandex-DTsHSf8e.png"
+  ],
+  "src/pages/About.tsx": [
+    "/assets/hero-industrial-DrkVVapx.jpg",
+    "/assets/equipment-manufacturing-05vLmLC9.jpg",
+    "/assets/raw-materials-BC40ykbr.jpg",
+    "/assets/static-map-yandex-DTsHSf8e.png"
+  ],
+  "src/pages/Cases.tsx": [
+    "/assets/hero-industrial-DrkVVapx.jpg",
+    "/assets/equipment-manufacturing-05vLmLC9.jpg",
+    "/assets/raw-materials-BC40ykbr.jpg",
+    "/assets/static-map-yandex-DTsHSf8e.png"
+  ],
+  "src/pages/Chinese.tsx": [
+    "/assets/hero-industrial-DrkVVapx.jpg",
+    "/assets/equipment-manufacturing-05vLmLC9.jpg",
+    "/assets/raw-materials-BC40ykbr.jpg",
+    "/assets/static-map-yandex-DTsHSf8e.png"
+  ],
+  "src/pages/CncMachines.tsx": [
+    "/assets/hero-industrial-DrkVVapx.jpg",
+    "/assets/equipment-manufacturing-05vLmLC9.jpg",
+    "/assets/raw-materials-BC40ykbr.jpg",
+    "/assets/static-map-yandex-DTsHSf8e.png"
+  ],
+  "src/pages/Company.tsx": [
+    "/assets/hero-industrial-DrkVVapx.jpg",
+    "/assets/equipment-manufacturing-05vLmLC9.jpg",
+    "/assets/raw-materials-BC40ykbr.jpg",
+    "/assets/static-map-yandex-DTsHSf8e.png"
+  ],
+  "src/pages/English.tsx": [
+    "/assets/hero-industrial-DrkVVapx.jpg",
+    "/assets/equipment-manufacturing-05vLmLC9.jpg",
+    "/assets/raw-materials-BC40ykbr.jpg",
+    "/assets/static-map-yandex-DTsHSf8e.png"
+  ],
+  "src/pages/Faq.tsx": [
+    "/assets/hero-industrial-DrkVVapx.jpg",
+    "/assets/equipment-manufacturing-05vLmLC9.jpg",
+    "/assets/raw-materials-BC40ykbr.jpg",
+    "/assets/static-map-yandex-DTsHSf8e.png"
+  ],
+  "src/pages/Index.tsx": [
+    "/assets/hero-industrial-DrkVVapx.jpg",
+    "/assets/equipment-manufacturing-05vLmLC9.jpg",
+    "/assets/raw-materials-BC40ykbr.jpg",
+    "/assets/static-map-yandex-DTsHSf8e.png"
+  ],
+  "src/pages/LegalPage.tsx": [
+    "/assets/hero-industrial-DrkVVapx.jpg",
+    "/assets/equipment-manufacturing-05vLmLC9.jpg",
+    "/assets/raw-materials-BC40ykbr.jpg",
+    "/assets/static-map-yandex-DTsHSf8e.png"
+  ],
+  "src/pages/LegalPlaceholder.tsx": [
+    "/assets/hero-industrial-DrkVVapx.jpg",
+    "/assets/equipment-manufacturing-05vLmLC9.jpg",
+    "/assets/raw-materials-BC40ykbr.jpg",
+    "/assets/static-map-yandex-DTsHSf8e.png"
+  ],
+  "src/pages/NotFound.tsx": [
+    "/assets/hero-industrial-DrkVVapx.jpg",
+    "/assets/equipment-manufacturing-05vLmLC9.jpg",
+    "/assets/raw-materials-BC40ykbr.jpg",
+    "/assets/static-map-yandex-DTsHSf8e.png"
+  ],
+  "src/utils/cacheManager.ts": [
+    "/assets/hero-industrial-DrkVVapx.jpg",
+    "/assets/equipment-manufacturing-05vLmLC9.jpg",
+    "/assets/raw-materials-BC40ykbr.jpg",
+    "/assets/static-map-yandex-DTsHSf8e.png"
+  ]
+}
