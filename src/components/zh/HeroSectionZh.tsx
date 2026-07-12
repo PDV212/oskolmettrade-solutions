@@ -95,25 +95,15 @@ const HeroSectionZh = () => {
                 我们的能力
               </Button>
             </div>
-
-            {/* Enhanced Stats with Badges */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+            {/* Stats — unsupported LLC-30+, ≈2,500 units and factory metrics removed */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
               <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-accent">30+</div>
-                <div className="text-white/70 text-sm">团队经验始于1994年</div>
+                <div className="text-2xl md:text-3xl font-bold text-accent">1994</div>
+                <div className="text-white/70 text-sm">创始人与团队行业经验始于</div>
               </div>
-              {showEquipmentDelivered && (
-                <div className="text-center">
-                  <div className="text-2xl md:text-3xl font-bold text-accent">约2,500</div>
-                  <div className="text-white/70 text-sm">台 — 累计项目经验</div>
-                </div>
-              )}
               <div className="text-center">
                 <div className="text-2xl md:text-3xl font-bold text-accent">4</div>
                 <div className="text-white/70 text-sm">业务方向</div>
-              </div>
-              <div className="text-center sm:col-span-2 lg:col-span-1">
-                <TrustedBadgeZh size="sm" variant="glass" />
               </div>
             </div>
           </div>
