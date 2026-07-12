@@ -103,76 +103,16 @@ const CncMachines = ({ lang = 'ru' }: CncMachinesProps) => {
             <h2 id="types-heading" className="text-2xl md:text-3xl font-bold text-foreground mb-6">
               {cncContent.sections.types[lang]}
             </h2>
-            <ul className="grid md:grid-cols-2 gap-3 list-disc list-inside text-muted-foreground">
+            <ul className="grid md:grid-cols-2 gap-3 list-disc list-inside text-muted-foreground mb-6">
               {cncContent.machineTypes.map((t) => (
                 <li key={t.ru}>{t[lang]}</li>
               ))}
             </ul>
+            <p className="text-sm text-muted-foreground italic leading-relaxed max-w-3xl">
+              {cncContent.categoriesNote[lang]}
+            </p>
           </section>
 
-          <section aria-labelledby="specs-heading" className="mb-12">
-            <h2 id="specs-heading" className="text-2xl md:text-3xl font-bold text-foreground mb-6">
-              {cncContent.sections.specs[lang]}
-            </h2>
-            <div className="overflow-x-auto rounded-lg border border-border">
-              <table className="w-full text-left">
-                <thead className="bg-muted">
-                  <tr>
-                    <th scope="col" className="px-4 py-3 font-semibold">{cncContent.sections.tableModel[lang]}</th>
-                    <th scope="col" className="px-4 py-3 font-semibold">{cncContent.sections.tableType[lang]}</th>
-                    <th scope="col" className="px-4 py-3 font-semibold">{cncContent.sections.tableAccuracy[lang]}</th>
-                    <th scope="col" className="px-4 py-3 font-semibold">{cncContent.sections.tableApplication[lang]}</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {cncContent.techRows.map((r) => (
-                    <tr key={r.model} className="border-t border-border">
-                      <td className="px-4 py-3 font-medium">{r.model}</td>
-                      <td className="px-4 py-3 text-muted-foreground">{r.type[lang]}</td>
-                      <td className="px-4 py-3 text-muted-foreground">{r.accuracy}</td>
-                      <td className="px-4 py-3 text-muted-foreground">{r.application[lang]}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </section>
-
-          <section aria-labelledby="comparison-heading" className="mb-12">
-            <h2 id="comparison-heading" className="text-2xl md:text-3xl font-bold text-foreground mb-6">
-              {cncContent.sections.comparison[lang]}
-            </h2>
-            <figure>
-              <figcaption className="text-sm text-muted-foreground mb-3">
-                {cncContent.sections.comparisonCaption[lang]}
-              </figcaption>
-              <div className="overflow-x-auto rounded-lg border border-border">
-                <table className="w-full text-left">
-                  <thead className="bg-muted sticky top-0 z-10">
-                    <tr>
-                      <th scope="col" className="px-4 py-3 font-semibold whitespace-nowrap">{cncContent.sections.tableMachineType[lang]}</th>
-                      <th scope="col" className="px-4 py-3 font-semibold whitespace-nowrap">{cncContent.sections.tableAccuracy[lang]}</th>
-                      <th scope="col" className="px-4 py-3 font-semibold whitespace-nowrap">{cncContent.sections.tableApplication[lang]}</th>
-                      <th scope="col" className="px-4 py-3 font-semibold whitespace-nowrap">{cncContent.sections.tablePrice[lang]}</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {cncContent.comparisonRows.map((r, i) => (
-                      <tr
-                        key={r.type.ru}
-                        className={`border-t border-border ${i % 2 === 1 ? 'bg-muted/50' : 'bg-card'}`}
-                      >
-                        <td className="px-4 py-3 font-medium whitespace-nowrap">{r.type[lang]}</td>
-                        <td className="px-4 py-3 text-muted-foreground whitespace-nowrap">{r.accuracy}</td>
-                        <td className="px-4 py-3 text-muted-foreground">{r.application[lang]}</td>
-                        <td className="px-4 py-3 text-muted-foreground whitespace-nowrap">{r.price[lang]}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </figure>
-          </section>
 
           <section aria-labelledby="why-heading" className="mb-12">
             <h2 id="why-heading" className="text-2xl md:text-3xl font-bold text-foreground mb-6">

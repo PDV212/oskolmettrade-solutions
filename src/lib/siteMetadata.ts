@@ -53,7 +53,8 @@ export const HREFLANG_GROUPS = {
   privacy: { ru: "/privacy", en: "/en/privacy", zh: "/zh/privacy", xDefault: "en" },
   cookies: { ru: "/cookies", en: "/en/cookies", zh: "/zh/cookies", xDefault: "en" },
   about: { ru: "/about", en: "/en/about", zh: "/zh/about", xDefault: "en" },
-  cases: { ru: "/cases", en: "/en/cases", zh: "/zh/cases", xDefault: "en" },
+  // cases group intentionally removed while /cases is a temporary
+  // noindex quarantine notice — do not emit reciprocal hreflang.
   cncMachines: {
     ru: "/cnc-machines",
     en: "/en/cnc-machines",
