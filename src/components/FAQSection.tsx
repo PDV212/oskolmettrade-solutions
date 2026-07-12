@@ -7,6 +7,13 @@ interface FAQSectionProps {
   language?: 'ru' | 'en' | 'zh';
 }
 
+/**
+ * Homepage FAQ.
+ * Answers are contract-qualified. Removed: universal warranty duration,
+ * 24/7 accredited service claim, ≈2,500-unit metric, fixed nationwide
+ * delivery windows. Visible text and inline schema.org FAQPage markup
+ * share the same source (this data structure).
+ */
 const data: Record<'ru' | 'en' | 'zh', { heading: string; intro: string; items: FAQItem[] }> = {
   ru: {
     heading: 'Часто задаваемые вопросы',
@@ -15,23 +22,23 @@ const data: Record<'ru' | 'en' | 'zh', { heading: string; intro: string; items: 
     items: [
       {
         q: 'Какое оборудование поставляет ОСКОЛ-МЕТ-ТРЕЙД?',
-        a: 'Станки с ЧПУ, обрабатывающие центры, токарные, фрезерные и шлифовальные станки, гидравлические прессы, роботизированные участки сварки и покраски с AI-расчётом траекторий по 3D-чертежам Tekla Structures.',
+        a: 'Станки с ЧПУ, обрабатывающие центры, токарные, фрезерные и шлифовальные станки, гидравлические прессы, роботизированные участки сварки и покраски. Конкретные модели, комплектация и характеристики согласовываются в рамках отдельного проекта.',
       },
       {
         q: 'С какого года формируется отраслевой опыт?',
-        a: 'Отраслевой опыт команды и основателя бизнеса формируется с 1994 года, когда начали работу первые компании основателя. ООО «ОСКОЛ-МЕТ-ТРЕЙД» продолжает и развивает этот опыт. Совокупный опыт включает участие в поставках около 2 500 единиц металлообрабатывающего оборудования.',
+        a: 'Отраслевая работа основателя и накопление опыта команды начались в 1994 году. Эта дата не является датой начала деятельности текущего юридического лица ООО «ОСКОЛ-МЕТ-ТРЕЙД».',
       },
       {
         q: 'В какие страны осуществляется поставка?',
-        a: 'Россия, Казахстан, Беларусь, Китай, Индия. Поддерживается мультиязычная коммуникация на русском, английском и китайском.',
+        a: 'Направление и условия поставки определяются по каждому проекту отдельно. Коммуникация поддерживается на русском, английском и китайском языках.',
       },
       {
         q: 'Предоставляется ли сервис и гарантия?',
-        a: 'Да. Гарантийное и постгарантийное обслуживание осуществляется через аккредитованное предприятие на Урале с круглосуточной технической поддержкой.',
+        a: 'Условия гарантийного и постгарантийного обслуживания фиксируются в договоре под конкретный проект и зависят от поставщика оборудования и региона монтажа.',
       },
       {
         q: 'Какое сырьё доступно к поставке?',
-        a: 'Марганцевая руда, феррохром, бентонит, никельсодержащий чугун и другие легирующие материалы для металлургического производства.',
+        a: 'Направления по сырью включают марганцевую руду, феррохром, бентонит, никельсодержащий чугун и другие легирующие материалы. Доступность конкретной партии подтверждается по запросу.',
       },
       {
         q: 'Где находится компания и каковы реквизиты?',
@@ -46,23 +53,23 @@ const data: Record<'ru' | 'en' | 'zh', { heading: string; intro: string; items: 
     items: [
       {
         q: 'What equipment does OSKOL-MET-TRADE supply?',
-        a: 'CNC machines, machining centers, lathes, milling and grinding machines, hydraulic presses, and robotic welding and painting lines with AI-driven trajectory planning based on Tekla Structures 3D models.',
+        a: 'CNC machines, machining centers, lathes, milling and grinding machines, hydraulic presses, and robotic welding and painting lines. Specific models, configuration and specifications are agreed for each individual project.',
       },
       {
-        q: 'Since when has the team\u2019s industry experience been formed?',
-        a: 'The industry experience of the business founder and the team dates back to 1994, when the founder\u2019s first companies began operating. OSKOL-MET-TRADE LLC continues and develops this expertise. Consolidated experience includes participation in the supply of approximately 2,500 units of metalworking equipment.',
+        q: "Since when has the team's industry experience been formed?",
+        a: "The founder's industry work and the team's accumulated experience date from 1994. This is not the start date of the current legal entity, OSKOL-MET-TRADE LLC.",
       },
       {
         q: 'Which countries do you supply to?',
-        a: 'Russia, Kazakhstan, Belarus, China and India. Communication is supported in Russian, English and Chinese.',
+        a: 'Destination and delivery terms are agreed per project. Communication is supported in Russian, English and Chinese.',
       },
       {
         q: 'Do you provide service and warranty?',
-        a: 'Yes. Warranty and post-warranty service is provided through an accredited facility in the Urals with 24/7 technical support.',
+        a: 'Warranty and post-warranty terms are fixed in the contract for each individual project and depend on the equipment supplier and the region of installation.',
       },
       {
         q: 'What raw materials are available?',
-        a: 'Manganese ore, ferrochrome, bentonite, nickel-containing pig iron and other alloying materials for metallurgical production.',
+        a: 'Product areas include manganese ore, ferrochrome, bentonite, nickel-containing pig iron and other alloying materials. Availability of a specific consignment is confirmed on request.',
       },
       {
         q: 'Where is the company registered?',
@@ -73,31 +80,31 @@ const data: Record<'ru' | 'en' | 'zh', { heading: string; intro: string; items: 
   zh: {
     heading: '常见问题',
     intro:
-      '关于公司、设备、原材料、交付和服务的简短事实性回答。内容以纯HTML形式呈现，可供搜索引擎和人工智能系统读取。',
+      '关于公司、设备、原材料、交付和服务的简短事实性回答。内容以纯 HTML 形式呈现，可供搜索引擎和人工智能系统读取。',
     items: [
       {
         q: '奥斯科尔-金属-贸易供应什么设备？',
-        a: '数控机床、加工中心、车床、铣床、磨床、液压机以及基于Tekla Structures三维模型进行AI轨迹规划的机器人焊接和喷漆生产线。',
+        a: '数控机床、加工中心、车床、铣床、磨床、液压机以及机器人焊接和喷漆生产线。具体型号、配置和技术规格按项目单独商定。',
       },
       {
         q: '团队的行业经验始于何时？',
-        a: '公司创始人及团队的行业经验可追溯至1994年，当时创始人创建的首批企业开始运营。OSKOL-MET-TRADE有限责任公司延续并发展了这些经验。团队及创始人所创办企业累计参与供应了约2,500台金属加工设备。',
+        a: '创始人的行业工作及团队经验积累始于 1994 年。该日期并非当前法人实体 OSKOL-MET-TRADE 有限责任公司的成立或经营起始日期。',
       },
       {
         q: '向哪些国家供货？',
-        a: '俄罗斯、哈萨克斯坦、白俄罗斯、中国和印度。支持俄语、英语和中文沟通。',
+        a: '目的地和交付条款按项目单独确定。支持俄语、英语和中文沟通。',
       },
       {
         q: '是否提供服务和保修？',
-        a: '是的。通过乌拉尔地区的认证企业提供保修和售后服务，提供24/7技术支持。',
+        a: '保修和售后服务条款按每个具体项目在合同中约定，取决于设备供应方和安装所在地区。',
       },
       {
         q: '提供哪些原材料？',
-        a: '锰矿、铬铁、膨润土、含镍生铁以及其他冶金生产用合金材料。',
+        a: '原材料方向包括锰矿、铬铁、膨润土、含镍生铁以及其他合金材料。具体批次的可供性可根据询价确认。',
       },
       {
         q: '公司注册地址是？',
-        a: 'OSKOL-MET-TRADE有限责任公司。税号 3127508337，OGRN 1033108702868。注册地址：俄罗斯别尔哥罗德州古布金市米拉街20号312/1办公室，邮编309181。',
+        a: 'OSKOL-MET-TRADE 有限责任公司。税号 3127508337，OGRN 1033108702868。注册地址：俄罗斯别尔哥罗德州古布金市米拉街 20 号 312/1 办公室，邮编 309181。',
       },
     ],
   },
