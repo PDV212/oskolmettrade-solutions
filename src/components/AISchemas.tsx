@@ -22,7 +22,7 @@ const serviceSchemas = [
     name: 'Поставка металлообрабатывающего оборудования',
     serviceType: 'Поставка станков с ЧПУ и обрабатывающих центров',
     provider: { '@type': 'Organization', name: 'ООО ОСКОЛ-МЕТ-ТРЕЙД' },
-    areaServed: ['RU', 'KZ', 'BY', 'CN', 'IN'],
+    areaServed: ['RU'],
     description:
       'Поставка станков с ЧПУ, обрабатывающих центров, токарных, фрезерных и шлифовальных станков, гидравлических прессов и роботизированных комплексов сварки и покраски.',
   },
@@ -32,7 +32,7 @@ const serviceSchemas = [
     name: 'Поставка металлургического сырья',
     serviceType: 'Поставка сырья для металлургии',
     provider: { '@type': 'Organization', name: 'ООО ОСКОЛ-МЕТ-ТРЕЙД' },
-    areaServed: ['RU', 'KZ', 'BY', 'CN', 'IN'],
+    areaServed: ['RU'],
     description:
       'Марганцевая руда, феррохром, бентонит, никельсодержащий чугун и другие легирующие материалы.',
   },
@@ -42,7 +42,7 @@ const serviceSchemas = [
     name: 'Поставка металлургических печей',
     serviceType: 'Промышленные печи',
     provider: { '@type': 'Organization', name: 'ООО ОСКОЛ-МЕТ-ТРЕЙД' },
-    areaServed: ['RU', 'KZ', 'BY', 'CN', 'IN'],
+    areaServed: ['RU'],
     description:
       'Вакуумно-дуговые, индукционные и газовые металлургические печи под задачи заказчика.',
   },
@@ -52,7 +52,7 @@ const serviceSchemas = [
     name: 'Инжиниринг, монтаж и сервисное обслуживание',
     serviceType: 'Engineering & Maintenance',
     provider: { '@type': 'Organization', name: 'ООО ОСКОЛ-МЕТ-ТРЕЙД' },
-    areaServed: ['RU', 'KZ', 'BY', 'CN', 'IN'],
+    areaServed: ['RU'],
     description:
       'Проектирование, шеф-монтаж, пуско-наладка, гарантийное и постгарантийное обслуживание оборудования — объём определяется по договору для конкретного проекта.',
   },
@@ -63,7 +63,7 @@ const contactPointSchema = {
   '@type': 'ContactPoint',
   telephone: '+7-909-097-71-74',
   contactType: 'sales',
-  areaServed: ['RU', 'KZ', 'BY', 'CN', 'IN'],
+  areaServed: ['RU'],
   availableLanguage: ['Russian', 'English', 'Chinese'],
 };
 
