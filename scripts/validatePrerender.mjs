@@ -57,10 +57,20 @@ for (const route of ROUTES) {
   const canonical = extract(/<link\s+rel="canonical"\s+href="([^"]+)"/i, html);
   const robots = extract(/<meta\s+name="robots"\s+content="([^"]+)"/i, html);
   const h1Count = count(/<h1\b/gi, html);
+  const mainCount = count(/<main\b/gi, html);
   const hreflangs = [...html.matchAll(/<link\s+rel="alternate"\s+hreflang="([^"]+)"/gi)].map((m) => m[1]);
   const jsonLdTypes = [...html.matchAll(/"@type"\s*:\s*"([^"]+)"/g)].map((m) => m[1]);
-  const marker = html.includes(`data-route="${route.path}"`);
-  const mainCharCount = (html.match(/data-prerendered="true"[\s\S]*?<\/section>/) || [""])[0].length;
+  const marker = html.includes(`data-ssr-route="${route.path}"`);
+  const hasLegacyStub = /data-prerendered="true"/.test(html);
+  const rootMatch = html.match(/<div id="root"[^>]*>([\s\S]*?)<\/div>\s*<script/);
+  const rootInner = rootMatch ? rootMatch[1] : "";
+  const visibleText = rootInner
+    .replace(/<script[\s\S]*?<\/script>/gi, "")
+    .replace(/<style[\s\S]*?<\/style>/gi, "")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+  const visibleLen = visibleText.length;
 
   if (htmlLang !== HTML_LANG[route.lang])
     errs.push(`html lang mismatch: ${htmlLang} vs ${HTML_LANG[route.lang]}`);
@@ -73,6 +83,7 @@ for (const route of ROUTES) {
   if (!robots || !/index/.test(robots) || /noindex/.test(robots))
     errs.push(`robots invalid: ${robots}`);
   if (h1Count < 1) errs.push("no H1");
+  if (mainCount < 1) errs.push("no <main> landmark");
   const g = HREFLANG_GROUPS[route.group];
   if (g) {
     for (const l of ["ru", "en", "zh"]) {
@@ -81,12 +92,14 @@ for (const route of ROUTES) {
     }
     if (!hreflangs.includes("x-default")) errs.push("missing hreflang x-default");
   }
-  if (!marker) errs.push("missing route marker");
+  if (!marker) errs.push("missing SSR route marker (data-ssr-route)");
+  if (hasLegacyStub) errs.push("legacy prerender stub still present");
+  if (visibleLen < 400)
+    errs.push(`root visible text too short (${visibleLen} chars) — SSR likely failed`);
   for (const bad of FORBIDDEN_SUBSTRINGS) {
     if (html.toLowerCase().includes(bad.toLowerCase()))
       errs.push(`forbidden substring: ${bad}`);
   }
-  // Homepage catalog: ensure no Product/Offer schema was restored.
   if (route.pageType === "home") {
     if (/"@type"\s*:\s*"Product"/.test(html)) errs.push("Product schema present on homepage");
     if (/"@type"\s*:\s*"Offer"/.test(html)) errs.push("Offer schema present on homepage");
@@ -101,9 +114,10 @@ for (const route of ROUTES) {
     canonical,
     robots,
     h1Count,
+    mainCount,
     hreflangs: hreflangs.join(","),
     jsonLdTypes: jsonLdTypes.join(","),
-    markerBytes: mainCharCount,
+    visibleLen,
   });
 
   if (errs.length) failures.push(`${route.path}: ${errs.join("; ")}`);
