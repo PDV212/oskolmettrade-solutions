@@ -150,7 +150,7 @@ const Footer = ({ language = 'ru' }: FooterProps) => {
   const registryShortName = tField(companyIdentity.shortName.value, language);
   const registryLegalName = tField(companyIdentity.legalName.value, language);
   const registryAddress = tField(companyIdentity.address.value, language);
-  const registryFounded = companyIdentity.foundedYear.value;
+  const registryExperienceSince = companyIdentity.founderTeamExperienceStartYear.value;
   const registryINN = legalIdentifiers.INN.value;
   const registryOGRN = legalIdentifiers.OGRN.value;
 
@@ -220,7 +220,7 @@ const Footer = ({ language = 'ru' }: FooterProps) => {
                     {registryShortName}
                   </h3>
                   <p className="text-white/70 text-sm">
-                    {t.sinceLabel} <time dateTime={String(registryFounded)} itemProp="foundingDate">{registryFounded}</time> {t.sinceSuffix}
+                    {t.sinceLabel} <time dateTime={String(registryExperienceSince)}>{registryExperienceSince}</time> {t.sinceSuffix}
                   </p>
                 </div>
 

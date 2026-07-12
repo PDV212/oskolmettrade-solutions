@@ -38,11 +38,11 @@ const content: Record<Lang, FaqContent> = {
         items: [
           {
             q: "What CNC equipment does OSKOL-MET-TRADE supply?",
-            a: "We supply vertical and horizontal CNC machining centers (VMC-850 and similar), CNC turning centers (CNC-320), CNC grinding machines, hydraulic presses, and fully automated robotic welding and painting lines with AI-trajectory planning.",
+            a: "Category-level offered directions include vertical and horizontal CNC machining centers, CNC turning centers, CNC grinding machines, hydraulic presses, and robotic welding and painting systems. Specific model, configuration and automation scope are agreed per project and fixed in the commercial proposal and contract.",
           },
           {
             q: "Since when has the team supplied equipment?",
-            a: "Equipment supply operations of OSKOL-MET-TRADE LLC began in 2015. The founder's industry work and the team's accumulated experience date from 1994; that date is not the start date of the current legal entity. Consolidated volume figures are pending approved public evidence and are therefore not published here.",
+            a: "The founder's industry work and the team's accumulated experience date from 1994; that date is not the start date of the current legal entity OSKOL-MET-TRADE LLC. Consolidated volume figures and the exact LLC registration date are not published here pending approved public evidence.",
           },
           {
             q: "Do you provide installation and warranty service?",
@@ -55,7 +55,7 @@ const content: Record<Lang, FaqContent> = {
         items: [
           {
             q: "What metallurgical raw materials are available?",
-            a: "We supply manganese ore, high-carbon ferrochrome FeCr60 and FeCr52, nickel-containing pig iron (NPI), bentonite, high-quality metallurgical materials, and stainless steel slabs.",
+            a: "Offered raw-material categories include manganese ore, ferrochrome FeCr, nickel-containing pig iron (NPI), bentonite, iron ore and stainless-steel slabs. Grade, chemical composition, particle size, origin, volume and delivery terms are determined for each lot and fixed in the specification and contract.",
           },
           {
             q: "What are the delivery terms for raw materials?",
@@ -113,11 +113,11 @@ const content: Record<Lang, FaqContent> = {
         items: [
           {
             q: "Какое оборудование с ЧПУ поставляет ОСКОЛ-МЕТ-ТРЕЙД?",
-            a: "Поставляем вертикальные и горизонтальные обрабатывающие центры с ЧПУ (VMC-850 и аналоги), токарные центры с ЧПУ (CNC-320), шлифовальные станки с ЧПУ, гидравлические прессы и полностью автоматизированные роботизированные линии сварки и покраски с AI-расчётом траекторий.",
+            a: "На уровне направлений предлагаются вертикальные и горизонтальные обрабатывающие центры с ЧПУ, токарные центры с ЧПУ, шлифовальные станки с ЧПУ, гидравлические прессы, а также роботизированные системы сварки и покраски. Конкретная модель, конфигурация и уровень автоматизации согласуются под проект и фиксируются в коммерческом предложении и договоре.",
           },
           {
-            q: "С какого года команда поставляет оборудование?",
-            a: "Поставки оборудования ООО «ОСКОЛ-МЕТ-ТРЕЙД» начались в 2015 году. Отраслевая работа основателя и накопление опыта команды начались в 1994 году; эта дата не является датой начала деятельности текущего юридического лица. Совокупные количественные показатели не публикуются до подтверждения общедоступными источниками.",
+            q: "С какого года команда работает в отрасли?",
+            a: "Отраслевая работа основателя и накопление опыта команды начались в 1994 году; эта дата не является датой начала деятельности текущего юридического лица ООО «ОСКОЛ-МЕТ-ТРЕЙД». Совокупные количественные показатели и точная дата регистрации юридического лица не публикуются до подтверждения общедоступными источниками.",
           },
           {
             q: "Предоставляется ли монтаж и гарантийное обслуживание?",
@@ -130,7 +130,7 @@ const content: Record<Lang, FaqContent> = {
         items: [
           {
             q: "Какое металлургическое сырьё доступно к поставке?",
-            a: "Поставляем марганцевую руду, высокоуглеродистый феррохром FeCr60 и FeCr52, никельсодержащий чугун (NPI), бентонит, высококачественные металлургические материалы и слябы из нержавеющей стали.",
+            a: "Категории поставок включают марганцевую руду, феррохром FeCr, никельсодержащий чугун (NPI), бентонит, железную руду и слябы из нержавеющей стали. Марка, химический состав, фракция, происхождение, объём и условия поставки определяются под конкретную партию и фиксируются в спецификации и договоре.",
           },
           {
             q: "Каковы условия поставки сырья?",
@@ -188,11 +188,11 @@ const content: Record<Lang, FaqContent> = {
         items: [
           {
             q: "奥斯科尔-金属-贸易供应哪些数控设备？",
-            a: "我们供应立式和卧式数控加工中心（VMC-850及同类）、数控车床中心（CNC-320）、数控磨床、液压机以及具有AI轨迹规划的全自动机器人焊接和喷漆生产线。",
+            a: "在业务方向层面提供立式和卧式数控加工中心、数控车削中心、数控磨床、液压机以及机器人焊接与喷涂系统。具体型号、配置及自动化范围按项目商定，并在商务报价和合同中确定。",
           },
           {
-            q: "团队从何时开始供应设备？",
-            a: "OSKOL-MET-TRADE 有限责任公司的设备供应业务始于 2015 年。创始人的行业工作及团队经验积累始于 1994 年；该日期并非当前法人实体的成立或经营起始日期。累计数量指标在获得可公开的证据前不予公布。",
+            q: "团队自何时开始从事本行业？",
+            a: "创始人的行业工作及团队经验积累始于 1994 年；该日期并非当前法人实体 OSKOL-MET-TRADE 有限责任公司的成立或经营起始日期。累计数量指标及法人实体的确切注册日期在获得可公开的证据前不予公布。",
           },
           {
             q: "是否提供安装和保修服务？",
@@ -205,7 +205,7 @@ const content: Record<Lang, FaqContent> = {
         items: [
           {
             q: "可供应哪些冶金原材料？",
-            a: "我们供应锰矿、高碳铬铁FeCr60和FeCr52、含镍生铁（NPI）、膨润土、高质量冶金材料以及不锈钢板坯。",
+            a: "供应方向包括锰矿、铬铁 FeCr、含镍生铁 (NPI)、膨润土、铁矿石以及不锈钢板坯。牌号、化学成分、粒度、原产地、数量及交付条件按具体批次确定，并在技术规格和合同中明确。",
           },
           {
             q: "原材料的交货条款是？",
