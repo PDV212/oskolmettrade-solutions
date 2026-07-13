@@ -100,7 +100,7 @@ const CncMachines = ({ lang = 'ru' }: CncMachinesProps) => {
             </p>
           </header>
 
-          <Bdmh3018Section lang={lang} contactHref={`${homePathFor(lang)}#contact`} />
+          <Bdmh3018Section lang={lang} contactHref={`${homePathFor(lang)}#contacts`} />
 
           <section aria-labelledby="types-heading" className="mb-12">
             <h2 id="types-heading" className="text-2xl md:text-3xl font-bold text-foreground mb-6">
