@@ -11,19 +11,24 @@ const variantUrls = import.meta.glob('@/assets/bdmh3018/*.{avif,webp,jpg}', {
 }) as Record<string, string>;
 
 type Fmt = 'avif' | 'webp' | 'jpg';
-type Width = 640 | 1024 | 1600;
 
-// Intrinsic (post-crop) dimensions of the largest served derivative. These
-// come from build-time image processing and are used to set explicit
-// width/height on <img> so the browser reserves layout space (no CLS).
-const INTRINSIC: Record<string, { w: number; h: number }> = {
-  'bdmh3018-machining': { w: 1600, h: 1178 },
-  'bdmh3018-machined-workpiece': { w: 1200, h: 1550 },
-  'bdmh3018-side-view': { w: 1280, h: 1300 },
-  'bdmh3018-gantry-overview': { w: 1600, h: 1183 },
+// Per-image metadata: actual generated widths (descriptors match real pixel
+// widths of the encoded files) plus intrinsic aspect ratio of the largest
+// derivative. Widths must equal the decoded pixel width of each file — a
+// dist-time validator enforces this.
+interface ImageMeta {
+  widths: readonly number[];
+  intrinsic: { w: number; h: number };
+}
+
+const IMAGES: Record<string, ImageMeta> = {
+  'bdmh3018-machining': { widths: [640, 1024, 1600], intrinsic: { w: 1600, h: 1178 } },
+  'bdmh3018-machined-workpiece': { widths: [640, 1024, 1200], intrinsic: { w: 1200, h: 1550 } },
+  'bdmh3018-side-view': { widths: [640, 1024, 1280], intrinsic: { w: 1280, h: 1300 } },
+  'bdmh3018-gantry-overview': { widths: [640, 1024, 1600], intrinsic: { w: 1600, h: 1183 } },
 };
 
-function urlFor(name: string, w: Width, fmt: Fmt): string {
+function urlFor(name: string, w: number, fmt: Fmt): string {
   const suffix = `/bdmh3018/${name}-${w}.${fmt}`;
   const key = Object.keys(variantUrls).find((k) => k.endsWith(suffix));
   if (!key) throw new Error(`missing bdmh3018 asset: ${suffix}`);
@@ -31,8 +36,7 @@ function urlFor(name: string, w: Width, fmt: Fmt): string {
 }
 
 function srcset(name: string, fmt: Fmt): string {
-  const widths: Width[] = [640, 1024, 1600];
-  return widths.map((w) => `${urlFor(name, w, fmt)} ${w}w`).join(', ');
+  return IMAGES[name].widths.map((w) => `${urlFor(name, w, fmt)} ${w}w`).join(', ');
 }
 
 interface FigureProps {
