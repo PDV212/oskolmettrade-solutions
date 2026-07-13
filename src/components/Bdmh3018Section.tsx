@@ -40,13 +40,13 @@ function srcset(name: string, fmt: Fmt): string {
 }
 
 interface FigureProps {
-  name: keyof typeof INTRINSIC;
+  name: keyof typeof IMAGES;
   alt: string;
   caption: string;
 }
 
 const Figure = ({ name, alt, caption }: FigureProps) => {
-  const dims = INTRINSIC[name];
+  const dims = IMAGES[name].intrinsic;
   return (
     <figure className="rounded-lg overflow-hidden border border-border bg-card">
       <picture>
