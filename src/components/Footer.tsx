@@ -295,7 +295,7 @@ const Footer = ({ language = 'ru' }: FooterProps) => {
                   return (
                     <a
                       key={index}
-                      href={['#equipment', '#materials', '#furnaces', '#manufacturing'][index]}
+                      href={serviceHrefs[index]}
                       className="flex items-center space-x-3 text-white/80 hover:text-accent transition-colors group"
                       itemProp="url"
                     >
