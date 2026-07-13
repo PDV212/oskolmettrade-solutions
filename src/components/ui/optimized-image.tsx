@@ -65,6 +65,18 @@ const OptimizedImage = ({
     return () => observer.disconnect();
   }, [priority]);
 
+  // Cache-race guard: if the image is already complete before React attached
+  // its onLoad listener (returning visitor, warm disk/memory cache, SSR
+  // hydration), synchronously mark it loaded so it never stays at opacity 0.
+  // Without this the hero appears only after Ctrl+Shift+R.
+  useEffect(() => {
+    if (isLoaded) return;
+    const el = imgRef.current?.querySelector<HTMLImageElement>('img.optimized-image');
+    if (el && el.complete && el.naturalWidth > 0) {
+      setIsLoaded(true);
+    }
+  });
+
   const handleLoad = () => {
     setIsLoaded(true);
     
