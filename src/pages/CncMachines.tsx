@@ -3,6 +3,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import SEOHead from '@/components/SEOHead';
 import StructuredData from '@/components/StructuredData';
+import Bdmh3018Section from '@/components/Bdmh3018Section';
 import {
   cncContent,
   uiStrings,
