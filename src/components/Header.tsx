@@ -49,21 +49,30 @@ const Header = ({ language = 'ru' }: HeaderProps) => {
   ];
 
   const scrollToSection = (href: string) => {
-    if (href.startsWith('/')) {
-      window.location.href = href;
-      return;
-    }
-    if (href.startsWith('#')) {
-      const element = document.querySelector(href) as HTMLElement;
-      if (element) {
-        // Для кнопки "О компании" используем меньший отступ, чтобы контент был ниже
-        const headerHeight = href === '#directions' ? 60 : 100;
-        const elementPosition = element.offsetTop - headerHeight;
-        window.scrollTo({
-          top: elementPosition,
-          behavior: 'smooth'
-        });
+    // Cross-page or cross-language links: let the browser handle the
+    // navigation so the href value visible to crawlers (and keyboard users
+    // using middle-click / open-in-new-tab) is authoritative.
+    if (href.startsWith('/') || href.includes('#')) {
+      // Same-page hash on the current homepage? Smooth-scroll instead.
+      const hashIndex = href.indexOf('#');
+      if (hashIndex >= 0) {
+        const path = href.slice(0, hashIndex) || '/';
+        const hash = href.slice(hashIndex);
+        const currentPath =
+          typeof window !== 'undefined'
+            ? window.location.pathname.replace(/\/+$/, '') || '/'
+            : '/';
+        const targetPath = path.replace(/\/+$/, '') || '/';
+        if (targetPath === currentPath) {
+          const element = document.querySelector(hash) as HTMLElement | null;
+          if (element) {
+            const headerHeight = hash === '#directions' ? 60 : 100;
+            window.scrollTo({ top: element.offsetTop - headerHeight, behavior: 'smooth' });
+            return;
+          }
+        }
       }
+      window.location.href = href;
     }
   };
 
