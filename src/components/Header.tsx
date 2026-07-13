@@ -115,7 +115,7 @@ const Header = ({ language = 'ru' }: HeaderProps) => {
               aspectRatio="square"
             />
             <div className="hidden md:block">
-              <h1 className="text-xl font-bold text-foreground">ОСКОЛ-МЕТ-ТРЕЙД</h1>
+              <p className="text-xl font-bold text-foreground">ОСКОЛ-МЕТ-ТРЕЙД</p>
               <p className="text-xs text-muted-foreground">Металлообработка • Металлургия • Производство</p>
             </div>
           </div>
