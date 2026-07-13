@@ -311,7 +311,7 @@ const Footer = ({ language = 'ru' }: FooterProps) => {
             <div>
               <h4 className="text-lg font-bold mb-6">{t.quickLinksTitle}</h4>
               <nav className="space-y-3 mb-8" itemScope itemType="https://schema.org/SiteNavigationElement">
-                {t.quickLinks.map((link, index) =>
+                {resolvedQuickLinks.map((link, index) =>
                   'isRoute' in link && link.isRoute ? (
                     <Link
                       key={index}
