@@ -22,11 +22,12 @@ interface ImageMeta {
 }
 
 const IMAGES: Record<string, ImageMeta> = {
-  'bdmh3018-machining': { widths: [640, 1024, 1600], intrinsic: { w: 1600, h: 1178 } },
-  'bdmh3018-machined-workpiece': { widths: [640, 1024, 1200], intrinsic: { w: 1200, h: 1550 } },
-  'bdmh3018-side-view': { widths: [640, 1024, 1280], intrinsic: { w: 1280, h: 1300 } },
-  'bdmh3018-gantry-overview': { widths: [640, 1024, 1600], intrinsic: { w: 1600, h: 1183 } },
+  'bdmh3018-machining': { widths: [640, 1024, 1600], intrinsic: { w: 1600, h: 1200 } },
+  'bdmh3018-machined-workpiece': { widths: [640, 1024, 1440], intrinsic: { w: 1440, h: 1920 } },
+  'bdmh3018-side-view': { widths: [640, 1024, 1600], intrinsic: { w: 1600, h: 1200 } },
+  'bdmh3018-gantry-overview': { widths: [640, 1024, 1600], intrinsic: { w: 1600, h: 1200 } },
 };
+
 
 function urlFor(name: string, w: number, fmt: Fmt): string {
   const suffix = `/bdmh3018/${name}-${w}.${fmt}`;

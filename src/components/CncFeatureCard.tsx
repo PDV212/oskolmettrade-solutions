@@ -80,8 +80,9 @@ const CncFeatureCard = ({ language = 'ru' }: Props) => {
                 srcSet={srcset('jpg')}
                 sizes="(max-width: 768px) 100vw, 50vw"
                 width={1600}
-                height={1178}
+                height={1200}
                 alt={copy.alt}
+
                 loading="lazy"
                 decoding="async"
                 className="block w-full h-full object-cover"
