@@ -188,6 +188,32 @@ const Footer = ({ language = 'ru' }: FooterProps) => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  // Absolute, language-aware hrefs so nested pages never generate
+  // e.g. `/zh/privacy/#equipment`. Homepage-section links always resolve
+  // against the language-home root via buildHomeSectionHref.
+  const serviceHrefs = [
+    buildHomeSectionHref(language, 'equipment'),
+    buildHomeSectionHref(language, 'materials'),
+    buildHomeSectionHref(language, 'furnaces'),
+    buildHomeSectionHref(language, 'manufacturing'),
+  ];
+  const contactsHref = buildHomeSectionHref(language, 'contacts');
+  const resolvedQuickLinks = t.quickLinks.map((link) => {
+    if ('isRoute' in link && link.isRoute) {
+      return { ...link, href: companyRouteFor(language) };
+    }
+    switch (link.href) {
+      case '#directions':
+        return { ...link, href: buildHomeSectionHref(language, 'directions') };
+      case '#advantages':
+        return { ...link, href: buildHomeSectionHref(language, 'advantages') };
+      case '#contacts':
+        return { ...link, href: contactsHref };
+      default:
+        return link;
+    }
+  });
+
 
   return (
     <footer
