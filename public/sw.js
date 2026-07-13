@@ -1,18 +1,20 @@
 // Cache version bumped after prerender rollout so every client discards
 // any pre-remediation HTML/JS (which could otherwise serve the Russian
 // homepage shell for /en, /zh and other prerendered language routes).
-const CACHE_NAME = 'oskol-met-trade-v2026-07-13-ssr';
-const STATIC_CACHE = 'static-v2026-07-13-ssr';
-const DYNAMIC_CACHE = 'dynamic-v2026-07-13-ssr';
-const IMAGE_CACHE = 'images-v2026-07-13-ssr';
+const CACHE_NAME = 'oskol-met-trade-v2026-07-13-ssr2';
+const STATIC_CACHE = 'static-v2026-07-13-ssr2';
+const DYNAMIC_CACHE = 'dynamic-v2026-07-13-ssr2';
+const IMAGE_CACHE = 'images-v2026-07-13-ssr2';
 
-// Precache only truly static, language-neutral assets. HTML documents are
-// intentionally excluded so each route always fetches its own prerendered
-// HTML from the network (network-first below) and never gets served the
-// Russian homepage as a substitute for /en or /zh.
+// Precache only truly static, language-neutral assets that are guaranteed
+// to exist in the final dist/ output. HTML documents are intentionally
+// excluded so each route always fetches its own prerendered HTML from the
+// network (network-first below) and never gets served the Russian
+// homepage as a substitute for /en or /zh. Hero/section images live in
+// src/assets/ and are emitted with Vite content hashes, so they cannot
+// be precached by static path and must not appear here.
 const STATIC_ASSETS = [
   '/manifest.json',
-  '/assets/hero-industrial.jpg',
   '/lovable-uploads/b3c22956-096b-4475-8619-90ea784e020b.png',
   '/lovable-uploads/adb38e62-ebf5-4d0f-92a9-272c1f38c8f4.png'
 ];
