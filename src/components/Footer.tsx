@@ -7,7 +7,7 @@ import {
   legalIdentifiers,
   t as tField,
 } from '@/data/companyRegistry';
-import { buildHomeSectionHref, companyRouteFor, type Lang } from '@/lib/globalUi';
+import { buildHomeSectionHref, companyRouteFor, cncRouteFor, type Lang } from '@/lib/globalUi';
 
 
 
@@ -52,10 +52,12 @@ const translations = {
     ],
     quickLinks: [
       { name: 'О компании', href: '#directions' },
+      { name: 'Станки с ЧПУ', href: '/cnc-machines', isRoute: true, isCnc: true },
       { name: 'Преимущества', href: '#advantages' },
       { name: 'Контакты', href: '#contacts' },
       { name: 'Реквизиты компании', href: '/company', isRoute: true },
     ],
+
   },
   en: {
     sinceLabel: 'Team experience since',
@@ -93,10 +95,12 @@ const translations = {
     ],
     quickLinks: [
       { name: 'About the company', href: '#directions' },
+      { name: 'CNC Machines', href: '/en/cnc-machines', isRoute: true, isCnc: true },
       { name: 'Advantages', href: '#advantages' },
       { name: 'Contacts', href: '#contacts' },
       { name: 'Company details', href: '/en/company', isRoute: true },
     ],
+
   },
   zh: {
     sinceLabel: '团队经验始于',
@@ -134,10 +138,12 @@ const translations = {
     ],
     quickLinks: [
       { name: '关于公司', href: '#directions' },
+      { name: '数控机床', href: '/zh/cnc-machines', isRoute: true, isCnc: true },
       { name: '优势', href: '#advantages' },
       { name: '联系我们', href: '#contacts' },
       { name: '公司资料', href: '/zh/company', isRoute: true },
     ],
+
   },
 } as const;
 
