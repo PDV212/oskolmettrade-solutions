@@ -415,10 +415,12 @@ const privacyZh: LegalPageContent = {
 
 /* --------------------------------- COOKIES -------------------------------- */
 
-// Kept in sync with the four cache constants in public/sw.js.
-// scripts/validatePrecache.mjs fails the build if these drift.
-const swCacheNames =
-  "oskol-met-trade-v2026-07-13-ssr2, static-v2026-07-13-ssr2, dynamic-v2026-07-13-ssr2, images-v2026-07-13-ssr2";
+// Kept in sync with the three cache constants actually opened by
+// public/sw.js (STATIC_CACHE, DYNAMIC_CACHE, IMAGE_CACHE).
+// scripts/validatePrecache.mjs extracts these names from the rendered
+// Cookies HTML and fails the build if they drift.
+export const swCacheNames =
+  "static-v2026-07-13-ssr3, dynamic-v2026-07-13-ssr3, images-v2026-07-13-ssr3";
 
 const cookiesRu: LegalPageContent = {
   language: "ru",
