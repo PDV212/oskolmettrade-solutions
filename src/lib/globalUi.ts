@@ -34,7 +34,9 @@ export interface GlobalUiStrings {
   directions: string;
   company: string;
   equipment: string;
+  cncMachines: string;
   materials: string;
+
   furnaces: string;
   manufacturing: string;
   advantages: string;
