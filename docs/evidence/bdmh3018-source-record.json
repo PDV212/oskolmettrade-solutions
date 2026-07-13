@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13T12:23:35.379690Z",
+  "generated_at": "2026-07-13T23:05:00Z",
   "processing_declaration": "resize, encode, metadata strip only",
   "sources": [
     {
@@ -7,7 +7,6 @@
       "sha256": "51a6202e4a32c37e24f17bfd3f3b79bc6016cfd66a5e92d9fff106a715f588fe",
       "orig_width": 1920,
       "orig_height": 1440,
-      "orientation": "unset",
       "logical_name": "bdmh3018-machining",
       "widths": [
         640,
@@ -21,16 +20,15 @@
       ]
     },
     {
-      "source_filename": "20260625_165243.jpg",
-      "sha256": "cb69c2c9d677df6f63b9f727d0ea1bdee6161aa0426a5a6ab382a80614f2ba3c",
-      "orig_width": 1440,
-      "orig_height": 1920,
-      "orientation": "unset",
-      "logical_name": "bdmh3018-machined-workpiece",
+      "source_filename": "20260626_092241.jpg",
+      "sha256": "0fccd3cb60955369c8c9499ac31dbec277ed68d0a181e3ee80683c25296cfe55",
+      "orig_width": 1920,
+      "orig_height": 1440,
+      "logical_name": "bdmh3018-workshop-view",
       "widths": [
         640,
         1024,
-        1440
+        1600
       ],
       "formats": [
         "avif",
@@ -43,7 +41,6 @@
       "sha256": "130bbedbbbd58d649c8eeaac0352b88c941c8d01d457e67673c4cb93001a156a",
       "orig_width": 1920,
       "orig_height": 1440,
-      "orientation": "unset",
       "logical_name": "bdmh3018-side-view",
       "widths": [
         640,
@@ -61,7 +58,6 @@
       "sha256": "c7757ae0b0d6fcc36088772db5c347d81dfb768d74df0176948a754a3b8bbcdd",
       "orig_width": 1920,
       "orig_height": 1440,
-      "orientation": "unset",
       "logical_name": "bdmh3018-gantry-overview",
       "widths": [
         640,
@@ -73,6 +69,30 @@
         "webp",
         "jpg"
       ]
+    },
+    {
+      "source_filename": "20260625_165243.jpg",
+      "sha256": "cb69c2c9d677df6f63b9f727d0ea1bdee6161aa0426a5a6ab382a80614f2ba3c",
+      "orig_width": 1440,
+      "orig_height": 1920,
+      "logical_name": "bdmh3018-machined-workpiece",
+      "widths": [
+        640,
+        1024,
+        1440
+      ],
+      "formats": [
+        "avif",
+        "webp",
+        "jpg"
+      ]
     }
-  ]
+  ],
+  "video": {
+    "source_filename": "20260626_162542.mp4",
+    "sha256": "adf1d9d102d4a53f3dd77b6195c321c47060b699c30545e3c7aed8718bb16622",
+    "output_mp4": "/media/bdmh3018/bdmh3018-commissioning.mp4",
+    "poster": "/media/bdmh3018/bdmh3018-commissioning-poster.jpg",
+    "processing": "HEVC->H.264 MP4 remux with AAC audio preserved, +faststart, metadata stripped"
+  }
 }
