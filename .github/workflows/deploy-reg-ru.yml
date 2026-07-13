@@ -6,6 +6,12 @@ on:
       - main
   workflow_dispatch:
 
+# Prevent overlapping production uploads: a second push must wait for the
+# in-flight deploy to finish rather than clobbering it mid-transfer.
+concurrency:
+  group: production-reg-ru
+  cancel-in-progress: false
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -20,11 +26,35 @@ jobs:
           node-version: 20
           cache: npm
 
-      - name: Install dependencies
+      - name: Install dependencies (deterministic)
         run: npm ci
 
-      - name: Build Vite project
+      - name: Build (typecheck + client + SSR + prerender + validate + manifest)
+        # `npm run build` runs, in order:
+        #   tsc --noEmit
+        #   vite build                          (client)
+        #   vite build --ssr entry-server       (SSR bundle in .prerender/)
+        #   scripts/prerender.mjs               (21 route HTML files)
+        #   scripts/validatePrerender.mjs       (strict H1=1, main=1, etc.)
+        #   scripts/writeDeployVersion.mjs      (dist/deploy-version.json)
+        # Any failure aborts the job before the FTP step runs.
+        env:
+          GITHUB_SHA: ${{ github.sha }}
         run: npm run build
+
+      - name: Verify dist contents
+        # Sanity check that the prerender pipeline actually produced its
+        # expected artefacts before we upload.
+        run: |
+          test -f dist/index.html
+          test -f dist/en/index.html
+          test -f dist/zh/index.html
+          test -f dist/company/index.html
+          test -f dist/en/company/index.html
+          test -f dist/zh/company/index.html
+          test -f dist/deploy-version.json
+          test ! -d dist/.prerender
+          echo "dist/ tree OK"
 
       - name: Deploy dist to REG.RU via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
@@ -34,3 +64,38 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
           server-dir: ${{ secrets.FTP_SERVER_DIR }}
+          # Deletion is scoped to server-dir only. Never delete outside it.
+          dangerous-clean-slate: false
+          # Belt-and-braces: even if dist/ ever contained these, do not ship.
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            **/.prerender/**
+            **/docs/**
+            **/*.map
+            **/.env*
+
+      - name: Wait for propagation and verify production
+        # Bounded retry loop: initial 10s wait, then up to 6 attempts with
+        # 10s between them. Requires ONE fully-consistent successful run
+        # (deploy-version.json must report the just-built commit).
+        env:
+          EXPECTED_COMMIT: ${{ github.sha }}
+          PROD_ORIGIN: https://www.xn-----llccbycikqb3afub.xn--p1ai
+        run: |
+          set -e
+          echo "Waiting 10s for FTP files to become live..."
+          sleep 10
+          attempt=1
+          max=6
+          until node scripts/verifyProduction.mjs; do
+            if [ "$attempt" -ge "$max" ]; then
+              echo "verifyProduction failed after $attempt attempts"
+              exit 1
+            fi
+            echo "verifyProduction attempt $attempt failed; retrying in 10s..."
+            attempt=$((attempt+1))
+            sleep 10
+          done
+          echo "Production verification passed on attempt $attempt"

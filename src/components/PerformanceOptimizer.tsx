@@ -40,22 +40,11 @@ const PerformanceOptimizer = () => {
 
       images.forEach(img => imageObserver.observe(img));
 
-      // 5. Оптимизация для Core Web Vitals
-      if ('requestIdleCallback' in window) {
-        requestIdleCallback(() => {
-          // Предзагружаем некритичные ресурсы в idle time
-          const nonCriticalImages = [
-            '/assets/equipment-manufacturing.jpg',
-            '/assets/metallurgy-furnace.jpg',
-            '/assets/raw-materials.jpg'
-          ];
-          
-          nonCriticalImages.forEach(src => {
-            const img = new Image();
-            img.src = src;
-          });
-        });
-      }
+      // 5. Оптимизация для Core Web Vitals.
+      // Hero/section images live in src/assets/ and are imported by
+      // components — Vite emits them with content hashes. Idle-time
+      // preloading of unhashed /assets/*.jpg URLs produced 404s in
+      // production and has been removed.
 
       // 6. Оптимизация скроллинга
       let ticking = false;

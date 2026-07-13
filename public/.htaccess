@@ -2,6 +2,14 @@
 RewriteEngine On
 RewriteBase /
 
+# Exact permanent redirect: /ru/company is a duplicate alias of /company.
+# Handled BEFORE the SPA fallback. Only the exact path (with or without a
+# trailing slash) is rewritten — /en/company and /zh/company are untouched.
+# NOTE: This rule is honoured only when Apache processes .htaccess. On the
+# current REG.RU nginx origin it has no effect; the equivalent nginx rule
+# must be configured server-side (see docs/nginx-redirects.md).
+RewriteRule ^ru/company/?$ /company [R=301,L]
+
 # SPA fallback: serve index.html for non-file, non-directory requests
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d

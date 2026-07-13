@@ -1,10 +1,10 @@
 // Cache version bumped after prerender rollout so every client discards
 // any pre-remediation HTML/JS (which could otherwise serve the Russian
 // homepage shell for /en, /zh and other prerendered language routes).
-const CACHE_NAME = 'oskol-met-trade-v2026-07-12-ssr';
-const STATIC_CACHE = 'static-v2026-07-12-ssr';
-const DYNAMIC_CACHE = 'dynamic-v2026-07-12-ssr';
-const IMAGE_CACHE = 'images-v2026-07-12-ssr';
+const CACHE_NAME = 'oskol-met-trade-v2026-07-13-ssr';
+const STATIC_CACHE = 'static-v2026-07-13-ssr';
+const DYNAMIC_CACHE = 'dynamic-v2026-07-13-ssr';
+const IMAGE_CACHE = 'images-v2026-07-13-ssr';
 
 // Precache only truly static, language-neutral assets. HTML documents are
 // intentionally excluded so each route always fetches its own prerendered
