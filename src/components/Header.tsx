@@ -4,6 +4,13 @@ import { Button } from '@/components/ui/button';
 import LanguageSelector from './LanguageSelector';
 import OptimizedImage from '@/components/ui/optimized-image';
 import useResponsiveImage from '@/hooks/useResponsiveImage';
+import {
+  GLOBAL_UI,
+  LANGUAGE_HOME,
+  buildHomeSectionHref,
+  companyRouteFor,
+  type Lang,
+} from '@/lib/globalUi';
 
 interface HeaderProps {
   language?: string;
@@ -12,7 +19,11 @@ interface HeaderProps {
 const Header = ({ language = 'ru' }: HeaderProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  
+
+  const lang: Lang = language === 'en' || language === 'zh' ? language : 'ru';
+  const ui = GLOBAL_UI[lang];
+  const home = LANGUAGE_HOME[lang];
+
   const logoSrc = "/lovable-uploads/b3c22956-096b-4475-8619-90ea784e020b.png";
   const logoConfig = useResponsiveImage(logoSrc);
 
@@ -26,60 +37,42 @@ const Header = ({ language = 'ru' }: HeaderProps) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const getNavItems = () => {
-    if (language === 'en') {
-      return [
-        { name: 'Home', href: '#home' },
-        { name: 'About', href: '#directions' },
-        { name: 'Company', href: '/en/company' },
-        { name: 'Equipment', href: '#equipment' },
-        { name: 'Materials', href: '#materials' },
-        { name: 'Furnaces', href: '#furnaces' },
-        { name: 'VSZ Production', href: '#manufacturing' },
-        { name: 'Contacts', href: '#contacts' }
-      ];
-    } else if (language === 'zh') {
-      return [
-        { name: '首页', href: '#home' },
-        { name: '关于我们', href: '#directions' },
-        { name: '公司信息', href: '/zh/company' },
-        { name: '设备', href: '#equipment' },
-        { name: '原材料', href: '#materials' },
-        { name: '炉子', href: '#furnaces' },
-        { name: 'VSZ生产', href: '#manufacturing' },
-        { name: '联系方式', href: '#contacts' }
-      ];
-    }
-    return [
-      { name: 'Главная', href: '#home' },
-      { name: 'О компании', href: '#directions' },
-      { name: 'Реквизиты', href: '/ru/company' },
-      { name: 'Оборудование', href: '#equipment' },
-      { name: 'Сырье', href: '#materials' },
-      { name: 'Печи', href: '#furnaces' },
-      { name: 'Производство ВСЗ', href: '#manufacturing' },
-      { name: 'Контакты', href: '#contacts' }
-    ];
-  };
-
-  const navItems = getNavItems();
+  const navItems = [
+    { name: ui.home, href: home },
+    { name: ui.directions, href: buildHomeSectionHref(lang, 'directions') },
+    { name: ui.company, href: companyRouteFor(lang) },
+    { name: ui.equipment, href: buildHomeSectionHref(lang, 'equipment') },
+    { name: ui.materials, href: buildHomeSectionHref(lang, 'materials') },
+    { name: ui.furnaces, href: buildHomeSectionHref(lang, 'furnaces') },
+    { name: ui.manufacturing, href: buildHomeSectionHref(lang, 'manufacturing') },
+    { name: ui.contacts, href: buildHomeSectionHref(lang, 'contacts') },
+  ];
 
   const scrollToSection = (href: string) => {
-    if (href.startsWith('/')) {
-      window.location.href = href;
-      return;
-    }
-    if (href.startsWith('#')) {
-      const element = document.querySelector(href) as HTMLElement;
-      if (element) {
-        // Для кнопки "О компании" используем меньший отступ, чтобы контент был ниже
-        const headerHeight = href === '#directions' ? 60 : 100;
-        const elementPosition = element.offsetTop - headerHeight;
-        window.scrollTo({
-          top: elementPosition,
-          behavior: 'smooth'
-        });
+    // Cross-page or cross-language links: let the browser handle the
+    // navigation so the href value visible to crawlers (and keyboard users
+    // using middle-click / open-in-new-tab) is authoritative.
+    if (href.startsWith('/') || href.includes('#')) {
+      // Same-page hash on the current homepage? Smooth-scroll instead.
+      const hashIndex = href.indexOf('#');
+      if (hashIndex >= 0) {
+        const path = href.slice(0, hashIndex) || '/';
+        const hash = href.slice(hashIndex);
+        const currentPath =
+          typeof window !== 'undefined'
+            ? window.location.pathname.replace(/\/+$/, '') || '/'
+            : '/';
+        const targetPath = path.replace(/\/+$/, '') || '/';
+        if (targetPath === currentPath) {
+          const element = document.querySelector(hash) as HTMLElement | null;
+          if (element) {
+            const headerHeight = hash === '#directions' ? 60 : 100;
+            window.scrollTo({ top: element.offsetTop - headerHeight, behavior: 'smooth' });
+            return;
+          }
+        }
       }
+      window.location.href = href;
     }
   };
 
@@ -116,7 +109,7 @@ const Header = ({ language = 'ru' }: HeaderProps) => {
             />
             <div className="hidden md:block">
               <p className="text-xl font-bold text-foreground">ОСКОЛ-МЕТ-ТРЕЙД</p>
-              <p className="text-xs text-muted-foreground">Металлообработка • Металлургия • Производство</p>
+              <p className="text-xs text-muted-foreground">{ui.headerTagline}</p>
             </div>
           </div>
 

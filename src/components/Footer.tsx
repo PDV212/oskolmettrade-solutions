@@ -7,8 +7,9 @@ import {
   legalIdentifiers,
   t as tField,
 } from '@/data/companyRegistry';
+import { buildHomeSectionHref, companyRouteFor, type Lang } from '@/lib/globalUi';
 
-type Lang = 'ru' | 'en' | 'zh';
+
 
 interface FooterProps {
   language?: Lang;
@@ -187,6 +188,32 @@ const Footer = ({ language = 'ru' }: FooterProps) => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  // Absolute, language-aware hrefs so nested pages never generate
+  // e.g. `/zh/privacy/#equipment`. Homepage-section links always resolve
+  // against the language-home root via buildHomeSectionHref.
+  const serviceHrefs = [
+    buildHomeSectionHref(language, 'equipment'),
+    buildHomeSectionHref(language, 'materials'),
+    buildHomeSectionHref(language, 'furnaces'),
+    buildHomeSectionHref(language, 'manufacturing'),
+  ];
+  const contactsHref = buildHomeSectionHref(language, 'contacts');
+  const resolvedQuickLinks = t.quickLinks.map((link) => {
+    if ('isRoute' in link && link.isRoute) {
+      return { ...link, href: companyRouteFor(language) };
+    }
+    switch (link.href) {
+      case '#directions':
+        return { ...link, href: buildHomeSectionHref(language, 'directions') };
+      case '#advantages':
+        return { ...link, href: buildHomeSectionHref(language, 'advantages') };
+      case '#contacts':
+        return { ...link, href: contactsHref };
+      default:
+        return link;
+    }
+  });
+
 
   return (
     <footer
@@ -268,7 +295,7 @@ const Footer = ({ language = 'ru' }: FooterProps) => {
                   return (
                     <a
                       key={index}
-                      href={['#equipment', '#materials', '#furnaces', '#manufacturing'][index]}
+                      href={serviceHrefs[index]}
                       className="flex items-center space-x-3 text-white/80 hover:text-accent transition-colors group"
                       itemProp="url"
                     >
@@ -284,7 +311,7 @@ const Footer = ({ language = 'ru' }: FooterProps) => {
             <div>
               <h4 className="text-lg font-bold mb-6">{t.quickLinksTitle}</h4>
               <nav className="space-y-3 mb-8" itemScope itemType="https://schema.org/SiteNavigationElement">
-                {t.quickLinks.map((link, index) =>
+                {resolvedQuickLinks.map((link, index) =>
                   'isRoute' in link && link.isRoute ? (
                     <Link
                       key={index}
@@ -337,13 +364,10 @@ const Footer = ({ language = 'ru' }: FooterProps) => {
 
               <div className="space-y-4">
                 <Button
+                  asChild
                   className="w-full bg-accent hover:bg-accent-muted text-white font-semibold"
-                  onClick={() => {
-                    const element = document.querySelector('#contacts');
-                    if (element) element.scrollIntoView({ behavior: 'smooth' });
-                  }}
                 >
-                  {t.contactsButton}
+                  <a href={contactsHref}>{t.contactsButton}</a>
                 </Button>
               </div>
 
