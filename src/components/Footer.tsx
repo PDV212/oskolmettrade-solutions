@@ -206,8 +206,10 @@ const Footer = ({ language = 'ru' }: FooterProps) => {
   const contactsHref = buildHomeSectionHref(language, 'contacts');
   const resolvedQuickLinks = t.quickLinks.map((link) => {
     if ('isRoute' in link && link.isRoute) {
-      return { ...link, href: companyRouteFor(language) };
+      const target = 'isCnc' in link && link.isCnc ? cncRouteFor(language) : companyRouteFor(language);
+      return { ...link, href: target };
     }
+
     switch (link.href) {
       case '#directions':
         return { ...link, href: buildHomeSectionHref(language, 'directions') };
