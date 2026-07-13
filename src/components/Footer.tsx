@@ -7,6 +7,7 @@ import {
   legalIdentifiers,
   t as tField,
 } from '@/data/companyRegistry';
+import { buildHomeSectionHref, companyRouteFor, type Lang } from '@/lib/globalUi';
 
 type Lang = 'ru' | 'en' | 'zh';
 
