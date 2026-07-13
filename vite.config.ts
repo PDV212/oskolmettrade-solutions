@@ -36,7 +36,25 @@ export default defineConfig(({ mode, isSsrBuild }) => ({
     },
     rollupOptions: {
       output: isSsrBuild
-        ? {}
+        ? {
+            // SSR must emit image assets under the SAME path as the client
+            // build so that SSR HTML `src` attributes match the actually
+            // shipped file. Without this, SSR emits `/assets/name-hash.jpg`
+            // while the client emits `/assets/images/name-hash.jpg`, and
+            // the SSR reference 404s (soft-served as index.html).
+            assetFileNames: (assetInfo) => {
+              if (!assetInfo.name) return `assets/[name]-[hash][extname]`;
+              const info = assetInfo.name.split('.');
+              const ext = info[info.length - 1];
+              if (/png|jpe?g|svg|gif|tiff|bmp|ico|webp/i.test(ext)) {
+                return `assets/images/[name]-[hash][extname]`;
+              }
+              if (/css/i.test(ext)) {
+                return `assets/css/[name]-[hash][extname]`;
+              }
+              return `assets/[name]-[hash][extname]`;
+            },
+          }
         : {
             manualChunks: {
               vendor: ['react', 'react-dom'],
@@ -58,6 +76,7 @@ export default defineConfig(({ mode, isSsrBuild }) => ({
             entryFileNames: 'assets/js/[name]-[hash].js',
           },
     },
+
   },
   // Оптимизация сборки
   assetsInclude: ['**/*.webp', '**/*.avif'],
