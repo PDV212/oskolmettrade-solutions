@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Routes, Route, Navigate } from "react-router-dom";
 import PerformanceOptimizer from "@/components/PerformanceOptimizer";
 import SkipLink from "@/components/SkipLink";
+import RouteScrollManager from "@/components/RouteScrollManager";
 import Index from "./pages/Index";
 import English from "./pages/English";
 import Chinese from "./pages/Chinese";
