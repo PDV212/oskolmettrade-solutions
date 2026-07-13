@@ -52,6 +52,8 @@ export const GLOBAL_UI: Record<Lang, GlobalUiStrings> = {
     directions: 'О компании',
     company: 'Реквизиты',
     equipment: 'Оборудование',
+    cncMachines: 'Станки с ЧПУ',
+
     materials: 'Сырье',
     furnaces: 'Печи',
     manufacturing: 'Производство ВСЗ',
@@ -66,6 +68,8 @@ export const GLOBAL_UI: Record<Lang, GlobalUiStrings> = {
     directions: 'About',
     company: 'Company',
     equipment: 'Equipment',
+    cncMachines: 'CNC Machines',
+
     materials: 'Materials',
     furnaces: 'Furnaces',
     manufacturing: 'VSZ Production',
@@ -80,6 +84,8 @@ export const GLOBAL_UI: Record<Lang, GlobalUiStrings> = {
     directions: '关于我们',
     company: '公司信息',
     equipment: '设备',
+    cncMachines: '数控机床',
+
     materials: '原材料',
     furnaces: '炉子',
     manufacturing: 'VSZ生产',
@@ -91,6 +97,13 @@ export const GLOBAL_UI: Record<Lang, GlobalUiStrings> = {
 };
 
 /** Route that hosts the Company details page for a language. */
+/** Route that hosts the Company details page for a language. */
 export function companyRouteFor(language: Lang): string {
   return language === 'ru' ? '/company' : `/${language}/company`;
 }
+
+/** Route that hosts the CNC Machines page for a language. */
+export function cncRouteFor(language: Lang): string {
+  return language === 'ru' ? '/cnc-machines' : `/${language}/cnc-machines`;
+}
+
