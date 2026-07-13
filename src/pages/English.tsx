@@ -7,6 +7,8 @@ import ContactSectionEn from '@/components/en/ContactSectionEn';
 import Footer from '@/components/Footer';
 import CTAButton from '@/components/CTAButton';
 import CatalogNavigation from '@/components/CatalogNavigation';
+import CncFeatureCard from '@/components/CncFeatureCard';
+
 import SEOHead, { seoConfigs } from '@/components/SEOHead';
 import StructuredData, { organizationSchema, breadcrumbSchema, faqSchemaEn } from '@/components/StructuredData';
 import AISummary from '@/components/AISummary';
@@ -28,7 +30,9 @@ const English = () => {
         <AISummary language="en" />
         <CTAButton language="en" variant="compact" className="py-8" />
         <BusinessDirectionsEn />
+        <CncFeatureCard language="en" />
         <CTAButton language="en" />
+
         <CatalogNavigation language="en" />
         <CTAButton language="en" variant="compact" className="py-8" />
         <CompanyAdvantagesEn />
