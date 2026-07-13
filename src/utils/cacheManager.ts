@@ -33,17 +33,14 @@ class CacheManager {
     }
   }
 
-  // Отправка критических URL для кеширования
+  // Send critical URLs for precaching.
+  // Only shipped, unhashed public assets are eligible here. Images that
+  // live in src/assets/ are imported by components and are emitted with
+  // Vite content hashes, so they cannot be precached by static path.
   private sendCriticalUrls(): void {
     const criticalUrls = [
-      '/assets/hero-industrial.webp',
-      '/assets/equipment-manufacturing.webp', 
-      '/assets/raw-materials.webp',
-      '/assets/metallurgy-furnace.webp',
-      '/lovable-uploads/b3c22956-096b-4475-8619-90ea784e020b.webp',
-      '/lovable-uploads/783d99ba-632d-47a7-bc9d-d2c6653ee5cc.webp',
-      '/lovable-uploads/0172be64-08ae-4d0c-b070-7507bf1ca449.webp',
-      '/lovable-uploads/0667cb35-cc3c-4070-b595-c9700d58f2d9.webp',
+      '/lovable-uploads/b3c22956-096b-4475-8619-90ea784e020b.png',
+      '/lovable-uploads/adb38e62-ebf5-4d0f-92a9-272c1f38c8f4.png',
     ];
 
     if (navigator.serviceWorker.controller) {
