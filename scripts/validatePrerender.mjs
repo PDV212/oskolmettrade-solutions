@@ -82,8 +82,9 @@ for (const route of ROUTES) {
     errs.push(`canonical ${canonical} != expected ${buildCanonical(route.path)}`);
   if (!robots || !/index/.test(robots) || /noindex/.test(robots))
     errs.push(`robots invalid: ${robots}`);
-  if (h1Count < 1) errs.push("no H1");
-  if (mainCount < 1) errs.push("no <main> landmark");
+  if (h1Count !== 1) errs.push(`H1 count = ${h1Count} (expected 1)`);
+  if (mainCount !== 1) errs.push(`main count = ${mainCount} (expected 1)`);
+
   const g = HREFLANG_GROUPS[route.group];
   if (g) {
     for (const l of ["ru", "en", "zh"]) {
