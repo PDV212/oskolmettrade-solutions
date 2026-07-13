@@ -364,13 +364,10 @@ const Footer = ({ language = 'ru' }: FooterProps) => {
 
               <div className="space-y-4">
                 <Button
+                  asChild
                   className="w-full bg-accent hover:bg-accent-muted text-white font-semibold"
-                  onClick={() => {
-                    const element = document.querySelector('#contacts');
-                    if (element) element.scrollIntoView({ behavior: 'smooth' });
-                  }}
                 >
-                  {t.contactsButton}
+                  <a href={contactsHref}>{t.contactsButton}</a>
                 </Button>
               </div>
 
