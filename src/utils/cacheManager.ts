@@ -18,38 +18,9 @@ class CacheManager {
     return CacheManager.instance;
   }
 
-  // Регистрация Service Worker
-  public async registerServiceWorker(): Promise<void> {
-    if ('serviceWorker' in navigator) {
-      try {
-        const registration = await navigator.serviceWorker.register('/sw.js');
-        console.log('Service Worker registered:', registration.scope);
-        
-        // Отправляем критические URL для предварительного кеширования
-        this.sendCriticalUrls();
-      } catch (error) {
-        console.error('Service Worker registration failed:', error);
-      }
-    }
-  }
-
-  // Send critical URLs for precaching.
-  // Only shipped, unhashed public assets are eligible here. Images that
-  // live in src/assets/ are imported by components and are emitted with
-  // Vite content hashes, so they cannot be precached by static path.
-  private sendCriticalUrls(): void {
-    const criticalUrls = [
-      '/lovable-uploads/b3c22956-096b-4475-8619-90ea784e020b.png',
-      '/lovable-uploads/adb38e62-ebf5-4d0f-92a9-272c1f38c8f4.png',
-    ];
-
-    if (navigator.serviceWorker.controller) {
-      navigator.serviceWorker.controller.postMessage({
-        type: 'CACHE_URLS',
-        payload: criticalUrls
-      });
-    }
-  }
+  // Service Worker registration lives in src/main.tsx so there is only
+  // one registrar. The CACHE_URLS message channel has been removed from
+  // the Service Worker; no page-driven precache injection is performed.
 
   // Кеширование в localStorage с TTL
   public setLocalCache(key: string, data: any, maxAge: number = 24 * 60 * 60 * 1000): void {
@@ -145,13 +116,10 @@ class CacheManager {
 
   // Инициализация менеджера кеширования
   public init(): void {
-    // Регистрируем Service Worker
-    this.registerServiceWorker();
-    
-    // Очищаем устаревшие кеши при запуске
+    // Очищаем устаревшие записи localStorage при запуске
     this.clearExpiredCaches();
 
-    // Периодическая очистка кеша (каждые 30 минут)
+    // Периодическая очистка (каждые 30 минут)
     setInterval(() => {
       this.clearExpiredCaches();
     }, 30 * 60 * 1000);
