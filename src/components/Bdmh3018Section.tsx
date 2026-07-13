@@ -39,8 +39,10 @@ function srcset(name: string, fmt: Fmt): string {
   return IMAGES[name].widths.map((w) => `${urlFor(name, w, fmt)} ${w}w`).join(', ');
 }
 
+type ImageName = keyof typeof IMAGES & string;
+
 interface FigureProps {
-  name: keyof typeof IMAGES;
+  name: ImageName;
   alt: string;
   caption: string;
 }
