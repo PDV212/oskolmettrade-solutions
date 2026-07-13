@@ -7,7 +7,15 @@ interface BreadcrumbsProps {
 
 const Breadcrumbs = ({ language = 'ru' }: BreadcrumbsProps) => {
   const location = useLocation();
-  
+  // Normalize trailing slash so SSR path ("/en") and browser path ("/en/",
+  // as produced by directory-index serving) resolve identically. Without
+  // this, the comparisons below diverge between server and client render
+  // and React reports a hydration mismatch (#418) on /en and /zh.
+  const pathname =
+    location.pathname.length > 1 && location.pathname.endsWith('/')
+      ? location.pathname.slice(0, -1)
+      : location.pathname;
+
   const getHomeText = () => {
     switch (language) {
       case 'en': return 'Home';
@@ -17,7 +25,7 @@ const Breadcrumbs = ({ language = 'ru' }: BreadcrumbsProps) => {
   };
 
   const getCurrentPageText = () => {
-    switch (location.pathname) {
+    switch (pathname) {
       case '/en': return 'English';
       case '/zh': return '中文';
       default: return '';
@@ -25,7 +33,7 @@ const Breadcrumbs = ({ language = 'ru' }: BreadcrumbsProps) => {
   };
 
   // Don't show breadcrumbs on home page
-  if (location.pathname === '/') {
+  if (pathname === '/') {
     return null;
   }
 
