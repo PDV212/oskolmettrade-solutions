@@ -164,7 +164,7 @@ const t = {
       },
       cap: {
         ru: 'Портальный станок BDMH3018 обрабатывает крупногабаритную металлическую заготовку.',
-        en: 'The BDMH3018 gantry machine machining a large metal workpiece.',
+        en: 'BDMH3018 gantry machine machining a large metal workpiece.',
         zh: 'BDMH3018 龙门机床加工大型金属工件。',
       },
     },
