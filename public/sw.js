@@ -93,11 +93,24 @@ async function cacheFirstStrategy(request, cacheName, maxAge = 7 * 24 * 60 * 60 
     const cache = await caches.open(cacheName);
     const cached = await cache.match(request);
     if (cached) {
-      const cachedDate = new Date(cached.headers.get('sw-cached-date') || 0);
-      if (Date.now() - cachedDate.getTime() < maxAge) return cached;
+      const cachedType = cached.headers.get('content-type') || '';
+      const looksLikeImage = cachedType.startsWith('image/') || cachedType.startsWith('font/') || cachedType.includes('font');
+      // Reject poisoned entries (HTML fallback stored under an image URL).
+      if (!looksLikeImage && (cacheName.startsWith('images-') || IMAGE_EXTENSIONS.test(new URL(request.url).pathname))) {
+        await cache.delete(request);
+      } else {
+        const cachedDate = new Date(cached.headers.get('sw-cached-date') || 0);
+        if (Date.now() - cachedDate.getTime() < maxAge) return cached;
+      }
     }
     const response = await fetch(request);
     if (response.ok) {
+      const respType = response.headers.get('content-type') || '';
+      const isImageReq = cacheName.startsWith('images-') || IMAGE_EXTENSIONS.test(new URL(request.url).pathname);
+      // Never cache non-image responses under an image URL (SPA fallback poisoning).
+      if (isImageReq && !respType.startsWith('image/')) {
+        return response;
+      }
       const clone = response.clone();
       const headers = new Headers(clone.headers);
       headers.set('sw-cached-date', new Date().toISOString());
