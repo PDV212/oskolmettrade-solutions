@@ -2,6 +2,8 @@ import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
 import BusinessDirections from '@/components/BusinessDirections';
 import CompanyAdvantages from '@/components/CompanyAdvantages';
+import CncFeatureCard from '@/components/CncFeatureCard';
+
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import CatalogNavigation from '@/components/CatalogNavigation';
@@ -34,7 +36,9 @@ const Index = () => {
         <AISummary language="ru" />
         <CTAButton language="ru" variant="compact" className="py-8" />
         <BusinessDirections />
+        <CncFeatureCard language="ru" />
         <CTAButton language="ru" />
+
         <CatalogNavigation />
         <CTAButton language="ru" variant="compact" className="py-8" />
         <CompanyAdvantages />

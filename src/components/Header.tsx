@@ -9,8 +9,10 @@ import {
   LANGUAGE_HOME,
   buildHomeSectionHref,
   companyRouteFor,
+  cncRouteFor,
   type Lang,
 } from '@/lib/globalUi';
+
 
 interface HeaderProps {
   language?: string;
@@ -41,12 +43,14 @@ const Header = ({ language = 'ru' }: HeaderProps) => {
     { name: ui.home, href: home },
     { name: ui.directions, href: buildHomeSectionHref(lang, 'directions') },
     { name: ui.company, href: companyRouteFor(lang) },
+    { name: ui.cncMachines, href: cncRouteFor(lang) },
     { name: ui.equipment, href: buildHomeSectionHref(lang, 'equipment') },
     { name: ui.materials, href: buildHomeSectionHref(lang, 'materials') },
     { name: ui.furnaces, href: buildHomeSectionHref(lang, 'furnaces') },
     { name: ui.manufacturing, href: buildHomeSectionHref(lang, 'manufacturing') },
     { name: ui.contacts, href: buildHomeSectionHref(lang, 'contacts') },
   ];
+
 
   const scrollToSection = (href: string) => {
     // Cross-page or cross-language links: let the browser handle the
