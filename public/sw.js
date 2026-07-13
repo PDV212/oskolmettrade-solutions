@@ -1,174 +1,147 @@
-// Cache version bumped after prerender rollout so every client discards
-// any pre-remediation HTML/JS (which could otherwise serve the Russian
-// homepage shell for /en, /zh and other prerendered language routes).
-const CACHE_NAME = 'oskol-met-trade-v2026-07-13-ssr2';
-const STATIC_CACHE = 'static-v2026-07-13-ssr2';
-const DYNAMIC_CACHE = 'dynamic-v2026-07-13-ssr2';
-const IMAGE_CACHE = 'images-v2026-07-13-ssr2';
+// Application Service Worker for the OSKOL-MET-TRADE informational site.
+//
+// Three application caches are actually used at runtime:
+//   - STATIC_CACHE  -> precache list + Stale-While-Revalidate for hashed
+//                      built assets (/assets/*, CSS/JS) and Cache-First for
+//                      same-origin fonts.
+//   - DYNAMIC_CACHE -> Network-First for same-origin HTML documents.
+//   - IMAGE_CACHE   -> Cache-First for same-origin images.
+//
+// No fourth "brand" cache is opened. All application caches share the
+// controlled prefixes below so activation only evicts our own caches and
+// never touches unrelated third-party workers on the same origin.
+
+const CACHE_VERSION = 'v2026-07-13-ssr3';
+const STATIC_CACHE = 'static-' + CACHE_VERSION;
+const DYNAMIC_CACHE = 'dynamic-' + CACHE_VERSION;
+const IMAGE_CACHE = 'images-' + CACHE_VERSION;
+
+const CURRENT_CACHES = [STATIC_CACHE, DYNAMIC_CACHE, IMAGE_CACHE];
+
+// Prefixes owned by this application. Activation deletes any cache that
+// begins with one of these prefixes and is not in CURRENT_CACHES. The
+// legacy 'oskol-met-trade-' prefix is retained here so pre-remediation
+// clients on ssr / ssr2 are cleaned up.
+const APP_CACHE_PREFIXES = [
+  'oskol-met-trade-',
+  'static-v',
+  'dynamic-v',
+  'images-v',
+];
 
 // Precache only truly static, language-neutral assets that are guaranteed
-// to exist in the final dist/ output. HTML documents are intentionally
-// excluded so each route always fetches its own prerendered HTML from the
-// network (network-first below) and never gets served the Russian
-// homepage as a substitute for /en or /zh. Hero/section images live in
-// src/assets/ and are emitted with Vite content hashes, so they cannot
-// be precached by static path and must not appear here.
+// to exist in the final dist/ output. Every entry must be same-origin,
+// absolute, and present in the shipped build.
 const STATIC_ASSETS = [
   '/manifest.json',
   '/lovable-uploads/b3c22956-096b-4475-8619-90ea784e020b.png',
-  '/lovable-uploads/adb38e62-ebf5-4d0f-92a9-272c1f38c8f4.png'
+  '/lovable-uploads/adb38e62-ebf5-4d0f-92a9-272c1f38c8f4.png',
 ];
 
-// Изображения и медиа файлы
 const IMAGE_EXTENSIONS = /\.(jpg|jpeg|png|gif|webp|svg|ico|avif)$/i;
 const FONT_EXTENSIONS = /\.(woff|woff2|ttf|eot)$/i;
 const CSS_JS_EXTENSIONS = /\.(css|js)$/i;
 
-// Установка Service Worker
 self.addEventListener('install', (event) => {
-  console.log('[SW] Installing Service Worker');
   event.waitUntil(
-    caches.open(STATIC_CACHE).then((cache) => {
-      console.log('[SW] Caching static assets');
-      return cache.addAll(STATIC_ASSETS);
-    })
+    caches.open(STATIC_CACHE).then((cache) => cache.addAll(STATIC_ASSETS)),
   );
   self.skipWaiting();
 });
 
-// Активация Service Worker
 self.addEventListener('activate', (event) => {
-  console.log('[SW] Activating Service Worker');
   event.waitUntil(
-    caches.keys().then((cacheNames) => {
-      return Promise.all(
-        cacheNames.map((cacheName) => {
-          if (cacheName !== CACHE_NAME && 
-              cacheName !== STATIC_CACHE && 
-              cacheName !== DYNAMIC_CACHE && 
-              cacheName !== IMAGE_CACHE) {
-            console.log('[SW] Deleting old cache:', cacheName);
-            return caches.delete(cacheName);
+    (async () => {
+      const names = await caches.keys();
+      await Promise.all(
+        names.map((name) => {
+          const isApp = APP_CACHE_PREFIXES.some((p) => name.startsWith(p));
+          if (isApp && !CURRENT_CACHES.includes(name)) {
+            return caches.delete(name);
           }
-        })
+          return undefined;
+        }),
       );
-    })
+      await self.clients.claim();
+    })(),
   );
-  self.clients.claim();
 });
 
-// Обработка запросов
 self.addEventListener('fetch', (event) => {
   const { request } = event;
+  if (request.method !== 'GET') return;
+
   const url = new URL(request.url);
 
-  // Пропускаем не-GET запросы
-  if (request.method !== 'GET') {
-    return;
-  }
+  // Only apply application caches to same-origin requests. Cross-origin
+  // requests fall through to the browser's normal network handling.
+  if (url.origin !== self.location.origin) return;
 
-  // Стратегия кеширования для разных типов ресурсов
   if (IMAGE_EXTENSIONS.test(url.pathname) || url.pathname.includes('/lovable-uploads/')) {
-    // Изображения: Cache First с длительным кешированием
-    event.respondWith(cacheFirstStrategy(request, IMAGE_CACHE, 30 * 24 * 60 * 60 * 1000)); // 30 дней
+    event.respondWith(cacheFirstStrategy(request, IMAGE_CACHE, 30 * 24 * 60 * 60 * 1000));
   } else if (FONT_EXTENSIONS.test(url.pathname)) {
-    // Шрифты: Cache First с очень длительным кешированием
-    event.respondWith(cacheFirstStrategy(request, STATIC_CACHE, 365 * 24 * 60 * 60 * 1000)); // 1 год
+    event.respondWith(cacheFirstStrategy(request, STATIC_CACHE, 365 * 24 * 60 * 60 * 1000));
   } else if (CSS_JS_EXTENSIONS.test(url.pathname) || url.pathname.includes('/assets/')) {
-    // CSS/JS: Stale While Revalidate
     event.respondWith(staleWhileRevalidateStrategy(request, STATIC_CACHE));
-  } else if (url.origin === self.location.origin) {
-    // HTML и API: Network First
+  } else {
     event.respondWith(networkFirstStrategy(request, DYNAMIC_CACHE));
   }
 });
 
-// Cache First - сначала кеш, потом сеть
 async function cacheFirstStrategy(request, cacheName, maxAge = 7 * 24 * 60 * 60 * 1000) {
   try {
     const cache = await caches.open(cacheName);
     const cached = await cache.match(request);
-    
     if (cached) {
       const cachedDate = new Date(cached.headers.get('sw-cached-date') || 0);
-      const now = new Date();
-      
-      // Проверяем, не устарел ли кеш
-      if (now - cachedDate < maxAge) {
-        return cached;
-      }
+      if (Date.now() - cachedDate.getTime() < maxAge) return cached;
     }
-    
-    // Если кеш пуст или устарел, делаем сетевой запрос
     const response = await fetch(request);
-    
     if (response.ok) {
-      const responseClone = response.clone();
-      const headers = new Headers(responseClone.headers);
+      const clone = response.clone();
+      const headers = new Headers(clone.headers);
       headers.set('sw-cached-date', new Date().toISOString());
-      
-      const modifiedResponse = new Response(await responseClone.blob(), {
-        status: responseClone.status,
-        statusText: responseClone.statusText,
-        headers: headers
+      const modified = new Response(await clone.blob(), {
+        status: clone.status,
+        statusText: clone.statusText,
+        headers,
       });
-      
-      cache.put(request, modifiedResponse);
+      cache.put(request, modified);
     }
-    
     return response;
   } catch (error) {
-    // Если сеть недоступна, возвращаем кешированную версию
     const cache = await caches.open(cacheName);
     const cached = await cache.match(request);
-    return cached || new Response('Ресурс недоступен', { status: 404 });
+    return cached || new Response('Resource unavailable', { status: 504 });
   }
 }
 
-// Network First - сначала сеть, потом кеш
 async function networkFirstStrategy(request, cacheName) {
   try {
     const response = await fetch(request);
-    
     if (response.ok) {
       const cache = await caches.open(cacheName);
       cache.put(request, response.clone());
     }
-    
     return response;
   } catch (error) {
     const cache = await caches.open(cacheName);
     const cached = await cache.match(request);
-    return cached || new Response('Страница недоступна', { 
-      status: 404,
-      headers: { 'Content-Type': 'text/html' }
+    return cached || new Response('Offline', {
+      status: 504,
+      headers: { 'Content-Type': 'text/html' },
     });
   }
 }
 
-// Stale While Revalidate - возврат кеша + обновление в фоне
 async function staleWhileRevalidateStrategy(request, cacheName) {
   const cache = await caches.open(cacheName);
   const cached = await cache.match(request);
-  
-  const fetchPromise = fetch(request).then((response) => {
-    if (response.ok) {
-      cache.put(request, response.clone());
-    }
-    return response;
-  }).catch(() => cached);
-  
+  const fetchPromise = fetch(request)
+    .then((response) => {
+      if (response.ok) cache.put(request, response.clone());
+      return response;
+    })
+    .catch(() => cached);
   return cached || fetchPromise;
 }
-
-// Предварительное кеширование критических ресурсов
-self.addEventListener('message', (event) => {
-  if (event.data && event.data.type === 'CACHE_URLS') {
-    const urlsToCache = event.data.payload;
-    event.waitUntil(
-      caches.open(IMAGE_CACHE).then((cache) => {
-        return cache.addAll(urlsToCache);
-      })
-    );
-  }
-});
