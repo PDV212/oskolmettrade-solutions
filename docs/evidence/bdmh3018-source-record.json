@@ -1,0 +1,78 @@
+{
+  "generated_at": "2026-07-13T12:23:35.379690Z",
+  "processing_declaration": "resize, encode, metadata strip only",
+  "sources": [
+    {
+      "source_filename": "20260623_193122.jpg",
+      "sha256": "51a6202e4a32c37e24f17bfd3f3b79bc6016cfd66a5e92d9fff106a715f588fe",
+      "orig_width": 1920,
+      "orig_height": 1440,
+      "orientation": "unset",
+      "logical_name": "bdmh3018-machining",
+      "widths": [
+        640,
+        1024,
+        1600
+      ],
+      "formats": [
+        "avif",
+        "webp",
+        "jpg"
+      ]
+    },
+    {
+      "source_filename": "20260625_165243.jpg",
+      "sha256": "cb69c2c9d677df6f63b9f727d0ea1bdee6161aa0426a5a6ab382a80614f2ba3c",
+      "orig_width": 1440,
+      "orig_height": 1920,
+      "orientation": "unset",
+      "logical_name": "bdmh3018-machined-workpiece",
+      "widths": [
+        640,
+        1024,
+        1440
+      ],
+      "formats": [
+        "avif",
+        "webp",
+        "jpg"
+      ]
+    },
+    {
+      "source_filename": "20260626_162434.jpg",
+      "sha256": "130bbedbbbd58d649c8eeaac0352b88c941c8d01d457e67673c4cb93001a156a",
+      "orig_width": 1920,
+      "orig_height": 1440,
+      "orientation": "unset",
+      "logical_name": "bdmh3018-side-view",
+      "widths": [
+        640,
+        1024,
+        1600
+      ],
+      "formats": [
+        "avif",
+        "webp",
+        "jpg"
+      ]
+    },
+    {
+      "source_filename": "20260626_162518.jpg",
+      "sha256": "c7757ae0b0d6fcc36088772db5c347d81dfb768d74df0176948a754a3b8bbcdd",
+      "orig_width": 1920,
+      "orig_height": 1440,
+      "orientation": "unset",
+      "logical_name": "bdmh3018-gantry-overview",
+      "widths": [
+        640,
+        1024,
+        1600
+      ],
+      "formats": [
+        "avif",
+        "webp",
+        "jpg"
+      ]
+    }
+  ]
+}
