@@ -87,6 +87,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
       <TooltipProvider>
         <PerformanceOptimizer />
         <SkipLink />
+        <RouteScrollManager />
         {children}
         <Toaster />
       </TooltipProvider>
