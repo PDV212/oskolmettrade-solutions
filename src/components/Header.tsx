@@ -109,7 +109,7 @@ const Header = ({ language = 'ru' }: HeaderProps) => {
             />
             <div className="hidden md:block">
               <p className="text-xl font-bold text-foreground">ОСКОЛ-МЕТ-ТРЕЙД</p>
-              <p className="text-xs text-muted-foreground">Металлообработка • Металлургия • Производство</p>
+              <p className="text-xs text-muted-foreground">{ui.headerTagline}</p>
             </div>
           </div>
 
