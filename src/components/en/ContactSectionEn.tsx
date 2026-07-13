@@ -15,7 +15,7 @@ const ContactSectionEn = () => {
       icon: Phone,
       title: 'Phone +7 909 097 71 74',
       href: 'tel:+79090977174',
-      description: 'Mobile contact for оперативной связи with a manager.'
+      description: 'Mobile contact for prompt communication with a manager.'
     },
     {
       icon: Mail,
