@@ -36,6 +36,7 @@ import {
 } from "@/components/ui/collapsible";
 import { Input } from "@/components/ui/input";
 import OptimizedImage from "@/components/ui/optimized-image";
+import CatalogImage from "@/components/CatalogImage";
 import {
   CATALOG_CATEGORIES,
   CATALOG_PRODUCTS,
@@ -44,6 +45,19 @@ import {
   type CatalogLanguage,
   type CatalogProduct,
 } from "@/data/catalog";
+
+// Map original public-upload image URLs to the responsive derivative slug
+// under src/assets/catalog/. Adding a new catalog image requires generating
+// derivatives and adding a mapping entry here.
+const CATALOG_IMAGE_SLUGS: Record<string, string> = {
+  "/lovable-uploads/b5b9d48f-fa70-463f-b4c5-98e99b19fbaa.png": "cnc-machine",
+  "/lovable-uploads/9037fa8f-e102-4232-a549-87fbfcd6bdd2.png": "cnc-320",
+  "/lovable-uploads/761c2c04-8071-4122-94b3-bb0d459d2e87.png": "robotic-welding",
+  "/lovable-uploads/a6f5d8cf-10e5-4159-9959-51419a44edc9.png": "manganese-ore-mr25",
+  "/lovable-uploads/9676f778-2096-4758-bdfe-13e24c70089a.png": "ferrochrome-fecr60",
+  "/lovable-uploads/edf23884-f593-4722-b789-00f5ca57510a.png": "induction-furnace-ip10",
+};
+
 
 interface CatalogNavigationProps {
   language?: CatalogLanguage;
