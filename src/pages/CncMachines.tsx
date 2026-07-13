@@ -3,6 +3,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import SEOHead from '@/components/SEOHead';
 import StructuredData from '@/components/StructuredData';
+import Bdmh3018Section from '@/components/Bdmh3018Section';
 import {
   cncContent,
   uiStrings,
@@ -98,6 +99,8 @@ const CncMachines = ({ lang = 'ru' }: CncMachinesProps) => {
               {cncContent.hero.intro[lang]}
             </p>
           </header>
+
+          <Bdmh3018Section lang={lang} contactHref={`${homePathFor(lang)}#contact`} />
 
           <section aria-labelledby="types-heading" className="mb-12">
             <h2 id="types-heading" className="text-2xl md:text-3xl font-bold text-foreground mb-6">
