@@ -36,6 +36,7 @@ import {
 } from "@/components/ui/collapsible";
 import { Input } from "@/components/ui/input";
 import OptimizedImage from "@/components/ui/optimized-image";
+import CatalogImage from "@/components/CatalogImage";
 import {
   CATALOG_CATEGORIES,
   CATALOG_PRODUCTS,
@@ -44,6 +45,19 @@ import {
   type CatalogLanguage,
   type CatalogProduct,
 } from "@/data/catalog";
+
+// Map original public-upload image URLs to the responsive derivative slug
+// under src/assets/catalog/. Adding a new catalog image requires generating
+// derivatives and adding a mapping entry here.
+const CATALOG_IMAGE_SLUGS: Record<string, string> = {
+  "/lovable-uploads/b5b9d48f-fa70-463f-b4c5-98e99b19fbaa.png": "cnc-machine",
+  "/lovable-uploads/9037fa8f-e102-4232-a549-87fbfcd6bdd2.png": "cnc-320",
+  "/lovable-uploads/761c2c04-8071-4122-94b3-bb0d459d2e87.png": "robotic-welding",
+  "/lovable-uploads/a6f5d8cf-10e5-4159-9959-51419a44edc9.png": "manganese-ore-mr25",
+  "/lovable-uploads/9676f778-2096-4758-bdfe-13e24c70089a.png": "ferrochrome-fecr60",
+  "/lovable-uploads/edf23884-f593-4722-b789-00f5ca57510a.png": "induction-furnace-ip10",
+};
+
 
 interface CatalogNavigationProps {
   language?: CatalogLanguage;
@@ -165,21 +179,31 @@ const CatalogNavigation = ({ language = "ru" }: CatalogNavigationProps) => {
     const summary = product.summary[language];
     const alt = product.imageAlt[language];
     const localizedTags = product.tags.map(localizeTag);
+    const slug = product.image ? CATALOG_IMAGE_SLUGS[product.image] : undefined;
 
     return (
       <Card key={product.id} className="overflow-hidden card-industrial">
         {viewMode === "grid" ? (
           <article>
-            {product.image && (
-              <figure className="w-24 h-24 mx-auto mb-4 pt-4">
+            {slug ? (
+              <figure className="aspect-square w-full bg-muted/40 flex items-center justify-center overflow-hidden">
+                <CatalogImage
+                  name={slug}
+                  alt={alt}
+                  sizes="(max-width: 768px) 90vw, (max-width: 1280px) 45vw, 30vw"
+                  className="w-full h-full object-contain"
+                />
+              </figure>
+            ) : product.image ? (
+              <figure className="aspect-square w-full bg-muted/40 flex items-center justify-center overflow-hidden">
                 <OptimizedImage
                   src={product.image}
                   alt={alt}
-                  className="w-full h-full object-cover rounded"
+                  className="w-full h-full object-contain"
                   loading="lazy"
                 />
               </figure>
-            )}
+            ) : null}
             <div className="p-4">
               <h3 className="font-semibold mb-2">{name}</h3>
               <p className="text-sm text-muted-foreground mb-3">{summary}</p>
@@ -208,16 +232,25 @@ const CatalogNavigation = ({ language = "ru" }: CatalogNavigationProps) => {
           </article>
         ) : (
           <article className="flex gap-4 p-4">
-            {product.image && (
-              <figure className="w-24 h-24 flex-shrink-0">
+            {slug ? (
+              <figure className="w-32 h-32 md:w-40 md:h-40 flex-shrink-0 bg-muted/40 rounded overflow-hidden flex items-center justify-center">
+                <CatalogImage
+                  name={slug}
+                  alt={alt}
+                  sizes="(max-width: 768px) 128px, 160px"
+                  className="w-full h-full object-contain"
+                />
+              </figure>
+            ) : product.image ? (
+              <figure className="w-32 h-32 md:w-40 md:h-40 flex-shrink-0 bg-muted/40 rounded overflow-hidden flex items-center justify-center">
                 <OptimizedImage
                   src={product.image}
                   alt={alt}
-                  className="w-full h-full object-cover rounded"
+                  className="w-full h-full object-contain"
                   loading="lazy"
                 />
               </figure>
-            )}
+            ) : null}
             <div className="flex-1">
               <h3 className="font-semibold mb-1">{name}</h3>
               <p className="text-sm text-muted-foreground mb-2">{summary}</p>
@@ -244,6 +277,7 @@ const CatalogNavigation = ({ language = "ru" }: CatalogNavigationProps) => {
         )}
       </Card>
     );
+
   };
 
   return (
