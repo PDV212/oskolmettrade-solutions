@@ -11,7 +11,7 @@
 // controlled prefixes below so activation only evicts our own caches and
 // never touches unrelated third-party workers on the same origin.
 
-const CACHE_VERSION = 'v2026-07-13-ssr3';
+const CACHE_VERSION = 'v2026-07-14-hero-cache1';
 const STATIC_CACHE = 'static-' + CACHE_VERSION;
 const DYNAMIC_CACHE = 'dynamic-' + CACHE_VERSION;
 const IMAGE_CACHE = 'images-' + CACHE_VERSION;
