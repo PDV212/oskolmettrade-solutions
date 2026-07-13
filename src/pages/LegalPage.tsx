@@ -119,9 +119,15 @@ const LegalPage = ({ lang, topic }: LegalPageProps) => {
                         <tr
                           key={i}
                           className="border-b border-border/60 align-top text-muted-foreground"
+                          data-row-technology={row.technology}
                         >
                           <td className="p-2">{row.technology}</td>
-                          <td className="p-2 font-mono text-xs">{row.name}</td>
+                          <td
+                            className="p-2 font-mono text-xs"
+                            data-cell-name={row.name}
+                          >
+                            {row.name}
+                          </td>
                           <td className="p-2">{row.purpose}</td>
                           <td className="p-2">{row.trigger}</td>
                           <td className="p-2">{row.retention}</td>
