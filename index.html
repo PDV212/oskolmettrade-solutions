@@ -20,9 +20,11 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="apple-mobile-web-app-title" content="OMT" />
     
-    <!-- Предзагрузка критических ресурсов -->
+    <!-- Предзагрузка критических ресурсов.
+         Hero и прочие фото в src/assets/ импортируются компонентами и
+         получают хеш от Vite (/assets/images/*-<hash>.jpg), поэтому
+         статические preload по неунифицированным путям намеренно удалены. -->
     <link rel="preload" href="/lovable-uploads/adb38e62-ebf5-4d0f-92a9-272c1f38c8f4.png" as="image" type="image/png" />
-    <link rel="preload" href="/assets/hero-industrial.jpg" as="image" type="image/jpeg" />
     <link rel="preload" href="/src/main.tsx" as="script" />
     
     <title>ОСКОЛ-МЕТ-ТРЕЙД — оборудование и сырьё для металлургии</title>
