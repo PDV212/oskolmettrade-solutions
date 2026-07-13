@@ -7,12 +7,13 @@ import { AppShell, AppRoutes } from "./AppShell";
 // the same route tree is rendered in both environments.
 function App() {
   return (
-    <AppShell>
-      <BrowserRouter>
+    <BrowserRouter>
+      <AppShell>
         <AppRoutes />
-      </BrowserRouter>
-    </AppShell>
+      </AppShell>
+    </BrowserRouter>
   );
+
 }
 
 export default App;
