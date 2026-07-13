@@ -14,22 +14,10 @@ function runBrowserOnly() {
   void import("./utils/cacheManager.ts").then(({ default: CacheManager }) => {
     const cacheManager = CacheManager.getInstance();
     cacheManager.init();
-
-    const criticalImages = [
-      "/assets/hero-industrial.jpg",
-      "/lovable-uploads/b3c22956-096b-4475-8619-90ea784e020b.png",
-      "/lovable-uploads/adb38e62-ebf5-4d0f-92a9-272c1f38c8f4.png",
-    ];
-    const lazyImages = [
-      "/assets/equipment-manufacturing.jpg",
-      "/assets/metallurgy-furnace.jpg",
-      "/assets/raw-materials.jpg",
-    ];
-
-    cacheManager.preloadImages(criticalImages).catch(() => {});
-    window.setTimeout(() => {
-      cacheManager.preloadImages(lazyImages).catch(() => {});
-    }, 2000);
+    // Note: hero and section images live in src/assets/ and are imported
+    // by components — Vite emits hashed filenames. Preloading unhashed
+    // paths here produced 404s in production, so those manual preloads
+    // were removed. Components perform their own image loading.
   });
 
   if ("serviceWorker" in navigator) {
