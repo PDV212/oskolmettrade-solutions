@@ -8,6 +8,7 @@
     "typecheck": "tsc --noEmit",
     "build": "tsc --noEmit && vite build && vite build --ssr src/entry-server.tsx --outDir .prerender && node scripts/prerender.mjs && node scripts/validatePrerender.mjs && node scripts/validatePrecache.mjs && node scripts/writeDeployVersion.mjs",
     "validate:precache": "node scripts/validatePrecache.mjs",
+    "test:verifier": "node scripts/verifyProductionImages.test.mjs",
     "build:client": "vite build",
     "build:ssr": "vite build --ssr src/entry-server.tsx --outDir .prerender",
     "prerender": "node scripts/prerender.mjs",
