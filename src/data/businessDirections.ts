@@ -191,7 +191,7 @@ const _rawDirections: BusinessDirection[] = [
       en: 'Furnace type, working capacity, power, control system and integration scope are determined from the technical requirements. Specific parameters are confirmed by the selected manufacturer’s documentation.',
       zh: '炉型、有效容量、功率、控制系统及集成范围根据技术要求确定。具体参数以选定制造商的技术文件为准。',
     },
-    image: heatingFurnacesImage,
+    image: furnaceImageAsset,
     actionType: 'contact',
     gradient: 'bg-gradient-to-br from-secondary/20 to-secondary/5',
     iconColor: 'text-secondary',
@@ -262,7 +262,7 @@ const _rawDirections: BusinessDirection[] = [
       en: 'Voronezh Machine Tool Plant is a separate legal entity. Its manufacturing capabilities may be considered for individual joint projects subject to the relevant agreements.',
       zh: '沃罗涅日机床厂是独立法人实体。在具备相应合作协议的情况下，其制造能力可用于具体联合项目。',
     },
-    image: vszManufacturingImage,
+    image: equipmentImageAsset,
     actionType: 'external-link',
     externalUrl: 'https://stankozavod.com/',
     externalLabel: {
