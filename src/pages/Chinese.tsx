@@ -31,6 +31,7 @@ const Chinese = () => {
         <AISummary language="zh" />
         <CTAButton language="zh" variant="compact" className="py-8" />
         <CncFeatureCard language="zh" />
+        <CaseHighlights language="zh" />
         <BusinessDirectionsZh />
         <CTAButton language="zh" />
 
