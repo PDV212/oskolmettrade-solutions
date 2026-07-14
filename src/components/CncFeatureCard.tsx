@@ -25,6 +25,8 @@ interface Copy {
   eyebrow: string;
   title: string;
   description: string;
+  categoriesLabel: string;
+  categories: string[];
   cta: string;
   alt: string;
 }
@@ -34,7 +36,16 @@ const COPY: Record<Lang, Copy> = {
     eyebrow: 'Металлообрабатывающее оборудование',
     title: 'Станки с ЧПУ',
     description:
-      'Подбор и организация поставки оборудования для обработки крупногабаритных металлических заготовок. Фотографии и описание портального станка BDMH3018, введённого в эксплуатацию в июне 2026 года.',
+      'Подбор и организация поставки металлообрабатывающего оборудования с ЧПУ для машиностроительных и металлургических предприятий. Конфигурация, производитель, автоматизация и состав проекта определяются по техническому заданию и фиксируются в коммерческом предложении и договоре.',
+    categoriesLabel: 'Основные категории оборудования',
+    categories: [
+      'Вертикальные и горизонтальные обрабатывающие центры с ЧПУ',
+      'Токарные обрабатывающие центры с ЧПУ',
+      'Шлифовальные станки с ЧПУ',
+      'Гидравлические прессы',
+      'Роботизированные системы сварки и покраски — по проекту',
+      'Автоматизированные металлорежущие комплексы — по техническому заданию',
+    ],
     cta: 'Смотреть станки и оборудование',
     alt: 'Портальный станок BDMH3018 в цехе заказчика — обработка крупногабаритной заготовки',
   },
@@ -42,7 +53,16 @@ const COPY: Record<Lang, Copy> = {
     eyebrow: 'Metalworking equipment',
     title: 'CNC Machines',
     description:
-      'Selection and supply coordination for equipment used to machine large metal workpieces. View photographs and details of the BDMH3018 gantry machine commissioned in June 2026.',
+      'Selection and supply coordination of CNC metalworking equipment for mechanical engineering and metallurgical enterprises. The configuration, manufacturer, automation scope and project composition are determined from the technical requirements and specified in the commercial proposal and contract.',
+    categoriesLabel: 'Main equipment categories',
+    categories: [
+      'Vertical and horizontal CNC machining centers',
+      'CNC turning centers',
+      'CNC grinding machines',
+      'Hydraulic presses',
+      'Robotic welding and painting systems — per project',
+      'Automated metal-cutting systems — subject to technical requirements',
+    ],
     cta: 'View CNC machines',
     alt: 'BDMH3018 gantry CNC machine at a customer facility machining a large workpiece',
   },
@@ -50,7 +70,16 @@ const COPY: Record<Lang, Copy> = {
     eyebrow: '金属加工设备',
     title: '数控机床',
     description:
-      '面向大型金属工件加工设备的选型与供货协调。查看于2026年6月投入运行的BDMH3018龙门机床照片与说明。',
+      '为机械制造和冶金企业提供数控金属加工设备的选型及供货协调服务。设备配置、制造商、自动化范围及项目组成根据技术要求确定，并在商务报价和合同中明确。',
+    categoriesLabel: '主要设备类别',
+    categories: [
+      '立式与卧式数控加工中心',
+      '数控车削中心',
+      '数控磨床',
+      '液压机',
+      '机器人焊接与喷涂系统 — 按项目协商',
+      '带上料与成品接收系统的自动化金属切削生产线 — 依据技术要求',
+    ],
     cta: '查看数控机床',
     alt: 'BDMH3018 龙门数控机床在客户车间加工大型工件',
   },
@@ -66,8 +95,9 @@ const CncFeatureCard = ({ language = 'ru' }: Props) => {
 
   return (
     <section
+      id="equipment"
       aria-labelledby="cnc-feature-title"
-      className="py-12 md:py-16 bg-muted/30"
+      className="py-12 md:py-16 bg-muted/30 scroll-mt-24"
     >
       <div className="container mx-auto px-4">
         <article className="grid md:grid-cols-2 gap-0 overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
@@ -99,9 +129,17 @@ const CncFeatureCard = ({ language = 'ru' }: Props) => {
             >
               {copy.title}
             </h2>
-            <p className="text-muted-foreground leading-relaxed mb-6">
+            <p className="text-muted-foreground leading-relaxed mb-4">
               {copy.description}
             </p>
+            <p className="text-sm font-semibold text-foreground mb-2">
+              {copy.categoriesLabel}
+            </p>
+            <ul className="text-sm text-muted-foreground list-disc list-inside space-y-1 mb-6">
+              {copy.categories.map((c) => (
+                <li key={c}>{c}</li>
+              ))}
+            </ul>
             <div>
               <Button
                 asChild
