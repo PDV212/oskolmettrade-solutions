@@ -15,10 +15,10 @@ const CompanyAdvantagesZh = () => {
     },
     {
       icon: Shield,
-      title: '四个业务方向',
+      title: '三个业务方向',
       description:
-        '在设备供应、冶金原材料、工业炉以及与独立法人 VSZ 的生产合作等方面开展联合项目。',
-      stat: '4 个方向',
+        '在金属加工设备及机器人焊接/喷涂系统、工业炉、铁合金及冶金材料等方向开展联合项目。',
+      stat: '3 个方向',
       gradient: 'from-secondary/20 to-secondary/5',
     },
     {
