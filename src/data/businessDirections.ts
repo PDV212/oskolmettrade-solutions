@@ -23,14 +23,6 @@ import equipmentImageAsset from '@/assets/equipment-manufacturing.jpg';
 import materialsImageAsset from '@/assets/raw-materials.jpg';
 import furnaceImageAsset from '@/assets/metallurgy-furnace.jpg';
 
-const cncMachineImage = '/lovable-uploads/b5b9d48f-fa70-463f-b4c5-98e99b19fbaa.png';
-const manipulatorsImage = '/lovable-uploads/761c2c04-8071-4122-94b3-bb0d459d2e87.png';
-const rawMaterialsImage = '/lovable-uploads/9676f778-2096-4758-bdfe-13e24c70089a.png';
-const rawMaterials3Image = '/lovable-uploads/a6f5d8cf-10e5-4159-9959-51419a44edc9.png';
-const heatingFurnacesImage = '/lovable-uploads/edf23884-f593-4722-b789-00f5ca57510a.png';
-const vszManufacturingImage = '/lovable-uploads/9037fa8f-e102-4232-a549-87fbfcd6bdd2.png';
-const manipulators2Image = '/lovable-uploads/f95317f5-d336-41bd-bee8-c76ec0ea6a0e.png';
-const equipmentLogoImage = '/lovable-uploads/6ec4623e-736f-469e-b1e3-ec6dbe88be82.png';
 const rawMaterialsMainImage = '/lovable-uploads/raw-materials.png';
 
 export type Lang = 'ru' | 'en' | 'zh';
@@ -68,6 +60,8 @@ export interface BusinessDirection {
   subtitle: LocalizedText;
   description: LocalizedText;
   features: DirectionFeature[];
+  /** Optional heading shown above the feature list. */
+  featuresHeading?: LocalizedText;
   /** Section-hero image, optional. */
   image?: string;
   actionType: DirectionActionType;
@@ -92,11 +86,7 @@ export const businessDirectionsIntro = {
     en: 'Supply and project-coordination areas for metallurgical and mechanical engineering enterprises.',
     zh: '面向冶金及机械制造企业的供货与项目协调业务方向。',
   } as LocalizedText,
-  gallery: [
-    { src: manipulators2Image, alt: 'OSKOL-MET-TRADE' },
-    { src: equipmentLogoImage, alt: 'Equipment' },
-    { src: rawMaterialsMainImage, alt: 'Raw materials' },
-  ],
+  gallery: [{ src: rawMaterialsMainImage, alt: 'OSKOL-MET-TRADE' }],
 };
 
 /* --------------------------------------------------------------- */
@@ -105,69 +95,65 @@ export const businessDirectionsIntro = {
 
 const _rawDirections: BusinessDirection[] = [
   {
-    id: 'materials',
-    icon: Factory,
+    id: 'equipment',
+    icon: Wrench,
     title: {
-      ru: 'Металлургическое сырьё',
-      en: 'Metallurgical raw materials',
-      zh: '冶金原材料',
+      ru: 'Металлообрабатывающее оборудование',
+      en: 'Metalworking equipment',
+      zh: '金属加工设备',
     },
     subtitle: {
-      ru: 'Категории поставок сырья',
-      en: 'Raw-material supply categories',
-      zh: '原材料供应类别',
+      ru: 'Подбор и поставка по ТЗ',
+      en: 'Selection and supply',
+      zh: '按技术任务选型供货',
     },
     description: {
-      ru: 'Категории поставок металлургического сырья и легирующих материалов. Марка, химический состав, фракция, происхождение, объём и условия поставки определяются для конкретной партии и фиксируются в спецификации и договоре.',
-      en: 'Supply categories of metallurgical raw materials and alloying materials. Grade, chemical composition, particle size, origin, volume and delivery conditions are determined for each lot and specified in the specification and contract.',
-      zh: '冶金原材料及合金材料的供应类别。牌号、化学成分、粒度、原产地、数量及交付条件均按具体批次确定，并在技术规格和合同中明确。',
+      ru:
+        'Подбор и организация поставки оборудования по техническому заданию заказчика. Помогаем сформировать запрос, согласовать технические параметры, упаковку, логистику и сопровождение до коммерческого предложения или контракта.',
+      en:
+        'Selection and organization of equipment supply based on the customer’s technical requirements. We help shape the request, agree on technical parameters, packaging, logistics, and support through commercial offer or contract.',
+      zh:
+        '根据客户技术任务进行设备选型与供货组织。我们协助明确需求、协调技术参数、包装、物流，并提供从报价到合同的全流程支持。',
     },
-    image: materialsImageAsset,
+    image: equipmentImageAsset,
     actionType: 'contact',
-    gradient: 'bg-gradient-to-br from-accent/20 to-accent/5',
-    iconColor: 'text-accent',
+    gradient: 'bg-gradient-to-br from-primary/15 to-accent/10',
+    iconColor: 'text-primary',
     features: [
       {
-        id: 'manganese-iron-ore',
+        id: 'equipment-by-spec',
         evidenceStatus: 'owner-confirmed-direction',
         label: {
-          ru: 'Марганцевая и железная руда',
-          en: 'Manganese and iron ore',
-          zh: '锰矿与铁矿石',
+          ru: 'Подбор и поставка оборудования по ТЗ заказчика',
+          en: 'Equipment selection and supply per customer specification',
+          zh: '按客户技术规格选型供货',
         },
       },
       {
-        id: 'bentonite',
-        evidenceStatus: 'owner-confirmed-direction',
-        label: { ru: 'Бентонит', en: 'Bentonite', zh: '膨润土' },
-      },
-      {
-        id: 'ferrochrome',
-        image: rawMaterials3Image,
+        id: 'robotic-welding-painting',
         evidenceStatus: 'owner-confirmed-direction',
         label: {
-          ru: 'Феррохром FeCr (марка подтверждается по партии)',
-          en: 'Ferrochrome FeCr (grade confirmed per lot)',
-          zh: '铬铁 FeCr（牌号按批次确认）',
+          ru: 'Роботизированные сварочные и покрасочные комплексы',
+          en: 'Robotic welding and painting complexes',
+          zh: '机器人焊接与喷涂系统',
         },
       },
       {
-        id: 'npi',
+        id: 'packaging-loading-logistics',
         evidenceStatus: 'owner-confirmed-direction',
         label: {
-          ru: 'Никельсодержащий чугун (NPI)',
-          en: 'Nickel-containing pig iron (NPI)',
-          zh: '含镍生铁 (NPI)',
+          ru: 'Согласование упаковки, загрузки и логистики',
+          en: 'Coordination of packaging, loading and logistics',
+          zh: '包装、装载及物流协调',
         },
       },
       {
-        id: 'ss-slabs',
-        image: rawMaterialsImage,
+        id: 'commercial-escort',
         evidenceStatus: 'owner-confirmed-direction',
         label: {
-          ru: 'Слябы из нержавеющей стали',
-          en: 'Stainless-steel slabs',
-          zh: '不锈钢板坯',
+          ru: 'Сопровождение до КП и поставки',
+          en: 'Support through quotation and delivery',
+          zh: '从报价到交付的全程支持',
         },
       },
     ],
@@ -187,9 +173,12 @@ const _rawDirections: BusinessDirection[] = [
       zh: '炉型与集成',
     },
     description: {
-      ru: 'Тип печи, полезная ёмкость, мощность, система управления и интеграция определяются по техническому заданию. Конкретные параметры подтверждаются документацией выбранного производителя.',
-      en: 'Furnace type, working capacity, power, control system and integration scope are determined from the technical requirements. Specific parameters are confirmed by the selected manufacturer’s documentation.',
-      zh: '炉型、有效容量、功率、控制系统及集成范围根据技术要求确定。具体参数以选定制造商的技术文件为准。',
+      ru:
+        'Тип печи, полезная ёмкость, мощность, система управления и интеграция определяются по техническому заданию. Конкретные параметры подтверждаются документацией выбранного производителя.',
+      en:
+        'Furnace type, working capacity, power, control system and integration scope are determined from the technical requirements. Specific parameters are confirmed by the selected manufacturer’s documentation.',
+      zh:
+        '炉型、有效容量、功率、控制系统及集成范围根据技术要求确定。具体参数以选定制造商的技术文件为准。',
     },
     image: furnaceImageAsset,
     actionType: 'contact',
@@ -245,76 +234,168 @@ const _rawDirections: BusinessDirection[] = [
   },
 
   {
-    id: 'manufacturing',
-    icon: Building2,
+    id: 'materials',
+    icon: Factory,
     title: {
-      ru: 'Производственные возможности ВСЗ',
-      en: 'VSZ manufacturing capabilities',
-      zh: 'VSZ 制造能力',
+      ru: 'Ферросплавы и материалы для металлургии',
+      en: 'Ferroalloys and materials for metallurgy',
+      zh: '铁合金及冶金材料',
     },
     subtitle: {
-      ru: 'Воронежский станкостроительный завод — отдельное юридическое лицо',
-      en: 'Voronezh Machine Tool Plant — separate legal entity',
-      zh: '沃罗涅日机床厂 — 独立法人实体',
+      ru: 'Поставки для металлургических предприятий',
+      en: 'Supplies for metallurgical enterprises',
+      zh: '面向冶金企业供货',
     },
     description: {
-      ru: 'Воронежский станкостроительный завод является отдельным юридическим лицом. Его производственные возможности могут рассматриваться для отдельных совместных проектов при наличии соответствующих договорённостей.',
-      en: 'Voronezh Machine Tool Plant is a separate legal entity. Its manufacturing capabilities may be considered for individual joint projects subject to the relevant agreements.',
-      zh: '沃罗涅日机床厂是独立法人实体。在具备相应合作协议的情况下，其制造能力可用于具体联合项目。',
+      ru:
+        'Мы организуем поставки ферросплавов и вспомогательных материалов для металлургических предприятий напрямую от производителей и проверенных экспортёров. Работаем с позициями для сталеплавильного, литейного и ферросплавного производства, подбираем спецификацию, упаковку, базис поставки и логистическое решение под требования заказчика. Подбираем производителей, запрашиваем COA/MTC, согласовываем технические параметры, проверяем упаковку и загрузку контейнера, рассчитываем ориентировочную логистику и сопровождаем переговоры до коммерческого предложения или пробной поставки. Заказчик получает не просто цену, а понятный вариант поставки с техническими и коммерческими условиями.',
+      en:
+        'We arrange supplies of ferroalloys and auxiliary materials for metallurgical enterprises directly from manufacturers and verified exporters. We work with items for steelmaking, foundry and ferroalloy production, selecting specifications, packaging, delivery basis and logistics solutions according to customer requirements. We select manufacturers, request COA/MTC, agree technical parameters, check packaging and container loading, calculate indicative logistics and support negotiations up to a commercial offer or trial shipment. The customer receives not just a price, but a clear supply option with technical and commercial terms.',
+      zh:
+        '我们为冶金企业组织铁合金及辅助材料的供应，直接对接生产商及经核实出口商。产品涵盖炼钢、铸造及铁合金生产用物料，并根据客户要求匹配规格、包装、交货条件与物流方案。我们筛选生产商、索取 COA/MTC、协调技术参数、检查包装与集装箱装载、核算参考物流成本，并跟进谈判直至形成报价或试运交付。客户获得的不仅是价格，而是一套附有技术与商务条款的清晰供应方案。',
     },
-    image: equipmentImageAsset,
-    actionType: 'external-link',
-    externalUrl: 'https://stankozavod.com/',
-    externalLabel: {
-      ru: 'Перейти на сайт ВСЗ',
-      en: 'Visit VSZ website',
-      zh: '访问 VSZ 网站',
+    image: materialsImageAsset,
+    actionType: 'contact',
+    gradient: 'bg-gradient-to-br from-accent/20 to-accent/5',
+    iconColor: 'text-accent',
+    featuresHeading: {
+      ru: 'Номенклатура поставок',
+      en: 'Supply range',
+      zh: '供货范围',
     },
-    gradient: 'bg-gradient-to-br from-primary/15 to-accent/10',
-    iconColor: 'text-primary',
     features: [
       {
-        id: 'milling-turning',
-        evidenceStatus: 'requires-owner-verification',
+        id: 'ferrosilicomanganese',
+        evidenceStatus: 'owner-confirmed-direction',
         label: {
-          ru: 'Фрезерная и токарная обработка — заявленная возможность, подтверждается по проекту.',
-          en: 'Milling and turning — stated capability, subject to project confirmation.',
-          zh: '铣削与车削 — 声明的能力，需按项目确认。',
+          ru: 'Ферросиликомарганец FeSiMn / SiMn 6516 / 6517 / 6518',
+          en: 'Ferrosilicomanganese FeSiMn / SiMn 6516 / 6517 / 6518',
+          zh: '硅锰合金 FeSiMn / SiMn 6516 / 6517 / 6518',
         },
       },
       {
-        id: 'grinding-gearcutting',
-        evidenceStatus: 'requires-owner-verification',
+        id: 'ferrosilicon',
+        evidenceStatus: 'owner-confirmed-direction',
         label: {
-          ru: 'Шлифовальные работы и зуборезка — заявленная возможность, подтверждается по проекту.',
-          en: 'Grinding and gear cutting — stated capability, subject to project confirmation.',
-          zh: '磨削与齿轮加工 — 声明的能力，需按项目确认。',
+          ru: 'Ферросилиций FeSi65 / FeSi75',
+          en: 'Ferrosilicon FeSi65 / FeSi75',
+          zh: '硅铁 FeSi65 / FeSi75',
         },
       },
       {
-        id: 'heat-treatment',
-        evidenceStatus: 'requires-owner-verification',
+        id: 'ferrovanadium',
+        evidenceStatus: 'owner-confirmed-direction',
         label: {
-          ru: 'Отдельные операции термообработки — при технической подтверждаемости.',
-          en: 'Selected heat-treatment operations, subject to technical confirmation.',
-          zh: '部分热处理工序 — 需技术确认后进行。',
+          ru: 'Феррованадий FeV80',
+          en: 'Ferrovanadium FeV80',
+          zh: '钒铁 FeV80',
         },
       },
       {
-        id: 'custom-documentation',
-        evidenceStatus: 'requires-owner-verification',
+        id: 'ferromanganese',
+        evidenceStatus: 'owner-confirmed-direction',
         label: {
-          ru: 'Изготовление по документации заказчика — при рассмотрении документации и заключении договора.',
-          en: 'Manufacturing to customer documentation — subject to document review and contract.',
-          zh: '按客户技术文件制造 — 需文件审查并签订合同。',
+          ru: 'Ферромарганец FeMn78 и другие марки FeMn',
+          en: 'Ferromanganese FeMn78 and other FeMn grades',
+          zh: '锰铁 FeMn78 及其他牌号',
+        },
+      },
+      {
+        id: 'ferrochrome',
+        evidenceStatus: 'owner-confirmed-direction',
+        label: {
+          ru: 'Феррохром HC FeCr / LC FeCr / MC FeCr',
+          en: 'Ferrochrome HC FeCr / LC FeCr / MC FeCr',
+          zh: '铬铁 HC FeCr / LC FeCr / MC FeCr',
+        },
+      },
+      {
+        id: 'ferrotitanium',
+        evidenceStatus: 'owner-confirmed-direction',
+        label: {
+          ru: 'Ферротитан FeTi30 / FeTi70',
+          en: 'Ferrotitanium FeTi30 / FeTi70',
+          zh: '钛铁 FeTi30 / FeTi70',
+        },
+      },
+      {
+        id: 'ferromolybdenum',
+        evidenceStatus: 'owner-confirmed-direction',
+        label: {
+          ru: 'Ферромолибден FeMo',
+          en: 'Ferromolybdenum FeMo',
+          zh: '钼铁 FeMo',
+        },
+      },
+      {
+        id: 'casi-cored-wire',
+        evidenceStatus: 'owner-confirmed-direction',
+        label: {
+          ru: 'CaSi cored wire, включая проволоку Ø14 мм',
+          en: 'CaSi cored wire, including Ø14 mm wire',
+          zh: 'CaSi 包芯线，含 Ø14 mm 线材',
+        },
+      },
+      {
+        id: 'calcium-materials',
+        evidenceStatus: 'owner-confirmed-direction',
+        label: {
+          ru: 'Силикокальций и кальцийсодержащие материалы',
+          en: 'Calcium silicon and calcium-containing materials',
+          zh: '硅钙及含钙材料',
+        },
+      },
+      {
+        id: 'graphite-electrodes',
+        evidenceStatus: 'owner-confirmed-direction',
+        label: {
+          ru: 'Графитированные электроды',
+          en: 'Graphitized electrodes',
+          zh: '石墨电极',
+        },
+      },
+      {
+        id: 'metallurgical-deoxidizers',
+        evidenceStatus: 'owner-confirmed-direction',
+        label: {
+          ru: 'Металлургические раскислители',
+          en: 'Metallurgical deoxidizers',
+          zh: '冶金脱氧剂',
+        },
+      },
+      {
+        id: 'alloying-additives',
+        evidenceStatus: 'owner-confirmed-direction',
+        label: {
+          ru: 'Легирующие и модифицирующие добавки',
+          en: 'Alloying and modifying additives',
+          zh: '合金及变质添加剂',
+        },
+      },
+      {
+        id: 'ladle-treatment',
+        evidenceStatus: 'owner-confirmed-direction',
+        label: {
+          ru: 'Материалы для внепечной обработки стали',
+          en: 'Materials for ladle metallurgy / secondary steel treatment',
+          zh: '钢包精炼及炉外处理材料',
+        },
+      },
+      {
+        id: 'custom-spec',
+        evidenceStatus: 'owner-confirmed-direction',
+        label: {
+          ru: 'Ферросплавы и спецматериалы под индивидуальную спецификацию заказчика',
+          en: 'Ferroalloys and special materials to customer specification',
+          zh: '按客户特殊规格供应的铁合金及特种材料',
         },
       },
     ],
   },
 ];
 
-// Homepage order: VSZ manufacturing, furnaces, metallurgical raw materials.
-const _orderIds: DirectionId[] = ['manufacturing', 'furnaces', 'materials'];
+// Homepage order: equipment, furnaces, ferroalloys / metallurgical materials.
+const _orderIds: DirectionId[] = ['equipment', 'furnaces', 'materials'];
 export const businessDirections: BusinessDirection[] = _orderIds
   .map((id) => _rawDirections.find((d) => d.id === id)!)
   .filter(Boolean);

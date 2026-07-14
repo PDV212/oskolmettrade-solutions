@@ -1,4 +1,4 @@
-import { ArrowRight, ExternalLink } from 'lucide-react';
+import { ArrowRight, ExternalLink, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import OptimizedImage from '@/components/ui/optimized-image';
@@ -80,6 +80,31 @@ const BusinessDirectionsView = ({ language }: Props) => {
                   >
                     {direction.description[language]}
                   </p>
+
+                  {direction.features.length > 0 && (
+                    <div className="mb-5">
+                      {direction.featuresHeading && (
+                        <h4 className="text-sm font-semibold text-foreground mb-3">
+                          {direction.featuresHeading[language]}
+                        </h4>
+                      )}
+                      <ul className="space-y-2">
+                        {direction.features.map((feature) => (
+                          <li
+                            key={feature.id}
+                            className="flex items-start gap-2 text-sm text-muted-foreground"
+                          >
+                            <Check
+                              className="w-4 h-4 text-accent mt-0.5 flex-shrink-0"
+                              aria-hidden="true"
+                            />
+                            <span>{feature.label[language]}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
                   <div className="mt-auto">
                     {isExternal ? (
                       <a

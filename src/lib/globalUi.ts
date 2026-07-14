@@ -54,7 +54,7 @@ export const GLOBAL_UI: Record<Lang, GlobalUiStrings> = {
     equipment: 'Оборудование',
     cncMachines: 'Станки с ЧПУ',
 
-    materials: 'Сырье',
+    materials: 'Ферросплавы',
     furnaces: 'Печи',
     manufacturing: 'Производство ВСЗ',
     advantages: 'Преимущества',
@@ -70,7 +70,7 @@ export const GLOBAL_UI: Record<Lang, GlobalUiStrings> = {
     equipment: 'Equipment',
     cncMachines: 'CNC Machines',
 
-    materials: 'Materials',
+    materials: 'Ferroalloys',
     furnaces: 'Furnaces',
     manufacturing: 'VSZ Production',
     advantages: 'Advantages',
@@ -86,7 +86,7 @@ export const GLOBAL_UI: Record<Lang, GlobalUiStrings> = {
     equipment: '设备',
     cncMachines: '数控机床',
 
-    materials: '原材料',
+    materials: '铁合金',
     furnaces: '炉子',
     manufacturing: 'VSZ生产',
     advantages: '优势',
