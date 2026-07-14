@@ -18,6 +18,8 @@ import Company from "./pages/Company";
 import NotFound from "./pages/NotFound";
 import LegalPlaceholder from "./pages/LegalPlaceholder";
 import Faq from "./pages/Faq";
+import Ferroalloys from "./pages/Ferroalloys";
+
 
 // Shared route table used by both browser (BrowserRouter) and build-time
 // static (StaticRouter) entries. No Router wrapper here — the entry chooses.
