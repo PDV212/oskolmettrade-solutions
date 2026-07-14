@@ -20,6 +20,8 @@ export const HREFLANG_GROUPS = {
   faq: { ru: "/ru/faq", en: "/en/faq", zh: "/zh/faq", xDefault: "en" },
   about: { ru: "/about", en: "/en/about", zh: "/zh/about", xDefault: "en" },
   cncMachines: { ru: "/cnc-machines", en: "/en/cnc-machines", zh: "/zh/cnc-machines", xDefault: "en" },
+  ferroalloys: { ru: "/ferroalloys", en: "/en/ferroalloys", zh: "/zh/ferroalloys", xDefault: "en" },
+
   privacy: { ru: "/privacy", en: "/en/privacy", zh: "/zh/privacy", xDefault: "en" },
   cookies: { ru: "/cookies", en: "/en/cookies", zh: "/zh/cookies", xDefault: "en" },
 };
