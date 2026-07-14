@@ -95,8 +95,9 @@ const CncFeatureCard = ({ language = 'ru' }: Props) => {
 
   return (
     <section
+      id="equipment"
       aria-labelledby="cnc-feature-title"
-      className="py-12 md:py-16 bg-muted/30"
+      className="py-12 md:py-16 bg-muted/30 scroll-mt-24"
     >
       <div className="container mx-auto px-4">
         <article className="grid md:grid-cols-2 gap-0 overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
