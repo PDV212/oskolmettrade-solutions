@@ -129,9 +129,17 @@ const CncFeatureCard = ({ language = 'ru' }: Props) => {
             >
               {copy.title}
             </h2>
-            <p className="text-muted-foreground leading-relaxed mb-6">
+            <p className="text-muted-foreground leading-relaxed mb-4">
               {copy.description}
             </p>
+            <p className="text-sm font-semibold text-foreground mb-2">
+              {copy.categoriesLabel}
+            </p>
+            <ul className="text-sm text-muted-foreground list-disc list-inside space-y-1 mb-6">
+              {copy.categories.map((c) => (
+                <li key={c}>{c}</li>
+              ))}
+            </ul>
             <div>
               <Button
                 asChild
