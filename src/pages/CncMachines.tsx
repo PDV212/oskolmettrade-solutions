@@ -122,7 +122,20 @@ const CncMachines = ({ lang = 'ru' }: CncMachinesProps) => {
     areaServed: { '@type': 'Country', name: lang === 'ru' ? 'Россия' : lang === 'en' ? 'Russia' : '俄罗斯' },
     provider: { '@type': 'Organization', name: 'ОСКОЛ-МЕТ-ТРЕЙД', url: SITE_ORIGIN_URL },
     description: cncContent.meta.description[lang],
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: sectionLabels.types[lang],
+      itemListElement: machineTypesTable.rows.map((r) => ({
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Product',
+          name: r.type[lang],
+          description: `${r.op[lang]} — ${r.best[lang]} (${r.axes} axes)`,
+        },
+      })),
+    },
   };
+
 
   const faqSchema = {
     '@context': 'https://schema.org',
