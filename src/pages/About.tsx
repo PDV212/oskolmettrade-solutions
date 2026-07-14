@@ -131,6 +131,11 @@ const About = ({ lang = 'ru' }: AboutProps) => {
       />
       <StructuredData type="BreadcrumbList" data={breadcrumbSchema} />
       <StructuredData type="AboutPage" data={aboutPageSchema} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+      />
+
       <SpeakableSchema
         url={canonical}
         name={aboutContent.hero.h1[lang]}
