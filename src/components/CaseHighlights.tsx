@@ -60,6 +60,21 @@ const COPY = {
         zh: '重型数控外圆磨床 H200-70L-C2 在生产现场',
       } as L,
     },
+    {
+      key: 'hc-fecr',
+      anchor: 'case-hc-fecr-2023-2024',
+      year: '2023–2024',
+      title: {
+        ru: 'Регулярные поставки ферросплавов (HC FeCr) 2023–2024',
+        en: 'Regular ferroalloy supplies (HC FeCr), 2023–2024',
+        zh: '2023–2024 年铁合金（HC FeCr）常态化供货',
+      } as L,
+      alt: {
+        ru: 'Партия высокоуглеродистого феррохрома HC FeCr в биг-бегах на терминале отгрузки',
+        en: 'Batch of high-carbon ferrochrome HC FeCr in big bags at the shipping terminal',
+        zh: '装运码头上的高碳铬铁 HC FeCr 吨袋批次',
+      } as L,
+    },
   ] as const,
 };
 
