@@ -423,7 +423,56 @@ export const cncContent = {
         zh: "如有可行的融资租赁或其他融资方案，将与相关融资机构按个案协商确定。",
       },
     },
+    {
+      q: {
+        ru: "Какие бренды систем ЧПУ обычно доступны?",
+        en: "What CNC control brands are typically available?",
+        zh: "通常可选哪些数控系统品牌？",
+      },
+      a: {
+        ru: "Доступные системы ЧПУ (например, FANUC, Siemens, Mitsubishi или другие) зависят от выбранной модели станка и производителя и подтверждаются в коммерческом предложении.",
+        en: "Available control systems (such as FANUC, Siemens, Mitsubishi, or others) depend on the selected machine model and manufacturer, and are confirmed in the commercial proposal.",
+        zh: "可选数控系统（如 FANUC、Siemens、Mitsubishi 或其他）取决于所选机型与制造商，并在商务报价中确认。",
+      },
+    },
+    {
+      q: {
+        ru: "Можно ли поставить оборудование от китайских производителей?",
+        en: "Can you source machines from Chinese manufacturers?",
+        zh: "是否可以从中国制造商采购设备？",
+      },
+      a: {
+        ru: "Оборудование может быть подобрано у различных производителей в зависимости от требований проекта, доступности и технических параметров, согласованных в проекте.",
+        en: "Equipment can be sourced from various manufacturers depending on project requirements, availability and technical specifications agreed in the project.",
+        zh: "根据项目需求、可获得性以及项目中商定的技术规格，可从不同制造商采购设备。",
+      },
+    },
+    {
+      q: {
+        ru: "Что входит в услуги пусконаладки?",
+        en: "What is included in commissioning service?",
+        zh: "调试服务包含哪些内容？",
+      },
+      a: {
+        ru: "Пусконаладка может включать монтаж оборудования, проверку геометрических и функциональных параметров, обучение оператора и передачу документации — объём определяется договором.",
+        en: "Commissioning may include equipment installation, geometric and functional verification, operator training and handover documentation — scope is defined in the contract.",
+        zh: "调试可包括设备安装、几何与功能验证、操作员培训及文件移交，具体范围由合同确定。",
+      },
+    },
+    {
+      q: {
+        ru: "Как оформляется гарантия на оборудование?",
+        en: "How is equipment warranty handled?",
+        zh: "设备保修如何处理？",
+      },
+      a: {
+        ru: "Условия гарантии определяются выбранным производителем, подтверждаются в коммерческом предложении и фиксируются в контракте на поставку.",
+        en: "Warranty terms are defined by the selected manufacturer, confirmed in the commercial proposal and fixed in the supply contract.",
+        zh: "保修条款由所选制造商确定，在商务报价中确认并写入供货合同。",
+      },
+    },
   ] as FaqEntry[],
+
 };
 
 /* ============================================================
