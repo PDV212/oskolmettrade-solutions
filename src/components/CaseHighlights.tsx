@@ -110,21 +110,15 @@ const CaseHighlights = ({ language = 'ru' }: Props) => {
                       className="max-w-full max-h-full w-auto h-full object-contain block"
                     />
                   ) : (
-                    <picture>
-                      <source type="image/avif" srcSet={bdmhSrcset('avif')} sizes="(max-width: 768px) 100vw, 45vw" />
-                      <source type="image/webp" srcSet={bdmhSrcset('webp')} sizes="(max-width: 768px) 100vw, 45vw" />
-                      <img
-                        src={bdmhUrl(1024, 'jpg')}
-                        srcSet={bdmhSrcset('jpg')}
-                        sizes="(max-width: 768px) 100vw, 45vw"
-                        width={1600}
-                        height={1200}
-                        alt={c.alt[language]}
-                        loading="lazy"
-                        decoding="async"
-                        className="max-w-full max-h-full w-full h-full object-contain block"
-                      />
-                    </picture>
+                    <img
+                      src={bdmhAsset.url}
+                      width={1920}
+                      height={1440}
+                      alt={c.alt[language]}
+                      loading="lazy"
+                      decoding="async"
+                      className="max-w-full max-h-full w-full h-full object-cover block"
+                    />
                   )}
                 </div>
                 <div className="p-5 md:p-6 flex flex-col gap-3 flex-1">
