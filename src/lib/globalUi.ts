@@ -54,7 +54,7 @@ export const GLOBAL_UI: Record<Lang, GlobalUiStrings> = {
     equipment: 'Оборудование',
     cncMachines: 'Станки с ЧПУ',
 
-    materials: 'Сырье',
+    materials: 'Ферросплавы',
     furnaces: 'Печи',
     manufacturing: 'Производство ВСЗ',
     advantages: 'Преимущества',
