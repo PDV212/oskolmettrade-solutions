@@ -215,8 +215,8 @@ const About = ({ lang = 'ru' }: AboutProps) => {
   return (
     <div className="min-h-screen bg-transparent">
       <SEOHead
-        title={aboutContent.meta.title[lang]}
-        description={aboutContent.meta.description[lang]}
+        title={aboutSeo[lang].title}
+        description={aboutSeo[lang].description}
         language={lang}
         path={path}
         hreflangGroup="about"
@@ -226,6 +226,14 @@ const About = ({ lang = 'ru' }: AboutProps) => {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(academicImageSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(staffingImageSchema) }}
       />
 
       <SpeakableSchema
