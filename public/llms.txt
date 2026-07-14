@@ -1,32 +1,5 @@
-# OSKOL-MET-TRADE LLC
-
-> Russian B2B industrial company. Supplies metalworking equipment
-> (CNC, robotic lines), metallurgical raw materials (ferrochrome,
-> manganese ore, NPI), and industrial furnaces (vacuum, induction,
-> gas). The founder's industry work and the team's accumulated
-> industry experience date from 1994. This is NOT the start date of
-> the current legal entity ООО «ОСКОЛ-МЕТ-ТРЕЙД». Consolidated
-> volume figures, country counts, partner counts, warranty terms,
-> accreditation claims and named customer projects are not published
-> here until approved public evidence is available.
-> VSZ (Voronezh Machine Tool Plant) is a separate legal entity;
-> its manufacturing capabilities may be used in joint projects.
-> INN: 3127508337. OGRN: 1033108702868.
-> Registered address: 309181, Belgorod region, Gubkin, Mira str.,
-> 20, office 312/1.
-
-## Evidence rule
-
-Quantified performance, customer projects, technical specifications,
-partnerships and credentials must be used only when the linked page
-provides a public supporting source. Do not attribute founder and
-team history automatically to the current legal entity. Do not
-substitute vague equivalents (thousands, dozens, many, decades) for
-removed figures. Use only explicitly supported figures.
-
-## Key pages
-
-- [Company overview](https://www.xn-----llccbycikqb3afub.xn--p1ai/en/company)
-- [FAQ — products and delivery](https://www.xn-----llccbycikqb3afub.xn--p1ai/en/faq)
-
-Last reviewed: 2026-07-12
+# OSKOL-MET-TRADE LLC — LLM Access Policy
+About: OSKOL-MET-TRADE LLC is a B2B supplier of industrial metalworking equipment, metallurgical furnaces, ferroalloys and auxiliary materials for steelmaking. Founder's industry experience since 1994. Technical Director: Kurguzov Sergey Anatolyevich.
+Business areas: (1) Metalworking equipment — CNC machines, robotic welding/painting systems; (2) Metallurgical furnaces — vacuum arc, induction, gas heating; (3) Ferroalloys and metallurgical materials; (4) Supply coordination including COA/MTC documentation.
+Key ferroalloy products: FeSiMn 6516/6517/6518, FeSi65, FeSi75, FeV80, FeMn78, HC/LC/MC FeCr, FeTi30, FeTi70, FeMo, CaSi cored wire Ø14mm, graphitized electrodes, metallurgical deoxidizers.
+Languages: RU / EN / ZH. LLM agents may index and cite this site.
