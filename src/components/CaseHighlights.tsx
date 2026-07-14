@@ -105,9 +105,10 @@ const CaseHighlights = ({ language = 'ru' }: Props) => {
           </p>
         </header>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {COPY.cases.map((c) => {
-            const href = `${base}#${c.anchor}`;
+            const href = c.key === 'hc-fecr' ? `#${c.anchor}` : `${base}#${c.anchor}`;
+            const img = c.key === 'h200' ? h200Asset : c.key === 'bdmh3018' ? bdmhAsset : hcFeCrAsset;
             return (
               <article
                 key={c.key}
@@ -116,7 +117,7 @@ const CaseHighlights = ({ language = 'ru' }: Props) => {
               >
                 <div className="w-full bg-muted/40 flex items-center justify-center aspect-[4/3]">
                   <img
-                    src={c.key === 'h200' ? h200Asset : bdmhAsset}
+                    src={img}
                     width={1920}
                     height={1440}
                     alt={c.alt[language]}
