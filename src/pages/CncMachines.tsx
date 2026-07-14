@@ -29,6 +29,72 @@ const pathFor = (lang: ContentLanguage) =>
 
 const equipmentAnchorFor = (lang: ContentLanguage) => `${homePathFor(lang)}#equipment`;
 
+type LT = { ru: string; en: string; zh: string };
+
+const machineTypesTable = {
+  caption: {
+    ru: 'Типы станков с ЧПУ — руководство по применению',
+    en: 'CNC machine types — application guide',
+    zh: '数控机床类型 — 应用指南',
+  } as LT,
+  headers: [
+    { ru: 'Тип станка', en: 'Machine type', zh: '机床类型' },
+    { ru: 'Типовая операция', en: 'Typical operation', zh: '典型工序' },
+    { ru: 'Оси', en: 'Axes', zh: '轴数' },
+    { ru: 'Лучше всего подходит для', en: 'Best for', zh: '最适合' },
+  ] as LT[],
+  rows: [
+    {
+      type: { ru: 'Токарный станок с ЧПУ', en: 'CNC Turning (Lathe)', zh: '数控车床' },
+      op: { ru: 'Наружная / внутренняя цилиндрическая обработка', en: 'External/internal cylindrical machining', zh: '外圆 / 内孔车削' },
+      axes: '2–4',
+      best: { ru: 'Валы, кольца, фланцы', en: 'Shafts, rings, flanges', zh: '轴、环、法兰' },
+    },
+    {
+      type: { ru: 'Вертикальный обрабатывающий центр (VMC)', en: 'Vertical Machining Center (VMC)', zh: '立式加工中心（VMC）' },
+      op: { ru: 'Фрезерование, сверление, нарезание резьбы', en: 'Milling, drilling, tapping', zh: '铣削、钻孔、攻丝' },
+      axes: '3–5',
+      best: { ru: 'Призматические детали, штампы', en: 'Prismatic parts, dies', zh: '棱柱形零件、模具' },
+    },
+    {
+      type: { ru: 'Горизонтальный обрабатывающий центр (HMC)', en: 'Horizontal Machining Center (HMC)', zh: '卧式加工中心（HMC）' },
+      op: { ru: 'Многосторонняя фрезеровка', en: 'Multi-face milling', zh: '多面铣削' },
+      axes: '4–5',
+      best: { ru: 'Крупные сложные детали, серийное производство', en: 'Large complex parts, batch production', zh: '大型复杂零件、批量生产' },
+    },
+    {
+      type: { ru: 'Шлифовальный станок с ЧПУ', en: 'CNC Grinding', zh: '数控磨床' },
+      op: { ru: 'Плоское / круглое шлифование', en: 'Surface/cylindrical grinding', zh: '平面 / 外圆磨削' },
+      axes: '2–4',
+      best: { ru: 'Финишная точность, закалённые детали', en: 'Precision finishing, hardened parts', zh: '精密精加工、淬硬件' },
+    },
+    {
+      type: { ru: 'Электроэрозионный станок (EDM)', en: 'EDM (Electrical Discharge)', zh: '电火花加工（EDM）' },
+      op: { ru: 'Искровая резка / прошивка', en: 'Spark erosion cutting/sinking', zh: '电火花切割 / 成型' },
+      axes: '2–5',
+      best: { ru: 'Закалённая сталь, сложные профили', en: 'Hardened steel, complex profiles', zh: '淬硬钢、复杂型面' },
+    },
+    {
+      type: { ru: 'Токарно-фрезерный (Turn-Mill)', en: 'Turn-Mill', zh: '车铣复合' },
+      op: { ru: 'Комбинированное точение и фрезеровка', en: 'Combined turning + milling', zh: '车削 + 铣削复合' },
+      axes: '5–7',
+      best: { ru: 'Сложные тела вращения за одну установку', en: 'Complex rotational parts in one setup', zh: '复杂回转零件一次装夹完成' },
+    },
+    {
+      type: { ru: 'Координатно-расточной станок', en: 'Jig Boring', zh: '坐标镗床' },
+      op: { ru: 'Прецизионное растачивание отверстий', en: 'High-precision hole boring', zh: '高精度孔镗削' },
+      axes: '3–4',
+      best: { ru: 'Оснастка, пресс-формы, прецизионные сборки', en: 'Fixtures, molds, precision assemblies', zh: '夹具、模具、精密装配' },
+    },
+  ],
+};
+
+const sectionLabels = {
+  types: { ru: 'Типы станков с ЧПУ', en: 'CNC machine types', zh: '数控机床类型' } as LT,
+};
+
+
+
 const CncMachines = ({ lang = 'ru' }: CncMachinesProps) => {
   const path = pathFor(lang);
   const canonical = SITE_ORIGIN_URL + path;
