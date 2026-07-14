@@ -17,7 +17,7 @@ import AISchemas from '@/components/AISchemas';
 
 const Chinese = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-transparent">
       <SEOHead {...seoConfigs.zh.home} />
       <StructuredData type="Organization" data={organizationSchema} />
       <StructuredData type="BreadcrumbList" data={breadcrumbSchema('zh')} />

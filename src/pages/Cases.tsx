@@ -33,7 +33,7 @@ const Cases = ({ lang = 'ru' }: CasesProps) => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-transparent">
       <SEOHead
         title={casesContent.meta.title[lang]}
         description={casesContent.meta.description[lang]}

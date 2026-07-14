@@ -23,7 +23,7 @@ const LegalPage = ({ lang, topic }: LegalPageProps) => {
   const hreflangGroup = topic === 'privacy' ? 'privacy' : 'cookies';
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-transparent">
       <SEOHead
         title={c.title}
         description={c.description}

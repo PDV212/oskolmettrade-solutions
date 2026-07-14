@@ -68,7 +68,7 @@ const CncMachines = ({ lang = 'ru' }: CncMachinesProps) => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-transparent">
       <SEOHead
         title={cncContent.meta.title[lang]}
         description={cncContent.meta.description[lang]}

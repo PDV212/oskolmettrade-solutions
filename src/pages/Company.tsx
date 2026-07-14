@@ -179,7 +179,7 @@ const Company = ({ lang }: CompanyProps) => {
   const homeHref = lang === 'en' ? '/en' : lang === 'zh' ? '/zh' : '/';
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-transparent">
       <SEOHead
         title={t.title}
         description={t.description}

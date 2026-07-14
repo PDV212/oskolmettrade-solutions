@@ -19,7 +19,7 @@ import SpeakableSchema from '@/components/SpeakableSchema';
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-transparent">
       <SEOHead {...seoConfigs.ru.home} />
       <StructuredData type="Organization" data={organizationSchema} />
       <StructuredData type="BreadcrumbList" data={breadcrumbSchema('ru')} />

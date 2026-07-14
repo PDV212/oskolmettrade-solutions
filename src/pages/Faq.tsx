@@ -272,7 +272,7 @@ const FaqPage = ({ lang }: FaqPageProps) => {
   const path = lang === "ru" ? "/ru/faq" : lang === "en" ? "/en/faq" : "/zh/faq";
 
   return (
-    <div className="min-h-screen flex flex-col bg-background">
+    <div className="min-h-screen flex flex-col bg-transparent">
       <SEOHead
         title={c.title}
         description={c.description}

@@ -97,7 +97,7 @@ const LegalPlaceholder = ({ lang, topic }: Props) => {
   // Legal placeholders have no verified translated equivalents:
   // emit a self-canonical only, and noindex the legacy consent page.
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-transparent">
       <SEOHead
         title={`${c.title} | OSKOL-MET-TRADE`}
         description={c.intro}
