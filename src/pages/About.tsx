@@ -160,6 +160,25 @@ const About = ({ lang = 'ru' }: AboutProps) => {
             </p>
           </header>
 
+          <section aria-labelledby="key-facts-heading" className="mb-16">
+            <h2 id="key-facts-heading" className="sr-only">
+              {lang === 'ru' ? 'Ключевые факты' : lang === 'en' ? 'Key facts' : '关键信息'}
+            </h2>
+            <div className="flex flex-col sm:flex-row flex-wrap gap-4">
+              {keyFacts.map((f) => (
+                <div
+                  key={f.label.en}
+                  className="flex-1 min-w-[160px] rounded-lg border border-border bg-card p-6 text-center"
+                >
+                  <div className="text-3xl md:text-4xl font-bold text-foreground mb-1">{f.value}</div>
+                  <div className="text-sm text-muted-foreground">{f.label[lang]}</div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+
+
           <section aria-labelledby="history-heading" className="mb-16">
             <h2 id="history-heading" className="text-2xl md:text-3xl font-bold text-foreground mb-8">
               {aboutContent.sections.history[lang]}
