@@ -105,7 +105,7 @@ const CncFeatureCard = ({ language = 'ru' }: Props) => {
         <article className="grid md:grid-cols-2 gap-0 overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
           <div className="relative bg-muted/40 aspect-[4/3] md:aspect-auto flex items-center justify-center p-4">
             <img
-              src={equipmentImage.url}
+              src={equipmentImage}
               width={1024}
               height={1024}
               alt={copy.alt}
