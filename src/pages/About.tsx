@@ -11,6 +11,26 @@ import {
   SITE_ORIGIN_URL,
   type ContentLanguage,
 } from '@/data/pageContent';
+import { EngineeringExpertiseSection } from '@/components/EngineeringExpertise';
+import { engineeringExpertise as EE } from '@/data/engineeringExpertise';
+
+const aboutSeo = {
+  ru: {
+    title: 'Инженерная экспертиза и сервисная команда | ОСКОЛ-МЕТ-ТРЕЙД',
+    description:
+      'Кургузов Сергей Анатольевич — кандидат технических наук, доцент по кафедре технологии машиностроения и технический директор ООО «ОСКОЛ-МЕТ-ТРЕЙД» по сопровождению и сервису оборудования.',
+  },
+  en: {
+    title: 'Engineering Expertise and Service Team | OSKOL-MET-TRADE',
+    description:
+      'Sergey Anatolyevich Kurguzov is Candidate of Technical Sciences, Associate Professor in Mechanical Engineering Technology, and Technical Director for Equipment Support and Service at OSKOL-MET-TRADE.',
+  },
+  zh: {
+    title: '工程专业能力与服务团队 | OSKOL-MET-TRADE',
+    description:
+      '谢尔盖·阿纳托利耶维奇·库尔古佐夫拥有技术科学副博士学位和机械制造工艺方向副教授学术职称，并担任公司的设备支持与服务技术总监。',
+  },
+} as const;
 
 const iconMap = {
   building: Building2,
