@@ -31,6 +31,7 @@ const English = () => {
         <AISummary language="en" />
         <CTAButton language="en" variant="compact" className="py-8" />
         <CncFeatureCard language="en" />
+        <CaseHighlights language="en" />
         <BusinessDirectionsEn />
         <CTAButton language="en" />
 
