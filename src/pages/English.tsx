@@ -29,9 +29,10 @@ const English = () => {
         <HeroSectionEn />
         <AISummary language="en" />
         <CTAButton language="en" variant="compact" className="py-8" />
-        <BusinessDirectionsEn />
         <CncFeatureCard language="en" />
+        <BusinessDirectionsEn />
         <CTAButton language="en" />
+
 
         <CatalogNavigation language="en" />
         <CTAButton language="en" variant="compact" className="py-8" />

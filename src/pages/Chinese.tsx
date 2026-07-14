@@ -29,9 +29,10 @@ const Chinese = () => {
         <HeroSectionZh />
         <AISummary language="zh" />
         <CTAButton language="zh" variant="compact" className="py-8" />
-        <BusinessDirectionsZh />
         <CncFeatureCard language="zh" />
+        <BusinessDirectionsZh />
         <CTAButton language="zh" />
+
 
         <CatalogNavigation language="zh" />
         <CTAButton language="zh" variant="compact" className="py-8" />
