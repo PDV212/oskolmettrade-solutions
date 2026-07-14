@@ -86,7 +86,7 @@ export const GLOBAL_UI: Record<Lang, GlobalUiStrings> = {
     equipment: '设备',
     cncMachines: '数控机床',
 
-    materials: '原材料',
+    materials: '铁合金',
     furnaces: '炉子',
     manufacturing: 'VSZ生产',
     advantages: '优势',
