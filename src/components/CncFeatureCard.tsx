@@ -104,12 +104,23 @@ const CncFeatureCard = ({ language = 'ru' }: Props) => {
   return (
     <section
       id="equipment"
-      aria-labelledby="cnc-feature-title"
+      aria-labelledby="equipment-parent-title"
       className="py-12 md:py-16 bg-muted/30 scroll-mt-24"
     >
       <div className="container mx-auto px-4">
+        <header className="text-center mb-8 md:mb-10">
+          <h2
+            id="equipment-parent-title"
+            className="text-2xl md:text-4xl font-bold text-foreground mb-3"
+          >
+            {copy.eyebrow}
+          </h2>
+          <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto">
+            {copy.supporting}
+          </p>
+        </header>
         <article className="grid md:grid-cols-2 gap-0 overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
-          <div className="relative bg-black/5">
+          <div className="relative bg-black/5 aspect-[4/3] md:aspect-auto">
             <picture>
               <source type="image/avif" srcSet={srcset('avif')} sizes="(max-width: 768px) 100vw, 50vw" />
               <source type="image/webp" srcSet={srcset('webp')} sizes="(max-width: 768px) 100vw, 50vw" />
@@ -120,7 +131,6 @@ const CncFeatureCard = ({ language = 'ru' }: Props) => {
                 width={1600}
                 height={1200}
                 alt={copy.alt}
-
                 loading="lazy"
                 decoding="async"
                 className="block w-full h-full object-cover"
@@ -128,18 +138,19 @@ const CncFeatureCard = ({ language = 'ru' }: Props) => {
             </picture>
           </div>
           <div className="p-6 md:p-10 flex flex-col justify-center">
-            <p className="text-xs md:text-sm font-semibold uppercase tracking-wider text-primary mb-3">
+            <p className="text-xs md:text-sm font-semibold uppercase tracking-wider text-primary mb-2">
               {copy.eyebrow}
             </p>
-            <h2
+            <h3
               id="cnc-feature-title"
-              className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4"
+              className="text-2xl md:text-3xl font-bold text-foreground mb-4"
             >
               {copy.title}
-            </h2>
+            </h3>
             <p className="text-muted-foreground leading-relaxed mb-4">
               {copy.description}
             </p>
+
             <p className="text-sm font-semibold text-foreground mb-2">
               {copy.categoriesLabel}
             </p>
