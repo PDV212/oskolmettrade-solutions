@@ -10,8 +10,10 @@ import {
   buildHomeSectionHref,
   companyRouteFor,
   cncRouteFor,
+  ferroalloysRouteFor,
   type Lang,
 } from '@/lib/globalUi';
+
 
 
 interface HeaderProps {
@@ -45,7 +47,7 @@ const Header = ({ language = 'ru' }: HeaderProps) => {
     { name: ui.company, href: companyRouteFor(lang) },
     { name: ui.cncMachines, href: cncRouteFor(lang) },
     { name: ui.equipment, href: buildHomeSectionHref(lang, 'equipment') },
-    { name: ui.materials, href: buildHomeSectionHref(lang, 'materials') },
+    { name: ui.materials, href: ferroalloysRouteFor(lang) },
     { name: ui.furnaces, href: buildHomeSectionHref(lang, 'furnaces') },
     { name: ui.contacts, href: buildHomeSectionHref(lang, 'contacts') },
   ];

@@ -18,6 +18,8 @@ import Company from "./pages/Company";
 import NotFound from "./pages/NotFound";
 import LegalPlaceholder from "./pages/LegalPlaceholder";
 import Faq from "./pages/Faq";
+import Ferroalloys from "./pages/Ferroalloys";
+
 
 // Shared route table used by both browser (BrowserRouter) and build-time
 // static (StaticRouter) entries. No Router wrapper here — the entry chooses.
@@ -36,6 +38,10 @@ export function AppRoutes() {
       <Route path="/cnc-machines" element={<CncMachines lang="ru" />} />
       <Route path="/en/cnc-machines" element={<CncMachines lang="en" />} />
       <Route path="/zh/cnc-machines" element={<CncMachines lang="zh" />} />
+      <Route path="/ferroalloys" element={<Ferroalloys lang="ru" />} />
+      <Route path="/en/ferroalloys" element={<Ferroalloys lang="en" />} />
+      <Route path="/zh/ferroalloys" element={<Ferroalloys lang="zh" />} />
+
       <Route path="/about" element={<About lang="ru" />} />
       <Route path="/en/about" element={<About lang="en" />} />
       <Route path="/zh/about" element={<About lang="zh" />} />

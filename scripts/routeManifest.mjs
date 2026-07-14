@@ -20,6 +20,8 @@ export const HREFLANG_GROUPS = {
   faq: { ru: "/ru/faq", en: "/en/faq", zh: "/zh/faq", xDefault: "en" },
   about: { ru: "/about", en: "/en/about", zh: "/zh/about", xDefault: "en" },
   cncMachines: { ru: "/cnc-machines", en: "/en/cnc-machines", zh: "/zh/cnc-machines", xDefault: "en" },
+  ferroalloys: { ru: "/ferroalloys", en: "/en/ferroalloys", zh: "/zh/ferroalloys", xDefault: "en" },
+
   privacy: { ru: "/privacy", en: "/en/privacy", zh: "/zh/privacy", xDefault: "en" },
   cookies: { ru: "/cookies", en: "/en/cookies", zh: "/zh/cookies", xDefault: "en" },
 };
@@ -145,6 +147,30 @@ export const ROUTES = [
     h1: "数控机床",
     intro: "数控（CNC）机床供应方向。具体型号、配置、附件与交货期按每个项目单独确认。",
   },
+
+  // Ferroalloys group
+  {
+    path: "/ferroalloys", lang: "ru", group: "ferroalloys", pageType: "ferroalloys",
+    title: "Ферросплавы и материалы для металлургии — ОСКОЛ-МЕТ-ТРЕЙД",
+    description: "Поставка ферросплавов (FeSiMn, FeSi65/75, FeV80, FeMn78, FeCr, FeTi, FeMo), кальций-силиконовой порошковой проволоки и графитированных электродов. Документы COA/MTC по каждой партии.",
+    h1: "Ферросплавы и материалы для металлургии",
+    intro: "ООО «ОСКОЛ-МЕТ-ТРЕЙД» подбирает и организует поставки ферросплавов и материалов для металлургии напрямую от производителей и проверенных экспортёров. Каждая партия сопровождается документами COA/MTC.",
+  },
+  {
+    path: "/en/ferroalloys", lang: "en", group: "ferroalloys", pageType: "ferroalloys",
+    title: "Ferroalloys and Materials for Metallurgy — OSKOL-MET-TRADE",
+    description: "Supply of ferroalloys (FeSiMn, FeSi65/75, FeV80, FeMn78, FeCr, FeTi, FeMo), calcium-silicon cored wire and graphitized electrodes. COA/MTC documents provided per batch.",
+    h1: "Ferroalloys and materials for metallurgy",
+    intro: "OSKOL-MET-TRADE LLC sources and coordinates supply of ferroalloys and metallurgical materials directly from manufacturers and verified exporters. All supplies include COA/MTC documentation.",
+  },
+  {
+    path: "/zh/ferroalloys", lang: "zh", group: "ferroalloys", pageType: "ferroalloys",
+    title: "铁合金与冶金材料 — OSKOL-MET-TRADE",
+    description: "供应铁合金（FeSiMn、FeSi65/75、FeV80、FeMn78、FeCr、FeTi、FeMo）、钙硅包芯线及石墨电极。每批次提供 COA/MTC 文件。",
+    h1: "铁合金与冶金材料",
+    intro: "OSKOL-MET-TRADE 有限责任公司直接从制造商和经核实的出口商采购并组织铁合金与冶金材料的供应。每批交付均附有 COA/MTC 文件。",
+  },
+
 
   // Privacy group
   {
