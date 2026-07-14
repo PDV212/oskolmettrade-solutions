@@ -23,6 +23,7 @@ const srcset = (fmt: 'avif' | 'webp' | 'jpg') =>
 
 interface Copy {
   eyebrow: string;
+  supporting: string;
   title: string;
   description: string;
   categoriesLabel: string;
@@ -31,10 +32,13 @@ interface Copy {
   alt: string;
 }
 
+
 const COPY: Record<Lang, Copy> = {
   ru: {
     eyebrow: 'Металлообрабатывающее оборудование',
+    supporting: 'Подбор и организация поставки оборудования по техническому заданию заказчика',
     title: 'Станки с ЧПУ',
+
     description:
       'Подбор и организация поставки металлообрабатывающего оборудования с ЧПУ для машиностроительных и металлургических предприятий. Конфигурация, производитель, автоматизация и состав проекта определяются по техническому заданию и фиксируются в коммерческом предложении и договоре.',
     categoriesLabel: 'Основные категории оборудования',
@@ -51,7 +55,9 @@ const COPY: Record<Lang, Copy> = {
   },
   en: {
     eyebrow: 'Metalworking equipment',
+    supporting: 'Selection and supply coordination of equipment based on the customer’s technical requirements',
     title: 'CNC Machines',
+
     description:
       'Selection and supply coordination of CNC metalworking equipment for mechanical engineering and metallurgical enterprises. The configuration, manufacturer, automation scope and project composition are determined from the technical requirements and specified in the commercial proposal and contract.',
     categoriesLabel: 'Main equipment categories',
@@ -68,7 +74,9 @@ const COPY: Record<Lang, Copy> = {
   },
   zh: {
     eyebrow: '金属加工设备',
+    supporting: '根据客户技术要求进行设备选型与供货组织',
     title: '数控机床',
+
     description:
       '为机械制造和冶金企业提供数控金属加工设备的选型及供货协调服务。设备配置、制造商、自动化范围及项目组成根据技术要求确定，并在商务报价和合同中明确。',
     categoriesLabel: '主要设备类别',
