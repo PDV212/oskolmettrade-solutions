@@ -16,6 +16,7 @@
 import { readFileSync } from "node:fs";
 import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
+import { verifyProductionImages } from "./verifyProductionImages.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ORIGIN = process.env.PROD_ORIGIN || "https://www.xn-----llccbycikqb3afub.xn--p1ai";
