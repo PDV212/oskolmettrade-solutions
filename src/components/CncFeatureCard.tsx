@@ -72,7 +72,7 @@ const COPY: Record<Lang, Copy> = {
       '带上料与成品接收系统的自动化金属切削生产线 — 依据技术要求',
     ],
     cta: '查看数控机床',
-    alt: 'BDMH3018 龙门数控机床在客户车间加工大型工件',
+    alt: '金属加工设备插图 — OSKOL-MET-TRADE',
   },
 };
 
