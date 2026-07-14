@@ -15,6 +15,7 @@ import StructuredData, { organizationSchema, breadcrumbSchema, faqSchemaZh } fro
 import AISummary from '@/components/AISummary';
 import FAQSection from '@/components/FAQSection';
 import AISchemas from '@/components/AISchemas';
+import { EngineeringExpertiseCompact } from '@/components/EngineeringExpertise';
 
 const Chinese = () => {
   return (
@@ -39,6 +40,7 @@ const Chinese = () => {
         <CatalogNavigation language="zh" />
         <CTAButton language="zh" variant="compact" className="py-8" />
         <CompanyAdvantagesZh />
+        <EngineeringExpertiseCompact lang="zh" />
         <FAQSection language="zh" />
         <CTAButton language="zh" />
         <ContactSectionZh />
