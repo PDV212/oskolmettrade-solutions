@@ -41,7 +41,7 @@ const CTAButton: React.FC<CTAButtonProps> = ({ language = 'ru', variant = 'defau
       <div className={`flex justify-center ${className}`}>
         <Button
           onClick={handleClick}
-          className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold px-8 py-4 text-lg rounded-xl shadow-accent-glow hover:shadow-lg transition-all duration-300 animate-pulse hover:animate-none touch-button group"
+          className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold px-8 py-4 text-lg rounded-xl shadow-md hover:shadow-lg transition-all duration-300 motion-safe:hover:-translate-y-0.5 touch-button group focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
           size="lg"
         >
           <Phone className="w-5 h-5 mr-2" />
@@ -64,7 +64,7 @@ const CTAButton: React.FC<CTAButtonProps> = ({ language = 'ru', variant = 'defau
           </p>
           <Button
             onClick={handleClick}
-            className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold px-10 py-6 text-xl rounded-xl shadow-accent-glow hover:shadow-lg transition-all duration-300 animate-pulse hover:animate-none touch-button group"
+            className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold px-10 py-6 text-xl rounded-xl shadow-md hover:shadow-xl transition-all duration-300 motion-safe:hover:-translate-y-0.5 touch-button group focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
             size="lg"
           >
             <Phone className="w-6 h-6 mr-3" />

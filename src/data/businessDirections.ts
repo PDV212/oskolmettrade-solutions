@@ -103,7 +103,7 @@ export const businessDirectionsIntro = {
 /* Direction data                                                  */
 /* --------------------------------------------------------------- */
 
-export const businessDirections: BusinessDirection[] = [
+const _rawDirections: BusinessDirection[] = [
   {
     id: 'materials',
     icon: Factory,
@@ -312,3 +312,9 @@ export const businessDirections: BusinessDirection[] = [
     ],
   },
 ];
+
+// Homepage order: VSZ manufacturing, furnaces, metallurgical raw materials.
+const _orderIds: DirectionId[] = ['manufacturing', 'furnaces', 'materials'];
+export const businessDirections: BusinessDirection[] = _orderIds
+  .map((id) => _rawDirections.find((d) => d.id === id)!)
+  .filter(Boolean);

@@ -23,6 +23,7 @@ const srcset = (fmt: 'avif' | 'webp' | 'jpg') =>
 
 interface Copy {
   eyebrow: string;
+  supporting: string;
   title: string;
   description: string;
   categoriesLabel: string;
@@ -31,10 +32,13 @@ interface Copy {
   alt: string;
 }
 
+
 const COPY: Record<Lang, Copy> = {
   ru: {
     eyebrow: 'Металлообрабатывающее оборудование',
+    supporting: 'Подбор и организация поставки оборудования по техническому заданию заказчика',
     title: 'Станки с ЧПУ',
+
     description:
       'Подбор и организация поставки металлообрабатывающего оборудования с ЧПУ для машиностроительных и металлургических предприятий. Конфигурация, производитель, автоматизация и состав проекта определяются по техническому заданию и фиксируются в коммерческом предложении и договоре.',
     categoriesLabel: 'Основные категории оборудования',
@@ -51,7 +55,9 @@ const COPY: Record<Lang, Copy> = {
   },
   en: {
     eyebrow: 'Metalworking equipment',
+    supporting: 'Selection and supply coordination of equipment based on the customer’s technical requirements',
     title: 'CNC Machines',
+
     description:
       'Selection and supply coordination of CNC metalworking equipment for mechanical engineering and metallurgical enterprises. The configuration, manufacturer, automation scope and project composition are determined from the technical requirements and specified in the commercial proposal and contract.',
     categoriesLabel: 'Main equipment categories',
@@ -68,7 +74,9 @@ const COPY: Record<Lang, Copy> = {
   },
   zh: {
     eyebrow: '金属加工设备',
+    supporting: '根据客户技术要求进行设备选型与供货组织',
     title: '数控机床',
+
     description:
       '为机械制造和冶金企业提供数控金属加工设备的选型及供货协调服务。设备配置、制造商、自动化范围及项目组成根据技术要求确定，并在商务报价和合同中明确。',
     categoriesLabel: '主要设备类别',
@@ -96,12 +104,23 @@ const CncFeatureCard = ({ language = 'ru' }: Props) => {
   return (
     <section
       id="equipment"
-      aria-labelledby="cnc-feature-title"
+      aria-labelledby="equipment-parent-title"
       className="py-12 md:py-16 bg-muted/30 scroll-mt-24"
     >
       <div className="container mx-auto px-4">
+        <header className="text-center mb-8 md:mb-10">
+          <h2
+            id="equipment-parent-title"
+            className="text-2xl md:text-4xl font-bold text-foreground mb-3"
+          >
+            {copy.eyebrow}
+          </h2>
+          <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto">
+            {copy.supporting}
+          </p>
+        </header>
         <article className="grid md:grid-cols-2 gap-0 overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
-          <div className="relative bg-black/5">
+          <div className="relative bg-black/5 aspect-[4/3] md:aspect-auto">
             <picture>
               <source type="image/avif" srcSet={srcset('avif')} sizes="(max-width: 768px) 100vw, 50vw" />
               <source type="image/webp" srcSet={srcset('webp')} sizes="(max-width: 768px) 100vw, 50vw" />
@@ -112,7 +131,6 @@ const CncFeatureCard = ({ language = 'ru' }: Props) => {
                 width={1600}
                 height={1200}
                 alt={copy.alt}
-
                 loading="lazy"
                 decoding="async"
                 className="block w-full h-full object-cover"
@@ -120,18 +138,19 @@ const CncFeatureCard = ({ language = 'ru' }: Props) => {
             </picture>
           </div>
           <div className="p-6 md:p-10 flex flex-col justify-center">
-            <p className="text-xs md:text-sm font-semibold uppercase tracking-wider text-primary mb-3">
+            <p className="text-xs md:text-sm font-semibold uppercase tracking-wider text-primary mb-2">
               {copy.eyebrow}
             </p>
-            <h2
+            <h3
               id="cnc-feature-title"
-              className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4"
+              className="text-2xl md:text-3xl font-bold text-foreground mb-4"
             >
               {copy.title}
-            </h2>
+            </h3>
             <p className="text-muted-foreground leading-relaxed mb-4">
               {copy.description}
             </p>
+
             <p className="text-sm font-semibold text-foreground mb-2">
               {copy.categoriesLabel}
             </p>

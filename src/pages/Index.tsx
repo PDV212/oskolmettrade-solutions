@@ -35,9 +35,10 @@ const Index = () => {
         <HeroSection />
         <AISummary language="ru" />
         <CTAButton language="ru" variant="compact" className="py-8" />
-        <BusinessDirections />
         <CncFeatureCard language="ru" />
+        <BusinessDirections />
         <CTAButton language="ru" />
+
 
         <CatalogNavigation />
         <CTAButton language="ru" variant="compact" className="py-8" />
