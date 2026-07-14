@@ -1,6 +1,10 @@
 import type { ContentLanguage } from '@/data/pageContent';
 import { CheckCircle2 } from 'lucide-react';
-import h200Asset from '@/assets/cases/h200-70l-c2-2025.png';
+import h200Photo1 from '@/assets/cases/h200-70l-c2-2025-photo-1.jpg';
+import h200Photo2 from '@/assets/cases/h200-70l-c2-2025-photo-2.jpg';
+import h200Photo3 from '@/assets/cases/h200-70l-c2-2025-photo-3.jpg';
+
+const h200Photos = [h200Photo1, h200Photo2, h200Photo3];
 
 type L = { ru: string; en: string; zh: string };
 
@@ -199,16 +203,19 @@ const H200Section = ({ lang, contactHref }: Props) => (
   >
     <div className="rounded-2xl border border-border bg-card/95 backdrop-blur-sm shadow-sm overflow-hidden">
       <div className="grid lg:grid-cols-2 gap-0">
-        <div className="bg-muted/40 flex items-center justify-center p-4 min-h-[360px]">
-          <img
-            src={h200Asset}
-            width={1299}
-            height={1732}
-            alt={t.photoAlt[lang]}
-            loading="lazy"
-            decoding="async"
-            className="max-w-full max-h-[80vh] w-auto h-auto object-contain block"
-          />
+        <div className="bg-muted/40 p-4 flex flex-col gap-3">
+          {h200Photos.map((src, i) => (
+            <img
+              key={src}
+              src={src}
+              width={1920}
+              height={1440}
+              alt={`${t.photoAlt[lang]} — ${i + 1}`}
+              loading="lazy"
+              decoding="async"
+              className="w-full h-auto object-cover rounded-md block"
+            />
+          ))}
         </div>
         <div className="p-6 md:p-10 flex flex-col justify-center">
           <span className="inline-flex items-center gap-2 self-start rounded-full bg-primary/10 text-primary px-3 py-1 text-xs font-semibold uppercase tracking-wide mb-4">

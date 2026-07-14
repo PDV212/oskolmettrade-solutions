@@ -41,11 +41,11 @@ export const REQUIRED_IMAGES = [
     mime: "image/png",
   },
   {
-    stem: "h200-70l-c2-2025-",
-    sha256: "2f89b7d19db55b52b0835225f99188200dd151c3004f5feda44dcccc720aac74",
-    width: 1299,
-    height: 1732,
-    mime: "image/png",
+    stem: "h200-70l-c2-2025-photo-1-",
+    sha256: "9b14ca11933c04aac89f1e83e62f891883f04a0dcd4e03a4848d2915499bd423",
+    width: 1920,
+    height: 1440,
+    mime: "image/jpeg",
   },
   {
     stem: "bdmh3018-gantry-2026-",
@@ -63,7 +63,9 @@ export const REQUIRED_STEMS_SOFT = [
   // BDMH3018 case gallery
   "bdmh3018-gantry-overview-",
   // H200 case
-  "h200-70l-c2-2025-",
+  "h200-70l-c2-2025-photo-1-",
+  "h200-70l-c2-2025-photo-2-",
+  "h200-70l-c2-2025-photo-3-",
   // Hero / SiteBackground — resolved at runtime from HTML preload
 ];
 
