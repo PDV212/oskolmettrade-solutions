@@ -262,7 +262,7 @@ const _rawDirections: BusinessDirection[] = [
       en: 'Voronezh Machine Tool Plant is a separate legal entity. Its manufacturing capabilities may be considered for individual joint projects subject to the relevant agreements.',
       zh: '沃罗涅日机床厂是独立法人实体。在具备相应合作协议的情况下，其制造能力可用于具体联合项目。',
     },
-    image: vszManufacturingImage,
+    image: equipmentImageAsset,
     actionType: 'external-link',
     externalUrl: 'https://stankozavod.com/',
     externalLabel: {
