@@ -163,6 +163,23 @@ async function main() {
   await checkStatic("/llms.txt", "text");
   await checkRedirect();
 
+  // Only run image verification once the deploy-version.json commit matches
+  // the expected commit (or when EXPECTED_COMMIT is not set). Otherwise the
+  // failing images may belong to the previous deployment and would just be
+  // noise obscuring the deploy-propagation failure.
+  const deployMismatch = results.some(r => r.name === "deploy-version.json" && r.status === "NOT_DEPLOYED");
+  if (!deployMismatch) {
+    const imgSummary = await verifyProductionImages({
+      origin: ORIGIN,
+      log,
+      fetchText,
+      expectedCommit: EXPECTED_COMMIT,
+    });
+    console.log(`[verifyProduction] images: PASS=${imgSummary.passed}  FAIL=${imgSummary.failed}`);
+  } else {
+    log("BLOCKED", "images", "skipped: deploy-version.json commit mismatch");
+  }
+
   const failed = results.filter(r => r.status === "FAIL").length;
   const notDeployed = results.filter(r => r.status === "NOT_DEPLOYED").length;
   const blocked = results.filter(r => r.status === "BLOCKED").length;
