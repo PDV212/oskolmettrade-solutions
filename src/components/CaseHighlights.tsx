@@ -3,6 +3,7 @@ import { ArrowRight } from 'lucide-react';
 import { cncRouteFor, type Lang } from '@/lib/globalUi';
 import h200Asset from '@/assets/cases/h200-70l-c2-2025-photo-1.jpg';
 import bdmhAsset from '@/assets/cases/bdmh3018-gantry-2026.jpg';
+import hcFeCrAsset from '@/assets/cases/hc-fecr-2023-2024-photo-1.jpg';
 
 
 type L = { ru: string; en: string; zh: string };
