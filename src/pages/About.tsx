@@ -55,7 +55,7 @@ const About = ({ lang = 'ru' }: AboutProps) => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-transparent">
       <SEOHead
         title={aboutContent.meta.title[lang]}
         description={aboutContent.meta.description[lang]}
