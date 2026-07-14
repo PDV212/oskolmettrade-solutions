@@ -217,7 +217,40 @@ const CncMachines = ({ lang = 'ru' }: CncMachinesProps) => {
             </div>
           </section>
 
+          <section aria-labelledby="machine-types-heading" className="mb-12">
+            <h2 id="machine-types-heading" className="text-2xl md:text-3xl font-bold text-foreground mb-6">
+              {sectionLabels.types[lang]}
+            </h2>
+            <div className="overflow-x-auto rounded-lg border border-border bg-card">
+              <table className="w-full text-sm text-left">
+                <caption className="sr-only">{machineTypesTable.caption[lang]}</caption>
+                <thead className="bg-muted/50">
+                  <tr>
+                    {machineTypesTable.headers.map((h) => (
+                      <th key={h.en} scope="col" className="px-4 py-3 font-semibold text-foreground">
+                        {h[lang]}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {machineTypesTable.rows.map((r, i) => (
+                    <tr key={r.type.en} className={i % 2 === 0 ? 'bg-transparent' : 'bg-muted/30'}>
+                      <th scope="row" className="px-4 py-3 font-semibold text-foreground align-top">
+                        {r.type[lang]}
+                      </th>
+                      <td className="px-4 py-3 text-muted-foreground align-top">{r.op[lang]}</td>
+                      <td className="px-4 py-3 text-muted-foreground align-top">{r.axes}</td>
+                      <td className="px-4 py-3 text-muted-foreground align-top">{r.best[lang]}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </section>
+
           <section aria-labelledby="faq-heading" className="mb-8">
+
             <h2 id="faq-heading" className="text-2xl md:text-3xl font-bold text-foreground mb-6">
               {cncContent.sections.faq[lang]}
             </h2>
