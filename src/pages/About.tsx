@@ -54,6 +54,72 @@ const About = ({ lang = 'ru' }: AboutProps) => {
     },
   };
 
+  const personSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Kurguzov Sergey Anatolyevich',
+    jobTitle: 'Technical Director',
+    worksFor: { '@type': 'Organization', name: 'OSKOL-MET-TRADE LLC' },
+    knowsAbout: [
+      'CNC metalworking equipment',
+      'mechanical engineering technology',
+      'industrial equipment procurement',
+    ],
+  };
+
+  const keyFacts: { value: string; label: { ru: string; en: string; zh: string } }[] = [
+    { value: '1994', label: { ru: 'Опыт в отрасли с', en: 'Industry experience since', zh: '行业经验起始年' } },
+    { value: '4', label: { ru: 'Направления деятельности', en: 'Business directions', zh: '业务方向' } },
+    { value: '3', label: { ru: 'Языка сайта', en: 'Website languages', zh: '网站语言' } },
+    { value: 'B2B', label: { ru: 'Модель работы', en: 'Business model', zh: '商业模式' } },
+  ];
+
+  const workflow = {
+    heading: {
+      ru: 'Как мы работаем — от запроса до поставки',
+      en: 'How we work — from request to delivery',
+      zh: '工作流程 — 从询单到交付',
+    },
+    steps: [
+      {
+        ru: 'Заказчик передаёт техническое задание (ТЗ) или обращается за консультацией.',
+        en: 'Customer submits technical requirements (TZ) or contacts us for consultation.',
+        zh: '客户提交技术任务书（TZ）或联系我们进行咨询。',
+      },
+      {
+        ru: 'Анализируем требования и подбираем подходящих производителей.',
+        en: 'We analyse requirements and identify suitable manufacturers.',
+        zh: '我们分析需求并筛选合适的生产商。',
+      },
+      {
+        ru: 'Запрашиваем техническую документацию, образцы COA/MTC и цены.',
+        en: 'We request technical documentation, COA/MTC samples and pricing.',
+        zh: '我们索取技术文件、COA/MTC 样品与报价。',
+      },
+      {
+        ru: 'Согласуются технические параметры, упаковка, загрузка и логистика.',
+        en: 'Technical parameters, packaging, loading and logistics are agreed.',
+        zh: '确认技术参数、包装、装载与物流。',
+      },
+      {
+        ru: 'Готовится коммерческое предложение с полными условиями поставки.',
+        en: 'Commercial proposal with full supply terms is prepared.',
+        zh: '编制包含完整供货条款的商务报价。',
+      },
+      {
+        ru: 'Подписывается контракт, инициируется производство и логистика.',
+        en: 'Contract signed, production/logistics initiated.',
+        zh: '签订合同，启动生产与物流。',
+      },
+      {
+        ru: 'Поставка, передача документации, сопровождение после поставки.',
+        en: 'Delivery, documentation handover, post-delivery support.',
+        zh: '交付、文件移交及交付后支持。',
+      },
+    ],
+  };
+
+
   return (
     <div className="min-h-screen bg-transparent">
       <SEOHead
@@ -65,6 +131,11 @@ const About = ({ lang = 'ru' }: AboutProps) => {
       />
       <StructuredData type="BreadcrumbList" data={breadcrumbSchema} />
       <StructuredData type="AboutPage" data={aboutPageSchema} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+      />
+
       <SpeakableSchema
         url={canonical}
         name={aboutContent.hero.h1[lang]}
@@ -88,6 +159,25 @@ const About = ({ lang = 'ru' }: AboutProps) => {
               {aboutContent.hero.intro[lang]}
             </p>
           </header>
+
+          <section aria-labelledby="key-facts-heading" className="mb-16">
+            <h2 id="key-facts-heading" className="sr-only">
+              {lang === 'ru' ? 'Ключевые факты' : lang === 'en' ? 'Key facts' : '关键信息'}
+            </h2>
+            <div className="flex flex-col sm:flex-row flex-wrap gap-4">
+              {keyFacts.map((f) => (
+                <div
+                  key={f.label.en}
+                  className="flex-1 min-w-[160px] rounded-lg border border-border bg-card p-6 text-center"
+                >
+                  <div className="text-3xl md:text-4xl font-bold text-foreground mb-1">{f.value}</div>
+                  <div className="text-sm text-muted-foreground">{f.label[lang]}</div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+
 
           <section aria-labelledby="history-heading" className="mb-16">
             <h2 id="history-heading" className="text-2xl md:text-3xl font-bold text-foreground mb-8">
@@ -182,7 +272,29 @@ const About = ({ lang = 'ru' }: AboutProps) => {
             </div>
           </section>
 
+          <section aria-labelledby="workflow-heading" className="mb-16">
+            <h2 id="workflow-heading" className="text-2xl md:text-3xl font-bold text-foreground mb-8">
+              {workflow.heading[lang]}
+            </h2>
+            <ol className="relative border-l-2 border-border ml-4 space-y-8 list-none p-0">
+              {workflow.steps.map((step, i) => (
+                <li key={i} className="relative pl-8">
+                  <span
+                    aria-hidden="true"
+                    className="absolute -left-[1.05rem] top-0 flex h-8 w-8 items-center justify-center rounded-full bg-primary text-primary-foreground text-sm font-bold border-4 border-background"
+                  >
+                    {i + 1}
+                  </span>
+                  <p className="text-base text-foreground leading-relaxed pt-1">
+                    {step[lang]}
+                  </p>
+                </li>
+              ))}
+            </ol>
+          </section>
+
         </article>
+
 
       </main>
 
