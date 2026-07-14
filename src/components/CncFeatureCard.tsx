@@ -2,24 +2,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cncRouteFor, type Lang } from '@/lib/globalUi';
-
-// Reuse the approved BDMH3018 responsive derivatives already emitted for
-// /cnc-machines. Importing via the same glob shape keeps Vite hashing and
-// asset placement consistent across pages.
-const variantUrls = import.meta.glob(
-  '@/assets/bdmh3018/bdmh3018-machining-*.{avif,webp,jpg}',
-  { eager: true, query: '?url', import: 'default' },
-) as Record<string, string>;
-
-const url = (w: number, fmt: 'avif' | 'webp' | 'jpg'): string => {
-  const suffix = `/bdmh3018/bdmh3018-machining-${w}.${fmt}`;
-  const key = Object.keys(variantUrls).find((k) => k.endsWith(suffix));
-  if (!key) throw new Error(`missing bdmh3018-machining asset ${suffix}`);
-  return variantUrls[key];
-};
-
-const srcset = (fmt: 'avif' | 'webp' | 'jpg') =>
-  [640, 1024, 1600].map((w) => `${url(w, fmt)} ${w}w`).join(', ');
+import equipmentImage from '@/assets/equipment/metalworking-equipment.png.asset.json';
 
 interface Copy {
   eyebrow: string;
