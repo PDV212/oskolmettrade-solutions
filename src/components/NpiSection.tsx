@@ -33,9 +33,9 @@ const t = {
     zh: '合同常规执行期间：2023–2024',
   } as L,
   summary: {
-    ru: 'В 2023–2024 годах ООО «ОСКОЛ-МЕТ-ТРЕЙД» обеспечило регулярные поставки никелевого чугуна (Nickel Pig Iron, NPI) из Индонезии. Материал отгружался в биг-бегах морскими контейнерами в адрес российских металлургических предприятий.',
-    en: 'In 2023–2024, OSKOL-MET-TRADE LLC provided regular supplies of nickel pig iron (NPI) from Indonesia. The material was shipped in big bags via sea containers to Russian metallurgical plants.',
-    zh: '2023–2024 年，ОСКОЛ-МЕТ-ТРЕЙД 有限公司持续从印度尼西亚进口镍生铁（NPI）。物料以吨袋包装，由海运集装箱发往俄罗斯冶金企业。',
+    ru: 'В 2023–2024 годах ООО «ОСКОЛ-МЕТ-ТРЕЙД» обеспечило регулярные поставки никелевого чугуна (Nickel Pig Iron, NPI) из Индонезии. Материал отгружался в биг-бегах морскими контейнерами в адрес металлургических предприятий.',
+    en: 'In 2023–2024, OSKOL-MET-TRADE LLC provided regular supplies of nickel pig iron (NPI) from Indonesia. The material was shipped in big bags via sea containers to metallurgical plants.',
+    zh: '2023–2024 年，ОСКОЛ-МЕТ-ТРЕЙД 有限公司持续从印度尼西亚进口镍生铁（NPI）。物料以吨袋包装，由海运集装箱发往冶金企业。',
   } as L,
   application: {
     ru: 'Никелевый чугун применяется в металлургии в качестве сырья при выплавке нержавеющих сталей аустенитного класса, обеспечивая необходимое содержание никеля и снижая себестоимость шихты по сравнению с использованием чистого никеля.',
