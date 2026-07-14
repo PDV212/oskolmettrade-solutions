@@ -27,9 +27,9 @@ const t = {
     zh: '2023–2024 年已完成常态化供货',
   } as L,
   summary: {
-    ru: 'В 2023–2024 годах ООО «ОСКОЛ-МЕТ-ТРЕЙД» обеспечило регулярные поставки высокоуглеродистого феррохрома (HC FeCr) из Индии. Материал поставлялся в биг-бегах по 1 тонне и отгружался морскими контейнерами в адрес российских металлургических предприятий.',
-    en: 'In 2023–2024, OSKOL-MET-TRADE LLC ensured regular supplies of high-carbon ferrochrome (HC FeCr) from India. The material was shipped in 1-tonne big bags and dispatched in sea containers to Russian metallurgical plants.',
-    zh: '2023–2024 年，ОСКОЛ-МЕТ-ТРЕЙД 有限公司持续从印度进口高碳铬铁（HC FeCr）。物料以每袋 1 吨的吨袋包装，由海运集装箱发往俄罗斯冶金企业。',
+    ru: 'В 2023–2024 годах ООО «ОСКОЛ-МЕТ-ТРЕЙД» обеспечило регулярные поставки высокоуглеродистого феррохрома (HC FeCr) из Индии. Материал поставлялся в биг-бегах по 1 тонне и отгружался морскими контейнерами в адрес металлургических предприятий.',
+    en: 'In 2023–2024, OSKOL-MET-TRADE LLC ensured regular supplies of high-carbon ferrochrome (HC FeCr) from India. The material was shipped in 1-tonne big bags and dispatched in sea containers to metallurgical plants.',
+    zh: '2023–2024 年，ОСКОЛ-МЕТ-ТРЕЙД 有限公司持续从印度进口高碳铬铁（HC FeCr）。物料以每袋 1 吨的吨袋包装，由海运集装箱发往冶金企业。',
   } as L,
   application: {
     ru: 'Высокоуглеродистый феррохром применяется в металлургии в качестве легирующей добавки при выплавке нержавеющих и конструкционных марок сталей, а также специальных сплавов, повышая прочность, износостойкость и коррозионную устойчивость готового проката.',
