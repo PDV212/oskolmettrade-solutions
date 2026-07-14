@@ -2,24 +2,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cncRouteFor, type Lang } from '@/lib/globalUi';
-
-// Reuse the approved BDMH3018 responsive derivatives already emitted for
-// /cnc-machines. Importing via the same glob shape keeps Vite hashing and
-// asset placement consistent across pages.
-const variantUrls = import.meta.glob(
-  '@/assets/bdmh3018/bdmh3018-machining-*.{avif,webp,jpg}',
-  { eager: true, query: '?url', import: 'default' },
-) as Record<string, string>;
-
-const url = (w: number, fmt: 'avif' | 'webp' | 'jpg'): string => {
-  const suffix = `/bdmh3018/bdmh3018-machining-${w}.${fmt}`;
-  const key = Object.keys(variantUrls).find((k) => k.endsWith(suffix));
-  if (!key) throw new Error(`missing bdmh3018-machining asset ${suffix}`);
-  return variantUrls[key];
-};
-
-const srcset = (fmt: 'avif' | 'webp' | 'jpg') =>
-  [640, 1024, 1600].map((w) => `${url(w, fmt)} ${w}w`).join(', ');
+import equipmentImage from '@/assets/equipment/metalworking-equipment.png.asset.json';
 
 interface Copy {
   eyebrow: string;
@@ -51,7 +34,7 @@ const COPY: Record<Lang, Copy> = {
       'Автоматизированные металлорежущие комплексы — по техническому заданию',
     ],
     cta: 'Смотреть станки и оборудование',
-    alt: 'Портальный станок BDMH3018 в цехе заказчика — обработка крупногабаритной заготовки',
+    alt: 'Иллюстрация металлообрабатывающего оборудования — ОСКОЛ-МЕТ-ТРЕЙД',
   },
   en: {
     eyebrow: 'Metalworking equipment',
@@ -70,7 +53,7 @@ const COPY: Record<Lang, Copy> = {
       'Automated metal-cutting systems — subject to technical requirements',
     ],
     cta: 'View CNC machines',
-    alt: 'BDMH3018 gantry CNC machine at a customer facility machining a large workpiece',
+    alt: 'Metalworking equipment illustration — OSKOL-MET-TRADE',
   },
   zh: {
     eyebrow: '金属加工设备',
@@ -89,7 +72,7 @@ const COPY: Record<Lang, Copy> = {
       '带上料与成品接收系统的自动化金属切削生产线 — 依据技术要求',
     ],
     cta: '查看数控机床',
-    alt: 'BDMH3018 龙门数控机床在客户车间加工大型工件',
+    alt: '金属加工设备插图 — OSKOL-MET-TRADE',
   },
 };
 
@@ -120,22 +103,16 @@ const CncFeatureCard = ({ language = 'ru' }: Props) => {
           </p>
         </header>
         <article className="grid md:grid-cols-2 gap-0 overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
-          <div className="relative bg-black/5 aspect-[4/3] md:aspect-auto">
-            <picture>
-              <source type="image/avif" srcSet={srcset('avif')} sizes="(max-width: 768px) 100vw, 50vw" />
-              <source type="image/webp" srcSet={srcset('webp')} sizes="(max-width: 768px) 100vw, 50vw" />
-              <img
-                src={url(1024, 'jpg')}
-                srcSet={srcset('jpg')}
-                sizes="(max-width: 768px) 100vw, 50vw"
-                width={1600}
-                height={1200}
-                alt={copy.alt}
-                loading="lazy"
-                decoding="async"
-                className="block w-full h-full object-cover"
-              />
-            </picture>
+          <div className="relative bg-muted/40 aspect-[4/3] md:aspect-auto flex items-center justify-center p-4">
+            <img
+              src={equipmentImage.url}
+              width={1024}
+              height={1024}
+              alt={copy.alt}
+              loading="lazy"
+              decoding="async"
+              className="block max-w-full max-h-full w-auto h-auto object-contain"
+            />
           </div>
           <div className="p-6 md:p-10 flex flex-col justify-center">
             <p className="text-xs md:text-sm font-semibold uppercase tracking-wider text-primary mb-2">
