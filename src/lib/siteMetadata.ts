@@ -61,7 +61,14 @@ export const HREFLANG_GROUPS = {
     zh: "/zh/cnc-machines",
     xDefault: "en",
   },
+  ferroalloys: {
+    ru: "/ferroalloys",
+    en: "/en/ferroalloys",
+    zh: "/zh/ferroalloys",
+    xDefault: "en",
+  },
 } as const satisfies Record<string, HreflangGroup>;
+
 
 export type HreflangGroupKey = keyof typeof HREFLANG_GROUPS;
 
