@@ -70,7 +70,7 @@ export const GLOBAL_UI: Record<Lang, GlobalUiStrings> = {
     equipment: 'Equipment',
     cncMachines: 'CNC Machines',
 
-    materials: 'Materials',
+    materials: 'Ferroalloys',
     furnaces: 'Furnaces',
     manufacturing: 'VSZ Production',
     advantages: 'Advantages',
