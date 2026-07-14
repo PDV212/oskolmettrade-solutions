@@ -34,7 +34,7 @@ const COPY: Record<Lang, Copy> = {
       'Автоматизированные металлорежущие комплексы — по техническому заданию',
     ],
     cta: 'Смотреть станки и оборудование',
-    alt: 'Портальный станок BDMH3018 в цехе заказчика — обработка крупногабаритной заготовки',
+    alt: 'Иллюстрация металлообрабатывающего оборудования — ОСКОЛ-МЕТ-ТРЕЙД',
   },
   en: {
     eyebrow: 'Metalworking equipment',
@@ -53,7 +53,7 @@ const COPY: Record<Lang, Copy> = {
       'Automated metal-cutting systems — subject to technical requirements',
     ],
     cta: 'View CNC machines',
-    alt: 'BDMH3018 gantry CNC machine at a customer facility machining a large workpiece',
+    alt: 'Metalworking equipment illustration — OSKOL-MET-TRADE',
   },
   zh: {
     eyebrow: '金属加工设备',
