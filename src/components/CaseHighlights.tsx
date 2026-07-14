@@ -111,7 +111,7 @@ const CaseHighlights = ({ language = 'ru' }: Props) => {
                     />
                   ) : (
                     <img
-                      src={bdmhAsset.url}
+                      src={bdmhAsset}
                       width={1920}
                       height={1440}
                       alt={c.alt[language]}
