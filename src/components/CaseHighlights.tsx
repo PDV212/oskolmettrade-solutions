@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { cncRouteFor, type Lang } from '@/lib/globalUi';
-import h200Asset from '@/assets/cases/h200-70l-c2-2025.png.asset.json';
-import bdmhAsset from '@/assets/cases/bdmh3018-gantry-2026.jpg.asset.json';
+import h200Asset from '@/assets/cases/h200-70l-c2-2025.png';
+import bdmhAsset from '@/assets/cases/bdmh3018-gantry-2026.jpg';
 
 
 type L = { ru: string; en: string; zh: string };
