@@ -101,7 +101,7 @@ const CaseHighlights = ({ language = 'ru' }: Props) => {
                 <div className="w-full bg-muted/40 flex items-center justify-center aspect-[4/3]">
                   {c.key === 'h200' ? (
                     <img
-                      src={h200Asset.url}
+                      src={h200Asset}
                       width={1299}
                       height={1732}
                       alt={c.alt[language]}
