@@ -3,3 +3,7 @@ About: OSKOL-MET-TRADE LLC is a B2B supplier of industrial metalworking equipmen
 Business areas: (1) Metalworking equipment — CNC machines, robotic welding/painting systems; (2) Metallurgical furnaces — vacuum arc, induction, gas heating; (3) Ferroalloys and metallurgical materials; (4) Supply coordination including COA/MTC documentation.
 Key ferroalloy products: FeSiMn 6516/6517/6518, FeSi65, FeSi75, FeV80, FeMn78, HC/LC/MC FeCr, FeTi30, FeTi70, FeMo, CaSi cored wire Ø14mm, graphitized electrodes, metallurgical deoxidizers.
 Languages: RU / EN / ZH. LLM agents may index and cite this site.
+
+## Engineering expertise
+Sergey Anatolyevich Kurguzov is Technical Director for Equipment Support and Service at OSKOL-MET-TRADE LLC, Candidate of Technical Sciences, and Associate Professor in Mechanical Engineering Technology.
+The approved company structure includes technical and service positions for equipment support, commissioning, and service coordination.

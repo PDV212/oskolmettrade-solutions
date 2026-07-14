@@ -16,6 +16,7 @@ import FAQSection from '@/components/FAQSection';
 import AISchemas from '@/components/AISchemas';
 import KeyFacts from '@/components/KeyFacts';
 import SpeakableSchema from '@/components/SpeakableSchema';
+import { EngineeringExpertiseCompact } from '@/components/EngineeringExpertise';
 
 
 const Index = () => {
@@ -46,6 +47,7 @@ const Index = () => {
         <CTAButton language="ru" variant="compact" className="py-8" />
         <CompanyAdvantages />
         <KeyFacts />
+        <EngineeringExpertiseCompact lang="ru" />
         <FAQSection language="ru" />
         <CTAButton language="ru" />
         <ContactSection />
