@@ -66,7 +66,7 @@ const CompanyAdvantagesZh = () => {
           </div>
           <h2 className="heading-section mb-4">为什么选择我们</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            工业设备、冶金原材料供应及生产合作方向的 B2B 合作伙伴。各方向的具体条件按合同确定。
+            金属加工设备、机器人焊接与喷涂系统、工业炉、铁合金及冶金材料方向的 B2B 合作伙伴。各方向的具体条件按合同确定。
           </p>
         </div>
 
