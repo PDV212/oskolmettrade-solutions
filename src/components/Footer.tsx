@@ -62,7 +62,7 @@ const translations = {
     sinceLabel: 'Team experience since',
     sinceSuffix: '',
     description:
-      'Reliable B2B partner for metalworking equipment, metallurgical raw materials and manufacturing cooperation.',
+      'Reliable B2B partner for metalworking equipment, ferroalloys and materials for metallurgy, and industrial furnaces.',
     commercialEmail: 'For commercial and technical inquiries',
     directionsTitle: 'Our directions',
     quickLinksTitle: 'Useful links',
@@ -88,9 +88,8 @@ const translations = {
     ],
     services: [
       'Metalworking equipment',
-      'Metallurgical raw materials',
+      'Ferroalloys and materials for metallurgy',
       'Industrial furnaces',
-      'VSZ Manufacturing Capabilities',
     ],
     quickLinks: [
       { name: 'About the company', href: '#directions' },
@@ -105,7 +104,7 @@ const translations = {
     sinceLabel: '团队经验始于',
     sinceSuffix: '年',
     description:
-      'OSKOL-MET-TRADE 是金属加工设备、冶金原材料供应及生产合作的可靠 B2B 合作伙伴。',
+      'OSKOL-MET-TRADE 是金属加工设备、冶金用铁合金及材料、工业炉领域的可靠 B2B 合作伙伴。',
     commercialEmail: '商务与技术咨询',
     directionsTitle: '业务方向',
     quickLinksTitle: '常用链接',
@@ -131,9 +130,8 @@ const translations = {
     ],
     services: [
       '金属加工设备',
-      '冶金原材料',
+      '铁合金及冶金材料',
       '工业熔炉',
-      'VSZ制造能力',
     ],
     quickLinks: [
       { name: '关于公司', href: '#directions' },
