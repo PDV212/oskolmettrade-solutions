@@ -272,7 +272,29 @@ const About = ({ lang = 'ru' }: AboutProps) => {
             </div>
           </section>
 
+          <section aria-labelledby="workflow-heading" className="mb-16">
+            <h2 id="workflow-heading" className="text-2xl md:text-3xl font-bold text-foreground mb-8">
+              {workflow.heading[lang]}
+            </h2>
+            <ol className="relative border-l-2 border-border ml-4 space-y-8 list-none p-0">
+              {workflow.steps.map((step, i) => (
+                <li key={i} className="relative pl-8">
+                  <span
+                    aria-hidden="true"
+                    className="absolute -left-[1.05rem] top-0 flex h-8 w-8 items-center justify-center rounded-full bg-primary text-primary-foreground text-sm font-bold border-4 border-background"
+                  >
+                    {i + 1}
+                  </span>
+                  <p className="text-base text-foreground leading-relaxed pt-1">
+                    {step[lang]}
+                  </p>
+                </li>
+              ))}
+            </ol>
+          </section>
+
         </article>
+
 
       </main>
 
