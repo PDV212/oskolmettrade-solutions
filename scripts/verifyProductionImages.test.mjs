@@ -27,7 +27,7 @@ import {
 
 // Real emitted originals from dist/assets/images.
 const REAL_PNG = readFileSync("dist/assets/images/metalworking-equipment-MRD-glv8.png");
-const REAL_H200 = readFileSync("dist/assets/images/h200-70l-c2-2025-vMMwCD7h.png");
+const REAL_H200 = readFileSync("src/assets/cases/h200-70l-c2-2025-photo-1.jpg");
 const REAL_BDMH = readFileSync("dist/assets/images/bdmh3018-gantry-2026-DPdSFZVk.jpg");
 
 // 1. Valid PNG magic bytes + dimensions
@@ -114,7 +114,9 @@ console.log("unit assertions: OK (10/10)");
 
 const INDEX_HTML_GOOD = `<!doctype html><html><head></head><body>
 <img src="/assets/images/metalworking-equipment-abc.png">
-<img src="/assets/images/h200-70l-c2-2025-abc.png">
+<img src="/assets/images/h200-70l-c2-2025-photo-1-abc.jpg">
+<img src="/assets/images/h200-70l-c2-2025-photo-2-abc.jpg">
+<img src="/assets/images/h200-70l-c2-2025-photo-3-abc.jpg">
 <img src="/assets/images/bdmh3018-gantry-2026-abc.jpg">
 <img src="/assets/images/bdmh3018-gantry-overview-1024-abc.jpg">
 </body></html>`;
@@ -130,8 +132,8 @@ const server = http.createServer((req, res) => {
   if (p.startsWith("/assets/images/metalworking-equipment-")) {
     res.writeHead(200, { "content-type": "image/png" }); return res.end(REAL_PNG);
   }
-  if (p.startsWith("/assets/images/h200-70l-c2-2025-")) {
-    res.writeHead(200, { "content-type": "image/png" }); return res.end(REAL_H200);
+  if (p.startsWith("/assets/images/h200-70l-c2-2025-photo-")) {
+    res.writeHead(200, { "content-type": "image/jpeg" }); return res.end(REAL_H200);
   }
   if (p.startsWith("/assets/images/bdmh3018-gantry-2026-")) {
     res.writeHead(200, { "content-type": "image/jpeg" }); return res.end(REAL_BDMH);
