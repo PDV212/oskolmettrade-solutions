@@ -201,7 +201,7 @@ const H200Section = ({ lang, contactHref }: Props) => (
       <div className="grid lg:grid-cols-2 gap-0">
         <div className="bg-muted/40 flex items-center justify-center p-4 min-h-[360px]">
           <img
-            src={h200Asset.url}
+            src={h200Asset}
             width={1299}
             height={1732}
             alt={t.photoAlt[lang]}
