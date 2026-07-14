@@ -2,22 +2,8 @@ import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { cncRouteFor, type Lang } from '@/lib/globalUi';
 import h200Asset from '@/assets/cases/h200-70l-c2-2025.png.asset.json';
+import bdmhAsset from '@/assets/cases/bdmh3018-gantry-2026.jpg.asset.json';
 
-// Reuse the approved BDMH3018 derivatives for the compact preview thumbnail.
-const bdmhVariants = import.meta.glob(
-  '@/assets/bdmh3018/bdmh3018-machining-*.{avif,webp,jpg}',
-  { eager: true, query: '?url', import: 'default' },
-) as Record<string, string>;
-
-const bdmhUrl = (w: number, fmt: 'avif' | 'webp' | 'jpg'): string => {
-  const suffix = `/bdmh3018/bdmh3018-machining-${w}.${fmt}`;
-  const key = Object.keys(bdmhVariants).find((k) => k.endsWith(suffix));
-  if (!key) throw new Error(`missing bdmh3018-machining asset ${suffix}`);
-  return bdmhVariants[key];
-};
-
-const bdmhSrcset = (fmt: 'avif' | 'webp' | 'jpg') =>
-  [640, 1024, 1600].map((w) => `${bdmhUrl(w, fmt)} ${w}w`).join(', ');
 
 type L = { ru: string; en: string; zh: string };
 
@@ -124,21 +110,15 @@ const CaseHighlights = ({ language = 'ru' }: Props) => {
                       className="max-w-full max-h-full w-auto h-full object-contain block"
                     />
                   ) : (
-                    <picture>
-                      <source type="image/avif" srcSet={bdmhSrcset('avif')} sizes="(max-width: 768px) 100vw, 45vw" />
-                      <source type="image/webp" srcSet={bdmhSrcset('webp')} sizes="(max-width: 768px) 100vw, 45vw" />
-                      <img
-                        src={bdmhUrl(1024, 'jpg')}
-                        srcSet={bdmhSrcset('jpg')}
-                        sizes="(max-width: 768px) 100vw, 45vw"
-                        width={1600}
-                        height={1200}
-                        alt={c.alt[language]}
-                        loading="lazy"
-                        decoding="async"
-                        className="max-w-full max-h-full w-full h-full object-contain block"
-                      />
-                    </picture>
+                    <img
+                      src={bdmhAsset.url}
+                      width={1920}
+                      height={1440}
+                      alt={c.alt[language]}
+                      loading="lazy"
+                      decoding="async"
+                      className="max-w-full max-h-full w-full h-full object-cover block"
+                    />
                   )}
                 </div>
                 <div className="p-5 md:p-6 flex flex-col gap-3 flex-1">
