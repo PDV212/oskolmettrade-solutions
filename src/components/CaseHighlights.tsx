@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { cncRouteFor, type Lang } from '@/lib/globalUi';
-import h200Asset from '@/assets/cases/h200-70l-c2-2025.png.asset.json';
-import bdmhAsset from '@/assets/cases/bdmh3018-gantry-2026.jpg.asset.json';
+import h200Asset from '@/assets/cases/h200-70l-c2-2025.png';
+import bdmhAsset from '@/assets/cases/bdmh3018-gantry-2026.jpg';
 
 
 type L = { ru: string; en: string; zh: string };
@@ -101,7 +101,7 @@ const CaseHighlights = ({ language = 'ru' }: Props) => {
                 <div className="w-full bg-muted/40 flex items-center justify-center aspect-[4/3]">
                   {c.key === 'h200' ? (
                     <img
-                      src={h200Asset.url}
+                      src={h200Asset}
                       width={1299}
                       height={1732}
                       alt={c.alt[language]}
@@ -111,7 +111,7 @@ const CaseHighlights = ({ language = 'ru' }: Props) => {
                     />
                   ) : (
                     <img
-                      src={bdmhAsset.url}
+                      src={bdmhAsset}
                       width={1920}
                       height={1440}
                       alt={c.alt[language]}

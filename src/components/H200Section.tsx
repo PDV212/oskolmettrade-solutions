@@ -1,6 +1,6 @@
 import type { ContentLanguage } from '@/data/pageContent';
 import { CheckCircle2 } from 'lucide-react';
-import h200Asset from '@/assets/cases/h200-70l-c2-2025.png.asset.json';
+import h200Asset from '@/assets/cases/h200-70l-c2-2025.png';
 
 type L = { ru: string; en: string; zh: string };
 
@@ -201,7 +201,7 @@ const H200Section = ({ lang, contactHref }: Props) => (
       <div className="grid lg:grid-cols-2 gap-0">
         <div className="bg-muted/40 flex items-center justify-center p-4 min-h-[360px]">
           <img
-            src={h200Asset.url}
+            src={h200Asset}
             width={1299}
             height={1732}
             alt={t.photoAlt[lang]}
