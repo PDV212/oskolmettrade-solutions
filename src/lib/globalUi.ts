@@ -107,3 +107,9 @@ export function cncRouteFor(language: Lang): string {
   return language === 'ru' ? '/cnc-machines' : `/${language}/cnc-machines`;
 }
 
+/** Route that hosts the Ferroalloys page for a language. */
+export function ferroalloysRouteFor(language: Lang): string {
+  return language === 'ru' ? '/ferroalloys' : `/${language}/ferroalloys`;
+}
+
+
