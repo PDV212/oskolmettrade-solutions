@@ -47,7 +47,6 @@ const Header = ({ language = 'ru' }: HeaderProps) => {
     { name: ui.equipment, href: buildHomeSectionHref(lang, 'equipment') },
     { name: ui.materials, href: buildHomeSectionHref(lang, 'materials') },
     { name: ui.furnaces, href: buildHomeSectionHref(lang, 'furnaces') },
-    { name: ui.manufacturing, href: buildHomeSectionHref(lang, 'manufacturing') },
     { name: ui.contacts, href: buildHomeSectionHref(lang, 'contacts') },
   ];
 
