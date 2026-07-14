@@ -17,7 +17,7 @@ import AISchemas from '@/components/AISchemas';
 
 const English = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-transparent">
       <SEOHead {...seoConfigs.en.home} />
       <StructuredData type="Organization" data={organizationSchema} />
       <StructuredData type="BreadcrumbList" data={breadcrumbSchema('en')} />

@@ -6,6 +6,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import PerformanceOptimizer from "@/components/PerformanceOptimizer";
 import SkipLink from "@/components/SkipLink";
 import RouteScrollManager from "@/components/RouteScrollManager";
+import SiteBackground from "@/components/SiteBackground";
 import Index from "./pages/Index";
 import English from "./pages/English";
 import Chinese from "./pages/Chinese";
@@ -88,6 +89,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         <PerformanceOptimizer />
         <SkipLink />
         <RouteScrollManager />
+        <SiteBackground />
         {children}
         <Toaster />
       </TooltipProvider>
