@@ -146,7 +146,7 @@ const translations = {
   },
 } as const;
 
-const serviceIcons = [Wrench, Factory, Flame, Building2];
+const serviceIcons = [Wrench, Factory, Flame];
 
 const Footer = ({ language = 'ru' }: FooterProps) => {
   const currentYear = new Date().getFullYear();
@@ -200,7 +200,6 @@ const Footer = ({ language = 'ru' }: FooterProps) => {
     buildHomeSectionHref(language, 'equipment'),
     buildHomeSectionHref(language, 'materials'),
     buildHomeSectionHref(language, 'furnaces'),
-    buildHomeSectionHref(language, 'manufacturing'),
   ];
   const contactsHref = buildHomeSectionHref(language, 'contacts');
   const resolvedQuickLinks = t.quickLinks.map((link) => {
