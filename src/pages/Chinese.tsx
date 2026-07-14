@@ -8,6 +8,7 @@ import Footer from '@/components/Footer';
 import CTAButton from '@/components/CTAButton';
 import CatalogNavigation from '@/components/CatalogNavigation';
 import CncFeatureCard from '@/components/CncFeatureCard';
+import CaseHighlights from '@/components/CaseHighlights';
 
 import SEOHead, { seoConfigs } from '@/components/SEOHead';
 import StructuredData, { organizationSchema, breadcrumbSchema, faqSchemaZh } from '@/components/StructuredData';
@@ -30,6 +31,7 @@ const Chinese = () => {
         <AISummary language="zh" />
         <CTAButton language="zh" variant="compact" className="py-8" />
         <CncFeatureCard language="zh" />
+        <CaseHighlights language="zh" />
         <BusinessDirectionsZh />
         <CTAButton language="zh" />
 

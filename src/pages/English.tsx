@@ -8,6 +8,7 @@ import Footer from '@/components/Footer';
 import CTAButton from '@/components/CTAButton';
 import CatalogNavigation from '@/components/CatalogNavigation';
 import CncFeatureCard from '@/components/CncFeatureCard';
+import CaseHighlights from '@/components/CaseHighlights';
 
 import SEOHead, { seoConfigs } from '@/components/SEOHead';
 import StructuredData, { organizationSchema, breadcrumbSchema, faqSchemaEn } from '@/components/StructuredData';
@@ -30,6 +31,7 @@ const English = () => {
         <AISummary language="en" />
         <CTAButton language="en" variant="compact" className="py-8" />
         <CncFeatureCard language="en" />
+        <CaseHighlights language="en" />
         <BusinessDirectionsEn />
         <CTAButton language="en" />
 
