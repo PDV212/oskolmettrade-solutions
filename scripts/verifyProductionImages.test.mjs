@@ -116,7 +116,7 @@ const INDEX_HTML_GOOD = `<!doctype html><html><head></head><body>
 <img src="/assets/images/metalworking-equipment-abc.png">
 <img src="/assets/images/h200-70l-c2-2025-abc.png">
 <img src="/assets/images/bdmh3018-gantry-2026-abc.jpg">
-<picture><source srcset="/assets/images/bdmh3018-gantry-overview-640-abc.webp 640w"><img src="/assets/images/bdmh3018-gantry-overview-1024-abc.jpg"></picture>
+<img src="/assets/images/bdmh3018-gantry-overview-1024-abc.jpg">
 </body></html>`;
 
 const server = http.createServer((req, res) => {
