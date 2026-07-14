@@ -103,22 +103,16 @@ const CncFeatureCard = ({ language = 'ru' }: Props) => {
           </p>
         </header>
         <article className="grid md:grid-cols-2 gap-0 overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
-          <div className="relative bg-black/5 aspect-[4/3] md:aspect-auto">
-            <picture>
-              <source type="image/avif" srcSet={srcset('avif')} sizes="(max-width: 768px) 100vw, 50vw" />
-              <source type="image/webp" srcSet={srcset('webp')} sizes="(max-width: 768px) 100vw, 50vw" />
-              <img
-                src={url(1024, 'jpg')}
-                srcSet={srcset('jpg')}
-                sizes="(max-width: 768px) 100vw, 50vw"
-                width={1600}
-                height={1200}
-                alt={copy.alt}
-                loading="lazy"
-                decoding="async"
-                className="block w-full h-full object-cover"
-              />
-            </picture>
+          <div className="relative bg-muted/40 aspect-[4/3] md:aspect-auto flex items-center justify-center p-4">
+            <img
+              src={equipmentImage.url}
+              width={1024}
+              height={1024}
+              alt={copy.alt}
+              loading="lazy"
+              decoding="async"
+              className="block max-w-full max-h-full w-auto h-auto object-contain"
+            />
           </div>
           <div className="p-6 md:p-10 flex flex-col justify-center">
             <p className="text-xs md:text-sm font-semibold uppercase tracking-wider text-primary mb-2">
