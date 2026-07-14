@@ -10,8 +10,10 @@ import {
   buildHomeSectionHref,
   companyRouteFor,
   cncRouteFor,
+  ferroalloysRouteFor,
   type Lang,
 } from '@/lib/globalUi';
+
 
 
 interface HeaderProps {
