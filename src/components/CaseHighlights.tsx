@@ -3,6 +3,7 @@ import { ArrowRight } from 'lucide-react';
 import { cncRouteFor, type Lang } from '@/lib/globalUi';
 import h200Asset from '@/assets/cases/h200-70l-c2-2025-photo-1.jpg';
 import bdmhAsset from '@/assets/cases/bdmh3018-gantry-2026.jpg';
+import hcFeCrAsset from '@/assets/cases/hc-fecr-2023-2024-photo-1.jpg';
 
 
 type L = { ru: string; en: string; zh: string };
@@ -59,6 +60,21 @@ const COPY = {
         zh: '重型数控外圆磨床 H200-70L-C2 在生产现场',
       } as L,
     },
+    {
+      key: 'hc-fecr',
+      anchor: 'case-hc-fecr-2023-2024',
+      year: '2023–2024',
+      title: {
+        ru: 'Регулярные поставки ферросплавов (HC FeCr) 2023–2024',
+        en: 'Regular ferroalloy supplies (HC FeCr), 2023–2024',
+        zh: '2023–2024 年铁合金（HC FeCr）常态化供货',
+      } as L,
+      alt: {
+        ru: 'Партия высокоуглеродистого феррохрома HC FeCr в биг-бегах на терминале отгрузки',
+        en: 'Batch of high-carbon ferrochrome HC FeCr in big bags at the shipping terminal',
+        zh: '装运码头上的高碳铬铁 HC FeCr 吨袋批次',
+      } as L,
+    },
   ] as const,
 };
 
@@ -89,9 +105,10 @@ const CaseHighlights = ({ language = 'ru' }: Props) => {
           </p>
         </header>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {COPY.cases.map((c) => {
-            const href = `${base}#${c.anchor}`;
+            const href = c.key === 'hc-fecr' ? `#${c.anchor}` : `${base}#${c.anchor}`;
+            const img = c.key === 'h200' ? h200Asset : c.key === 'bdmh3018' ? bdmhAsset : hcFeCrAsset;
             return (
               <article
                 key={c.key}
@@ -100,7 +117,7 @@ const CaseHighlights = ({ language = 'ru' }: Props) => {
               >
                 <div className="w-full bg-muted/40 flex items-center justify-center aspect-[4/3]">
                   <img
-                    src={c.key === 'h200' ? h200Asset : bdmhAsset}
+                    src={img}
                     width={1920}
                     height={1440}
                     alt={c.alt[language]}
