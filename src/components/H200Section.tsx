@@ -1,6 +1,6 @@
 import type { ContentLanguage } from '@/data/pageContent';
 import { CheckCircle2 } from 'lucide-react';
-import h200Asset from '@/assets/cases/h200-70l-c2-2025.png.asset.json';
+import h200Asset from '@/assets/cases/h200-70l-c2-2025.png';
 
 type L = { ru: string; en: string; zh: string };
 
