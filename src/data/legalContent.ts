@@ -420,7 +420,7 @@ const privacyZh: LegalPageContent = {
 // scripts/validatePrecache.mjs extracts these names from the rendered
 // Cookies HTML and fails the build if they drift.
 export const swCacheNames =
-  "static-v2026-07-13-ssr3, dynamic-v2026-07-13-ssr3, images-v2026-07-13-ssr3";
+  "static-v2026-07-14-hero-cache1, dynamic-v2026-07-14-hero-cache1, images-v2026-07-14-hero-cache1";
 
 const cookiesRu: LegalPageContent = {
   language: "ru",
