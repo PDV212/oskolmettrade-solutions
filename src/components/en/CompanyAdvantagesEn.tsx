@@ -15,10 +15,10 @@ const CompanyAdvantagesEn = () => {
     },
     {
       icon: Shield,
-      title: 'Four business areas',
+      title: 'Three business areas',
       description:
-        'Joint projects covering equipment supply, metallurgical raw materials, industrial furnaces and manufacturing cooperation with VSZ, which is a separate legal entity.',
-      stat: '4 areas',
+        'Joint projects covering metalworking equipment and robotic complexes, industrial furnaces, and ferroalloys and materials for metallurgy.',
+      stat: '3 areas',
       gradient: 'from-secondary/20 to-secondary/5',
     },
     {
@@ -66,8 +66,8 @@ const CompanyAdvantagesEn = () => {
           </div>
           <h2 className="heading-section mb-4">Why choose us</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            B2B partner for industrial equipment, metallurgical raw materials and manufacturing
-            cooperation. Specific conditions for each area are fixed in the contract.
+            B2B partner for metalworking equipment, robotic welding and painting complexes, industrial
+            furnaces, ferroalloys and materials for metallurgy. Specific conditions for each area are fixed in the contract.
           </p>
         </div>
 
