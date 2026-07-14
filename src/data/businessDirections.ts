@@ -103,7 +103,7 @@ export const businessDirectionsIntro = {
 /* Direction data                                                  */
 /* --------------------------------------------------------------- */
 
-export const businessDirections: BusinessDirection[] = [
+const _rawDirections: BusinessDirection[] = [
   {
     id: 'materials',
     icon: Factory,
