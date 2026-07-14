@@ -1,5 +1,6 @@
 import type { ContentLanguage } from '@/data/pageContent';
 import { CheckCircle2 } from 'lucide-react';
+import { cn } from '@/lib/utils';
 import photo1 from '@/assets/cases/hc-fecr-2023-2024-photo-1.jpg';
 import photo2 from '@/assets/cases/hc-fecr-2023-2024-photo-2.jpg';
 import photo3 from '@/assets/cases/hc-fecr-2023-2024-photo-3.jpg';
@@ -76,18 +77,28 @@ const specRows: Row[] = [
 
 interface Props {
   lang: ContentLanguage;
+  embedded?: boolean;
+  hideHeader?: boolean;
 }
 
-const HcFeCrSection = ({ lang }: Props) => (
-  <section
-    id="case-hc-fecr-2023-2024"
-    aria-labelledby="hc-fecr-heading"
-    className="py-12 md:py-16 scroll-mt-24"
-    data-hc-fecr-section="true"
-  >
-    <div className="container mx-auto px-4">
-      <div className="rounded-2xl border border-border bg-card/95 backdrop-blur-sm shadow-sm overflow-hidden">
-        <div className="grid lg:grid-cols-2 gap-0">
+const HcFeCrSection = ({ lang, embedded, hideHeader }: Props) => {
+  const Wrapper = embedded ? 'div' : 'section';
+
+  return (
+    <Wrapper
+      id="case-hc-fecr-2023-2024"
+      aria-labelledby={!hideHeader ? 'hc-fecr-heading' : undefined}
+      className={cn(!embedded && 'py-12 md:py-16 scroll-mt-24')}
+      data-hc-fecr-section="true"
+    >
+      <div className={cn(!embedded && 'container mx-auto px-4')}>
+        <div
+          className={cn(
+            'grid lg:grid-cols-2 gap-0',
+            !embedded &&
+              'rounded-2xl border border-border bg-card/95 backdrop-blur-sm shadow-sm overflow-hidden'
+          )}
+        >
           <div className="bg-muted/40 p-4 grid grid-cols-2 gap-3 content-start">
             {photos.map((p, i) => (
               <img
@@ -103,37 +114,60 @@ const HcFeCrSection = ({ lang }: Props) => (
             ))}
           </div>
           <div className="p-6 md:p-10 flex flex-col justify-center">
-            <span className="inline-flex items-center gap-2 self-start rounded-full bg-primary/10 text-primary px-3 py-1 text-xs font-semibold uppercase tracking-wide mb-4">
-              <CheckCircle2 className="w-4 h-4" aria-hidden="true" />
-              {t.status[lang]}
-            </span>
-            <h2 id="hc-fecr-heading" className="text-2xl md:text-3xl font-bold text-foreground mb-4">
-              {t.title[lang]}
-            </h2>
-            <p className="text-muted-foreground leading-relaxed mb-4">{t.summary[lang]}</p>
-            <p className="text-muted-foreground leading-relaxed">{t.application[lang]}</p>
+            {!hideHeader && (
+              <>
+                <span className="inline-flex items-center gap-2 self-start rounded-full bg-primary/10 text-primary px-3 py-1 text-xs font-semibold uppercase tracking-wide mb-4">
+                  <CheckCircle2 className="w-4 h-4" aria-hidden="true" />
+                  {t.status[lang]}
+                </span>
+                <h2
+                  id="hc-fecr-heading"
+                  className="text-2xl md:text-3xl font-bold text-foreground mb-4"
+                >
+                  {t.title[lang]}
+                </h2>
+              </>
+            )}
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              {t.summary[lang]}
+            </p>
+            <p className="text-muted-foreground leading-relaxed">
+              {t.application[lang]}
+            </p>
           </div>
         </div>
-      </div>
 
-      <h3 className="text-xl md:text-2xl font-semibold text-foreground mt-10 mb-4">
-        {t.specHeading[lang]}
-      </h3>
-      <div className="rounded-lg border border-border bg-card overflow-hidden" data-hc-fecr-spec="true">
-        <dl className="divide-y divide-border">
-          {specRows.map((row) => (
-            <div
-              key={row.k.ru}
-              className="grid grid-cols-1 sm:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)] gap-1 sm:gap-6 px-4 md:px-6 py-3 odd:bg-muted/20"
-            >
-              <dt className="text-sm font-medium text-foreground">{row.k[lang]}</dt>
-              <dd className="text-sm text-muted-foreground break-words">{row.v[lang]}</dd>
-            </div>
-          ))}
-        </dl>
+        <h3
+          className={cn(
+            'text-xl md:text-2xl font-semibold text-foreground mb-4',
+            embedded ? 'mt-6' : 'mt-10'
+          )}
+        >
+          {t.specHeading[lang]}
+        </h3>
+        <div
+          className="rounded-lg border border-border bg-card overflow-hidden"
+          data-hc-fecr-spec="true"
+        >
+          <dl className="divide-y divide-border">
+            {specRows.map((row) => (
+              <div
+                key={row.k.ru}
+                className="grid grid-cols-1 sm:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)] gap-1 sm:gap-6 px-4 md:px-6 py-3 odd:bg-muted/20"
+              >
+                <dt className="text-sm font-medium text-foreground">
+                  {row.k[lang]}
+                </dt>
+                <dd className="text-sm text-muted-foreground break-words">
+                  {row.v[lang]}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </div>
       </div>
-    </div>
-  </section>
-);
+    </Wrapper>
+  );
+};
 
 export default HcFeCrSection;
