@@ -393,6 +393,8 @@ const About = ({ lang = 'ru' }: AboutProps) => {
             </ol>
           </section>
 
+          <EngineeringExpertiseSection lang={lang} />
+
         </article>
 
 
