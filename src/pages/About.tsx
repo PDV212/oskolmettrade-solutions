@@ -74,17 +74,89 @@ const About = ({ lang = 'ru' }: AboutProps) => {
     },
   };
 
+  const personId = 'https://www.xn-----llccbycikqb3afub.xn--p1ai/about#sergey-kurguzov';
+  const orgId = 'https://www.xn-----llccbycikqb3afub.xn--p1ai/#organization';
+  const orgName = {
+    ru: 'ООО «ОСКОЛ-МЕТ-ТРЕЙД»',
+    en: 'OSKOL-MET-TRADE LLC',
+    zh: 'OSKOL-MET-TRADE 有限责任公司',
+  }[lang];
+
   const personSchema = {
     '@context': 'https://schema.org',
     '@type': 'Person',
-    name: 'Kurguzov Sergey Anatolyevich',
-    jobTitle: 'Technical Director',
-    worksFor: { '@type': 'Organization', name: 'OSKOL-MET-TRADE LLC' },
-    knowsAbout: [
-      'CNC metalworking equipment',
-      'mechanical engineering technology',
-      'industrial equipment procurement',
+    '@id': personId,
+    name: EE.expert.name[lang],
+    alternateName: [
+      'Sergey Anatolyevich Kurguzov',
+      '谢尔盖·阿纳托利耶维奇·库尔古佐夫',
+      'Кургузов Сергей Анатольевич',
     ],
+    jobTitle: EE.expert.position[lang],
+    worksFor: { '@type': 'Organization', '@id': orgId, name: orgName },
+    hasCredential: [
+      {
+        '@type': 'EducationalOccupationalCredential',
+        name: EE.credentials[0].title[lang],
+        credentialCategory: 'Academic degree',
+        dateCreated: '1997',
+      },
+      {
+        '@type': 'EducationalOccupationalCredential',
+        name: EE.credentials[1].title[lang],
+        credentialCategory: 'Academic title',
+        dateCreated: '2000',
+      },
+    ],
+    knowsAbout: {
+      ru: [
+        'Технология машиностроения',
+        'Металлообрабатывающее оборудование',
+        'Станки с ЧПУ',
+        'Шеф-монтаж',
+        'Пусконаладочные работы',
+        'Техническое сопровождение оборудования',
+        'Сервис промышленного оборудования',
+      ],
+      en: [
+        'Mechanical engineering technology',
+        'Metalworking equipment',
+        'CNC machines',
+        'Installation supervision',
+        'Commissioning',
+        'Technical support of equipment',
+        'Industrial equipment service',
+      ],
+      zh: [
+        '机械制造工艺',
+        '金属加工设备',
+        '数控机床',
+        '安装指导',
+        '调试作业',
+        '设备技术支持',
+        '工业设备服务',
+      ],
+    }[lang],
+  };
+
+  const inLanguage = lang === 'ru' ? 'ru' : lang === 'en' ? 'en' : 'zh-Hans';
+  const academicImageSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ImageObject',
+    contentUrl: SITE_ORIGIN_URL + EE.academicDocument.src,
+    caption: EE.academicDocument.caption[lang],
+    inLanguage,
+    representativeOfPage: false,
+    creditText: 'ООО «ОСКОЛ-МЕТ-ТРЕЙД»',
+  };
+  const staffingImageSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ImageObject',
+    contentUrl: SITE_ORIGIN_URL + EE.staffingDocument.src,
+    caption: EE.staffingDocument.caption[lang],
+    inLanguage,
+    representativeOfPage: false,
+    creditText: 'ООО «ОСКОЛ-МЕТ-ТРЕЙД»',
   };
 
   const keyFacts: { value: string; label: { ru: string; en: string; zh: string } }[] = [
