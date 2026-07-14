@@ -4,7 +4,6 @@ import BusinessDirections from '@/components/BusinessDirections';
 import CompanyAdvantages from '@/components/CompanyAdvantages';
 import CncFeatureCard from '@/components/CncFeatureCard';
 import CaseHighlights from '@/components/CaseHighlights';
-import HcFeCrSection from '@/components/HcFeCrSection';
 
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
@@ -39,7 +38,6 @@ const Index = () => {
         <CTAButton language="ru" variant="compact" className="py-8" />
         <CncFeatureCard language="ru" />
         <CaseHighlights language="ru" />
-        <HcFeCrSection lang="ru" />
         <BusinessDirections />
         <CTAButton language="ru" />
 
