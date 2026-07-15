@@ -1,5 +1,6 @@
 import React from "react";
 import { Toaster } from "@/components/ui/toaster";
+import { Toaster as SonnerToaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Routes, Route, Navigate } from "react-router-dom";
@@ -98,6 +99,9 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         <SiteBackground />
         {children}
         <Toaster />
+        {/* Sonner toaster — used by src/lib/appVersion.ts for the
+            "new version available" update prompt. */}
+        <SonnerToaster />
       </TooltipProvider>
     </QueryClientProvider>
   );

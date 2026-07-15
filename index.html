@@ -12,6 +12,14 @@
     <meta name="referrer" content="origin-when-cross-origin" />
     
     <link rel="icon" href="/lovable-uploads/adb38e62-ebf5-4d0f-92a9-272c1f38c8f4.png" type="image/png">
+
+    <!-- HTML cache policy (fallback for hosts that don't send Cache-Control).
+         Ensures the entry document always revalidates so a new deploy is
+         picked up on the next normal reload. Hashed JS/CSS/images remain
+         cacheable via their own headers. -->
+    <meta http-equiv="Cache-Control" content="no-cache, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
     
     <!-- PWA и кеширование -->
     <link rel="manifest" href="/manifest.json" />

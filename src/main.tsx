@@ -2,6 +2,7 @@ import React from "react";
 import { createRoot, hydrateRoot } from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";
+import { initAppVersionWatcher, primeChunkErrorRecovery } from "./lib/appVersion";
 
 // Browser-only bootstrap. Anything that touches window / document /
 // navigator / localStorage / service worker MUST live inside runBrowserOnly()
@@ -9,22 +10,39 @@ import "./index.css";
 function runBrowserOnly() {
   if (typeof window === "undefined") return;
 
-  // Lazy import so the static renderer's module graph never pulls
-  // CacheManager (which touches window/navigator at method time).
   void import("./utils/cacheManager.ts").then(({ default: CacheManager }) => {
     const cacheManager = CacheManager.getInstance();
     cacheManager.init();
-    // Note: hero and section images live in src/assets/ and are imported
-    // by components — Vite emits hashed filenames. Preloading unhashed
-    // paths here produced 404s in production, so those manual preloads
-    // were removed. Components perform their own image loading.
   });
 
+  // One-shot cleanup for returning visitors that still have the legacy
+  // app-shell Service Worker registered. The current /sw.js is a kill
+  // switch that unregisters itself, but a returning browser must first
+  // fetch that replacement — we also proactively unregister any SW
+  // scoped to this origin here so no NEW page load can be intercepted
+  // by a stale worker. Kept for at least two release cycles.
   if ("serviceWorker" in navigator) {
-    window.addEventListener("load", () => {
-      navigator.serviceWorker.register("/sw.js").catch(() => {});
-    });
+    navigator.serviceWorker
+      .getRegistrations()
+      .then((registrations) => {
+        for (const registration of registrations) {
+          try {
+            const scopeUrl = new URL(registration.scope);
+            if (scopeUrl.origin === window.location.origin) {
+              registration.unregister().catch(() => {});
+            }
+          } catch {
+            /* ignore malformed scope */
+          }
+        }
+      })
+      .catch(() => {});
   }
+
+  // Wire up automatic deployment-version detection (fetches /version.json,
+  // shows an update toast, safe first-load recovery, ChunkLoadError guard).
+  primeChunkErrorRecovery();
+  initAppVersionWatcher();
 }
 
 const rootEl = document.getElementById("root");
@@ -36,8 +54,6 @@ const app = (
   </React.StrictMode>
 );
 
-// If the prerender pipeline wrote real React markup into #root, hydrate
-// over it. Otherwise (empty dev shell) do a fresh createRoot render.
 if (rootEl.firstElementChild) {
   hydrateRoot(rootEl, app);
 } else {

@@ -1,13 +1,11 @@
-// Post-build: write a small, non-sensitive deployment manifest into dist/
-// so the live origin can be checked against the CI commit and build time.
+// Post-build: write two deployment manifests into dist/.
 //
-// Content is intentionally minimal:
-//   - commit SHA (from GITHUB_SHA or `git rev-parse HEAD`, else "unknown")
-//   - build timestamp (ISO 8601, UTC)
-//   - prerenderedRoutes (count from routeManifest)
-//   - buildId (short SHA + timestamp)
+//   - dist/deploy-version.json   (legacy, used by scripts/verifyProduction.mjs)
+//   - dist/version.json          (public runtime endpoint used by
+//                                 src/lib/appVersion.ts to detect a newer
+//                                 deployment and prompt users to reload)
 //
-// No secrets, no environment dump, no internal paths.
+// Content is intentionally minimal — no secrets, no environment dump.
 
 import { writeFileSync, existsSync, mkdirSync } from "node:fs";
 import { execSync } from "node:child_process";
@@ -34,15 +32,35 @@ function resolveCommit() {
 const commit = resolveCommit();
 const shortCommit = commit === "unknown" ? "unknown" : commit.slice(0, 7);
 const builtAt = new Date().toISOString();
+const buildId = `${shortCommit}-${builtAt.replace(/[:.]/g, "-")}`;
 
 const manifest = {
   commit,
   shortCommit,
   builtAt,
   prerenderedRoutes: ROUTES.length,
-  buildId: `${shortCommit}-${builtAt.replace(/[:.]/g, "-")}`,
+  buildId,
 };
 
-const outPath = resolve(DIST, "deploy-version.json");
-writeFileSync(outPath, JSON.stringify(manifest, null, 2) + "\n", "utf8");
-console.log(`[deploy-version] wrote ${outPath} (commit=${shortCommit}, routes=${manifest.prerenderedRoutes})`);
+writeFileSync(
+  resolve(DIST, "deploy-version.json"),
+  JSON.stringify(manifest, null, 2) + "\n",
+  "utf8",
+);
+
+// Public runtime endpoint. Kept small on purpose — the client only needs a
+// stable `version` string.
+const publicVersion = {
+  version: buildId,
+  buildTime: builtAt,
+  commit: shortCommit,
+};
+writeFileSync(
+  resolve(DIST, "version.json"),
+  JSON.stringify(publicVersion, null, 2) + "\n",
+  "utf8",
+);
+
+console.log(
+  `[deploy-version] wrote deploy-version.json + version.json (commit=${shortCommit}, buildId=${buildId})`,
+);
