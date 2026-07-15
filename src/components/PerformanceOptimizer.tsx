@@ -59,11 +59,10 @@ const PerformanceOptimizer = () => {
 
       window.addEventListener('scroll', handleScroll, { passive: true });
 
-      // 7. Compression hint для браузера
-      if ('serviceWorker' in navigator && 'caches' in window) {
-        // Service worker уже регистрируется в main.tsx
-        console.log('Performance optimizations applied');
-      }
+      // 7. (removed) Legacy Service Worker registration hint. The app-shell
+      //    SW has been replaced by a kill switch at /sw.js and is no longer
+      //    registered from main.tsx. See src/lib/appVersion.ts for the
+      //    current deploy-update flow.
 
       return () => {
         window.removeEventListener('scroll', handleScroll);
