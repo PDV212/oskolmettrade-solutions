@@ -27,15 +27,23 @@ if (!existsSync(swPath)) {
 }
 const sw = readFileSync(swPath, "utf8");
 
-// Extract the three cache-name constants actually opened by the worker.
-// CACHE_NAME has been removed intentionally — do not resurrect it.
+// If sw.js is the kill-switch (no CACHE_VERSION / no STATIC_ASSETS and
+// no fetch handler), precache validation no longer applies — the SW is
+// intentionally passthrough and unregisters itself on activation.
+const isKillSwitch =
+  !/const\s+CACHE_VERSION\s*=/.test(sw) &&
+  !/const\s+STATIC_ASSETS\s*=/.test(sw) &&
+  !/addEventListener\(['"]fetch['"]/.test(sw);
+if (isKillSwitch) {
+  console.log("[validatePrecache] SKIP — sw.js is a kill-switch worker.");
+  process.exit(0);
+}
+
 const constRe = {
   STATIC_CACHE: /const\s+STATIC_CACHE\s*=\s*['"]?([^'";\s]+)['"]?\s*(?:;|\n)/,
   DYNAMIC_CACHE: /const\s+DYNAMIC_CACHE\s*=\s*['"]?([^'";\s]+)['"]?\s*(?:;|\n)/,
   IMAGE_CACHE: /const\s+IMAGE_CACHE\s*=\s*['"]?([^'";\s]+)['"]?\s*(?:;|\n)/,
 };
-// The above regex also matches the concatenation form
-// `'static-' + CACHE_VERSION`, so we resolve programmatically instead.
 const versionMatch = sw.match(/const\s+CACHE_VERSION\s*=\s*'([^']+)'/);
 if (!versionMatch) fail("sw.js: CACHE_VERSION constant not found");
 const version = versionMatch ? versionMatch[1] : "";
