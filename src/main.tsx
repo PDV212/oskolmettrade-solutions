@@ -37,6 +37,23 @@ function runBrowserOnly() {
         }
       })
       .catch(() => {});
+
+    // Page-side guarded reload triggered by the kill-switch SW after it
+    // has evicted its own caches. Exactly one automatic reload per tab,
+    // keyed in sessionStorage so a stuck message can never cause a loop.
+    const LEGACY_SW_RELOAD_KEY = "omt:legacy-sw-cleanup-reload";
+    navigator.serviceWorker.addEventListener("message", (event) => {
+      if (event?.data?.type !== "OMT_LEGACY_SERVICE_WORKER_REMOVED") return;
+      try {
+        if (sessionStorage.getItem(LEGACY_SW_RELOAD_KEY) === "1") return;
+        sessionStorage.setItem(LEGACY_SW_RELOAD_KEY, "1");
+      } catch {
+        /* if storage is unavailable, do NOT reload — safer than a loop */
+        return;
+      }
+      // Small delay so any in-flight UI settles.
+      setTimeout(() => window.location.reload(), 100);
+    });
   }
 
   // Wire up automatic deployment-version detection (fetches /version.json,
