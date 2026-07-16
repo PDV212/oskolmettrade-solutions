@@ -2,13 +2,26 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { execSync } from "node:child_process";
+import { readFileSync, existsSync } from "node:fs";
 import { componentTagger } from "lovable-tagger";
 
 // Resolve a stable build id so the running client bundle can compare
-// itself against /version.json (see src/lib/appVersion.ts). Prefers the
-// CI commit SHA when available; falls back to a local `git rev-parse`;
-// finally to a timestamp so dev builds are still unique enough.
+// itself against /version.json (see src/lib/appVersion.ts). Prefers
+// `.buildid` written by scripts/computeBuildId.mjs (guarantees byte-for-
+// byte equality with dist/version.json). Falls back to a git-based id for
+// standalone `vite build` invocations, and finally to a timestamp for dev.
 function resolveBuildId() {
+  const shared = path.resolve(__dirname, ".buildid");
+  if (existsSync(shared)) {
+    try {
+      const parsed = JSON.parse(readFileSync(shared, "utf8"));
+      if (parsed && typeof parsed.buildId === "string" && parsed.buildId) {
+        return parsed.buildId;
+      }
+    } catch {
+      /* fall through */
+    }
+  }
   const commit =
     process.env.GITHUB_SHA ||
     (() => {

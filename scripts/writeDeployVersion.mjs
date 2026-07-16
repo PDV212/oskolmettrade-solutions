@@ -7,7 +7,7 @@
 //
 // Content is intentionally minimal — no secrets, no environment dump.
 
-import { writeFileSync, existsSync, mkdirSync } from "node:fs";
+import { writeFileSync, existsSync, mkdirSync, readFileSync } from "node:fs";
 import { execSync } from "node:child_process";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -15,6 +15,7 @@ import { ROUTES } from "./routeManifest.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DIST = resolve(__dirname, "..", "dist");
+const SHARED = resolve(__dirname, "..", ".buildid");
 
 if (!existsSync(DIST)) mkdirSync(DIST, { recursive: true });
 
@@ -29,10 +30,25 @@ function resolveCommit() {
   }
 }
 
-const commit = resolveCommit();
-const shortCommit = commit === "unknown" ? "unknown" : commit.slice(0, 7);
-const builtAt = new Date().toISOString();
-const buildId = `${shortCommit}-${builtAt.replace(/[:.]/g, "-")}`;
+// Prefer the shared .buildid written by scripts/computeBuildId.mjs so the
+// buildId embedded in the JS bundle (__APP_VERSION__) is byte-for-byte
+// identical to version.json. Fallback: compute a fresh one (standalone use).
+let commit;
+let shortCommit;
+let builtAt;
+let buildId;
+if (existsSync(SHARED)) {
+  const parsed = JSON.parse(readFileSync(SHARED, "utf8"));
+  commit = parsed.commit || "unknown";
+  shortCommit = parsed.shortCommit || (commit === "unknown" ? "unknown" : commit.slice(0, 7));
+  builtAt = parsed.builtAt;
+  buildId = parsed.buildId;
+} else {
+  commit = resolveCommit();
+  shortCommit = commit === "unknown" ? "unknown" : commit.slice(0, 7);
+  builtAt = new Date().toISOString();
+  buildId = `${shortCommit}-${builtAt.replace(/[:.]/g, "-")}`;
+}
 
 const manifest = {
   commit,
