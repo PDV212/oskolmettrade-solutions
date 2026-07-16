@@ -63,12 +63,21 @@ async function fetchServerVersion(): Promise<string | null> {
       credentials: "omit",
     });
     if (!res.ok) return null;
+    const contentType = (res.headers.get("content-type") || "").toLowerCase();
+    if (!contentType.includes("application/json")) return null;
     const data = (await res.json()) as {
       version?: string;
       buildId?: string;
       commit?: string;
-    };
-    return data.version || data.buildId || data.commit || null;
+    } | null;
+    if (!data) return null;
+    const version =
+      (typeof data.version === "string" && data.version) ||
+      (typeof data.buildId === "string" && data.buildId) ||
+      (typeof data.commit === "string" && data.commit) ||
+      "";
+    if (typeof version !== "string" || version.trim() === "") return null;
+    return version;
   } catch {
     return null;
   }
