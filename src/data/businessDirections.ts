@@ -53,6 +53,15 @@ export interface DirectionFeature {
 
 export type DirectionActionType = 'contact' | 'external-link';
 
+export interface DirectionDetails {
+  processHeading: LocalizedText;
+  processText: LocalizedText;
+  scopeHeading: LocalizedText;
+  scopeItems: LocalizedText[];
+  resultHeading: LocalizedText;
+  resultText: LocalizedText;
+}
+
 export interface BusinessDirection {
   id: DirectionId;
   icon: LucideIcon;
@@ -62,6 +71,8 @@ export interface BusinessDirection {
   features: DirectionFeature[];
   /** Optional heading shown above the feature list. */
   featuresHeading?: LocalizedText;
+  /** Optional structured details rendered between description and features. */
+  details?: DirectionDetails;
   /** Section-hero image, optional. */
   image?: string;
   actionType: DirectionActionType;
@@ -119,6 +130,60 @@ const _rawDirections: BusinessDirection[] = [
     actionType: 'contact',
     gradient: 'bg-gradient-to-br from-primary/15 to-accent/10',
     iconColor: 'text-primary',
+    details: {
+      processHeading: {
+        ru: 'Как формируется предложение',
+        en: 'How the offer is prepared',
+        zh: '报价方案的形成',
+      },
+      processText: {
+        ru: 'Работа начинается с анализа технического задания, чертежей деталей, обрабатываемых материалов и требований к производительности. Если исходных данных недостаточно, мы помогаем сформировать перечень параметров для запроса производителям и сопоставления доступных решений.',
+        en: 'Work starts with a review of the technical specification, part drawings, materials to be machined and productivity requirements. When the input data is incomplete, we help compile the parameter list needed to issue requests to manufacturers and to compare available solutions.',
+        zh: '工作始于对技术任务、零件图纸、被加工材料及生产率要求的分析。如原始资料不足，我们协助整理向制造商询价及对比可选方案所需的参数清单。',
+      },
+      scopeHeading: {
+        ru: 'Что согласовывается по проекту',
+        en: 'What is agreed within the project',
+        zh: '项目中需协调的内容',
+      },
+      scopeItems: [
+        {
+          ru: 'Тип оборудования и выполняемые технологические операции',
+          en: 'Equipment type and machining operations to be performed',
+          zh: '设备类型及所执行的加工工序',
+        },
+        {
+          ru: 'Рабочая зона, перемещения, мощность и требуемая точность',
+          en: 'Working envelope, travels, power and required accuracy',
+          zh: '加工范围、行程、功率及所需精度',
+        },
+        {
+          ru: 'Система ЧПУ, инструментальная оснастка и уровень автоматизации',
+          en: 'CNC control system, tooling and fixtures, level of automation',
+          zh: '数控系统、刀具及工装、自动化程度',
+        },
+        {
+          ru: 'Требования к электропитанию, фундаменту и размещению оборудования',
+          en: 'Power supply, foundation and installation layout requirements',
+          zh: '供电、基础及设备布置要求',
+        },
+        {
+          ru: 'Упаковка, схема загрузки и условия международной перевозки',
+          en: 'Packaging, loading arrangement and international shipping terms',
+          zh: '包装、装载方案及国际运输条件',
+        },
+      ],
+      resultHeading: {
+        ru: 'Результат для заказчика',
+        en: 'Deliverable for the customer',
+        zh: '客户获得的成果',
+      },
+      resultText: {
+        ru: 'Заказчик получает технически сопоставимое предложение с описанием конфигурации, комплектации, условий поставки и перечнем вопросов, требующих подтверждения производителя. Окончательные характеристики, сроки, гарантия, монтаж и сервис фиксируются в коммерческом предложении и договоре.',
+        en: 'The customer receives a technically comparable offer describing the configuration, scope of supply, delivery terms and the list of points that require manufacturer confirmation. Final specifications, lead times, warranty, installation and service are fixed in the commercial offer and contract.',
+        zh: '客户获得技术上可比的方案，涵盖配置、供货范围、交付条件以及需由制造商确认的事项清单。最终技术参数、交货期、保修、安装及服务均在报价与合同中确定。',
+      },
+    },
     features: [
       {
         id: 'equipment-by-spec',
@@ -184,6 +249,65 @@ const _rawDirections: BusinessDirection[] = [
     actionType: 'contact',
     gradient: 'bg-gradient-to-br from-secondary/20 to-secondary/5',
     iconColor: 'text-secondary',
+    details: {
+      processHeading: {
+        ru: 'Подбор под технологический процесс',
+        en: 'Selection based on the process',
+        zh: '按工艺要求选型',
+      },
+      processText: {
+        ru: 'При выборе печи учитываются назначение установки, обрабатываемый материал, рабочая температура, масса или объём загрузки, требуемая атмосфера и продолжительность цикла. Для плавильных и нагревательных решений отдельно согласовываются производительность, энергопотребление и способ загрузки.',
+        en: 'Furnace selection considers the intended application, the material to be processed, operating temperature, charge mass or volume, required atmosphere and cycle duration. For melting and heating solutions, throughput, energy consumption and charging method are agreed separately.',
+        zh: '选型时需综合考虑设备用途、被处理材料、工作温度、装料质量或容积、所需气氛及工艺周期。对于熔炼和加热方案，还需单独确认产能、能耗及装料方式。',
+      },
+      scopeHeading: {
+        ru: 'Состав технической проработки',
+        en: 'Scope of technical assessment',
+        zh: '技术论证的内容',
+      },
+      scopeItems: [
+        {
+          ru: 'Тип печи и рекомендуемый технологический процесс',
+          en: 'Furnace type and recommended process',
+          zh: '炉型及推荐工艺',
+        },
+        {
+          ru: 'Полезная ёмкость, температурный диапазон и установленная мощность',
+          en: 'Working capacity, temperature range and installed power',
+          zh: '有效容量、温度范围及装机功率',
+        },
+        {
+          ru: 'Вакуумная, инертная или контролируемая рабочая атмосфера',
+          en: 'Vacuum, inert or controlled furnace atmosphere',
+          zh: '真空、惰性或受控炉内气氛',
+        },
+        {
+          ru: 'Система охлаждения, газоснабжения и удаления продуктов сгорания',
+          en: 'Cooling, gas supply and flue-gas exhaust systems',
+          zh: '冷却、供气及烟气排放系统',
+        },
+        {
+          ru: 'Автоматизация, регистрация параметров и интеграция с линией',
+          en: 'Automation, parameter logging and line integration',
+          zh: '自动化、参数记录及生产线集成',
+        },
+        {
+          ru: 'Требования к фундаменту, коммуникациям и промышленной безопасности',
+          en: 'Foundation, utility connections and industrial safety requirements',
+          zh: '基础、公用工程接入及工业安全要求',
+        },
+      ],
+      resultHeading: {
+        ru: 'Результат для заказчика',
+        en: 'Deliverable for the customer',
+        zh: '客户获得的成果',
+      },
+      resultText: {
+        ru: 'По техническому заданию формируется проектная конфигурация для запроса производителю. В предложении указываются состав оборудования, вспомогательные системы, требования к подключению, границы поставки и доступные варианты пусконаладочного сопровождения. Все параметры подтверждаются технической документацией выбранного изготовителя.',
+        en: 'Based on the technical specification, a project configuration is prepared for the manufacturer request. The offer states the equipment scope, auxiliary systems, connection requirements, scope of supply and available commissioning support options. All parameters are confirmed by the selected manufacturer’s technical documentation.',
+        zh: '根据技术任务形成用于向制造商询价的项目配置。方案中明确设备组成、辅助系统、接入要求、供货范围以及可选的安装调试支持内容。所有参数以选定制造商的技术文件为准。',
+      },
+    },
     features: [
       {
         id: 'vacuum-arc',

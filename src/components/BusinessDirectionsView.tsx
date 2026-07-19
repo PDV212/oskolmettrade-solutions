@@ -75,11 +75,51 @@ const BusinessDirectionsView = ({ language }: Props) => {
                     {direction.title[language]}
                   </h3>
                   <p
-                    className="text-muted-foreground text-sm leading-relaxed mb-5 flex-1"
+                    className="text-muted-foreground text-sm leading-relaxed mb-5"
                     itemProp="description"
                   >
                     {direction.description[language]}
                   </p>
+
+                  {direction.details && (
+                    <div className="mb-5 space-y-4 flex-1">
+                      <div>
+                        <h4 className={`text-sm font-semibold mb-1.5 ${direction.iconColor}`}>
+                          {direction.details.processHeading[language]}
+                        </h4>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          {direction.details.processText[language]}
+                        </p>
+                      </div>
+                      <div>
+                        <h4 className={`text-sm font-semibold mb-2 ${direction.iconColor}`}>
+                          {direction.details.scopeHeading[language]}
+                        </h4>
+                        <ul className="space-y-1.5">
+                          {direction.details.scopeItems.map((item, idx) => (
+                            <li
+                              key={idx}
+                              className="flex items-start gap-2 text-sm text-muted-foreground"
+                            >
+                              <Check
+                                className="w-4 h-4 text-accent mt-0.5 flex-shrink-0"
+                                aria-hidden="true"
+                              />
+                              <span>{item[language]}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div className="pt-3 border-t border-border/60">
+                        <h4 className={`text-sm font-semibold mb-1.5 ${direction.iconColor}`}>
+                          {direction.details.resultHeading[language]}
+                        </h4>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          {direction.details.resultText[language]}
+                        </p>
+                      </div>
+                    </div>
+                  )}
 
                   {direction.features.length > 0 && (
                     <div className="mb-5">
