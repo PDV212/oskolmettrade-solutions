@@ -249,6 +249,65 @@ const _rawDirections: BusinessDirection[] = [
     actionType: 'contact',
     gradient: 'bg-gradient-to-br from-secondary/20 to-secondary/5',
     iconColor: 'text-secondary',
+    details: {
+      processHeading: {
+        ru: 'Подбор под технологический процесс',
+        en: 'Selection based on the process',
+        zh: '按工艺要求选型',
+      },
+      processText: {
+        ru: 'При выборе печи учитываются назначение установки, обрабатываемый материал, рабочая температура, масса или объём загрузки, требуемая атмосфера и продолжительность цикла. Для плавильных и нагревательных решений отдельно согласовываются производительность, энергопотребление и способ загрузки.',
+        en: 'Furnace selection considers the intended application, the material to be processed, operating temperature, charge mass or volume, required atmosphere and cycle duration. For melting and heating solutions, throughput, energy consumption and charging method are agreed separately.',
+        zh: '选型时需综合考虑设备用途、被处理材料、工作温度、装料质量或容积、所需气氛及工艺周期。对于熔炼和加热方案，还需单独确认产能、能耗及装料方式。',
+      },
+      scopeHeading: {
+        ru: 'Состав технической проработки',
+        en: 'Scope of technical assessment',
+        zh: '技术论证的内容',
+      },
+      scopeItems: [
+        {
+          ru: 'Тип печи и рекомендуемый технологический процесс',
+          en: 'Furnace type and recommended process',
+          zh: '炉型及推荐工艺',
+        },
+        {
+          ru: 'Полезная ёмкость, температурный диапазон и установленная мощность',
+          en: 'Working capacity, temperature range and installed power',
+          zh: '有效容量、温度范围及装机功率',
+        },
+        {
+          ru: 'Вакуумная, инертная или контролируемая рабочая атмосфера',
+          en: 'Vacuum, inert or controlled furnace atmosphere',
+          zh: '真空、惰性或受控炉内气氛',
+        },
+        {
+          ru: 'Система охлаждения, газоснабжения и удаления продуктов сгорания',
+          en: 'Cooling, gas supply and flue-gas exhaust systems',
+          zh: '冷却、供气及烟气排放系统',
+        },
+        {
+          ru: 'Автоматизация, регистрация параметров и интеграция с линией',
+          en: 'Automation, parameter logging and line integration',
+          zh: '自动化、参数记录及生产线集成',
+        },
+        {
+          ru: 'Требования к фундаменту, коммуникациям и промышленной безопасности',
+          en: 'Foundation, utility connections and industrial safety requirements',
+          zh: '基础、公用工程接入及工业安全要求',
+        },
+      ],
+      resultHeading: {
+        ru: 'Результат для заказчика',
+        en: 'Deliverable for the customer',
+        zh: '客户获得的成果',
+      },
+      resultText: {
+        ru: 'По техническому заданию формируется проектная конфигурация для запроса производителю. В предложении указываются состав оборудования, вспомогательные системы, требования к подключению, границы поставки и доступные варианты пусконаладочного сопровождения. Все параметры подтверждаются технической документацией выбранного изготовителя.',
+        en: 'Based on the technical specification, a project configuration is prepared for the manufacturer request. The offer states the equipment scope, auxiliary systems, connection requirements, scope of supply and available commissioning support options. All parameters are confirmed by the selected manufacturer’s technical documentation.',
+        zh: '根据技术任务形成用于向制造商询价的项目配置。方案中明确设备组成、辅助系统、接入要求、供货范围以及可选的安装调试支持内容。所有参数以选定制造商的技术文件为准。',
+      },
+    },
     features: [
       {
         id: 'vacuum-arc',
