@@ -35,8 +35,7 @@ const ContactSectionEn = () => {
     {
       title: 'Telegram',
       image: '/lovable-uploads/783d99ba-632d-47a7-bc9d-d2c6653ee5cc.png',
-      alt: 'Telegram QR code for contacting OSKOL-MET-TRADE',
-      description: 'Scan the QR code to contact us via Telegram.'
+      alt: 'Telegram QR code for contacting OSKOL-MET-TRADE'
     },
     {
       title: 'WhatsApp',
