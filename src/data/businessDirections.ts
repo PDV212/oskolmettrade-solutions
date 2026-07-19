@@ -130,6 +130,60 @@ const _rawDirections: BusinessDirection[] = [
     actionType: 'contact',
     gradient: 'bg-gradient-to-br from-primary/15 to-accent/10',
     iconColor: 'text-primary',
+    details: {
+      processHeading: {
+        ru: 'Как формируется предложение',
+        en: 'How the offer is prepared',
+        zh: '报价方案的形成',
+      },
+      processText: {
+        ru: 'Работа начинается с анализа технического задания, чертежей деталей, обрабатываемых материалов и требований к производительности. Если исходных данных недостаточно, мы помогаем сформировать перечень параметров для запроса производителям и сопоставления доступных решений.',
+        en: 'Work starts with a review of the technical specification, part drawings, materials to be machined and productivity requirements. When the input data is incomplete, we help compile the parameter list needed to issue requests to manufacturers and to compare available solutions.',
+        zh: '工作始于对技术任务、零件图纸、被加工材料及生产率要求的分析。如原始资料不足，我们协助整理向制造商询价及对比可选方案所需的参数清单。',
+      },
+      scopeHeading: {
+        ru: 'Что согласовывается по проекту',
+        en: 'What is agreed within the project',
+        zh: '项目中需协调的内容',
+      },
+      scopeItems: [
+        {
+          ru: 'Тип оборудования и выполняемые технологические операции',
+          en: 'Equipment type and machining operations to be performed',
+          zh: '设备类型及所执行的加工工序',
+        },
+        {
+          ru: 'Рабочая зона, перемещения, мощность и требуемая точность',
+          en: 'Working envelope, travels, power and required accuracy',
+          zh: '加工范围、行程、功率及所需精度',
+        },
+        {
+          ru: 'Система ЧПУ, инструментальная оснастка и уровень автоматизации',
+          en: 'CNC control system, tooling and fixtures, level of automation',
+          zh: '数控系统、刀具及工装、自动化程度',
+        },
+        {
+          ru: 'Требования к электропитанию, фундаменту и размещению оборудования',
+          en: 'Power supply, foundation and installation layout requirements',
+          zh: '供电、基础及设备布置要求',
+        },
+        {
+          ru: 'Упаковка, схема загрузки и условия международной перевозки',
+          en: 'Packaging, loading arrangement and international shipping terms',
+          zh: '包装、装载方案及国际运输条件',
+        },
+      ],
+      resultHeading: {
+        ru: 'Результат для заказчика',
+        en: 'Deliverable for the customer',
+        zh: '客户获得的成果',
+      },
+      resultText: {
+        ru: 'Заказчик получает технически сопоставимое предложение с описанием конфигурации, комплектации, условий поставки и перечнем вопросов, требующих подтверждения производителя. Окончательные характеристики, сроки, гарантия, монтаж и сервис фиксируются в коммерческом предложении и договоре.',
+        en: 'The customer receives a technically comparable offer describing the configuration, scope of supply, delivery terms and the list of points that require manufacturer confirmation. Final specifications, lead times, warranty, installation and service are fixed in the commercial offer and contract.',
+        zh: '客户获得技术上可比的方案，涵盖配置、供货范围、交付条件以及需由制造商确认的事项清单。最终技术参数、交货期、保修、安装及服务均在报价与合同中确定。',
+      },
+    },
     features: [
       {
         id: 'equipment-by-spec',
