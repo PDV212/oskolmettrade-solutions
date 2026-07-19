@@ -53,6 +53,15 @@ export interface DirectionFeature {
 
 export type DirectionActionType = 'contact' | 'external-link';
 
+export interface DirectionDetails {
+  processHeading: LocalizedText;
+  processText: LocalizedText;
+  scopeHeading: LocalizedText;
+  scopeItems: LocalizedText[];
+  resultHeading: LocalizedText;
+  resultText: LocalizedText;
+}
+
 export interface BusinessDirection {
   id: DirectionId;
   icon: LucideIcon;
@@ -62,6 +71,8 @@ export interface BusinessDirection {
   features: DirectionFeature[];
   /** Optional heading shown above the feature list. */
   featuresHeading?: LocalizedText;
+  /** Optional structured details rendered between description and features. */
+  details?: DirectionDetails;
   /** Section-hero image, optional. */
   image?: string;
   actionType: DirectionActionType;
